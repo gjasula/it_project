@@ -21,7 +21,7 @@ public class Main extends Application {
     @Override
     public void start (Stage stage) throws Exception {
         Button button = new Button();
-        button.setText("klick mich!");
+        button.setText("klick mich! - Update DAT");
         button.setOnAction(event -> System.out.println("Hello World!"));
 
         StackPane root = new StackPane();
