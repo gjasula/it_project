@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a17926e2-da12-48d9-a277-7c36733f2c16" name="Default" comment="&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/Test_Nadine.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/it_project/ch/fhnw/atlantis/Main.class" afterPath="$PROJECT_DIR$/out/production/it_project/ch/fhnw/atlantis/Main.class" />
+    <list default="true" id="a17926e2-da12-48d9-a277-7c36733f2c16" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/Main.java" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/Main.java" />
     </list>
     <ignored path="it_project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -444,6 +441,14 @@
       <updated>1469710450815</updated>
       <workItem from="1469710452865" duration="2056000" />
     </task>
+    <task id="LOCAL-00001" summary="&#10;.">
+      <created>1473100792431</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1473100792431</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -493,7 +498,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&#10;" />
+    <MESSAGE value="&#10;." />
+    <option name="LAST_COMMIT_MESSAGE" value="&#10;." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
