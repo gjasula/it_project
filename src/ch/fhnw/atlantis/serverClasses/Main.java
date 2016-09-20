@@ -1,4 +1,4 @@
-package ch.fhnw.atlantis;
+package ch.fhnw.atlantis.serverClasses;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -9,7 +9,6 @@ import javafx.stage.Stage;
 /**
  * Created by team Gerstenland.
  *
- * Richy push test
  */
 
 
@@ -23,15 +22,14 @@ public class Main extends Application {
     @Override
     public void start (Stage stage) throws Exception {
         Button button = new Button();
-        button.setText("klick mich! - Update DAT");
         button.setOnAction(event -> System.out.println("Hello World!"));
 
         StackPane root = new StackPane();
         root.getChildren().add(button);
 
-        Scene scene = new Scene(root, 300, 200);
+        Scene scene = new Scene(root, 800, 600);
 
-        stage.setTitle("Hello World App");
+        stage.setTitle("Atlantis - Client - Team Gerstenland");
         stage.setScene(scene);
         stage.show();
 
