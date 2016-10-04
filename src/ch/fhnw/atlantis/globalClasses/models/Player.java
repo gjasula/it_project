@@ -3,8 +3,12 @@ package ch.fhnw.atlantis.globalClasses.models;
 import java.io.Serializable;
 
 /**
- * Created by js on 04.10.2016.
+ *
+ * Team Gerstenland
+ * Created by Jürg Steudler
+ *
  */
+
 public class Player implements Serializable {
     private String playername;
     private boolean isConnected = true;

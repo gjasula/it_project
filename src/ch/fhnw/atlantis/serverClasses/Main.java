@@ -7,11 +7,11 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 /**
- * Created by team Gerstenland.
+ *
+ * Team Gerstenland
+ * Created by Jürg Steudler
  *
  */
-
-
 
 public class Main extends Application {
 

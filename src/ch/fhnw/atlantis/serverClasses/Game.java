@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
  * Created by Jürg Steudler
  *
  */
+
 public class Game implements Serializable {
     private static Game instance;
 
