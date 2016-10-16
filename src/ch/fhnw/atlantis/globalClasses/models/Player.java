@@ -27,6 +27,8 @@ public class Player implements Serializable {
     public Player(String playername){
         this();
         this.playername = playername;
+
+        // Um danach den Spielern Karten zuzuweisen getCardFromStack(AnzahlKarten)
     }
 
     /*
