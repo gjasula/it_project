@@ -19,11 +19,11 @@ public class GameBoard {
         int ypos = 0;
 
     }
-
+/**
     public void init() {
         this.htTiles = TileFactory.getAllTiles();
 
-    }
+    }*/
 
     /**
      * Bringt alle Enums der Klasse Tile in einen Hashset
