@@ -15,6 +15,8 @@ public class Player implements Serializable {
     private boolean isConnected = true;
     private int playernumber = 0;
     static ArrayList<String> MovementCards = new ArrayList<>();
+    static ArrayList<String> PlayerOneHandCards = new ArrayList<>();
+    static ArrayList<String> PlayerTwoHandCards = new ArrayList<>();
 
     /**
      * Default Konstruktor
@@ -29,6 +31,26 @@ public class Player implements Serializable {
         this.playername = playername;
 
         // Um danach den Spielern Karten zuzuweisen getCardFromStack(AnzahlKarten)
+    }
+
+    //Remove Card from hand
+    //removeCardFromHand(1, 1);
+    static void removeCardFromHand(int Player, int Card){
+
+        if(Player == 1){
+            PlayerOneHandCards.remove(Card);
+            for( int i = 0 ; i < PlayerOneHandCards.size() ; i++ )
+            {
+                System.out.println(PlayerOneHandCards.get(i));
+            }
+        }else{
+            PlayerTwoHandCards.remove(Card);
+            for( int i = 0 ; i < PlayerTwoHandCards.size() ; i++ )
+            {
+                System.out.println(PlayerTwoHandCards.get(i));
+            }
+        }
+
     }
 
     /*
