@@ -138,7 +138,6 @@ public class WelcomeView {
 
         // ------------------- Stylesheets -------------------
         welcome_pane.getStylesheets().add("/ch/fhnw/atlantis/resources/css/style.css");
-        welcome_pane.getStylesheets().add("http://fonts.googleapis.com/css?family=Material+Icons");
 
         // ------------------- BorderPane zu Scene hinzufügen und Fenstergrösse setzen -------------------
         scene = new Scene(welcome_pane, 800, 600);
