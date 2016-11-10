@@ -47,8 +47,6 @@ public class GameMenuView {
         menu0.setPadding(new Insets(50));
         menu0.setSpacing(10);
 
-
-
         menu1 = new VBox(btnSprache1, btnSprache2);
 
 
@@ -56,7 +54,7 @@ public class GameMenuView {
         GameMenu_pane.setLeft(menu0);
 
         scene = new Scene(GameMenu_pane, 800, 600);
-        scene.getStylesheets().add("Resource/menu.css");
+    //    scene.getStylesheets().add("resources/menu.css");
 
     }
 

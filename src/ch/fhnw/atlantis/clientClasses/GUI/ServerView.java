@@ -1,4 +1,6 @@
-package ch.fhnw.atlantis.clientClasses.GUI;import javafx.geometry.HPos;
+package ch.fhnw.atlantis.clientClasses.GUI;
+
+import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -98,7 +100,7 @@ public class ServerView {
 
         // BorderPane zu Scene hinzufügen und Fenstergrösse setzen
         scene = new Scene(stack, 800, 600);
-        scene.getStylesheets().add("Resource/style.css");
+    //    scene.getStylesheets().add("resources/style.css");
 
     }
     public void show(Stage stage) {
