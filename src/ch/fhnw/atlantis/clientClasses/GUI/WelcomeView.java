@@ -136,7 +136,7 @@ public class WelcomeView {
         welcome_pane.setTop(labelPane);
 
         // ------------------- Stylesheets -------------------
-        welcome_pane.getStylesheets().add("Resource/style.css");
+        welcome_pane.getStylesheets().add("/ch/fhnw/atlantis/resources/css/style.css");
         welcome_pane.getStylesheets().add("http://fonts.googleapis.com/css?family=Material+Icons");
 
         // ------------------- BorderPane zu Scene hinzufügen und Fenstergrösse setzen -------------------
@@ -147,7 +147,7 @@ public class WelcomeView {
     // ------------------- View der Stage bekannt geben -------------------
     public void show(Stage stage) {
         stage.setTitle("Atlantis by Team Gerstenland");
-        Image icon = new Image(getClass().getResourceAsStream("Resource/atlantis_client.jpg"));
+        Image icon = new Image(getClass().getResourceAsStream("./../../resources/images/atlantis_client.jpg"));
         stage.getIcons().add(icon);
         stage.setScene(scene);
         stage.show();
