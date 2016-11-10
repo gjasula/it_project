@@ -1,0 +1,27 @@
+.root{
+
+ -fx-background-color: #0099cc;
+ }
+
+Label{
+ -fx-text-fill: #e8e8e8;
+ -fx-font-family: "Courier New";
+ -fx-font-size: 15px;
+}
+
+#Label-big{
+ -fx-font-family: "Comic Sans MS";
+ -fx-font-size: 40px;
+}
+
+Button{
+ -fx-background-color: #808080;
+ -fx-font-weight: bold;
+ -fx-font-family: "Courier New";
+}
+
+#MenuButton{
+ -fx-background-color: #ff3300;
+ -fx-font-family: "Courier New";
+}
+
