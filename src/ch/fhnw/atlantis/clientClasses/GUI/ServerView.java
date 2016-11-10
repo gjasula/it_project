@@ -11,14 +11,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.CycleMethod;
-import javafx.scene.paint.LinearGradient;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
-import java.awt.*;
-import java.awt.Label;
 
 /**
  * Created by Nadine on 18.10.2016.
@@ -29,13 +24,14 @@ public class ServerView {
     private Scene scene;
     private GridPane serverpane;
     private BorderPane pane;
-    private HBox s_pane;
+    private HBox spane;
     private StackPane stack;
 
     private Button btnConnect_s;
     private Button btnStop_s;
     private TextField ServerConnection;
-    private Label lblAtlantis;
+
+
     private Image icon;
     private Image img;
     private ImageView iview1;
@@ -49,45 +45,37 @@ public class ServerView {
     public ServerView() {
 
         // ------------------- Buttons -------------------
-        btnConnect_s = new Button("Start Server");
-        btnStop_s = new Button("Stop Server");
+        btnConnect_s = new Button("START SERVER");
+        btnStop_s = new Button("STOP SERVER");
 
         //  ------------------- TextField -------------------
-        ServerConnection = new TextField();
-        ServerConnection.setText("Server Value");
+        ServerConnection = new TextField("Server Value");
+        //    ServerConnection.setText("Server Value");
         ServerConnection.setMinWidth(150);
         ServerConnection.setMinHeight(150);
 
-        //  ------------------- Schriftzug Atlantis  -------------------
-        lblAtlantis = new Label();
-        lblAtlantis.setText("Atlantis");
-
-
-
         //  ------------------- Elemente in HBox anordnen  -------------------
-        s_pane = new HBox(btnConnect_s, btnStop_s);
-        s_pane.setAlignment(Pos.CENTER);
-        s_pane.setPadding(new Insets(50));
-        s_pane.setSpacing(15);
-        s_pane.setId("Button");
+        spane = new HBox(btnConnect_s, btnStop_s);
+        spane.setAlignment(Pos.CENTER);
+        spane.setPadding(new Insets(50));
+        spane.setSpacing(15);
+        spane.setId("Button");
 
         //  ------------------- Layout: Gridpane erstellen; anordnen; hinzufügen  -------------------
         serverpane = new GridPane();
-        serverpane.addRow(0, s_pane);
-        serverpane.addRow(3, ServerConnection);
+        GridPane.setHalignment(spane, HPos.LEFT);
+        GridPane.setHalignment(ServerConnection, HPos.CENTER);
+        GridPane.setColumnSpan(ServerConnection, 2);
 
-        serverpane.setHalignment(s_pane, HPos.LEFT);
-        serverpane.setHalignment(iview1, HPos.RIGHT);
-        serverpane.setHalignment(ServerConnection, HPos.CENTER);
-        serverpane.setColumnSpan(ServerConnection, 1);
+        serverpane.addRow(0, spane);
+        serverpane.addRow(3, ServerConnection);
         serverpane.setPadding(new Insets(40, 40, 40, 40));
         serverpane.setVgap(80);
-        serverpane.setHgap(500);
+        serverpane.setHgap(400);
         serverpane.setGridLinesVisible(true);
 
-
         rect = new Rectangle(720, 550);
-        rect.setFill(Color.rgb(200,200,200,0.6));
+        rect.setFill(Color.rgb(200, 200, 200, 0.6));
         rect.setArcHeight(3.5);
         rect.setArcWidth(3.5);
         rect.setStroke(Color.LIGHTGRAY);
@@ -97,21 +85,19 @@ public class ServerView {
         stack.setAlignment(Pos.CENTER);
 
 
-
         // BorderPane zu Scene hinzufügen und Fenstergrösse setzen
         scene = new Scene(stack, 800, 600);
-    //    scene.getStylesheets().add("resources/style.css");
+        scene.getStylesheets().add("/ch/fhnw/atlantis/resources/css/style.css");
 
     }
-    public void show(Stage stage) {
-        stage.setTitle("Atlantis by Team Gerstenland");
-        Image icon = new Image(getClass().getResourceAsStream("Resource/logoMuehle.jpg"));
-        stage.getIcons().add(icon);
-        stage.setScene(scene);
-        stage.show();
+        public void show(Stage stage) {
+            stage.setTitle("Atlantis by Team Gerstenland");
+            Image icon = new Image(getClass().getResourceAsStream("./../../resources/images/atlantis_client.jpg"));
+            stage.getIcons().add(icon);
+            stage.setScene(scene);
+            stage.show();
 
-
-    }
+        }
 
     public Scene getScene() {
         return scene;
@@ -137,12 +123,12 @@ public class ServerView {
         this.pane = pane;
     }
 
-    public HBox getS_pane() {
-        return s_pane;
+    public HBox getSpane() {
+        return spane;
     }
 
-    public void setS_pane(HBox s_pane) {
-        this.s_pane = s_pane;
+    public void setSpane(HBox spane) {
+        this.spane = spane;
     }
 
     public StackPane getStack() {
@@ -201,6 +187,14 @@ public class ServerView {
         this.iview1 = iview1;
     }
 
+    public Rectangle getRect() {
+        return rect;
+    }
+
+    public void setRect(Rectangle rect) {
+        this.rect = rect;
+    }
+
     public ColumnConstraints getColl1() {
         return coll1;
     }
@@ -225,8 +219,4 @@ public class ServerView {
         this.coll3 = coll3;
     }
 
-
-
-}
-
-
+  }

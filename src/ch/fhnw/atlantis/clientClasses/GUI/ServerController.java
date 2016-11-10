@@ -4,7 +4,7 @@ package ch.fhnw.atlantis.clientClasses.GUI;
  */
 
 public class ServerController {
-    // ch.fhnw.atlantis.clientClasses.GUI.Model
+
     private Model model;
     // View
     private ServerView view;

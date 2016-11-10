@@ -54,7 +54,7 @@ public class GameMenuView {
         GameMenu_pane.setLeft(menu0);
 
         scene = new Scene(GameMenu_pane, 800, 600);
-    //    scene.getStylesheets().add("resources/menu.css");
+        scene.getStylesheets().add("/ch/fhnw/atlantis/resources/css/style.css");
 
     }
 

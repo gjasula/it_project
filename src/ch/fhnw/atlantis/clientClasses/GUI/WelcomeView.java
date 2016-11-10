@@ -1,4 +1,5 @@
-package ch.fhnw.atlantis.clientClasses.GUI;import javafx.geometry.HPos;
+package ch.fhnw.atlantis.clientClasses.GUI;
+import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -81,7 +82,7 @@ public class WelcomeView {
         IPLabel = new Label("IP Adresse");
 
         // ------------------- Textfield -------------------
-        TextField IPEnter = new TextField("185.xx.xx.xx");
+        IPEnter = new TextField("185.xx.xx.xx");
 
         // ------------------- Buttons / Label / Textfield HBox anordnen -------------------
         buttonPane = new HBox(IPLabel, IPEnter, btnConnect, btnClose);
