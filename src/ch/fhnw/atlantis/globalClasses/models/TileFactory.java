@@ -16,7 +16,7 @@ public class TileFactory {
     public static HashMap<String, EnumSet<?>> getAllTiles() {
 
         HashMap<String, EnumSet<?>> htAllTiles = new HashMap<>();
-        htAllTiles.put("Tiles", EnumSet.allOf(Tile.class));
+        //htAllTiles.put("Tiles", EnumSet.allOf(Tile.class));
         for (Map.Entry<String, EnumSet<?>> e : htAllTiles.entrySet()) {
 
         }

@@ -114,10 +114,10 @@ public class WelcomeView {
         p4 = new Label("Spieler 4");
         grid.setConstraints(p4, 3, 1);
 
-        player1.setStyle("-fx-font-family: \'Material Icons\'; -fx-font-size: 60; -fx-text-fill: green;");
-        player2.setStyle("-fx-font-family: \'Material Icons\'; -fx-font-size: 60; -fx-text-fill: white;");
-        player3.setStyle("-fx-font-family: \'Material Icons\'; -fx-font-size: 60; -fx-text-fill: white;");
-        player4.setStyle("-fx-font-family: \'Material Icons\'; -fx-font-size: 60; -fx-text-fill: white;");
+        player1.setStyle("-fx-font-family: 'Material Icons'; -fx-font-size: 20; -fx-text-fill: green;");
+        player2.setStyle("-fx-font-family: 'Material Icons'; -fx-font-size: 60; -fx-text-fill: white;");
+        player3.setStyle("-fx-font-family: 'Material Icons'; -fx-font-size: 60; -fx-text-fill: white;");
+        player4.setStyle("-fx-font-family: 'Material Icons'; -fx-font-size: 60; -fx-text-fill: white;");
 
         // ------------------- Gridpane definieren -------------------
         grid = new GridPane();
@@ -138,6 +138,7 @@ public class WelcomeView {
 
         // ------------------- Stylesheets -------------------
         welcome_pane.getStylesheets().add("/ch/fhnw/atlantis/resources/css/style.css");
+        welcome_pane.getStylesheets().add("/ch/fhnw/atlantis/resources/css/font.css");
 
         // ------------------- BorderPane zu Scene hinzufügen und Fenstergrösse setzen -------------------
         scene = new Scene(welcome_pane, 800, 600);
