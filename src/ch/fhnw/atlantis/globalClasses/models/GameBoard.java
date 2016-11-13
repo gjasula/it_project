@@ -21,7 +21,7 @@ public class GameBoard {
     }
 
     public void init() {
-        this.htTiles = TileFactory.getAllTiles();
+        //this.htTiles = TileFactory.getAllTiles();
 
     }
 
@@ -61,11 +61,9 @@ public class GameBoard {
    */
 
 
-/**
+    /**
     public Tile removeTilesFromBoard(Tile tile) {
         //return TileFactory.getAllTiles().remove();
     return null;
     }*/
-
-
 }
