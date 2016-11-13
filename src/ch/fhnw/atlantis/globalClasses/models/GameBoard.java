@@ -19,11 +19,11 @@ public class GameBoard {
         int ypos = 0;
 
     }
-/**
+
     public void init() {
         this.htTiles = TileFactory.getAllTiles();
 
-    }*/
+    }
 
     /**
      * Bringt alle Enums der Klasse Tile in einen Hashset
@@ -47,31 +47,25 @@ public class GameBoard {
 
     /**
      * Methode zum Laden einer Image Resource
-     * @param imageName
+     * @param
      * @return
-     * @throws FileNotFoundException
+     * @throws
      */
-
-    public static Image getImage(String imageName) throws FileNotFoundException {
+/**
+    public static Image getImage(String file) {
         // Implemetierung des ServiceLocators (siehe Projekt nicht lustig)
-        File file = new File("resources/"+ imageName);
-        if (!file.exists()) {
-            // ServiceLocator
-            throw new FileNotFoundException(imageName+" konnte nicht gefunden werden");
-        }
-        try {
-            return new Image(file.getAbsolutePath());
-        } catch (Exception e) {
-            //ServiceLocator abfangen
-        }
-        return null;
+        Image img = new Image("ch/fhnw/atlantis/resources/images/" + file);
+
+        return img;
     }
+   */
 
 
+/**
     public Tile removeTilesFromBoard(Tile tile) {
         //return TileFactory.getAllTiles().remove();
     return null;
-    }
+    }*/
 
 
 }

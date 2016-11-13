@@ -115,19 +115,15 @@ public enum Tile {
         this.path = path;
     }
 
-
-
     /**
      * Gibt den Namen des Bewegungplätchens zurück
      * @return Bezeichnung Bewegungsplättchen
-     */
+     * */
+
     @Override
     public String toString() {
         return this.name;
     }
-
-
-
 };
 
 

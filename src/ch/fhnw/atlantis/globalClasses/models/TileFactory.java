@@ -13,8 +13,6 @@ public class TileFactory {
      * Erstellt eine Hashtable mit einer Arraylist und mischt diese
      * @return Hashtable with all Tiles
      */
-
-    /**
     public static HashMap<String, EnumSet<?>> getAllTiles() {
 
         HashMap<String, EnumSet<?>> htAllTiles = new HashMap<>();
@@ -24,7 +22,7 @@ public class TileFactory {
         }
         System.out.println(htAllTiles);
         return htAllTiles;
-    }*/
+    }
 
 }
 
