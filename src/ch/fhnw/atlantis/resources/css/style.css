@@ -25,3 +25,14 @@ Button{
  -fx-font-family: "Courier New";
 }
 
+#Playerbefore{
+ -fx-font-family: 'Material Icons';
+ -fx-font-size: 60;
+ -fx-text-fill: #ffffff;
+}
+
+#Playerafter{
+ -fx-font-family: 'Material Icons';
+ -fx-font-size: 60;
+ -fx-text-fill: #008000;
+}

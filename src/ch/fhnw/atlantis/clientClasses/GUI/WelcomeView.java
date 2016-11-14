@@ -105,6 +105,13 @@ public class WelcomeView {
         grid.setConstraints(player4, 3, 0);
         grid.setHalignment(player4, HPos.CENTER);
 
+        // ------------------- CSS den Icons zuweisen ---------
+        player1.setId("Playerbefore");
+        player2.setId("Playerbefore");
+        player3.setId("Playerbefore");
+        player4.setId("Playerbefore");
+
+        // ------------------- Player Labels definieren ---------
         p1 = new Label("Spieler 1");
         grid.setConstraints(p1, 0, 1);
         p2 = new Label("Spieler 2");
@@ -114,17 +121,12 @@ public class WelcomeView {
         p4 = new Label("Spieler 4");
         grid.setConstraints(p4, 3, 1);
 
-        player1.setStyle("-fx-font-family: 'Material Icons'; -fx-font-size: 20; -fx-text-fill: green;");
-        player2.setStyle("-fx-font-family: 'Material Icons'; -fx-font-size: 60; -fx-text-fill: white;");
-        player3.setStyle("-fx-font-family: 'Material Icons'; -fx-font-size: 60; -fx-text-fill: white;");
-        player4.setStyle("-fx-font-family: 'Material Icons'; -fx-font-size: 60; -fx-text-fill: white;");
-
-        // ------------------- Gridpane definieren -------------------
+       // ------------------- Gridpane definieren für Players-------------------
         grid = new GridPane();
         grid.setPadding(new Insets(20, 20, 20, 120));
         grid.setVgap(0);
-        grid.setHgap(80);
-        grid.setGridLinesVisible(true);
+        grid.setHgap(150);
+        grid.setGridLinesVisible(false);
 
         // alle Inhalte ins Grid holen mit getChildren
         grid.getChildren().addAll(player1, player2, player3, player4, p1, p2, p3, p4);
@@ -136,22 +138,23 @@ public class WelcomeView {
         welcome_pane.setCenter(buttonPane);
         welcome_pane.setTop(labelPane);
 
-        // ------------------- Stylesheets -------------------
+        // ------------------- Stylesheets aufrufen -------------------
         welcome_pane.getStylesheets().add("/ch/fhnw/atlantis/resources/css/style.css");
         welcome_pane.getStylesheets().add("/ch/fhnw/atlantis/resources/css/font.css");
 
         // ------------------- BorderPane zu Scene hinzufügen und Fenstergrösse setzen -------------------
-        scene = new Scene(welcome_pane, 800, 600);
-
+        scene = new Scene(welcome_pane, 1024, 640);
     }
 
-    // ------------------- View der Stage bekannt geben -------------------
-    public void show(Stage stage) {
+        // ------------------- View der Stage bekannt geben -------------------
+        public void show(Stage stage) {
         stage.setTitle("Atlantis by Team Gerstenland");
-        Image icon = new Image(getClass().getResourceAsStream("./../../resources/images/atlantis_client.jpg"));
-        stage.getIcons().add(icon);
+        stage.setResizable(false);                              // Fenstergrösse nicht veränderbar
         stage.setScene(scene);
         stage.show();
+        // ------------------- Bild in Stage Titel laden  -------------------
+        Image icon = new Image(getClass().getResourceAsStream("./../../resources/images/atlantis_client.jpg"));
+        stage.getIcons().add(icon);
 
     }
 

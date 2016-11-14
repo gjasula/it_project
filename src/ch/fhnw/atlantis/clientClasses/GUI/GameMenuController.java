@@ -5,7 +5,7 @@ package ch.fhnw.atlantis.clientClasses.GUI;
  */
 
 public class GameMenuController {
-    // ch.fhnw.atlantis.clientClasses.GUI.Model
+    // Model
     private Model model;
     // View
     private GameMenuView view;
@@ -15,7 +15,6 @@ public class GameMenuController {
         this.view = new GameMenuView();
 
      // Eventhandler registrieren
-
 
     }
 
