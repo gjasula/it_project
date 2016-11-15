@@ -4,11 +4,13 @@ import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -23,13 +25,13 @@ public class GameMenuView {
     private GridPane grid;
     private Stage gameMenu_stage;
 
-    private MenuButton btnStartGame;
-    private MenuButton btnOptions;
-    private MenuButton btnExit;
-    private MenuButton btnBack;
+    private Button btnStartGame;
+    private Button btnOptions;
+    private Button btnExit;
+    private Button btnBack;
 
-    private MenuButton btnSprache1;
-    private MenuButton btnSprache2;
+    private Button btnSprache1;
+    private Button btnSprache2;
 
     private VBox menu0;
     private VBox menu1;
@@ -47,27 +49,29 @@ public class GameMenuView {
     public GameMenuView() {
 
         // ------------------- Buttons Hauptmenu -------------------
-        btnStartGame = new MenuButton("SPIEL STARTEN");
-        btnOptions = new MenuButton("OPTIONEN");
-        btnExit = new MenuButton("SCHLIESSEN");
-        btnBack = new MenuButton("ZURÜCK");
+        btnStartGame = new Button("SPIEL STARTEN");
+        btnOptions = new Button("OPTIONEN");
+        btnExit = new Button("SCHLIESSEN");
+        btnBack = new Button("ZURÜCK");
 
         // ------------------- Buttons Untermenu -------------------
-        btnSprache1 = new MenuButton("DEUTSCH");
-        btnSprache2 = new MenuButton("ENGLISCH");
+        btnSprache1 = new Button("DEUTSCH");
+        btnSprache2 = new Button("ENGLISCH");
 
         // ------------------- Buttons vertikal anordnen -------------------
         menu0 = new VBox(btnStartGame, btnOptions, btnExit, btnBack);
         menu0.setAlignment(Pos.BASELINE_LEFT);
         menu0.setPadding(new Insets(50));
         menu0.setSpacing(10);
+        menu0.setId("Button");
+
 
         menu1 = new VBox(btnSprache1, btnSprache2);
         menu1.setAlignment(Pos.BASELINE_LEFT);
         menu1.setPadding(new Insets(50));
         menu1.setSpacing(10);
 
-        // ------------------- Player Icons -------------------
+        //------------------- Player Icons -------------------
         player1 = new Label("\ue7FD");
         grid.setConstraints(player1, 0, 0);
         grid.setHalignment(player1, HPos.CENTER);
@@ -108,35 +112,30 @@ public class GameMenuView {
         grid.getChildren().addAll(player1, player2, player3, player4, p1, p2, p3, p4);
 
 
-
         // ------------------- BorderPane erstellen und HBox, VBox, Grid hinzufügen -------------------
         BorderPane gmpane = new BorderPane();
         gmpane.setBottom(grid);
-
+        gmpane.setLeft(menu0);
 
 
         // ------------------- Stylesheets aufrufen -------------------
-        scene.getStylesheets().add("/ch/fhnw/atlantis/resources/css/style.css");
+        gmpane.getStylesheets().add("/ch/fhnw/atlantis/resources/css/style.css");
 
         // ------------------- BorderPane zu Scene hinzufügen und Fenstergrösse setzen -------------------
-        scene = new Scene(gmpane, 800, 600);
-        }
+        scene = new Scene(gmpane, 1024, 640);
 
-        // ------------------- View der Stage bekannt geben -------------------
+    }
+    // ------------------- View der Stage bekannt geben -------------------
         public void show(Stage stage) {
         stage.setTitle("Atlantis by Team Gerstenland");
         stage.setResizable(false);
-        stage.setScene(scene);
-        stage.show();
-
         // ------------------- Bild in Stage Titel laden  -------------------
         Image icon = new Image(getClass().getResourceAsStream("./../../resources/images/atlantis_client.jpg"));
         stage.getIcons().add(icon);
-
+        stage.setScene(scene);
+        stage.show();
     }
-
     // ------------------- Getter Funktionen auf Element, für Interaktion -------------------
-
     public Scene getScene() {
         return scene;
     }
@@ -153,6 +152,14 @@ public class GameMenuView {
         this.gmpane = gmpane;
     }
 
+    public GridPane getGrid() {
+        return grid;
+    }
+
+    public void setGrid(GridPane grid) {
+        this.grid = grid;
+    }
+
     public Stage getGameMenu_stage() {
         return gameMenu_stage;
     }
@@ -161,51 +168,51 @@ public class GameMenuView {
         this.gameMenu_stage = gameMenu_stage;
     }
 
-    public MenuButton getBtnStartGame() {
+    public Button getBtnStartGame() {
         return btnStartGame;
     }
 
-    public void setBtnStartGame(MenuButton btnStartGame) {
+    public void setBtnStartGame(Button btnStartGame) {
         this.btnStartGame = btnStartGame;
     }
 
-    public MenuButton getBtnOptions() {
+    public Button getBtnOptions() {
         return btnOptions;
     }
 
-    public void setBtnOptions(MenuButton btnOptions) {
+    public void setBtnOptions(Button btnOptions) {
         this.btnOptions = btnOptions;
     }
 
-    public MenuButton getBtnExit() {
+    public Button getBtnExit() {
         return btnExit;
     }
 
-    public void setBtnExit(MenuButton btnExit) {
+    public void setBtnExit(Button btnExit) {
         this.btnExit = btnExit;
     }
 
-    public MenuButton getBtnBack() {
+    public Button getBtnBack() {
         return btnBack;
     }
 
-    public void setBtnBack(MenuButton btnBack) {
+    public void setBtnBack(Button btnBack) {
         this.btnBack = btnBack;
     }
 
-    public MenuButton getBtnSprache1() {
+    public Button getBtnSprache1() {
         return btnSprache1;
     }
 
-    public void setBtnSprache1(MenuButton btnSprache1) {
+    public void setBtnSprache1(Button btnSprache1) {
         this.btnSprache1 = btnSprache1;
     }
 
-    public MenuButton getBtnSprache2() {
+    public Button getBtnSprache2() {
         return btnSprache2;
     }
 
-    public void setBtnSprache2(MenuButton btnSprache2) {
+    public void setBtnSprache2(Button btnSprache2) {
         this.btnSprache2 = btnSprache2;
     }
 
@@ -225,4 +232,71 @@ public class GameMenuView {
         this.menu1 = menu1;
     }
 
-       }
+    public Label getP1() {
+        return p1;
+    }
+
+    public void setP1(Label p1) {
+        this.p1 = p1;
+    }
+
+    public Label getP2() {
+        return p2;
+    }
+
+    public void setP2(Label p2) {
+        this.p2 = p2;
+    }
+
+    public Label getP3() {
+        return p3;
+    }
+
+    public void setP3(Label p3) {
+        this.p3 = p3;
+    }
+
+    public Label getP4() {
+        return p4;
+    }
+
+    public void setP4(Label p4) {
+        this.p4 = p4;
+    }
+
+    public Label getPlayer1() {
+        return player1;
+    }
+
+    public void setPlayer1(Label player1) {
+        this.player1 = player1;
+    }
+
+    public Label getPlayer2() {
+        return player2;
+    }
+
+    public void setPlayer2(Label player2) {
+        this.player2 = player2;
+    }
+
+    public Label getPlayer3() {
+        return player3;
+    }
+
+    public void setPlayer3(Label player3) {
+        this.player3 = player3;
+    }
+
+    public Label getPlayer4() {
+        return player4;
+    }
+
+    public void setPlayer4(Label player4) {
+        this.player4 = player4;
+    }
+
+    }
+
+
+

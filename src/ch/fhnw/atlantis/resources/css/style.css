@@ -1,28 +1,40 @@
 .root{
 
- -fx-background-color: #0099cc;
+ -fx-background-image: url("../images/Atlantis_BG.jpg");
+ -fx-background-repeat: no-repeat;
+ -fx-background-attachment: fixed;
+ -fx-background-position: bottom;
  }
 
 Label{
  -fx-text-fill: #e8e8e8;
  -fx-font-family: "Courier New";
- -fx-font-size: 15px;
+ -fx-font-size: 18px;
+
 }
 
 #Label-big{
- -fx-font-family: "Comic Sans MS";
+ -fx-font-family: "Castellar";
  -fx-font-size: 40px;
+ -fx-font-weight: bold;
 }
 
 Button{
  -fx-background-color: #808080;
  -fx-font-weight: bold;
  -fx-font-family: "Courier New";
+ -fx-alignment: Center;
+ -fx-pref-width: 200px;
+
+
 }
 
-#MenuButton{
- -fx-background-color: #ff3300;
- -fx-font-family: "Courier New";
+.button:hover{
+ -fx-background-color: #4CAF50;
+  color: white;
+
+
+
 }
 
 #Playerbefore{
@@ -34,5 +46,5 @@ Button{
 #Playerafter{
  -fx-font-family: 'Material Icons';
  -fx-font-size: 60;
- -fx-text-fill: #008000;
+ -fx-text-fill: #ff9933;
 }

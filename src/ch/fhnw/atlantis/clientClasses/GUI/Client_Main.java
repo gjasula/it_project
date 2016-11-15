@@ -11,7 +11,6 @@ import javafx.stage.Stage;
  */
 
 public class Client_Main extends Application {
-    //Main Methode
     public static void main(String[] args) {
         launch(args);
     }
@@ -21,10 +20,6 @@ public class Client_Main extends Application {
         Model model = new Model(primaryStage);
 
         WelcomeController welcomeController = new WelcomeController(model);
-        // Befehl show - zeige View an
         welcomeController.show();
-
-
     }
 }
-

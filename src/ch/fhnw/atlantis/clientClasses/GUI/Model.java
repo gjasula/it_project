@@ -14,12 +14,13 @@ import javafx.stage.Stage;
 public class Model {
     private Stage primaryStage = null;
 
-    public Model(Stage primaryStage) {
+    public Model(Stage primaryStage){
         this.primaryStage = primaryStage;
     }
 
-    public Stage getPrimaryStage() {
+    public Stage getPrimaryStage(){
         return primaryStage;
     }
 }
+
 
