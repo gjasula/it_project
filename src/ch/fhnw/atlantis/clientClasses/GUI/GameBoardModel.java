@@ -2,6 +2,8 @@ package ch.fhnw.atlantis.clientClasses.GUI;
 
 import ch.fhnw.atlantis.globalClasses.models.GameBoard;
 
+import java.io.FileNotFoundException;
+
 /**
  * Created by js on 02.11.2016.
  */

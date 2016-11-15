@@ -33,6 +33,21 @@ public class Player implements Serializable {
         // Um danach den Spielern Karten zuzuweisen getCardFromStack(AnzahlKarten)
     }
 
+    // Austausch von Wegplättchen in Bewegungskarte
+    static void ChangeTileToMovementcard(int Player, int TileID){
+
+        int PullCards;
+
+        for (Tile PathTile : Tile.values())
+        {
+            if(TileID == PathTile.getId()){
+                // Das abrunden laut Spielregeln nicht nötig, da im enum keine Kommastellen vorahnden sind
+                PullCards = PathTile.getValue() / 2;
+                getCardFromStack(PullCards, Player);
+            }
+        }
+    }
+
     //Remove Card from hand
     //removeCardFromHand(1, 1);
     static void removeCardFromHand(int Player, int Card){
@@ -105,11 +120,15 @@ public class Player implements Serializable {
         this.playernumber = playernumber;
     }
 
-    static void getCardFromStack(int AmountMV){
+    static void getCardFromStack(int AmountMV, int Player){
         // Ausgabe erste Karte vom Stapel
         for( int i = 0 ; i < AmountMV ; i++ )
         {
-            System.out.println(MovementCards.get(0));
+            if(Player == 1){
+                PlayerOneHandCards.add(MovementCards.get(0));
+            }else{
+                PlayerTwoHandCards.add(MovementCards.get(0));
+            }
             MovementCards.remove(0);
         }
 
