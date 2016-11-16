@@ -20,7 +20,7 @@ public class Server {
         try {
             while (true) {
                 Socket socket = listener.accept();
-                try {
+                try {e
                     PrintWriter out =
                             new PrintWriter(socket.getOutputStream(), true);
                     out.println(new Date().toString());
