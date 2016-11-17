@@ -46,3 +46,9 @@ Button{
  -fx-font-size: 60;
  -fx-text-fill: #ff9933;
 }
+
+#MenuIcon{
+ -fx-font-family: 'Material Icons';
+ -fx-font-size: 29;
+ -fx-text-fill: #ffffff;
+ }

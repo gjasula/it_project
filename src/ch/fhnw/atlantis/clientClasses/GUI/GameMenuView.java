@@ -12,6 +12,8 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 /**
@@ -27,14 +29,17 @@ public class GameMenuView {
 
     private Button btnStartGame;
     private Button btnOptions;
+    private Button btnRules;
+    private Button btnPlayer;
     private Button btnExit;
     private Button btnBack;
 
     private Button btnSprache1;
     private Button btnSprache2;
 
-    private VBox menu0;
-    private VBox menu1;
+    private GridPane menu0;
+    private GridPane menu1;
+
 
     private Label p1;
     private Label p2;
@@ -46,34 +51,78 @@ public class GameMenuView {
     private Label player3;
     private Label player4;
 
+    private Label menuIconStart;
+    private Label menuIconOpt;
+    private Label menuIconPlayer;
+    private Label menuIconRule;
+    private Label menuIconExit;
+    private Label menuIconBack;
+
+    private Rectangle bg;
+
     public GameMenuView() {
 
         // ------------------- Buttons Hauptmenu -------------------
         btnStartGame = new Button("SPIEL STARTEN");
-        btnOptions = new Button("OPTIONEN");
-        btnExit = new Button("SCHLIESSEN");
+        menu0.setConstraints(btnStartGame, 1, 0);
+        btnOptions = new Button("SPRACHE WÄHLEN");
+        menu0.setConstraints(btnOptions, 1, 1);
+        btnPlayer = new Button("SPIELFIGUR WÄHLEN");
+        menu0.setConstraints(btnPlayer, 1, 2);
+        btnRules = new Button("SPIELREGELN");
+        menu0.setConstraints(btnRules, 1, 3);
         btnBack = new Button("ZURÜCK");
-
-         = new Label("\ue7FD");
+        menu0.setConstraints(btnBack, 1, 4);
+        btnExit = new Button("SCHLIESSEN");
+        menu0.setConstraints(btnExit, 1, 5);
 
         // ------------------- Buttons Untermenu -------------------
         btnSprache1 = new Button("DEUTSCH");
         btnSprache2 = new Button("ENGLISCH");
 
-        // ------------------- Buttons vertikal anordnen -------------------
-        menu0 = new VBox(btnStartGame, btnOptions, btnExit, btnBack);
-        menu0.setAlignment(Pos.BASELINE_LEFT);
-        menu0.setPadding(new Insets(50));
-        menu0.setSpacing(10);
-        menu0.setId("Button");
+        // ------------------- ICONS Menu -------------------
+        menuIconStart = new Label("\ue037");
+        menu0.setConstraints(menuIconStart, 0, 0);
+        menuIconOpt = new Label("\ue894");
+        menu0.setConstraints(menuIconOpt, 0, 1);
+        menuIconPlayer = new Label("\ue87B");
+        menu0.setConstraints(menuIconPlayer, 0, 2);
+        menuIconRule = new Label("\ue873");
+        menu0.setConstraints(menuIconRule, 0, 3);
+        menuIconExit = new Label("\ue020");
+        menu0.setConstraints(menuIconExit, 0, 4);
+        menuIconBack = new Label("\ue14C");
+        menu0.setConstraints(menuIconBack, 0, 5);
+
+        menuIconStart.setId("MenuIcon");
+        menuIconOpt.setId("MenuIcon");
+        menuIconPlayer.setId("MenuIcon");
+        menuIconRule.setId("MenuIcon");
+        menuIconExit.setId("MenuIcon");
+        menuIconBack.setId("MenuIcon");
 
 
-        menu1 = new VBox(btnSprache1, btnSprache2);
-        menu1.setAlignment(Pos.BASELINE_LEFT);
-        menu1.setPadding(new Insets(50));
-        menu1.setSpacing(10);
+        // ------------------- Buttons und MenuIcons in Grid anordnen -------------------
+        menu0 = new GridPane();
+        menu0.setPadding(new Insets(20, 20, 20, 20));
+        menu0.setVgap(5);
+        menu0.setHgap(5);
+        menu0.setGridLinesVisible(false);
 
-        //------------------- Player Icons -------------------
+        // alle Inhalte ins Grid holen mit getChildren
+        menu0.getChildren().addAll(btnStartGame, btnOptions, btnPlayer, btnRules, btnBack, btnExit, menuIconStart, menuIconOpt, menuIconPlayer, menuIconRule, menuIconExit, menuIconBack);
+
+
+        menu1 = new GridPane();
+        menu1.setPadding(new Insets(100, 100, 100, 100));
+        menu1.setVgap(5);
+        menu1.setHgap(5);
+        menu1.setGridLinesVisible(false);
+        menu1.setVisible(false);
+        menu1.getChildren().addAll(btnSprache1, btnSprache2);
+
+
+        //------------------- Player Icons und Grid anordnen -------------------
         player1 = new Label("\ue7FD");
         grid.setConstraints(player1, 0, 0);
         grid.setHalignment(player1, HPos.CENTER);
@@ -118,15 +167,18 @@ public class GameMenuView {
         BorderPane gmpane = new BorderPane();
         gmpane.setBottom(grid);
         gmpane.setLeft(menu0);
+        gmpane.setCenter(menu1);
 
 
         // ------------------- Stylesheets aufrufen -------------------
         gmpane.getStylesheets().add("/ch/fhnw/atlantis/resources/css/style.css");
+        gmpane.getStylesheets().add("/ch/fhnw/atlantis/resources/css/font.css");
 
         // ------------------- BorderPane zu Scene hinzufügen und Fenstergrösse setzen -------------------
         scene = new Scene(gmpane, 1024, 640);
 
     }
+
     // ------------------- View der Stage bekannt geben -------------------
         public void show(Stage stage) {
         stage.setTitle("Atlantis by Team Gerstenland");
@@ -136,8 +188,11 @@ public class GameMenuView {
         stage.getIcons().add(icon);
         stage.setScene(scene);
         stage.show();
+
     }
+
     // ------------------- Getter Funktionen auf Element, für Interaktion -------------------
+
     public Scene getScene() {
         return scene;
     }
@@ -186,6 +241,22 @@ public class GameMenuView {
         this.btnOptions = btnOptions;
     }
 
+    public Button getBtnRules() {
+        return btnRules;
+    }
+
+    public void setBtnRules(Button btnRules) {
+        this.btnRules = btnRules;
+    }
+
+    public Button getBtnPlayer() {
+        return btnPlayer;
+    }
+
+    public void setBtnPlayer(Button btnPlayer) {
+        this.btnPlayer = btnPlayer;
+    }
+
     public Button getBtnExit() {
         return btnExit;
     }
@@ -218,19 +289,19 @@ public class GameMenuView {
         this.btnSprache2 = btnSprache2;
     }
 
-    public VBox getMenu0() {
+    public GridPane getMenu0() {
         return menu0;
     }
 
-    public void setMenu0(VBox menu0) {
+    public void setMenu0(GridPane menu0) {
         this.menu0 = menu0;
     }
 
-    public VBox getMenu1() {
+    public GridPane getMenu1() {
         return menu1;
     }
 
-    public void setMenu1(VBox menu1) {
+    public void setMenu1(GridPane menu1) {
         this.menu1 = menu1;
     }
 
@@ -298,7 +369,55 @@ public class GameMenuView {
         this.player4 = player4;
     }
 
+    public Label getMenuIconStart() {
+        return menuIconStart;
     }
+
+    public void setMenuIconStart(Label menuIconStart) {
+        this.menuIconStart = menuIconStart;
+    }
+
+    public Label getMenuIconOpt() {
+        return menuIconOpt;
+    }
+
+    public void setMenuIconOpt(Label menuIconOpt) {
+        this.menuIconOpt = menuIconOpt;
+    }
+
+    public Label getMenuIconPlayer() {
+        return menuIconPlayer;
+    }
+
+    public void setMenuIconPlayer(Label menuIconPlayer) {
+        this.menuIconPlayer = menuIconPlayer;
+    }
+
+    public Label getMenuIconRule() {
+        return menuIconRule;
+    }
+
+    public void setMenuIconRule(Label menuIconRule) {
+        this.menuIconRule = menuIconRule;
+    }
+
+    public Label getMenuIconExit() {
+        return menuIconExit;
+    }
+
+    public void setMenuIconExit(Label menuIconExit) {
+        this.menuIconExit = menuIconExit;
+    }
+
+    public Label getMenuIconBack() {
+        return menuIconBack;
+    }
+
+    public void setMenuIconBack(Label menuIconBack) {
+        this.menuIconBack = menuIconBack;
+    }
+}
+
 
 
 

@@ -2,6 +2,7 @@ package ch.fhnw.atlantis.clientClasses.GUI;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.input.MouseEvent;
 
 /**
  * Created by Nadine on 18.10.2016.
@@ -19,7 +20,7 @@ public class WelcomeController {
         this.model = model;
         this.view = new WelcomeView();
 
-        view.getBtnConnect().setOnAction(new btnConnectEventHandler());
+      view.getBtnConnect().setOnAction(new btnConnectEventHandler());
     }
 
         public void show(){
@@ -28,10 +29,10 @@ public class WelcomeController {
     }
 
     class btnConnectEventHandler implements EventHandler<ActionEvent> {
-        @Override
-        public void handle(ActionEvent event) {
-            GameMenuController gameMenuController = new GameMenuController(model);
-            gameMenuController.show();
+       @Override
+       public void handle(ActionEvent event) {
+       GameMenuController gameMenuController = new GameMenuController(model);
+       gameMenuController.show();
 
         }
     }
