@@ -20,7 +20,7 @@ Label{
 }
 
 Button{
- -fx-background-color: #808080;
+ -fx-background-color: #ffffff;
  -fx-font-weight: bold;
  -fx-font-family: "Courier New";
  -fx-alignment: Center;
@@ -30,8 +30,8 @@ Button{
 }
 
 .button:hover{
- -fx-background-color: #4CAF50;
-  color: white;
+ -fx-background-color: #0000ff;
+ -fx-text-fill: white;
 
 }
 

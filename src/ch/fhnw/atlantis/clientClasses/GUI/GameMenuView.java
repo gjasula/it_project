@@ -54,6 +54,8 @@ public class GameMenuView {
         btnExit = new Button("SCHLIESSEN");
         btnBack = new Button("ZURÜCK");
 
+         = new Label("\ue7FD");
+
         // ------------------- Buttons Untermenu -------------------
         btnSprache1 = new Button("DEUTSCH");
         btnSprache2 = new Button("ENGLISCH");
