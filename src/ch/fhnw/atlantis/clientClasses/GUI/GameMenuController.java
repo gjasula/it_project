@@ -31,10 +31,10 @@ public class GameMenuController {
 
         view.getBtnOptions().setOnMouseClicked(event ->{
 
-            }
+            });
 
-        });
-    }
+        }
+
 
     public void show(){
         view.show(model.getPrimaryStage());
@@ -44,8 +44,8 @@ public class GameMenuController {
     class btnBackEventHandler implements EventHandler<ActionEvent> {
         @Override
         public void handle(ActionEvent event) {
-            WelcomeController welcomeController = new WelcomeController(model);
-            welcomeController.show();
+            //WelcomeController welcomeController = new WelcomeController(model);
+            //welcomeController.show();
 
         }
     }
