@@ -1,4 +1,5 @@
 package ch.fhnw.atlantis.clientClasses.GUI;
+
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -65,7 +66,7 @@ public class WelcomeView {
 
         // ------------------- Labels VBox anordnen -------------------
         labelPane = new VBox(lbl1, lbl2);
-        labelPane.setAlignment(Pos.TOP_CENTER);
+        labelPane.setAlignment(Pos.CENTER);
         labelPane.setPadding(new Insets(40));
         labelPane.setSpacing(10);
 
@@ -76,7 +77,7 @@ public class WelcomeView {
         // ------------------- Buttons erstellen -------------------
         btnConnect = new Button("SERVER VERBINDEN");
         btnClose = new Button("SCHLIESSEN");
-        //btnAltConnect = new Button("");
+        //btnAltConnect = new Button("ALTERNATIV SERVER");
 
         // ------------------- Labels erstellen -------------------
         IPLabel = new Label("IP Adresse");
@@ -121,7 +122,7 @@ public class WelcomeView {
         p4 = new Label("Spieler 4");
         grid.setConstraints(p4, 3, 1);
 
-       // ------------------- Gridpane definieren für Players-------------------
+        // ------------------- Gridpane definieren für Players-------------------
         grid = new GridPane();
         grid.setPadding(new Insets(20, 20, 20, 120));
         grid.setVgap(0);
@@ -137,7 +138,7 @@ public class WelcomeView {
         welcome_pane.setBottom(grid);
         welcome_pane.setCenter(buttonPane);
         welcome_pane.setTop(labelPane);
-
+   //   welcome_pane.getStyleClass().add("root");
         // ------------------- Stylesheets aufrufen -------------------
         welcome_pane.getStylesheets().add("/ch/fhnw/atlantis/resources/css/style.css");
         welcome_pane.getStylesheets().add("/ch/fhnw/atlantis/resources/css/font.css");
@@ -146,8 +147,8 @@ public class WelcomeView {
         scene = new Scene(welcome_pane, 1024, 640);
     }
 
-        // ------------------- View der Stage bekannt geben -------------------
-        public void show(Stage stage) {
+    // ------------------- View der Stage bekannt geben -------------------
+    public void show(Stage stage) {
         stage.setTitle("Atlantis by Team Gerstenland");
         stage.setResizable(false);                              // Fenstergrösse nicht veränderbar
         stage.setScene(scene);
@@ -176,44 +177,12 @@ public class WelcomeView {
         this.welcome_pane = welcome_pane;
     }
 
-    public Button getBtnConnect() {
-        return btnConnect;
+    public GridPane getGrid() {
+        return grid;
     }
 
-    public void setBtnConnect(Button btnConnect) {
-        this.btnConnect = btnConnect;
-    }
-
-    public Button getBtnAltConnect() {
-        return btnAltConnect;
-    }
-
-    public void setBtnAltConnect(Button btnAltConnect) {
-        this.btnAltConnect = btnAltConnect;
-    }
-
-    public Button getBtnClose() {
-        return btnClose;
-    }
-
-    public void setBtnClose(Button btnClose) {
-        this.btnClose = btnClose;
-    }
-
-    public Label getIPLabel() {
-        return IPLabel;
-    }
-
-    public void setIPLabel(Label IPLabel) {
-        this.IPLabel = IPLabel;
-    }
-
-    public TextField getIPEnter() {
-        return IPEnter;
-    }
-
-    public void setIPEnter(TextField IPEnter) {
-        this.IPEnter = IPEnter;
+    public void setGrid(GridPane grid) {
+        this.grid = grid;
     }
 
     public HBox getButtonPane() {
@@ -240,6 +209,38 @@ public class WelcomeView {
         this.imagePane = imagePane;
     }
 
+    public Button getBtnConnect() {
+        return btnConnect;
+    }
+
+    public void setBtnConnect(Button btnConnect) {
+        this.btnConnect = btnConnect;
+    }
+
+    public Button getBtnAltConnect() {
+        return btnAltConnect;
+    }
+
+    public void setBtnAltConnect(Button btnAltConnect) {
+        this.btnAltConnect = btnAltConnect;
+    }
+
+    public Button getBtnClose() {
+        return btnClose;
+    }
+
+    public void setBtnClose(Button btnClose) {
+        this.btnClose = btnClose;
+    }
+
+    public TextField getIPEnter() {
+        return IPEnter;
+    }
+
+    public void setIPEnter(TextField IPEnter) {
+        this.IPEnter = IPEnter;
+    }
+
     public Label getLbl1() {
         return lbl1;
     }
@@ -256,12 +257,12 @@ public class WelcomeView {
         this.lbl2 = lbl2;
     }
 
-    public GridPane getGrid() {
-        return grid;
+    public Label getIPLabel() {
+        return IPLabel;
     }
 
-    public void setGrid(GridPane grid) {
-        this.grid = grid;
+    public void setIPLabel(Label IPLabel) {
+        this.IPLabel = IPLabel;
     }
 
     public ImageView getRoot() {
@@ -270,6 +271,38 @@ public class WelcomeView {
 
     public void setRoot(ImageView root) {
         this.root = root;
+    }
+
+    public Label getP1() {
+        return p1;
+    }
+
+    public void setP1(Label p1) {
+        this.p1 = p1;
+    }
+
+    public Label getP2() {
+        return p2;
+    }
+
+    public void setP2(Label p2) {
+        this.p2 = p2;
+    }
+
+    public Label getP3() {
+        return p3;
+    }
+
+    public void setP3(Label p3) {
+        this.p3 = p3;
+    }
+
+    public Label getP4() {
+        return p4;
+    }
+
+    public void setP4(Label p4) {
+        this.p4 = p4;
     }
 
     public Label getPlayer1() {
@@ -304,4 +337,4 @@ public class WelcomeView {
         this.player4 = player4;
     }
 
-   }
+}

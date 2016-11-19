@@ -2,6 +2,7 @@ package ch.fhnw.atlantis.clientClasses.GUI;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.input.MouseEvent;
 
 /**
  * Created by Nadine on 18.10.2016.
@@ -12,42 +13,27 @@ import javafx.event.EventHandler;
  */
 
 public class WelcomeController {
-    // Model
     private Model model;
-    // View
     private WelcomeView view;
 
-
-    // Konstruktor sichert und erstellt View
-    public WelcomeController(Model model) {
+    public WelcomeController(Model model){
         this.model = model;
         this.view = new WelcomeView();
 
-
+      view.getBtnConnect().setOnAction(new btnConnectEventHandler());
     }
 
-    public void show() {
+        public void show(){
         view.show(model.getPrimaryStage());
 
-        //Eventhandler initialisieren - damit ausgeführt werden kann
-        view.getBtnConnect().setOnAction(new btnConnectEventHandler());
-
     }
 
-    // Klassen erstellen für Eventhandler
     class btnConnectEventHandler implements EventHandler<ActionEvent> {
-        @Override
-        public void handle(ActionEvent e) {
-            GameMenuController gameMenucontroller = new GameMenuController(model);
-            gameMenucontroller.show();
-
+       @Override
+       public void handle(ActionEvent event) {
+       GameMenuController gameMenuController = new GameMenuController(model);
+       gameMenuController.show();
 
         }
     }
 }
-
-
-
-
-
-

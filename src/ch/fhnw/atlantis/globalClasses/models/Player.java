@@ -2,6 +2,7 @@ package ch.fhnw.atlantis.globalClasses.models;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.io.Serializable;
+import java.util.Stack;
 
 /**
  *
@@ -14,7 +15,7 @@ public class Player implements Serializable {
     private String playername;
     private boolean isConnected = true;
     private int playernumber = 0;
-    static ArrayList<String> MovementCards = new ArrayList<>();
+    static Stack<String> MovementCards = new Stack<String>();
     static ArrayList<String> PlayerOneHandCards = new ArrayList<>();
     static ArrayList<String> PlayerTwoHandCards = new ArrayList<>();
 
@@ -83,13 +84,13 @@ public class Player implements Serializable {
         // Alle 105 Bewegungskarten einfügen (15 mal werden die 7 Karten hinzugefügt)
         for( int i = 0 ; i < 15 ; i++ )
         {
-            MovementCards.add(MV_Blue);
-            MovementCards.add(MV_Brown);
-            MovementCards.add(MV_Green);
-            MovementCards.add(MV_Grey);
-            MovementCards.add(MV_Pink);
-            MovementCards.add(MV_White);
-            MovementCards.add(MV_Yellow);
+            MovementCards.push(MV_Blue);
+            MovementCards.push(MV_Brown);
+            MovementCards.push(MV_Green);
+            MovementCards.push(MV_Grey);
+            MovementCards.push(MV_Pink);
+            MovementCards.push(MV_White);
+            MovementCards.push(MV_Yellow);
         }
         // Mischen der Bewegungskarten
         Collections.shuffle(MovementCards);
@@ -125,9 +126,9 @@ public class Player implements Serializable {
         for( int i = 0 ; i < AmountMV ; i++ )
         {
             if(Player == 1){
-                PlayerOneHandCards.add(MovementCards.get(0));
+                PlayerOneHandCards.add(MovementCards.pop());
             }else{
-                PlayerTwoHandCards.add(MovementCards.get(0));
+                PlayerTwoHandCards.add(MovementCards.pop());
             }
             MovementCards.remove(0);
         }

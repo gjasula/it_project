@@ -19,6 +19,5 @@ public class ServerMain extends Application {
         Model model = new Model(primaryStage);
         ServerController serverController = new ServerController(model);
         serverController.show();
-
     }
 }

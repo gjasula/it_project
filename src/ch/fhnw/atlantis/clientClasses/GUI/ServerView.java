@@ -84,15 +84,17 @@ public class ServerView {
         stack.getChildren().addAll(rect, serverpane);
         stack.setAlignment(Pos.CENTER);
 
-
+        serverpane.getStyleClass().add("root");
         // BorderPane zu Scene hinzufügen und Fenstergrösse setzen
-        scene = new Scene(stack, 800, 600);
+        scene = new Scene(stack, 1024, 640);
         scene.getStylesheets().add("/ch/fhnw/atlantis/resources/css/style.css");
+
 
     }
         public void show(Stage stage) {
             stage.setTitle("Atlantis by Team Gerstenland");
             Image icon = new Image(getClass().getResourceAsStream("./../../resources/images/atlantis_client.jpg"));
+            stage.setResizable(false);
             stage.getIcons().add(icon);
             stage.setScene(scene);
             stage.show();
