@@ -1,8 +1,8 @@
 package ch.fhnw.atlantis.globalClasses.models;
 
-import java.util.EnumSet;
-import java.util.HashMap;
-import java.util.Map;
+import ch.fhnw.atlantis.globalClasses.interfaces.ITile;
+
+import java.util.*;
 
 /**
  * Created by js on 02.11.2016.
@@ -10,20 +10,35 @@ import java.util.Map;
 public class TileFactory {
 
     /**
-     * Erstellt eine Hashtable mit einer Arraylist und mischt diese
+     * Erstellt eine Hashmap mit allen Tile
      * @return Hashtable with all Tiles
      */
     public static HashMap<String, EnumSet<Tile>> getAllTiles() {
-
-        HashMap<String, EnumSet<Tile>> htAllTiles = new HashMap<>();
-        //htAllTiles.put("Tiles", EnumSet.allOf(Tile.class));
-        for (Map.Entry<String, EnumSet<Tile>> e : htAllTiles.entrySet()) {
-
-
-        }
-        System.out.println(htAllTiles);
-        return htAllTiles;
+        HashMap<String, EnumSet<Tile>> hmAllTiles = new HashMap<>();
+        hmAllTiles.put("Tiles", EnumSet.allOf(Tile.class));
+        System.out.println(hmAllTiles);
+        return hmAllTiles;
     }
 
+
+    /**
+     * Alternative Methode zur oberen
+     * Bringt alle Enums der Klasse Tile in eine Arrayliste
+     * Shuffle
+     * @return
+     */
+    //Alternative Variante mit ArrayListe
+    public ArrayList<Tile> getTilesToArrayList(){
+        //htTiles.values().toArray(new Tile[0]);
+        ArrayList<Tile> values = new ArrayList<>();
+        for (Tile e : Tile.values()) {
+            values.add(e);
+
+            //Collections.addAll(values);
+            Collections.shuffle(values);
+            System.out.print(e.getPath());
+        }
+        return values;
+    }
 }
 

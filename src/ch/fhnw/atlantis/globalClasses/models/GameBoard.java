@@ -23,35 +23,24 @@ public class GameBoard {
     }
 
     /**
-     * Bringt alle Enums der Klasse Tile in eine Arrayliste
-     * Shuffle
-     * @return
+     * Erstellt ein Array von Strings mit allen Pfaden der Bilder für das Gameboard
+     * @return Array mit Pfade der Bilser
      */
-    public ArrayList<String> getImageFromEnum(){
-        //htTiles.values().toArray(new Tile[0]);
-        ArrayList<String> values = new ArrayList<>();
-        for (Tile e : Tile.values()) {
-            values.add(e.getPath());
-            //List<Tile> tiles = new ArrayList<>();
-            Collections.addAll(values);
-            Collections.shuffle(values);
-           System.out.print(e.getPath());
-            //tiles.add(int l, );
-
-        }
-        return values;
-    }
-
-    public ITile[] getTilesToBoard() {
+     public ITile[] getTilesToBoard() {
         ArrayList<String> returnPath = new ArrayList<>();
         for(EnumSet<Tile> tiles : this.hmTiles.values()) {
             returnPath.addAll(tiles.stream().map(Tile::getPath).collect(Collectors.toList()));
         }
         System.out.println(returnPath);
-        //ITile[] returnPath = Arrays.copyOf(this.hmTiles.values().toArray(), this.hmTiles.values().size(), ITile[].class);
+       //die untere Zeile generiert den folgenden Fehler "Caused by: java.lang.ArrayStoreException" --> Wie bringe ich diesen Fehler weg?
         return returnPath.toArray(new ITile[returnPath.size()]);
     }
 
+    /**
+     * Alternative Methode der oberen,
+     * Er
+     * @return
+     */
     public ITile[] getTilesToBoard2() {
         ArrayList<ITile> returnPath = new ArrayList<>();
         for (EnumSet<Tile> tiles : this.hmTiles.values()) {
@@ -61,18 +50,14 @@ public class GameBoard {
         }
         return returnPath.toArray(new ITile[returnPath.size()]);
     }
-/**
-    public RandomSet() {
-        int index = rand.nextInt(set.size());
-        Iterator<Object> iter = set.iterator();
-        for (int i = 0; i < index; i++) {
-            iter.next();
-        }
-        return iter.next();
-        }
 
+    /**
+     * Methode zum entfernen des Tile vom Board
+     * @param tile
+     * @return
+     */
     public Tile removeTilesFromBoard(Tile tile) {
         //return TileFactory.getAllTiles().remove();
     return null;
-    }*/
+    }
 }

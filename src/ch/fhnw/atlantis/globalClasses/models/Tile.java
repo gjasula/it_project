@@ -1,5 +1,7 @@
 package ch.fhnw.atlantis.globalClasses.models;
 
+import ch.fhnw.atlantis.globalClasses.interfaces.ITile;
+
 /**
  * Created by js on 22.10.2016.
  */
@@ -119,12 +121,11 @@ public enum Tile {
      * Gibt den Namen des Bewegungplätchens zurück
      * @return Bezeichnung Bewegungsplättchen
      * */
-
     @Override
     public String toString() {
         return this.name;
     }
-};
+}
 
 
 
