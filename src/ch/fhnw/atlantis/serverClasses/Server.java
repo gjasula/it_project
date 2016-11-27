@@ -65,9 +65,14 @@ public class Server implements Runnable {
 
     public static void main(String args[]) {
         Server server = null;
+
+        // Selbstinitialisierung das müsste danach ins Server GUI MAIN
+        server = new Server(Integer.parseInt(String.valueOf(7788)));
+
+
         if (args.length != 1)
             System.out.println("Usage: java Server port");
         else
-            server = new Server(Integer.parseInt(args[0]));
+            server = new Server(Integer.parseInt(String.valueOf(7777)));
     }
 }

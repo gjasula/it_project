@@ -4,6 +4,8 @@ package ch.fhnw.atlantis.clientClasses.GUI;
  * Created by Daniel on 18.11.2016.
  */
 
+import jdk.internal.org.objectweb.asm.Handle;
+
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -15,6 +17,7 @@ public class Client implements Runnable {
     private Thread thread = null;
     private DataInputStream console = null;
     private DataOutputStream streamOut = null;
+
     private ClientThread client = null;
 
     public Client(String serverName, int serverPort) {
@@ -34,6 +37,7 @@ public class Client implements Runnable {
         while (this.thread != null) {
             try {
                 this.streamOut.writeUTF(this.console.readLine());
+                //this.streamOut.writeBytes(this.console.readLine());
                 this.streamOut.flush();
             } catch (IOException ioe) {
                 System.out.println("Sending error: " + ioe.getMessage());
@@ -79,8 +83,20 @@ public class Client implements Runnable {
         this.client.stop();
     }
 
-    public static void main(String args[]) {
+    public static void main(String args[]) throws IOException {
         Client client = null;
+
+        // Selbstinitialisierung, das müsste später ins Client GUI Main einfliessen
+        client = new Client("127.0.0.1", Integer.valueOf(7788));
+
+        // Sende "print da shit out" an server
+        try {
+            client.streamOut.writeUTF("print da shit out");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
         if (args.length != 2)
             System.out.println("Usage: java Client host port");
         else
