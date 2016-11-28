@@ -2,6 +2,10 @@ package ch.fhnw.atlantis.clientClasses.GUI;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+
+import java.util.Optional;
 
 /**
  * Created by Nadine on 18.10.2016.
@@ -15,24 +19,44 @@ public class LogInController {
     private Model model;
     private LogInView view;
 
-    public LogInController(Model model){
+    public LogInController(Model model) {
         this.model = model;
         this.view = new LogInView();
 
-      view.getBtnConnect().setOnAction(new btnConnectEventHandler());
+        view.getBtnConnect().setOnAction(new btnConnectEventHandler());
+        view.getBtnClose().setOnAction(new btnCloseEventHandler());
+
     }
 
-        public void show(){
+    public void show() {
         view.show(model.getPrimaryStage());
 
     }
 
     class btnConnectEventHandler implements EventHandler<ActionEvent> {
-       @Override
-       public void handle(ActionEvent event) {
-       MenuController menuController = new MenuController(model);
-       menuController.show();
+        @Override
+        public void handle(ActionEvent event) {
+            MenuController menuController = new MenuController(model);
+            menuController.show();
 
         }
     }
 }
+    class btnCloseEventHandler implements EventHandler<ActionEvent> {
+        @Override
+        public void handle(ActionEvent event) {
+
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION,
+                    "Soll Atlantis wirklich beendet werden?", ButtonType.YES, ButtonType.NO);
+            alert.setTitle("Confirmation Dialog");
+            alert.setHeaderText("Spiel verlassen");
+
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.get() == ButtonType.YES) {
+                System.exit(0);
+                System.out.println("Atlantis verlassen");
+
+            }
+
+        }
+    }

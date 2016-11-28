@@ -7,7 +7,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -39,7 +41,6 @@ public class MenuView {
 
     private GridPane menu0;
     private GridPane menu1;
-
 
     private Label p1;
     private Label p2;
@@ -79,6 +80,7 @@ public class MenuView {
         // ------------------- Buttons Untermenu -------------------
         btnSprache1 = new Button("DEUTSCH");
         btnSprache2 = new Button("ENGLISCH");
+
 
         // ------------------- ICONS Menu -------------------
         menuIconStart = new Label("\ue037");
@@ -168,6 +170,7 @@ public class MenuView {
         gmpane.setBottom(grid);
         gmpane.setLeft(menu0);
         gmpane.setCenter(menu1);
+
 
 
         // ------------------- Stylesheets aufrufen -------------------
@@ -416,6 +419,7 @@ public class MenuView {
     public void setMenuIconBack(Label menuIconBack) {
         this.menuIconBack = menuIconBack;
     }
+
 }
 
 

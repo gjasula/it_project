@@ -3,6 +3,11 @@ package ch.fhnw.atlantis.clientClasses.GUI;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+import javafx.stage.WindowEvent;
+
+import java.util.Optional;
 
 
 /**
@@ -20,19 +25,16 @@ public class MenuController {
 
         view.getBtnBack().setOnAction(new btnBackEventHandler());
         view.getBtnExit().setOnAction(new btnExitEventHandler());
+        view.getBtnRules().setOnAction(new btnRulesEventHandler());
+
 
     //    view.getBtnOptions().setOnMouseClicked(new btnOptionsEventHandler());
 
-        view.getBtnOptions().setOnMouseClicked(event ->{
-
-            });
-
-        }
+    }
 
 
     public void show(){
         view.show(model.getPrimaryStage());
-
     }
 
     class btnBackEventHandler implements EventHandler<ActionEvent> {
@@ -43,23 +45,36 @@ public class MenuController {
 
         }
     }
+
     class btnExitEventHandler implements EventHandler<ActionEvent> {
-       @Override
-        public void handle(ActionEvent event) {
-            System.out.println("Atlantis verlassen");
-            System.exit(0);
-        }
-
-    }
-
-   /* class btnOptionsEventHandler implements EventHandler<MouseEvent>{
         @Override
-        public void handle(MouseEvent event) {
+        public void handle(ActionEvent event) {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION,
+            "Soll Atlantis wirklich beendet werden?", ButtonType.YES, ButtonType.NO);
+            alert.setTitle("Confirmation Dialog");
+            alert.setHeaderText("Spiel verlassen");
 
+
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.get() == ButtonType.YES) {
+                System.exit(0);
+                System.out.println("Atlantis verlassen");
+
+            }
+
+        }
+
+    }
+
+    class btnRulesEventHandler implements EventHandler<ActionEvent>{
+        @Override
+        public void handle(ActionEvent event) {
+
+            RulesController rulesController = new RulesController(model);
+            rulesController.show();
 
         }
     }
-*/
-
 }
+
 
