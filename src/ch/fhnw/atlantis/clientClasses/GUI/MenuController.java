@@ -1,11 +1,13 @@
 package ch.fhnw.atlantis.clientClasses.GUI;
 
 
+import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.stage.WindowEvent;
+import javafx.util.Duration;
 
 import java.util.Optional;
 
@@ -28,9 +30,7 @@ public class MenuController {
         view.getBtnRules().setOnAction(new btnRulesEventHandler());
 
 
-    //    view.getBtnOptions().setOnMouseClicked(new btnOptionsEventHandler());
-
-    }
+      }
 
 
     public void show(){
@@ -57,8 +57,9 @@ public class MenuController {
 
             Optional<ButtonType> result = alert.showAndWait();
             if (result.get() == ButtonType.YES) {
+                System.out.println("Atlantis ist geschlossen");
                 System.exit(0);
-                System.out.println("Atlantis verlassen");
+
 
             }
 
@@ -69,7 +70,6 @@ public class MenuController {
     class btnRulesEventHandler implements EventHandler<ActionEvent>{
         @Override
         public void handle(ActionEvent event) {
-
             RulesController rulesController = new RulesController(model);
             rulesController.show();
 

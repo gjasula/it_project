@@ -35,6 +35,16 @@ Button{
 
 }
 
+MenuButton{
+ -fx-background-color: #ffffff;
+ -fx-font-weight: bold;
+ -fx-font-family: "Courier New";
+ -fx-alignment: Center;
+ -fx-pref-width: 200px;
+
+
+}
+
 #Playerbefore{
  -fx-font-family: 'Material Icons';
  -fx-font-size: 60;

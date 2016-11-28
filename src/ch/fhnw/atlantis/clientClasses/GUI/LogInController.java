@@ -53,8 +53,9 @@ public class LogInController {
 
             Optional<ButtonType> result = alert.showAndWait();
             if (result.get() == ButtonType.YES) {
-                System.exit(0);
                 System.out.println("Atlantis verlassen");
+                System.exit(0);
+
 
             }
 

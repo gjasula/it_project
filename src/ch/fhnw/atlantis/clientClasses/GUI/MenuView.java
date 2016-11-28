@@ -77,6 +77,7 @@ public class MenuView {
         btnExit = new Button("SCHLIESSEN");
         menu0.setConstraints(btnExit, 1, 5);
 
+
         // ------------------- Buttons Untermenu -------------------
         btnSprache1 = new Button("DEUTSCH");
         btnSprache2 = new Button("ENGLISCH");
@@ -182,8 +183,9 @@ public class MenuView {
 
     }
 
+
     // ------------------- View der Stage bekannt geben -------------------
-        public void show(Stage stage) {
+    public void show(Stage stage) {
         stage.setTitle("Atlantis by Team Gerstenland");
         stage.setResizable(false);
         // ------------------- Bild in Stage Titel laden  -------------------
@@ -193,8 +195,6 @@ public class MenuView {
         stage.show();
 
     }
-
-    // ------------------- Getter Funktionen auf Element, für Interaktion -------------------
 
     public Scene getScene() {
         return scene;
@@ -419,6 +419,17 @@ public class MenuView {
     public void setMenuIconBack(Label menuIconBack) {
         this.menuIconBack = menuIconBack;
     }
+
+    public Rectangle getBg() {
+        return bg;
+    }
+
+    public void setBg(Rectangle bg) {
+        this.bg = bg;
+    }
+    // ------------------- Getter Funktionen auf Element, für Interaktion -------------------
+
+
 
 }
 
