@@ -23,7 +23,7 @@ import javafx.stage.Stage;
  * Style und Layout
  */
 
-public class WelcomeView {
+public class LogInView {
 
     private Scene scene;
 
@@ -56,7 +56,7 @@ public class WelcomeView {
     private Label player4;
 
 
-    public WelcomeView() {
+    public LogInView() {
 
         //  ------------------- Labels -------------------
         lbl1 = new Label();

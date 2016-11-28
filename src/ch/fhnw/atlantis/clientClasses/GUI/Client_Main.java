@@ -19,7 +19,7 @@ public class Client_Main extends Application {
     public void start(Stage primaryStage) {
         Model model = new Model(primaryStage);
 
-        WelcomeController welcomeController = new WelcomeController(model);
-        welcomeController.show();
+        LogInController logInController = new LogInController(model);
+        logInController.show();
     }
 }

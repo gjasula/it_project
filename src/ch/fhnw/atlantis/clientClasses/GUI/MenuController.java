@@ -1,28 +1,22 @@
 package ch.fhnw.atlantis.clientClasses.GUI;
 
 
-import javafx.animation.FadeTransition;
-import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.control.Button;
-import javafx.scene.input.MouseDragEvent;
-import javafx.scene.input.MouseEvent;
-import javafx.util.Duration;
 
 
 /**
  * Created by Nadine on 25.10.2016.
  */
 
-public class GameMenuController {
+public class MenuController {
     private Model model;
-    private GameMenuView view;
+    private MenuView view;
 
 
-    public  GameMenuController(Model model) {
+    public MenuController(Model model) {
         this.model = model;
-        this.view = new GameMenuView();
+        this.view = new MenuView();
 
         view.getBtnBack().setOnAction(new btnBackEventHandler());
         view.getBtnExit().setOnAction(new btnExitEventHandler());
@@ -44,8 +38,8 @@ public class GameMenuController {
     class btnBackEventHandler implements EventHandler<ActionEvent> {
         @Override
         public void handle(ActionEvent event) {
-            //WelcomeController welcomeController = new WelcomeController(model);
-            //welcomeController.show();
+            LogInController logInController = new LogInController(model);
+            logInController.show();
 
         }
     }

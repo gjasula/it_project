@@ -20,7 +20,7 @@ import javafx.stage.Stage;
  * Created by Nadine on 25.10.2016.
  */
 
-public class GameMenuView {
+public class MenuView {
     private Scene scene;
 
     private BorderPane gmpane;
@@ -60,7 +60,7 @@ public class GameMenuView {
 
     private Rectangle bg;
 
-    public GameMenuView() {
+    public MenuView() {
 
         // ------------------- Buttons Hauptmenu -------------------
         btnStartGame = new Button("SPIEL STARTEN");
