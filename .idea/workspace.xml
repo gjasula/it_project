@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a17926e2-da12-48d9-a277-7c36733f2c16" name="Default" comment="GUI Klassen update&#10;- GameMenu Struktur&#10;- Eventhandler Buttons">
+    <list default="true" id="a17926e2-da12-48d9-a277-7c36733f2c16" name="Default" comment="GUI Klassen update&#10;- LogIn Controller &#10;- MenuController">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/LogInController.java" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/LogInController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/MenuController.java" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/MenuController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/css/style.css" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/css/style.css" />
     </list>
     <ignored path="it_project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,8 +39,8 @@
       <file leaf-file-name="MenuController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/MenuController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+            <state relative-caret-position="262">
+              <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#969#970#0" expanded="true" />
@@ -894,7 +891,14 @@
       <option name="project" value="LOCAL" />
       <updated>1480366610642</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="GUI Klassen update&#10;- LogIn Controller &#10;- MenuController">
+      <created>1480433597070</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1480433597070</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -992,7 +996,8 @@
     <MESSAGE value="Umbennen der GUI Klassen &#10;*neu MenuView und Controller (nicht GameMenuView und GameMenuController)&#10;*neu LogInView und Controller (nicht WelcomeView und WelcomeController)" />
     <MESSAGE value="GUI Klassen Update&#10;Implementierung der Spielregeln und Eventhandler für Fenster schliessen" />
     <MESSAGE value="GUI Klassen update&#10;- Client Main &#10;- LogIn Controller&#10;- Menu Controller &#10;- Menu View" />
-    <option name="LAST_COMMIT_MESSAGE" value="GUI Klassen update&#10;- Client Main &#10;- LogIn Controller&#10;- Menu Controller &#10;- Menu View" />
+    <MESSAGE value="GUI Klassen update&#10;- LogIn Controller &#10;- MenuController" />
+    <option name="LAST_COMMIT_MESSAGE" value="GUI Klassen update&#10;- LogIn Controller &#10;- MenuController" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1317,8 +1322,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/MenuController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+        <state relative-caret-position="262">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#969#970#0" expanded="true" />
