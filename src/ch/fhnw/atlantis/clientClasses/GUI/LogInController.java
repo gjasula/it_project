@@ -33,6 +33,7 @@ public class LogInController {
 
     }
 
+
     class btnConnectEventHandler implements EventHandler<ActionEvent> {
         @Override
         public void handle(ActionEvent event) {
@@ -42,22 +43,23 @@ public class LogInController {
         }
     }
 }
-    class btnCloseEventHandler implements EventHandler<ActionEvent> {
-        @Override
-        public void handle(ActionEvent event) {
 
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION,
-                    "Soll Atlantis wirklich beendet werden?", ButtonType.YES, ButtonType.NO);
-            alert.setTitle("Confirmation Dialog");
-            alert.setHeaderText("Spiel verlassen");
+class btnCloseEventHandler implements EventHandler<ActionEvent> {
+    @Override
+    public void handle(ActionEvent event) {
 
-            Optional<ButtonType> result = alert.showAndWait();
-            if (result.get() == ButtonType.YES) {
-                System.out.println("Atlantis verlassen");
-                System.exit(0);
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION,
+                "Soll Atlantis wirklich beendet werden?", ButtonType.YES, ButtonType.NO);
+        alert.setTitle("Confirmation Dialog");
+        alert.setHeaderText("Spiel verlassen");
 
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.YES) {
+            System.out.println("Atlantis verlassen");
+            System.exit(0);
 
-            }
 
         }
+
     }
+}

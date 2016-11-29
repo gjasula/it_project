@@ -6,6 +6,11 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Tooltip;
+import javafx.scene.effect.DropShadow;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.WindowEvent;
 import javafx.util.Duration;
 
@@ -28,9 +33,7 @@ public class MenuController {
         view.getBtnBack().setOnAction(new btnBackEventHandler());
         view.getBtnExit().setOnAction(new btnExitEventHandler());
         view.getBtnRules().setOnAction(new btnRulesEventHandler());
-
-
-      }
+    }
 
 
     public void show(){
@@ -45,6 +48,7 @@ public class MenuController {
 
         }
     }
+
 
     class btnExitEventHandler implements EventHandler<ActionEvent> {
         @Override
@@ -67,7 +71,7 @@ public class MenuController {
 
     }
 
-    class btnRulesEventHandler implements EventHandler<ActionEvent>{
+   class btnRulesEventHandler implements EventHandler<ActionEvent>{
         @Override
         public void handle(ActionEvent event) {
             RulesController rulesController = new RulesController(model);
