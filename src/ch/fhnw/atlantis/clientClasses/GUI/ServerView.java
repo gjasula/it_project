@@ -49,10 +49,9 @@ public class ServerView {
         btnStop_s = new Button("STOP SERVER");
 
         //  ------------------- TextField -------------------
-        ServerConnection = new TextField("Server Value");
-        //    ServerConnection.setText("Server Value");
-        ServerConnection.setMinWidth(150);
-        ServerConnection.setMinHeight(150);
+
+
+
 
         //  ------------------- Elemente in HBox anordnen  -------------------
         spane = new HBox(btnConnect_s, btnStop_s);
@@ -62,29 +61,30 @@ public class ServerView {
         spane.setId("Button");
 
         //  ------------------- Layout: Gridpane erstellen; anordnen; hinzufügen  -------------------
-        serverpane = new GridPane();
+     /*   serverpane = new GridPane();
         GridPane.setHalignment(spane, HPos.LEFT);
         GridPane.setHalignment(ServerConnection, HPos.CENTER);
         GridPane.setColumnSpan(ServerConnection, 2);
 
         serverpane.addRow(0, spane);
         serverpane.addRow(3, ServerConnection);
-        serverpane.setPadding(new Insets(40, 40, 40, 40));
+        serverpane.setPadding(new Insets(20, 20, 40, 40));
         serverpane.setVgap(80);
         serverpane.setHgap(400);
         serverpane.setGridLinesVisible(true);
-
-        rect = new Rectangle(720, 550);
-        rect.setFill(Color.rgb(200, 200, 200, 0.6));
+*/
+        rect = new Rectangle(1000, 550);
+        rect.setFill(Color.rgb(200, 200, 200, 0.4));
         rect.setArcHeight(3.5);
         rect.setArcWidth(3.5);
         rect.setStroke(Color.LIGHTGRAY);
+        rect.setVisible(true);
 
         stack = new StackPane();
-        stack.getChildren().addAll(rect, serverpane);
+        stack.getChildren().addAll(rect, spane);
         stack.setAlignment(Pos.CENTER);
 
-        serverpane.getStyleClass().add("root");
+
         // BorderPane zu Scene hinzufügen und Fenstergrösse setzen
         scene = new Scene(stack, 1024, 640);
         scene.getStylesheets().add("/ch/fhnw/atlantis/resources/css/style.css");
@@ -93,7 +93,7 @@ public class ServerView {
     }
         public void show(Stage stage) {
             stage.setTitle("Atlantis by Team Gerstenland");
-            Image icon = new Image(getClass().getResourceAsStream("./../../resources/images/atlantis_client.jpg"));
+            Image icon = new Image(getClass().getResourceAsStream("./../../resources/images/atlantis.jpg"));
             stage.setResizable(false);
             stage.getIcons().add(icon);
             stage.setScene(scene);

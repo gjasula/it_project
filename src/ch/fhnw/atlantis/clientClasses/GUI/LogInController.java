@@ -26,6 +26,13 @@ public class LogInController {
         view.getBtnConnect().setOnAction(new btnConnectEventHandler());
         view.getBtnClose().setOnAction(new btnCloseEventHandler());
 
+        // ------------------- CSS Styling den Playern (Icons) zuweisen - WEISS -------------------
+
+        view.getPlayer1().getStyleClass().add("Playerbefore");
+        view.getPlayer2().getStyleClass().add("Playerbefore");
+        view.getPlayer3().getStyleClass().add("Playerbefore");
+        view.getPlayer4().getStyleClass().add("Playerbefore");
+
     }
 
     public void show() {
