@@ -91,7 +91,8 @@ public class Client implements Runnable {
 
         // Sende "print da shit out" an server
         try {
-            client.streamOut.writeUTF("print da shit out");
+            client.streamOut.writeUTF("Client zu Server");
+            client.streamOut.flush();
         } catch (IOException e) {
             e.printStackTrace();
         }
