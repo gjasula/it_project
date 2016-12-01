@@ -3,20 +3,25 @@ package ch.fhnw.atlantis.serverClasses;
 /**
  * Created by Daniel on 18.11.2016.
  */
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
 public class Server implements Runnable {
+    private Socket socket = null;
     private ServerThread client = null;
     private ServerSocket server = null;
     private Thread thread = null;
+    private DataOutputStream streamOut = null;
 
     public Server(int port) {
         try {
             System.out
                     .println("Binding to port " + port + ", please wait  ...");
             this.server = new ServerSocket(port);
+            this.socket = server.accept();
+
             System.out
                     .println("Server started: " + server + " on port " + port);
             start();
@@ -27,9 +32,12 @@ public class Server implements Runnable {
     }
 
     public void run() {
+
         while (this.thread != null) {
             try {
-                // System.out.println("Waiting for a client ...");
+                System.out.println(this.thread + "OUT threadName");
+                this.streamOut.writeUTF("Server zu Client");
+
                 addClient(this.server.accept());
             } catch (IOException ioe) {
                 System.out.println("Server accept error: " + ioe);
@@ -38,7 +46,8 @@ public class Server implements Runnable {
         }
     }
 
-    public void start() {
+    public void start() throws IOException {
+        this.streamOut = new DataOutputStream(socket.getOutputStream());
         if (this.thread == null) {
             this.thread = new Thread(this);
             this.thread.start();
@@ -68,7 +77,6 @@ public class Server implements Runnable {
 
         // Selbstinitialisierung das müsste danach ins Server GUI MAIN
         server = new Server(Integer.parseInt(String.valueOf(7788)));
-
 
         if (args.length != 1)
             System.out.println("Usage: java Server port");
