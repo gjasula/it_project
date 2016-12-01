@@ -19,6 +19,12 @@ Label{
  -fx-font-weight: bold;
 }
 
+#Label-small{
+ -fx-font-family: "Castellar";
+ -fx-font-size: 9px;
+ -fx-font-weight: bold;
+}
+
 Button{
  -fx-background-color: #ffffff;
  -fx-font-weight: bold;

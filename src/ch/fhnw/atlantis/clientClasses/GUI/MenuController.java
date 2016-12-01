@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.ProgressIndicator;
 import javafx.scene.input.MouseEvent;
 
 
@@ -34,6 +35,8 @@ public class MenuController {
 
         // ------------------- StartButton Disable setzen solange, nicht mind. 2 Spieler angemeldet sind -------------------
         view.getBtnStartGame().setDisable(true);
+        // solange ProgressIndicator anzeigen: ProgressIndicator pi = new ProgressIndicator();
+
 
         // ------------------- CSS Styling den angemeldeten Playern (Icons) zuweisen - Orange -------------------
         view.getPlayer1().getStyleClass().remove("Playerbefore");
@@ -49,8 +52,9 @@ public class MenuController {
         view.show(model.getPrimaryStage());
     }
 
-    // ------------------- EVENTS definieren -------------------
-
+    /* ------------------- EVENTS definieren -------------------
+    -------------------------------------------------------------
+     ------------------------------------- -------------------*/
     class btnRulesEventHandler implements EventHandler<ActionEvent>{
         @Override
         public void handle(ActionEvent event) {

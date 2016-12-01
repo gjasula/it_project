@@ -26,6 +26,5 @@ public class ServerMain extends Application {
         ServerController serverController = new ServerController(model);
         serverController.show();
 
-
     }
 }
