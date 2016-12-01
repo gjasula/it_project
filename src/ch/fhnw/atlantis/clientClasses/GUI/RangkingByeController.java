@@ -4,7 +4,7 @@ import javafx.stage.Stage;
 
 /**
  * Created by Nadine on 28.11.2016.
- */
+
 public class RangkingByeController {
     private Model model;
     private RankingByeView view;
@@ -20,3 +20,7 @@ public class RangkingByeController {
         view.show(secondStage);
     }
 }
+*/
+
+
+
