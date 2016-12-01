@@ -37,8 +37,6 @@ public class RulesView {
         root = new StackPane();
 
         // ------------------- Button -------------------
-        btnBack2 = new Button("ZURÜCK ZUM MENU");
-        btnBack2.setId("Button");
 
         // ------------------- Regeln -------------------
         Regeln = new VBox();
@@ -49,7 +47,7 @@ public class RulesView {
         AR5 = new ImageView(new Image(getClass().getResourceAsStream("./../../resources/images/AtlantisRegeln5.JPG")));
         AR6 = new ImageView(new Image(getClass().getResourceAsStream("./../../resources/images/AtlantisRegeln6.JPG")));
 
-        Regeln.getChildren().addAll(btnBack2, AR1, AR2, AR3, AR4, AR5, AR6);
+        Regeln.getChildren().addAll(AR1, AR2, AR3, AR4, AR5, AR6);
         RegelnSP = new ScrollPane(Regeln);
 
         root.getChildren().add(RegelnSP);
@@ -103,14 +101,6 @@ public class RulesView {
 
     public void setScene(Scene scene) {
         this.scene = scene;
-    }
-
-    public Button getBtnBack2() {
-        return btnBack2;
-    }
-
-    public void setBtnBack2(Button btnBack2) {
-        this.btnBack2 = btnBack2;
     }
 
     public ImageView getAR1() {

@@ -2,20 +2,13 @@ package ch.fhnw.atlantis.clientClasses.GUI;
 
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 /**
@@ -38,9 +31,10 @@ public class MenuView {
 
     private Button btnSprache1;
     private Button btnSprache2;
+    private Button btnSprache3;
 
-    private GridPane menu0;
-    private GridPane menu1;
+    private GridPane MainMenu;
+    private GridPane SubMenu;
 
     private Label p1;
     private Label p2;
@@ -59,43 +53,52 @@ public class MenuView {
     private Label menuIconExit;
     private Label menuIconBack;
 
-    private Rectangle bg;
+    private Image Flag_GB;
+    private Image Flag_Germany;
+    private Image Flag_Switzerland;
+    private Image Flag1;
+
+    private ImageView iview1;
+    private ImageView iview2;
+    private ImageView iview3;
+
+    private Button gameCharacter1;
+    private Button gameCharacter2;
+    private Button gameCharacter3;
+    private Button gameCharacter4;
+
 
     public MenuView() {
 
-        // ------------------- Buttons Hauptmenu -------------------
+        // ------------------- Buttons MenuMain definieren und in Gridanordnen -------------------
         btnStartGame = new Button("SPIEL STARTEN");
-        menu0.setConstraints(btnStartGame, 1, 0);
         btnOptions = new Button("SPRACHE WÄHLEN");
-        menu0.setConstraints(btnOptions, 1, 1);
         btnPlayer = new Button("SPIELFIGUR WÄHLEN");
-        menu0.setConstraints(btnPlayer, 1, 2);
         btnRules = new Button("SPIELREGELN");
-        menu0.setConstraints(btnRules, 1, 3);
         btnBack = new Button("ZURÜCK");
-        menu0.setConstraints(btnBack, 1, 4);
         btnExit = new Button("SCHLIESSEN");
-        menu0.setConstraints(btnExit, 1, 5);
 
+        MainMenu.setConstraints(btnStartGame, 1, 0);
+        MainMenu.setConstraints(btnOptions, 1, 1);
+        MainMenu.setConstraints(btnPlayer, 1, 2);
+        MainMenu.setConstraints(btnRules, 1, 3);
+        MainMenu.setConstraints(btnBack, 1, 4);
+        MainMenu.setConstraints(btnExit, 1, 5);
 
-        // ------------------- Buttons Untermenu -------------------
-        btnSprache1 = new Button("DEUTSCH");
-        btnSprache2 = new Button("ENGLISCH");
-
-
-        // ------------------- ICONS Menu -------------------
+        // ------------------- ICONS MenuMain definieren, in Grid anordnen, CSS ID setzen  -------------------
         menuIconStart = new Label("\ue037");
-        menu0.setConstraints(menuIconStart, 0, 0);
         menuIconOpt = new Label("\ue894");
-        menu0.setConstraints(menuIconOpt, 0, 1);
         menuIconPlayer = new Label("\ue87B");
-        menu0.setConstraints(menuIconPlayer, 0, 2);
         menuIconRule = new Label("\ue873");
-        menu0.setConstraints(menuIconRule, 0, 3);
         menuIconExit = new Label("\ue020");
-        menu0.setConstraints(menuIconExit, 0, 4);
         menuIconBack = new Label("\ue14C");
-        menu0.setConstraints(menuIconBack, 0, 5);
+
+        MainMenu.setConstraints(menuIconStart, 0, 0);
+        MainMenu.setConstraints(menuIconOpt, 0, 1);
+        MainMenu.setConstraints(menuIconPlayer, 0, 2);
+        MainMenu.setConstraints(menuIconRule, 0, 3);
+        MainMenu.setConstraints(menuIconExit, 0, 4);
+        MainMenu.setConstraints(menuIconBack, 0, 5);
 
         menuIconStart.setId("MenuIcon");
         menuIconOpt.setId("MenuIcon");
@@ -104,26 +107,75 @@ public class MenuView {
         menuIconExit.setId("MenuIcon");
         menuIconBack.setId("MenuIcon");
 
+        // ------------------- Buttons SubMenu definieren, in Grid anordnen und Verbergen -------------------
+        btnSprache1 = new Button("DEUTSCH");
+        btnSprache2 = new Button("ENGLISCH");
+        btnSprache3 = new Button("SCHWIIZERDÜTSCH");
+
+        btnSprache1.setVisible(false);
+        btnSprache2.setVisible(false);
+        btnSprache3.setVisible(false);
+
+        SubMenu.setConstraints(btnSprache1, 2,2);
+        SubMenu.setConstraints(btnSprache2, 3,2);
+        SubMenu.setConstraints(btnSprache3, 4,2);
+
+        // ------------------- Flaggen SubMenu -------------------
+        Flag_GB = new Image("/ch/fhnw/atlantis/resources/images/Flag_GB.png");
+        iview1 = new ImageView(Flag_GB);
+        iview1.setVisible(false);
+        SubMenu.setConstraints(iview1, 3, 1);
+        SubMenu.setHalignment(iview1, HPos.CENTER);
+
+        Flag_Germany = new Image("/ch/fhnw/atlantis/resources/images/Flag_Germany.png");
+        iview2 = new ImageView(Flag_Germany);
+        iview2.setVisible(false);
+        SubMenu.setConstraints(iview2, 2, 1);
+        SubMenu.setHalignment(iview2, HPos.CENTER);
+
+        Flag_Switzerland = new Image("/ch/fhnw/atlantis/resources/images/Flag_Switzerland.png");
+        iview3 = new ImageView(Flag_Switzerland);
+        iview3.setVisible(false);
+        SubMenu.setConstraints(iview3, 4, 1);
+        SubMenu.setHalignment(iview3, HPos.CENTER);
+
+        // ------------------- menuPlayer -------------------
+        gameCharacter1 = new Button("\ue91D");
+        gameCharacter2 = new Button("\ue532");
+        gameCharacter3 = new Button("\ue16B");
+        gameCharacter4 = new Button("\ue80C");
+
+        SubMenu.setConstraints(gameCharacter1, 2,1);
+        SubMenu.setConstraints(gameCharacter2, 3,1);
+        SubMenu.setConstraints(gameCharacter3, 4,1);
+        SubMenu.setConstraints(gameCharacter4, 5,1);
+
+        gameCharacter1.setId("PlayerIcon");
+        gameCharacter2.setId("PlayerIcon");
+        gameCharacter3.setId("PlayerIcon");
+        gameCharacter4.setId("PlayerIcon");
+
+        gameCharacter1.setVisible(false);
+        gameCharacter2.setVisible(false);
+        gameCharacter3.setVisible(false);
+        gameCharacter4.setVisible(false);
 
         // ------------------- Buttons und MenuIcons in Grid anordnen -------------------
-        menu0 = new GridPane();
-        menu0.setPadding(new Insets(20, 20, 20, 20));
-        menu0.setVgap(5);
-        menu0.setHgap(5);
-        menu0.setGridLinesVisible(false);
-
+        MainMenu = new GridPane();
+        MainMenu.setPadding(new Insets(20, 20, 20, 20));
+        MainMenu.setVgap(5);
+        MainMenu.setHgap(5);
+        MainMenu.setGridLinesVisible(false);
         // alle Inhalte ins Grid holen mit getChildren
-        menu0.getChildren().addAll(btnStartGame, btnOptions, btnPlayer, btnRules, btnBack, btnExit, menuIconStart, menuIconOpt, menuIconPlayer, menuIconRule, menuIconExit, menuIconBack);
+        MainMenu.getChildren().addAll(btnStartGame, btnOptions, btnPlayer, btnRules, btnBack, btnExit, menuIconStart, menuIconOpt, menuIconPlayer, menuIconRule, menuIconExit, menuIconBack);
 
-
-        menu1 = new GridPane();
-        menu1.setPadding(new Insets(100, 100, 100, 100));
-        menu1.setVgap(5);
-        menu1.setHgap(5);
-        menu1.setGridLinesVisible(false);
-        menu1.setVisible(false);
-        menu1.getChildren().addAll(btnSprache1, btnSprache2);
-
+        SubMenu = new GridPane();
+        SubMenu.setPadding(new Insets(60, 60, 100, 100));   // top, right, bottom, left
+        SubMenu.setVgap(5);
+        SubMenu.setHgap(5);
+        SubMenu.setGridLinesVisible(false);
+        // alle Inhalte ins Grid holen mit getChildren
+        SubMenu.getChildren().addAll(btnSprache1, btnSprache2, btnSprache3, iview1, iview2, iview3, gameCharacter1, gameCharacter2, gameCharacter3, gameCharacter4);
 
         //------------------- Player Icons und Grid anordnen -------------------
         player1 = new Label("\ue7FD");
@@ -139,11 +191,11 @@ public class MenuView {
         grid.setConstraints(player4, 3, 0);
         grid.setHalignment(player4, HPos.CENTER);
 
-        // ------------------- CSS den Icons zuweisen ---------
-        player1.setId("Playerafter");
-        player2.setId("Playerafter");
-        player3.setId("Playerbefore");
-        player4.setId("Playerbefore");
+        // ------------------- CSS den Icons zuweisen --> über Controller implementiert---------
+        //  player1.setId("Playerbefore");
+        //  player2.setId("Playerbefore");
+        //  player3.setId("Playerbefore");
+        //  player4.setId("Playerbefore");
 
         // ------------------- Player Labels definieren ---------
         p1 = new Label("Spieler 1");
@@ -161,17 +213,14 @@ public class MenuView {
         grid.setVgap(0);
         grid.setHgap(150);
         grid.setGridLinesVisible(false);
-
         // alle Inhalte ins Grid holen mit getChildren
         grid.getChildren().addAll(player1, player2, player3, player4, p1, p2, p3, p4);
-
 
         // ------------------- BorderPane erstellen und HBox, VBox, Grid hinzufügen -------------------
         BorderPane gmpane = new BorderPane();
         gmpane.setBottom(grid);
-        gmpane.setLeft(menu0);
-        gmpane.setCenter(menu1);
-
+        gmpane.setLeft(MainMenu);
+        gmpane.setCenter(SubMenu);
 
 
         // ------------------- Stylesheets aufrufen -------------------
@@ -182,7 +231,6 @@ public class MenuView {
         scene = new Scene(gmpane, 1024, 640);
 
     }
-
 
     // ------------------- View der Stage bekannt geben -------------------
     public void show(Stage stage) {
@@ -196,6 +244,7 @@ public class MenuView {
 
     }
 
+    // ------------------- Getter und Setter -------------------
     public Scene getScene() {
         return scene;
     }
@@ -292,20 +341,28 @@ public class MenuView {
         this.btnSprache2 = btnSprache2;
     }
 
-    public GridPane getMenu0() {
-        return menu0;
+    public Button getBtnSprache3() {
+        return btnSprache3;
     }
 
-    public void setMenu0(GridPane menu0) {
-        this.menu0 = menu0;
+    public void setBtnSprache3(Button btnSprache3) {
+        this.btnSprache3 = btnSprache3;
     }
 
-    public GridPane getMenu1() {
-        return menu1;
+    public GridPane getMainMenu() {
+        return MainMenu;
     }
 
-    public void setMenu1(GridPane menu1) {
-        this.menu1 = menu1;
+    public void setMainMenu(GridPane mainMenu) {
+        this.MainMenu = mainMenu;
+    }
+
+    public GridPane getSubMenu() {
+        return SubMenu;
+    }
+
+    public void setSubMenu(GridPane subMenu) {
+        this.SubMenu = subMenu;
     }
 
     public Label getP1() {
@@ -420,17 +477,93 @@ public class MenuView {
         this.menuIconBack = menuIconBack;
     }
 
-    public Rectangle getBg() {
-        return bg;
+    public Image getFlag_GB() {
+        return Flag_GB;
     }
 
-    public void setBg(Rectangle bg) {
-        this.bg = bg;
+    public void setFlag_GB(Image flag_GB) {
+        Flag_GB = flag_GB;
     }
-    // ------------------- Getter Funktionen auf Element, für Interaktion -------------------
 
+    public Image getFlag_Germany() {
+        return Flag_Germany;
+    }
 
+    public void setFlag_Germany(Image flag_Germany) {
+        Flag_Germany = flag_Germany;
+    }
 
+    public Image getFlag_Switzerland() {
+        return Flag_Switzerland;
+    }
+
+    public void setFlag_Switzerland(Image flag_Switzerland) {
+        Flag_Switzerland = flag_Switzerland;
+    }
+
+    public Image getFlag1() {
+        return Flag1;
+    }
+
+    public void setFlag1(Image flag1) {
+        Flag1 = flag1;
+    }
+
+    public ImageView getIview1() {
+        return iview1;
+    }
+
+    public void setIview1(ImageView iview1) {
+        this.iview1 = iview1;
+    }
+
+    public ImageView getIview2() {
+        return iview2;
+    }
+
+    public void setIview2(ImageView iview2) {
+        this.iview2 = iview2;
+    }
+
+    public ImageView getIview3() {
+        return iview3;
+    }
+
+    public void setIview3(ImageView iview3) {
+        this.iview3 = iview3;
+    }
+
+    public Button getGameCharacter1() {
+        return gameCharacter1;
+    }
+
+    public void setGameCharacter1(Button gameCharacter1) {
+        this.gameCharacter1 = gameCharacter1;
+    }
+
+    public Button getGameCharacter2() {
+        return gameCharacter2;
+    }
+
+    public void setGameCharacter2(Button gameCharacter2) {
+        this.gameCharacter2 = gameCharacter2;
+    }
+
+    public Button getGameCharacter3() {
+        return gameCharacter3;
+    }
+
+    public void setGameCharacter3(Button gameCharacter3) {
+        this.gameCharacter3 = gameCharacter3;
+    }
+
+    public Button getGameCharacter4() {
+        return gameCharacter4;
+    }
+
+    public void setGameCharacter4(Button gameCharacter4) {
+        this.gameCharacter4 = gameCharacter4;
+    }
 }
 
 

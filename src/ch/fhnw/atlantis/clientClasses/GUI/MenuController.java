@@ -1,18 +1,13 @@
 package ch.fhnw.atlantis.clientClasses.GUI;
 
 
-import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
-import javafx.scene.control.Tooltip;
-import javafx.scene.effect.DropShadow;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
+import javafx.scene.control.ProgressIndicator;
 import javafx.scene.input.MouseEvent;
-import javafx.stage.WindowEvent;
-import javafx.util.Duration;
+
 
 import java.util.Optional;
 
@@ -30,14 +25,79 @@ public class MenuController {
         this.model = model;
         this.view = new MenuView();
 
+        // ------------------- Eventhandler registrieren -------------------
+        view.getBtnRules().setOnAction(new btnRulesEventHandler());
+        view.getBtnOptions().setOnMouseClicked(new btnOptionsEventHandler1());
+        view.getBtnPlayer().setOnMouseClicked(new btnPlayerEventhandler());
         view.getBtnBack().setOnAction(new btnBackEventHandler());
         view.getBtnExit().setOnAction(new btnExitEventHandler());
-        view.getBtnRules().setOnAction(new btnRulesEventHandler());
+
+
+        // ------------------- StartButton Disable setzen solange, nicht mind. 2 Spieler angemeldet sind -------------------
+        view.getBtnStartGame().setDisable(true);
+        // solange ProgressIndicator anzeigen: ProgressIndicator pi = new ProgressIndicator();
+
+
+        // ------------------- CSS Styling den angemeldeten Playern (Icons) zuweisen - Orange -------------------
+        view.getPlayer1().getStyleClass().remove("Playerbefore");
+        view.getPlayer1().getStyleClass().add("Playerafter");
+        view.getPlayer2().getStyleClass().remove("Playerbefore");
+        view.getPlayer2().getStyleClass().add("Playerafter");
+        view.getPlayer3().getStyleClass().add("Playerbefore");
+        view.getPlayer4().getStyleClass().add("Playerbefore");
     }
 
-
+    // ------------------- View anzeigen - Primarystage aufrufen-------------------
     public void show(){
         view.show(model.getPrimaryStage());
+    }
+
+    /* ------------------- EVENTS definieren -------------------
+    -------------------------------------------------------------
+     ------------------------------------- -------------------*/
+    class btnRulesEventHandler implements EventHandler<ActionEvent>{
+        @Override
+        public void handle(ActionEvent event) {
+            RulesController rulesController = new RulesController(model);
+            rulesController.show();
+        }
+    }
+
+     class btnOptionsEventHandler1 implements EventHandler<MouseEvent>{
+        @Override
+        public void handle(MouseEvent event) {
+            view.getBtnSprache1().setVisible(true);
+            view.getBtnSprache2().setVisible(true);
+            view.getBtnSprache3().setVisible(true);
+            view.getIview1().setVisible(true);
+            view.getIview2().setVisible(true);
+            view.getIview3().setVisible(true);
+
+            view.getGameCharacter1().setVisible(false);
+            view.getGameCharacter2().setVisible(false);
+            view.getGameCharacter3().setVisible(false);
+            view.getGameCharacter4().setVisible(false);
+
+        }
+    }
+
+    class btnPlayerEventhandler implements EventHandler<MouseEvent>{
+        @Override
+        public void handle(MouseEvent event) {
+            view.getGameCharacter1().setVisible(true);
+            view.getGameCharacter2().setVisible(true);
+            view.getGameCharacter3().setVisible(true);
+            view.getGameCharacter4().setVisible(true);
+
+            view.getBtnSprache1().setVisible(false);
+            view.getBtnSprache2().setVisible(false);
+            view.getBtnSprache3().setVisible(false);
+            view.getIview1().setVisible(false);
+            view.getIview2().setVisible(false);
+            view.getIview3().setVisible(false);
+
+
+        }
     }
 
     class btnBackEventHandler implements EventHandler<ActionEvent> {
@@ -48,7 +108,6 @@ public class MenuController {
 
         }
     }
-
 
     class btnExitEventHandler implements EventHandler<ActionEvent> {
         @Override
@@ -63,22 +122,11 @@ public class MenuController {
             if (result.get() == ButtonType.YES) {
                 System.out.println("Atlantis ist geschlossen");
                 System.exit(0);
-
-
             }
-
-        }
-
-    }
-
-   class btnRulesEventHandler implements EventHandler<ActionEvent>{
-        @Override
-        public void handle(ActionEvent event) {
-            RulesController rulesController = new RulesController(model);
-            rulesController.show();
-
         }
     }
+
 }
+
 
 

@@ -19,13 +19,18 @@ Label{
  -fx-font-weight: bold;
 }
 
+#Label-small{
+ -fx-font-family: "Castellar";
+ -fx-font-size: 9px;
+ -fx-font-weight: bold;
+}
+
 Button{
  -fx-background-color: #ffffff;
  -fx-font-weight: bold;
  -fx-font-family: "Courier New";
  -fx-alignment: Center;
  -fx-pref-width: 200px;
-
 
 }
 
@@ -35,23 +40,13 @@ Button{
 
 }
 
-MenuButton{
- -fx-background-color: #ffffff;
- -fx-font-weight: bold;
- -fx-font-family: "Courier New";
- -fx-alignment: Center;
- -fx-pref-width: 200px;
-
-
-}
-
-#Playerbefore{
+.Playerbefore{
  -fx-font-family: 'Material Icons';
  -fx-font-size: 60;
  -fx-text-fill: #ffffff;
 }
 
-#Playerafter{
+.Playerafter{
  -fx-font-family: 'Material Icons';
  -fx-font-size: 60;
  -fx-text-fill: #ff9933;
@@ -62,3 +57,10 @@ MenuButton{
  -fx-font-size: 29;
  -fx-text-fill: #ffffff;
  }
+
+#PlayerIcon{
+-fx-font-family: 'Material Icons';
+ -fx-font-size: 40;
+ -fx-text-fill: #000000;
+ }
+

@@ -23,8 +23,15 @@ public class LogInController {
         this.model = model;
         this.view = new LogInView();
 
+
         view.getBtnConnect().setOnAction(new btnConnectEventHandler());
         view.getBtnClose().setOnAction(new btnCloseEventHandler());
+
+        // ------------------- CSS Styling den Playern (Icons) zuweisen - WEISS -------------------
+        view.getPlayer1().getStyleClass().add("Playerbefore");
+        view.getPlayer2().getStyleClass().add("Playerbefore");
+        view.getPlayer3().getStyleClass().add("Playerbefore");
+        view.getPlayer4().getStyleClass().add("Playerbefore");
 
     }
 
@@ -33,33 +40,28 @@ public class LogInController {
 
     }
 
+    class btnCloseEventHandler implements EventHandler<ActionEvent>{
+        @Override
+        public void handle(ActionEvent event) {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION,
+                    "Soll Atlantis wirklich beendet werden?", ButtonType.YES, ButtonType.NO);
+            alert.setTitle("Confirmation Dialog");
+            alert.setHeaderText("Spiel verlassen");
+
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.get()== ButtonType.YES){
+                System.out.println("Atlantis verlassen");
+                System.exit(0);
+            }
+        }
+    }
+
 
     class btnConnectEventHandler implements EventHandler<ActionEvent> {
         @Override
         public void handle(ActionEvent event) {
             MenuController menuController = new MenuController(model);
             menuController.show();
-
         }
-    }
-}
-
-class btnCloseEventHandler implements EventHandler<ActionEvent> {
-    @Override
-    public void handle(ActionEvent event) {
-
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION,
-                "Soll Atlantis wirklich beendet werden?", ButtonType.YES, ButtonType.NO);
-        alert.setTitle("Confirmation Dialog");
-        alert.setHeaderText("Spiel verlassen");
-
-        Optional<ButtonType> result = alert.showAndWait();
-        if (result.get() == ButtonType.YES) {
-            System.out.println("Atlantis verlassen");
-            System.exit(0);
-
-
-        }
-
     }
 }

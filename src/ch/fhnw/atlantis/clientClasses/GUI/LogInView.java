@@ -41,6 +41,7 @@ public class LogInView {
 
     private Label lbl1;
     private Label lbl2;
+    private Label lbl3;
     private Label IPLabel;
 
     private ImageView root;
@@ -62,7 +63,9 @@ public class LogInView {
         lbl1 = new Label();
         lbl1.setText("Willkommen in Atlantis");
         lbl2 = new Label();
-        lbl2.setText(" Bitte wählen Sie ihre Verbindung");
+        lbl2.setText("Bitte stellen Sie die Verbindung zum Server her");
+        lbl3 = new Label();
+        lbl3.setText("Team Gerstenland: IT-Projekt Fachhochschule Nordwestschweiz, 2016");
 
         // ------------------- Labels VBox anordnen -------------------
         labelPane = new VBox(lbl1, lbl2);
@@ -73,6 +76,7 @@ public class LogInView {
         // ------------------- ID definieren für CSS aufruf -------------------
         labelPane.setId("Label");
         lbl1.setId("Label-big");
+        lbl3.setId("Label-small");
 
         // ------------------- Buttons erstellen -------------------
         btnConnect = new Button("SERVER VERBINDEN");
@@ -90,7 +94,6 @@ public class LogInView {
         buttonPane.setAlignment(Pos.BOTTOM_CENTER);
         buttonPane.setPadding(new Insets(0));
         buttonPane.setSpacing(10);
-        buttonPane.setId("Button");
 
         // ------------------- Player Icons -------------------
         player1 = new Label("\ue7FD");
@@ -106,11 +109,11 @@ public class LogInView {
         grid.setConstraints(player4, 3, 0);
         grid.setHalignment(player4, HPos.CENTER);
 
-        // ------------------- CSS den Icons zuweisen ---------
-        player1.setId("Playerbefore");
-        player2.setId("Playerbefore");
-        player3.setId("Playerbefore");
-        player4.setId("Playerbefore");
+        // ------------------- CSS den Icons zuweisen --> über Controller implementiert  ---------
+          //player1.setId("Playerbefore");
+         // player2.setId("Playerbefore");
+        //  player3.setId("Playerbefore")
+       //   player4.setId("Playerbefore");
 
         // ------------------- Player Labels definieren ---------
         p1 = new Label("Spieler 1");
@@ -121,24 +124,25 @@ public class LogInView {
         grid.setConstraints(p3, 2, 1);
         p4 = new Label("Spieler 4");
         grid.setConstraints(p4, 3, 1);
+        grid.setConstraints(lbl3, 0, 3);
+        grid.setColumnSpan(lbl3, 4);
 
         // ------------------- Gridpane definieren für Players-------------------
         grid = new GridPane();
         grid.setPadding(new Insets(20, 20, 20, 120));
-        grid.setVgap(0);
+        grid.setVgap(10);
         grid.setHgap(150);
         grid.setGridLinesVisible(false);
 
         // alle Inhalte ins Grid holen mit getChildren
-        grid.getChildren().addAll(player1, player2, player3, player4, p1, p2, p3, p4);
-
+        grid.getChildren().addAll(player1, player2, player3, player4, p1, p2, p3, p4, lbl3);
 
         // ------------------- BorderPane erstellen und HBox, VBox, Grid hinzufügen -------------------
         BorderPane welcome_pane = new BorderPane();
         welcome_pane.setBottom(grid);
         welcome_pane.setCenter(buttonPane);
         welcome_pane.setTop(labelPane);
-   //   welcome_pane.getStyleClass().add("root");
+
         // ------------------- Stylesheets aufrufen -------------------
         welcome_pane.getStylesheets().add("/ch/fhnw/atlantis/resources/css/style.css");
         welcome_pane.getStylesheets().add("/ch/fhnw/atlantis/resources/css/font.css");
@@ -160,7 +164,6 @@ public class LogInView {
     }
 
     // ------------------- Getter Funktionen auf Element, für Interaktion -------------------
-
     public Scene getScene() {
         return scene;
     }
