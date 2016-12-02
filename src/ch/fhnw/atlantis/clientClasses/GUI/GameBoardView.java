@@ -1,169 +1,197 @@
 package ch.fhnw.atlantis.clientClasses.GUI;
 
-import ch.fhnw.atlantis.globalClasses.ImageLoader;
-import ch.fhnw.atlantis.globalClasses.interfaces.ITile;
-
-import ch.fhnw.atlantis.globalClasses.models.GameBoard;
+import ch.fhnw.atlantis.globalClasses.models.*;
 import javafx.application.Application;
-import javafx.geometry.Insets;
 
-import javafx.scene.Group;
-
-import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.image.ImageView;
+
+import javafx.scene.control.Label;
+
 import javafx.scene.layout.*;
+
+import javafx.scene.paint.Color;
 
 import javafx.stage.Stage;
 
-
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 
 public class GameBoardView extends Application {
 
-    private double sceneWidth = 1024;
-    private double sceneHeight = 768;
+    private ArrayList<Player> players;
+    private ArrayList<Card> pathCards;
 
-    int COL = 16;
-    int ROW = 10;
+    private HashMap<Integer, Label> scoresLabels;
 
-    int gridWidth = 90;
-    int gridHeight = 90;
+    private BorderPane root;
+    private GridPane gameBoard;
 
-    private GameBoardModel model = new GameBoardModel();
+    private Stage stage;
+    private Scene scene;
 
-    GridPane[][] gameBoard = new GridPane[COL][ROW];
+    private int maxColIndex, maxRowIndex, height;
+    private Player localPlayer;
+    private Tile consoleTile;
 
-    BorderPane bp = new BorderPane();
+    //private GameBoardModel model = new GameBoardModel();
 
-    @Override
-    public void start(Stage primaryStage) throws FileNotFoundException {
-        primaryStage.setTitle("GridPane example");
-
-        //Adding GridPane
-        GridPane gridPane = new GridPane();
-
-        // 2D array of Buttons with value of 5,5
-        ImageView[][] iV = new ImageView[COL][ROW];
-
-        //Column is a vertical line and row is a horizontal line
-        //Two FOR loops used for creating 2D array of buttons with values i,j
-        for (ITile tiles : model.gameBoard.getTilesToBoard()) {
-        for(int i=0; i<COL; i++){
-            for(int j=0; j<ROW;j++){
-
-                //Initializing 2D buttons with values i,j
-                //iV[i][j] = new ImageView(ImageLoader.getImage("blue_1.jpg"));
-                iV[i][j] = new ImageView(ImageLoader.getImage(tiles.getTile().getPath()));
-
-                gridPane.add(iV[i][j], i, j);
-            }
-        }
-
-        //Adding GridPane to the scene
-        Scene scene = new Scene(gridPane);
-        primaryStage.setScene(scene);
-        primaryStage.show();
-    }
-    }
 
     /**
-     *
-     * @param primaryStage
+     * Mainmethode für Testzwecke
      * @throws FileNotFoundException
-
-    @Override
-    public void start(Stage primaryStage) throws FileNotFoundException {
-        //createCards();
-        HBox playField = new HBox();
-
-
-
-        GridPane pane = new GridPane();
-        Node node = new ImageView();
-
-        for(int i = 0; i < COL; i++) {
-            ColumnConstraints col = new ColumnConstraints();
-            col.setHgrow(Priority.ALWAYS);
-            //pane.getColumnConstraints().add(col);
-            for (int j = 0; j < ROW; j++) {
-                RowConstraints row = new RowConstraints();
-                row.setVgrow(Priority.ALWAYS);
-                //gameBoard.getRowConstraints().add(row);
-                gameBoard[i][j] = pane;
-            }
-
-        //gameBoard = GameBoardView.initGridPane(COL, ROW);
-
-        //playField.getChildren().add(pane);
-
-        bp.setCenter(pane);
-
-
-
-        Scene scene = new Scene(bp, sceneWidth, sceneHeight);
-
-        primaryStage.setScene(scene);
-        primaryStage.show();
-        }
-    }  */
-
-    /**
-     *
-     * @param
-     * @param
-     * @return
-
-    private static GridPane[][] initGridPane(int x, int y) {
-
-        }
-
-        //pane.setTranslateX(x * gridWidth);
-        //pane.setTranslateY(y * gridHeight);
-        return pane;
-    }
      */
     public static void main(String[] args) {
 
         Application.launch(args);
+    }
 
-        //GameBoard.class.getImageFromEnum();
+
+
+    /**
+     * Startmethode für Testzwecke
+     * @throws FileNotFoundException
+     */
+    public void start(Stage primaryStage) throws FileNotFoundException {
+
+
+        //Scene scene = new Scene();
+        //primaryStage.setScene(scene);
+        //primaryStage.show();
     }
 
     /**
-     *
-     * @throws FileNotFoundException
+     * Methode zum zeichnen der Tiles und Karten auf dem Spielbrett
+     * @param pathCards: Arraylist mit allen Karten
+     * @param tiles: Arraylist mit allen Bewegungskärtchen
      */
-    public void createCards() throws FileNotFoundException {
+    private void drawCards(ArrayList<Card> pathCards, ArrayList<Tile> tiles) {
 
-        GridPane gridPane;
-        StackPane sp = new StackPane();
-        Group root = new Group();
-        Node node = new ImageView();
+        for (Card card : pathCards) {
+            for (Tile tile : tiles) {
+                if (tile.getPathId() == 500) {
+                    consoleTile = tile;
+                }
+                if (card.getPathID() == tile.getPathId()) {
+                    card.setWidth(tile.getSide());
+                    card.setHeight(tile.getSide());
+                    card.setLayoutX(tile.getX());
+                    card.setLayoutY(tile.getY());
+                    card.setStroke(Color.BLACK);
 
-        ImageView iv = new ImageView();
-        iv.setFitWidth(75);
-        iv.setFitHeight(75);
+                    addWater(card);
 
-        for (ITile tiles : model.gameBoard.getTilesToBoard()) {
-            for (int i = 0; i < COL; i++) {
-                for (int j = 0; j < ROW; j++) {
-                    gridPane = null;
-                    // create obstacle
-                    if (i == 1 && j == 1) {
-                        node = new ImageView(ImageLoader.getImage(tiles.getTile().getPath()));
-                    }
-                    //add node to group
-                    if (iv != null) {
-                        root.getChildren().add(iv);
-                        // add to playfield for further reference using an array
-                        gameBoard[i][j] = gridPane;
-                    }
+                    //addStartEndCard();
 
+                    //card.addImagesToTile(model.htOfImages());
+                    //TODO: At this place the card-image will be added to the card
+                    //this.getChildren().add(card);
                 }
             }
         }
     }
-}
+
+    /**
+     * Methode zum zeichnen eines Wasserplättchen
+     * @param card
+     */
+    private void addWater(Card card) {
+
+        //card.setFill(new ImagePattern(model.htOfImages().get("water.jpg").getImage()));
+
+    }
+
+    /**
+     * Methode zum zeichnen einet SPielfigur
+     * TODO: Möglicherweise können wir hier unsere Symbole verwenden?
+     */
+    private void drawPawns() {
+        int offsetX = 10;
+        int offsetY = 5;
+        for (Card card : pathCards) {
+            // TileType Enum gibt noch einen Fehler da nicht public
+            //if (card.getObject() == TileType.START) {
+                for (Player player : players) {
+                    for (Pawn pawn : player.getPawns()) {
+                        //Put the game pieces onto the start field
+                        pawn.setLayoutX(card.getLayoutX() + offsetX);
+                        pawn.setLayoutY(card.getLayoutY() + offsetY);
+                        pawn.setPathId(card.getPathID());
+                        pawn.setFill(player.getColor());
+                        pawn.setStroke(Color.BLACK);
+                        pawn.setWidth(10);
+                        pawn.setHeight(10);
+                        //this.getChildren().add(pawn);
+                        offsetX += 20;
+                    }
+                    offsetY += 15;
+                    offsetX = 10;
+                }
+            }
+        }
+    }
+
+    /** TODO: Alter Code zum löschen sobald alles funktioniert
+
+     GridPane[][] gameBoard = new GridPane[COL][ROW];
+
+     BorderPane bp = new BorderPane();
+
+     @Override
+     public void start(Stage primaryStage) throws FileNotFoundException {
+     primaryStage.setTitle("GridPane example");
+
+     //Adding GridPane
+     GridPane gridPane = new GridPane();
+
+     // 2D array of Buttons with value of 5,5
+     ImageView[][] iV = new ImageView[5][5];
+
+     for (String tiles : model.gameBoard.getPicturesToArraylist()) {
+     for(int i=0; i<5; i++){
+     for(int j=0; j<5;j++){
+
+     //Initializing 2D buttons with values i,j
+     iV[i][j] = new ImageView(ImageLoader.getImage("blue_1.jpg"));
+     //iV[i][j] = new ImageView(ImageLoader.getImage(tiles));
+
+     gridPane.add(iV[i][j], i, j);
+     }
+     }
+
+     Scene scene = new Scene(gridPane,sceneWidth, sceneHeight);
+     primaryStage.setScene(scene);
+     primaryStage.show();
+     }
+     }
+
+     GridPane gridPane;
+     StackPane sp = new StackPane();
+     Group root = new Group();
+     Node node = new ImageView();
+
+     ImageView iv = new ImageView();
+     iv.setFitWidth(25);
+     iv.setFitHeight(25);
+
+     for (String tiles : model.gameBoard.getPicturesToArraylist()) {
+     for (int i = 0; i < COL; i++) {
+     for (int j = 0; j < ROW; j++) {
+     gridPane = null;
+     // create obstacle
+     if (i == 1 && j == 1) {
+     node = new ImageView(ImageLoader.getImage(tiles));
+     }
+     //add node to group
+     if (iv != null) {
+     root.getChildren().add(iv);
+     // add to playfield for further reference using an array
+     gameBoard[i][j] = gridPane;
+     }
+     }
+     }
+     }
+
+     */
+

@@ -1,52 +1,77 @@
 package ch.fhnw.atlantis.globalClasses.models;
+
+import javafx.scene.paint.Color;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.io.Serializable;
 import java.util.Stack;
 
 /**
+ * Created by juerg on 02.12.2016.
  *
- * Team Gerstenland
- * Created by Jürg Steudler
- *
+ * Erstellung eines Player
  */
 
 public class Player implements Serializable {
-    private String playername;
+
+    //private static final long serialVersionUID = 1;
+
+    private ArrayList<Pawn> pawns;
+    private ArrayList<Card> movementCards;
+    private String playerName;
+    private String gameName;
+    private int playerID;
+    private Color color;
+    private int bridge;
+    private int score;
+
     private boolean isConnected = true;
     private int playernumber = 0;
     static Stack<String> MovementCards = new Stack<String>();
     static ArrayList<String> PlayerOneHandCards = new ArrayList<>();
     static ArrayList<String> PlayerTwoHandCards = new ArrayList<>();
 
-    /**
-     * Default Konstruktor
-     */
-    public Player() {super();}
-
-    /**
-     * Instanzierung eines neuen Spielers
-     */
-    public Player(String playername){
-        this();
-        this.playername = playername;
-
-        // Um danach den Spielern Karten zuzuweisen getCardFromStack(AnzahlKarten)
+    public Player(int playerID, String gameName, String playerName) {
+        this.playerName = playerName;
+        this.playerID = playerID;
+        this.gameName = gameName;
     }
 
+    /**
+     * Methode zur Vergabe einer Farbe an einen Player
+     */
+    public void playerColor() {
+        switch (playerID) {
+            case 0:
+                color = Color.RED;
+                break;
+            case 1:
+                color = Color.BLUE;
+                break;
+            case 2:
+                color = Color.GREEN;
+                break;
+            case 3:
+                color = Color.YELLOW;
+                break;
+        }
+    }
+
+    // TODO: müsste man noch auf die neue Tiles Klasse anpassen
     // Austausch von Wegplättchen in Bewegungskarte
     static void ChangeTileToMovementcard(int Player, int TileID){
 
         int PullCards;
 
-        for (Tile PathTile : Tile.values())
-        {
-            if(TileID == PathTile.getId()){
-                // Das abrunden laut Spielregeln nicht nötig, da im enum keine Kommastellen vorahnden sind
-                PullCards = PathTile.getValue() / 2;
-                getCardFromStack(PullCards, Player);
-            }
-        }
+        //for (Tile pathTile : Tile.values())
+        //{
+        //    if(TileID == pathTile.getId()){
+        //        // Das abrunden laut Spielregeln nicht nötig, da im enum keine Kommastellen vorahnden sind
+        //        PullCards = pathTile.getValue() / 2;
+        //        getCardFromStack(PullCards, Player);
+        //    }
+        //}
     }
 
     //Remove Card from hand
@@ -70,8 +95,8 @@ public class Player implements Serializable {
     }
 
     /*
-     * Kartenstapel erzeugen - Richard Künzi
-     */
+    * Kartenstapel erzeugen - Richard Künzi
+    */
     static void CardStack(){
         String MV_Blue = "MV_Blue";
         String MV_Brown = "MV_Brown";
@@ -96,30 +121,47 @@ public class Player implements Serializable {
         Collections.shuffle(MovementCards);
     }
 
-    /** Getter und Setter der Player Klasse **/
-    public String getPlayername() {
-        return playername;
+    public Color getColor() { return color; }
+
+    public int getScore() { return score; }
+
+    public int getBridge() {
+        return bridge;
     }
 
-    public void setPlayername(String playername) {
-        this.playername = playername;
+    public void removeBridge() {
+        this.bridge = 0;
     }
 
-    public boolean isConnected() {
-        return isConnected;
+    public int getPlayerID() {
+        return playerID;
     }
 
-    public void setConnected(boolean connected) {
-        isConnected = connected;
+    public String getPlayerName() {
+        return playerName;
     }
 
-    public int getPlayernumber() {
-        return playernumber;
+    public String getGameName() {
+        return gameName;
     }
 
-    public void setPlayernumber(int playernumber) {
-        this.playernumber = playernumber;
+    public void setGameName(String gameName) {
+        this.gameName = gameName;
     }
+
+    public void addScore(int score) {
+        this.score += score;
+    }
+
+    public void subtractScore(int score) {
+        this.score -= score;
+    }
+
+    public ArrayList<Pawn> getPawns() {
+        return pawns;
+    }
+
+    public ArrayList<Card> getMovementCards() { return movementCards; }
 
     static void getCardFromStack(int AmountMV, int Player){
         // Ausgabe erste Karte vom Stapel
@@ -134,4 +176,5 @@ public class Player implements Serializable {
         }
 
     }
+
 }
