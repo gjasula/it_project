@@ -1,86 +1,68 @@
 package ch.fhnw.atlantis.serverClasses;
 
-/**
- * Created by Daniel on 18.11.2016.
- */
-import java.io.DataOutputStream;
+import com.sun.xml.internal.ws.message.ByteArrayAttachment;
+
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
-public class Server implements Runnable {
-    private Socket socket = null;
-    private ServerThread client = null;
-    private ServerSocket server = null;
-    private Thread thread = null;
-    private DataOutputStream streamOut = null;
+/**
+ * Created by Daniel on 02.12.2016.
+ */
+public class Server {
 
-    public Server(int port) {
-        try {
-            System.out
-                    .println("Binding to port " + port + ", please wait  ...");
-            this.server = new ServerSocket(port);
-            this.socket = server.accept();
+    private static Server instance;
+    private int port;
+    private ServerSocket serverSocket;
+    private List<ServerClientHandler> socketList;
 
-            System.out
-                    .println("Server started: " + server + " on port " + port);
-            start();
-        } catch (IOException ioe) {
-            System.out.println("Can not bind to port " + port + ": "
-                    + ioe.getMessage());
-        }
+    private Server(int port) {
+        this.port = port;
+        socketList = new ArrayList<>();
     }
 
-    public void run() {
+    public static Server getInstance() {
+        if (instance == null) {
+            instance = new Server(7777);
+        }
+        return instance;
+    }
 
-        while (this.thread != null) {
-            try {
-                System.out.println(this.thread + "OUT threadName");
-                this.streamOut.writeUTF("Server zu Client");
+    public void addClient(ServerClientHandler sch) {
+        socketList.add(sch);
+    }
+    public void removeClient(ServerClientHandler sch) {
+        socketList.remove(sch);
+    }
 
-                addClient(this.server.accept());
-            } catch (IOException ioe) {
-                System.out.println("Server accept error: " + ioe);
-                stop();
+    public void forwardMessage(String message, ServerClientHandler sender) {
+        Iterator itr = socketList.iterator();
+
+        while (itr.hasNext()) {
+            ServerClientHandler sch = (ServerClientHandler) itr.next();
+            if (!sender.equals(sch)) {
+                sch.send(message);
             }
         }
     }
 
-    public void start() throws IOException {
-        this.streamOut = new DataOutputStream(socket.getOutputStream());
-        if (this.thread == null) {
-            this.thread = new Thread(this);
-            this.thread.start();
-        }
-    }
 
-    public void stop() {
-        if (this.thread != null) {
-            this.thread.stop();
-            this.thread = null;
-        }
-    }
-
-    private void addClient(Socket socket) {
-        // System.out.println("Client accepted: " + socket);
-        this.client = new ServerThread(this, socket);
+    public void startTCP() {
         try {
-            this.client.open();
-            this.client.start();
-        } catch (IOException ioe) {
-            System.out.println("Error opening thread: " + ioe);
+            serverSocket = new ServerSocket(port);
+            new Thread(new ServerTCPListener(serverSocket)).start();
+            System.out.println("Server started");
+        } catch ( IOException e ) {
+            e.printStackTrace();
         }
     }
 
-    public static void main(String args[]) {
-        Server server = null;
+    public static void main(String[] args) {
+        Server server = Server.getInstance();
 
-        // Selbstinitialisierung das müsste danach ins Server GUI MAIN
-        server = new Server(Integer.parseInt(String.valueOf(7788)));
-
-        if (args.length != 1)
-            System.out.println("Usage: java Server port");
-        else
-            server = new Server(Integer.parseInt(String.valueOf(7777)));
+        server.startTCP();
     }
 }

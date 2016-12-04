@@ -4,103 +4,58 @@ package ch.fhnw.atlantis.clientClasses.GUI;
  * Created by Daniel on 18.11.2016.
  */
 
-import jdk.internal.org.objectweb.asm.Handle;
-
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.net.Socket;
-import java.net.UnknownHostException;
 
-public class Client implements Runnable {
-    private Socket socket = null;
-    private Thread thread = null;
-    private DataInputStream console = null;
-    private DataOutputStream streamOut = null;
+/**
+ * Created by Stefan on 02.12.2016.
+ */
+public class Client {
 
-    private ClientThread client = null;
+    private ClientComSocket clientComSocket;
 
-    public Client(String serverName, int serverPort) {
+    public Client() {
+
+    }
+
+    public void connectToServer() {
         try {
-            System.out.println("Establishing connection. Please wait ...");
-            this.socket = new Socket(serverName, serverPort);
-            System.out.println("Connected: " + socket + "\n");
-            start();
-        } catch (UnknownHostException uhe) {
-            System.out.println("Host unknown: " + uhe.getMessage());
-        } catch (IOException ioe) {
-            System.out.println("Unexpected exception: " + ioe.getMessage());
-        }
-    }
-
-    public void run() {
-        while (this.thread != null) {
-            try {
-                this.streamOut.writeUTF(this.console.readLine());
-                //this.streamOut.writeBytes(this.console.readLine());
-                this.streamOut.flush();
-            } catch (IOException ioe) {
-                System.out.println("Sending error: " + ioe.getMessage());
-                stop();
-            }
-        }
-    }
-
-    public void handle(String msg) {
-        if (msg.equals(".bye")) {
-            System.out.println("Good bye. Press RETURN to exit ...");
-            stop();
-        } else
-            System.out.println(msg);
-    }
-
-    public void start() throws IOException {
-        this.console = new DataInputStream(System.in);
-        this.streamOut = new DataOutputStream(socket.getOutputStream());
-        if (this.thread == null) {
-            this.client = new ClientThread(this, socket);
-            this.thread = new Thread(this);
-            this.thread.start();
-        }
-    }
-
-    public void stop() {
-        if (this.thread != null) {
-            this.thread.stop();
-            this.thread = null;
-        }
-        try {
-            if (this.console != null)
-                this.console.close();
-            if (this.streamOut != null)
-                this.streamOut.close();
-            if (this.socket != null)
-                this.socket.close();
-        } catch (IOException ioe) {
-            System.out.println("Error closing ...");
-        }
-        this.client.close();
-        this.client.stop();
-    }
-
-    public static void main(String args[]) throws IOException {
-        Client client = null;
-
-        // Selbstinitialisierung, das müsste später ins Client GUI Main einfliessen
-        client = new Client("127.0.0.1", Integer.valueOf(7788));
-
-        // Sende "print da shit out" an server
-        try {
-            client.streamOut.writeUTF("Client zu Server");
-            client.streamOut.flush();
+            Socket socketToServer = new Socket("localhost", 7777);
+            clientComSocket = new ClientComSocket(socketToServer);
+            new Thread(clientComSocket).start();
         } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void sendMessagetoServer(String message) {
+        clientComSocket.send(message);
+    }
+
+    public static void main(String[] args) {
+        Client client = new Client();
+        client.connectToServer();
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
 
-        if (args.length != 2)
-            System.out.println("Usage: java Client host port");
-        else
-            client = new Client(args[0], Integer.parseInt(args[1]));
+        while (true) {
+            try {
+                BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+                String message = br.readLine();
+                if (message.equals("q")) {
+                    break;
+                }
+                client.sendMessagetoServer(message);
+            } catch ( IOException e ) {
+                e.printStackTrace();
+            }
+
+        }
+
     }
 }
