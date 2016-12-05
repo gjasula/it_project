@@ -1,19 +1,25 @@
 package ch.fhnw.atlantis.clientClasses.GUI;
 
+import ch.fhnw.atlantis.globalClasses.models.GameBoard;
+
 /**
  * Created by js on 02.11.2016.
  */
 public class GameBoardController {
 
-    public GameBoardModel model;
+    public Model model;
     public GameBoardView view;
 
-    public GameBoardController(GameBoardModel model, GameBoardView view){
+    public GameBoardController(Model model){
         super();
         this.model = model;
-        this.view = view;
+        this.view = new GameBoardView();
 
     }
 
+    public void show() {
+        view.show(model.getPrimaryStage());
+
+    }
 
 }

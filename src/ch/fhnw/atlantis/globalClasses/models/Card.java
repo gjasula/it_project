@@ -1,6 +1,8 @@
 package ch.fhnw.atlantis.globalClasses.models;
 
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 
@@ -23,10 +25,18 @@ public class Card extends Rectangle implements Serializable {
 
     public boolean isOnTop;
     private boolean isPlayed;
-    private int value;
-    private int colorSet;
+    private int value, colorSet, pathID;
     private TileType object;
-    private int pathID;
+    private Image image;
+
+    public final static Color Blue = Color.BLUE;
+    public final static Color Brown = Color.BROWN;
+    public final static Color Green = Color.GREEN;
+    public final static Color Gray = Color.GRAY;
+    public final static Color Pink = Color.PINK;
+    public final static Color Yellow = Color.YELLOW;
+    public final static Color White = Color.WHITE;
+
 
     /**
      * Erstelle eine Hashtable mit ImageView Objekten auf Enums der einzelnen Tiles
@@ -34,7 +44,6 @@ public class Card extends Rectangle implements Serializable {
      * Inkl. Start und Ende des Spiels
      * @param htOfImages
      */
-
     public void addImagesToTile(Hashtable<String, ImageView> htOfImages) {
 
         if (this.getObject() == TileType.TILE) {
@@ -102,6 +111,9 @@ public class Card extends Rectangle implements Serializable {
     }
 
 
+    public void setImage(Image image) {
+        this.image = image;
+    }
 }
 
 

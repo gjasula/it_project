@@ -9,86 +9,92 @@ import java.util.stream.Collectors;
  */
 public class GameBoard {
 
+    private ArrayList<Object>[] aLArray;
+
+    private ArrayList<Tile> TilesA;
+    private ArrayList<Tile> TilesB;
+
+    private Array[] tilesAArray;
+
+
+
     public GameBoard () {
+        init();
 
     }
 
     public void init() {
-        createGameBoard();
+        //createGameBoard();
 
     }
 
-    public void createGameBoard() {
 
-    }
-
-    /**
     public void createGameBoard() {
 
         for (int i = 0; i < 55; i++) {
-            ArrayListArray[i] = new ArrayList<>();
+            aLArray[i] = new ArrayList<>();
         }
-        //int atlantis;
-        ArrayListArray[0].add(water);
-        int i = 1;
 
+        // Add Start to position 0
+        aLArray[0].add(TileType.START);
+        int i = 1;
 
         //10x2 Plättchen + 1 Wasserplättchen
         do {
-            ArrayListArray[i].add((hmTiles.remove(0)));
-            ArrayListArray[i].add((TilesA.tilesAArray.remove(0)));
-            ArrayListArray[i].add((WaterTiles.WaterTilesArray.remove(0)));
+            aLArray[i].add((TilesA.remove(0)));
+            aLArray[i].add((TilesA.remove(0)));
+            aLArray[i].add((TileType.WATER));
             i++;
         } while (i > 0 && i < 11);
 
         //10x1 Plättchen + 1 Wasserplättchen
         do {
-            ArrayListArray[i].add((TilesA.tilesAArray.remove(0)));
-            ArrayListArray[i].add((WaterTiles.WaterTilesArray.remove(0)));
+            aLArray[i].add((TilesA.remove(0)));
+            aLArray[i].add((TileType.WATER));
             i++;
         } while (i > 10 && i < 21);
 
         //6x2 Plättchen + 1 Wasserplättchen
         do {
-            ArrayListArray[i].add((TilesA.tilesAArray.remove(0)));
-            ArrayListArray[i].add((TilesA.tilesAArray.remove(0)));
-            ArrayListArray[i].add((WaterTiles.WaterTilesArray.remove(0)));
+            aLArray[i].add((TilesA.remove(0)));
+            aLArray[i].add((TilesA.remove(0)));
+            aLArray[i].add((TileType.WATER));
             i++;
         } while (i > 20 && i < 27);
 
         //1 Wasserplättchen
         do {
-
-            ArrayListArray[i].add((WaterTiles.WaterTilesArray.remove(0)));
+            aLArray[i].add((aLArray[i].add((TileType.WATER))));
             i++;
         } while (i == 27);
 
         //6x2 Plättchen + 1 Wasserplättchen
         do {
-            ArrayListArray[i].add((TilesB.tilesBArray.remove(0)));
-            ArrayListArray[i].add((TilesB.tilesBArray.remove(0)));
-            ArrayListArray[i].add((WaterTiles.WaterTilesArray.remove(0)));
+            aLArray[i].add((TilesB.remove(0)));
+            aLArray[i].add((TilesB.remove(0)));
+            aLArray[i].add((aLArray[i].add((TileType.WATER))));
             i++;
         } while (i > 27 && i < 34);
 
         //10x1 Plättchen + 1 Wasserplättchen
         do {
-            ArrayListArray[i].add((TilesB.tilesBArray.remove(0)));
-            ArrayListArray[i].add((WaterTiles.WaterTilesArray.remove(0)));
+            aLArray[i].add((TilesB.remove(0)));
+            aLArray[i].add((aLArray[i].add((TileType.WATER))));
             i++;
         } while (i > 33 && i < 44);
 
         //10x2 Plättchen + 1 Wasserplättchen
         do {
-            ArrayListArray[i].add((TilesB.tilesBArray.remove(0)));
-            ArrayListArray[i].add((TilesB.tilesBArray.remove(0)));
-            ArrayListArray[i].add((WaterTiles.WaterTilesArray.remove(0)));
+            aLArray[i].add((TilesB.remove(0)));
+            aLArray[i].add((TilesB.remove(0)));
+            aLArray[i].add((aLArray[i].add((TileType.WATER))));
             i++;
         } while (i > 43 && i < 54);
 
-        ArrayListArray[54].add(land);
-    }*/
-
+        // Add End Tile to last position
+        aLArray[54].add(TileType.END);
+    }
+}
 
     /**
      * TODO: Löschen sobald es anderweitig funktioniert
@@ -116,5 +122,3 @@ public class GameBoard {
         //return TileFactory.getAllTiles().remove();
     return null;
     }*/
-
-}

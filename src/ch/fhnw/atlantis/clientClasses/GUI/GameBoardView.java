@@ -1,12 +1,20 @@
 package ch.fhnw.atlantis.clientClasses.GUI;
 
+import ch.fhnw.atlantis.globalClasses.ImageLoader;
 import ch.fhnw.atlantis.globalClasses.models.*;
 import javafx.application.Application;
 
+import javafx.geometry.HPos;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
+import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 
 import javafx.scene.paint.Color;
@@ -18,48 +26,197 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 
-public class GameBoardView extends Application {
+public class GameBoardView extends Pane {
 
+    //private AtlantisView view;
     private ArrayList<Player> players;
     private ArrayList<Card> pathCards;
 
-    private HashMap<Integer, Label> scoresLabels;
 
-    private BorderPane root;
     private GridPane gameBoard;
 
-    private Stage stage;
-    private Scene scene;
 
     private int maxColIndex, maxRowIndex, height;
     private Player localPlayer;
     private Tile consoleTile;
+    private HashMap<Integer, Label> scoresLabels;
+    private Model model;
 
-    //private GameBoardModel model = new GameBoardModel();
+    // löschen
+
+
+
+    private Scene scene;
+
+    private BorderPane welcome_pane;
+    private GridPane grid;
+    private HBox buttonPane;
+    private VBox labelPane;
+    private HBox imagePane;
+
+    private Button btnConnect;
+    private Button btnAltConnect;
+    private Button btnClose;
+
+    private TextField IPEnter;
+
+    private Label lbl1;
+    private Label lbl2;
+    private Label lbl3;
+    private Label IPLabel;
+
+    private ImageView root;
+
+    private Label p1;
+    private Label p2;
+    private Label p3;
+    private Label p4;
+
+    private Label player1;
+    private Label player2;
+    private Label player3;
+    private Label player4;
+
 
 
     /**
-     * Mainmethode für Testzwecke
-     * @throws FileNotFoundException
-     */
-    public static void main(String[] args) {
+     * Constructer der GameModel Klasse
+     * @param model
 
-        Application.launch(args);
+    public GameBoardView() {
+
+        this.model = model;
+
+        //ArrayList<Tile> tiles = setXYTiles(model.getTiles());
+        //localPlayer = model.getLocalPlayer();
+        //players = model.getPlayers();
+        //pathCards = model.getPathCards();
+
+
+//
+
+        //drawCards(pathCards, tiles);
+
+        //drawPawns();
+
+        //createGameConsole();
+
+
+
+//        gameBoard.setVgap(3);
+  //      gameBoard.setHgap(3);
+
+        root.setCenter(gameBoard);
+        scene = new Scene(root);
+
+        stage = new Stage();
+
+    }*/
+    public GameBoardView() {
+
+        //  ------------------- Labels -------------------
+        lbl1 = new Label();
+        lbl1.setText("Willkommen in Atlantis");
+        lbl2 = new Label();
+        lbl2.setText("Bitte stellen Sie die Verbindung zum Server her");
+        lbl3 = new Label();
+        lbl3.setText("Team Gerstenland: IT-Projekt Fachhochschule Nordwestschweiz, 2016");
+
+
+
+
+        // ------------------- Player Icons -------------------
+        player1 = new Label("\ue7FD");
+        grid.setConstraints(player1, 0, 0);
+        grid.setHalignment(player1, HPos.CENTER);
+        player2 = new Label("\ue7FD");
+        grid.setConstraints(player2, 1, 0);
+        grid.setHalignment(player2, HPos.CENTER);
+        player3 = new Label("\ue7FD");
+        grid.setConstraints(player3, 2, 0);
+        grid.setHalignment(player3, HPos.CENTER);
+        player4 = new Label("\ue7FD");
+        grid.setConstraints(player4, 3, 0);
+        grid.setHalignment(player4, HPos.CENTER);
+
+        // ------------------- CSS den Icons zuweisen --> über Controller implementiert  ---------
+        //player1.setId("Playerbefore");
+        // player2.setId("Playerbefore");
+        //  player3.setId("Playerbefore")
+        //   player4.setId("Playerbefore");
+
+        // ------------------- Player Labels definieren ---------
+        p1 = new Label("Spieler 1");
+        grid.setConstraints(p1, 0, 1);
+        p2 = new Label("Spieler 2");
+        grid.setConstraints(p2, 1, 1);
+        p3 = new Label("Spieler 3");
+        grid.setConstraints(p3, 2, 1);
+        p4 = new Label("Spieler 4");
+        grid.setConstraints(p4, 3, 1);
+        grid.setConstraints(lbl3, 0, 3);
+        grid.setColumnSpan(lbl3, 4);
+
+        // ------------------- Gridpane definieren für Players-------------------
+
+
+        gameBoard = new GridPane();
+        gameBoard.setHgap(5);
+        gameBoard.setVgap(5);
+
+        gameBoard.setPadding(new Insets(10, 10, 10, 10));
+
+        for (int i = 0; i < 16; i++) {
+            ColumnConstraints cc = new ColumnConstraints();
+            cc.setPrefWidth(70);
+            gameBoard.getColumnConstraints().add(cc);
+        }
+        for (int i = 0; i < 10; i++) {
+            RowConstraints rc = new RowConstraints();
+            rc.setPrefHeight(70);
+            gameBoard.getRowConstraints().add(rc);
+        }
+
+        gameBoard.setGridLinesVisible(true);
+
+        // alle Inhalte ins Grid holen mit getChildren
+        gameBoard.getChildren().addAll(player1, player2, player3, player4, p1, p2, p3, p4, lbl3);
+
+        // ------------------- BorderPane erstellen und HBox, VBox, Grid hinzufügen -------------------
+        BorderPane welcome_pane = new BorderPane();
+        welcome_pane.setBottom(buttonPane);
+        welcome_pane.setCenter(gameBoard);
+        welcome_pane.setTop(labelPane);
+
+        // ------------------- Stylesheets aufrufen -------------------
+        welcome_pane.getStylesheets().add("/ch/fhnw/atlantis/resources/css/style.css");
+        welcome_pane.getStylesheets().add("/ch/fhnw/atlantis/resources/css/font.css");
+
+        // ------------------- BorderPane zu Scene hinzufügen und Fenstergrösse setzen -------------------
+        scene = new Scene(welcome_pane, 1024, 640);
     }
 
+    // ------------------- View der Stage bekannt geben -------------------
+    public void show(Stage stage) {
+        stage.setTitle("Atlantis by Team Gerstenland");
+        stage.setResizable(false);                              // Fenstergrösse nicht veränderbar
+        stage.setScene(scene);
+        stage.show();
+        // ------------------- Bild in Stage Titel laden  -------------------
+        Image icon = new Image(getClass().getResourceAsStream("./../../resources/images/atlantis_client.jpg"));
+        stage.getIcons().add(icon);
 
-
-    /**
-     * Startmethode für Testzwecke
-     * @throws FileNotFoundException
-     */
-    public void start(Stage primaryStage) throws FileNotFoundException {
-
-
-        //Scene scene = new Scene();
-        //primaryStage.setScene(scene);
-        //primaryStage.show();
     }
+
+    // ------------------- Getter Funktionen auf Element, für Interaktion -------------------
+    //public Scene getScene() {
+    //    return scene;
+    //}
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
+
 
     /**
      * Methode zum zeichnen der Tiles und Karten auf dem Spielbrett
@@ -80,7 +237,7 @@ public class GameBoardView extends Application {
                     card.setLayoutY(tile.getY());
                     card.setStroke(Color.BLACK);
 
-                    addWater(card);
+                    //addWater(card);
 
                     //addStartEndCard();
 
@@ -96,9 +253,11 @@ public class GameBoardView extends Application {
      * Methode zum zeichnen eines Wasserplättchen
      * @param card
      */
+
+
     private void addWater(Card card) {
 
-        //card.setFill(new ImagePattern(model.htOfImages().get("water.jpg").getImage()));
+        //card.setImage(new ImageView(new ImageLoader().getImage("./../../resources/images/water.jpg")));
 
     }
 
@@ -131,6 +290,7 @@ public class GameBoardView extends Application {
             }
         }
     }
+
 
     /** TODO: Alter Code zum löschen sobald alles funktioniert
 
