@@ -42,6 +42,11 @@ public class ServerClientHandler implements Runnable {
         while (socketToClient.isConnected()) {
             try {
                 final String messagefromClient = (String) inputStream.readObject();
+
+                //Forward Message from Server to Interpreter
+                Interpreter InterpretServerMessage = new Interpreter();
+                InterpretServerMessage.interpretServerMsg(messagefromClient);
+
                 System.out.println("Received Message from client ("+socketToClient.hashCode()+"): " + messagefromClient);
                 server.forwardMessage("client ("+socketToClient.hashCode()+"):" + messagefromClient, this);
             } catch (IOException e) {

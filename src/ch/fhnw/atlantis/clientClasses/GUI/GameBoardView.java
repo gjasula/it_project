@@ -34,6 +34,7 @@ public class GameBoardView extends Pane {
 
 
     private GridPane gameBoard;
+    private GridPane grid;
 
 
     private int maxColIndex, maxRowIndex, height;
@@ -49,21 +50,15 @@ public class GameBoardView extends Pane {
     private Scene scene;
 
     private BorderPane welcome_pane;
-    private GridPane grid;
     private HBox buttonPane;
     private VBox labelPane;
     private HBox imagePane;
 
-    private Button btnConnect;
-    private Button btnAltConnect;
+    private Button finishTurn;
+    private Button buyCard;
     private Button btnClose;
 
     private TextField IPEnter;
-
-    private Label lbl1;
-    private Label lbl2;
-    private Label lbl3;
-    private Label IPLabel;
 
     private ImageView root;
 
@@ -77,67 +72,48 @@ public class GameBoardView extends Pane {
     private Label player3;
     private Label player4;
 
-
-
-    /**
-     * Constructer der GameModel Klasse
-     * @param model
+    private Label pointsP1;
+    private Label pointsP2;
+    private Label pointsP3;
+    private Label pointsP4;
 
     public GameBoardView() {
+        // ------------------- Grid für Player Icons -------------------
+        grid = new GridPane();
 
-        this.model = model;
-
-        //ArrayList<Tile> tiles = setXYTiles(model.getTiles());
-        //localPlayer = model.getLocalPlayer();
-        //players = model.getPlayers();
-        //pathCards = model.getPathCards();
-
-
-//
-
-        //drawCards(pathCards, tiles);
-
-        //drawPawns();
-
-        //createGameConsole();
-
-
-
-//        gameBoard.setVgap(3);
-  //      gameBoard.setHgap(3);
-
-        root.setCenter(gameBoard);
-        scene = new Scene(root);
-
-        stage = new Stage();
-
-    }*/
-    public GameBoardView() {
-
-        //  ------------------- Labels -------------------
-        lbl1 = new Label();
-        lbl1.setText("Willkommen in Atlantis");
-        lbl2 = new Label();
-        lbl2.setText("Bitte stellen Sie die Verbindung zum Server her");
-        lbl3 = new Label();
-        lbl3.setText("Team Gerstenland: IT-Projekt Fachhochschule Nordwestschweiz, 2016");
-
-
-
+        grid.setPadding(new Insets(20, 50, 20, 70));
+        grid.setVgap(10);
+        grid.setHgap(60);
+        grid.setGridLinesVisible(false);
 
         // ------------------- Player Icons -------------------
         player1 = new Label("\ue7FD");
         grid.setConstraints(player1, 0, 0);
         grid.setHalignment(player1, HPos.CENTER);
+        pointsP1 = new Label("0");
+        grid.setConstraints(pointsP1, 1, 0 );
+        grid.setHalignment(pointsP1, HPos.CENTER);
+
         player2 = new Label("\ue7FD");
-        grid.setConstraints(player2, 1, 0);
+        grid.setConstraints(player2, 2, 0);
         grid.setHalignment(player2, HPos.CENTER);
+        pointsP2 = new Label("0");
+        grid.setConstraints(pointsP2, 3, 0 );
+        grid.setHalignment(pointsP2, HPos.CENTER);
+
         player3 = new Label("\ue7FD");
-        grid.setConstraints(player3, 2, 0);
+        grid.setConstraints(player3, 4, 0);
         grid.setHalignment(player3, HPos.CENTER);
+        pointsP3 = new Label("0");
+        grid.setConstraints(pointsP3, 5, 0 );
+        grid.setHalignment(pointsP3, HPos.CENTER);
+
         player4 = new Label("\ue7FD");
-        grid.setConstraints(player4, 3, 0);
+        grid.setConstraints(player4, 6, 0);
         grid.setHalignment(player4, HPos.CENTER);
+        pointsP4 = new Label("0");
+        grid.setConstraints(pointsP4, 7, 0 );
+        grid.setHalignment(pointsP4, HPos.CENTER);
 
         // ------------------- CSS den Icons zuweisen --> über Controller implementiert  ---------
         //player1.setId("Playerbefore");
@@ -148,18 +124,19 @@ public class GameBoardView extends Pane {
         // ------------------- Player Labels definieren ---------
         p1 = new Label("Spieler 1");
         grid.setConstraints(p1, 0, 1);
+
         p2 = new Label("Spieler 2");
-        grid.setConstraints(p2, 1, 1);
+        grid.setConstraints(p2, 2, 1);
+
         p3 = new Label("Spieler 3");
-        grid.setConstraints(p3, 2, 1);
+        grid.setConstraints(p3, 4, 1);
+
         p4 = new Label("Spieler 4");
-        grid.setConstraints(p4, 3, 1);
-        grid.setConstraints(lbl3, 0, 3);
-        grid.setColumnSpan(lbl3, 4);
-
-        // ------------------- Gridpane definieren für Players-------------------
+        grid.setConstraints(p4, 6, 1);
 
 
+
+        // ------------------- Gridpane definieren für Gameboard-------------------
         gameBoard = new GridPane();
         gameBoard.setHgap(5);
         gameBoard.setVgap(5);
@@ -180,11 +157,11 @@ public class GameBoardView extends Pane {
         gameBoard.setGridLinesVisible(true);
 
         // alle Inhalte ins Grid holen mit getChildren
-        gameBoard.getChildren().addAll(player1, player2, player3, player4, p1, p2, p3, p4, lbl3);
+        grid.getChildren().addAll(player1, player2, player3, player4, p1, p2, p3, p4, pointsP1, pointsP2, pointsP3, pointsP4);
 
         // ------------------- BorderPane erstellen und HBox, VBox, Grid hinzufügen -------------------
         BorderPane welcome_pane = new BorderPane();
-        welcome_pane.setBottom(buttonPane);
+        welcome_pane.setBottom(grid);
         welcome_pane.setCenter(gameBoard);
         welcome_pane.setTop(labelPane);
 
@@ -289,7 +266,36 @@ public class GameBoardView extends Pane {
                 }
             }
         }
+
+    public Label getPlayer1() {
+        return player1;
     }
+    public Label getPlayer2() {
+        return player2;
+    }
+    public Label getPlayer3() {
+        return player3;
+    }
+    public Label getPlayer4() {
+        return player4;
+    }
+
+    public Label getPointsP1() {
+        return pointsP1;
+    }
+
+    public Label getPointsP2() {
+        return pointsP2;
+    }
+
+    public Label getPointsP3() {
+        return pointsP3;
+    }
+
+    public Label getPointsP4() {
+        return pointsP4;
+    }
+}
 
 
     /** TODO: Alter Code zum löschen sobald alles funktioniert
