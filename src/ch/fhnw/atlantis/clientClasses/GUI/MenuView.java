@@ -9,6 +9,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 /**
@@ -52,6 +53,8 @@ public class MenuView {
     private Label menuIconRule;
     private Label menuIconExit;
     private Label menuIconBack;
+
+    private Label txtAtlantis;
 
     private Image Flag_GB;
     private Image Flag_Germany;
@@ -120,6 +123,15 @@ public class MenuView {
         SubMenu.setConstraints(btnSprache2, 3,2);
         SubMenu.setConstraints(btnSprache3, 4,2);
 
+        txtAtlantis = new Label(TEXT);
+        txtAtlantis.setWrapText(true);
+        txtAtlantis.setId("Label-text");
+        txtAtlantis.setVisible(true);
+
+        SubMenu.setConstraints(txtAtlantis, 1,1);
+        SubMenu.setColumnSpan(txtAtlantis, 5);
+        SubMenu.setRowSpan(txtAtlantis,4);
+
         // ------------------- Flaggen SubMenu -------------------
         Flag_GB = new Image("/ch/fhnw/atlantis/resources/images/Flag_GB.png");
         iview1 = new ImageView(Flag_GB);
@@ -164,7 +176,7 @@ public class MenuView {
         MainMenu = new GridPane();
         MainMenu.setPadding(new Insets(20, 20, 20, 20));
         MainMenu.setVgap(5);
-        MainMenu.setHgap(5);
+        MainMenu.setHgap(7);
         MainMenu.setGridLinesVisible(false);
         // alle Inhalte ins Grid holen mit getChildren
         MainMenu.getChildren().addAll(btnStartGame, btnOptions, btnPlayer, btnRules, btnBack, btnExit, menuIconStart, menuIconOpt, menuIconPlayer, menuIconRule, menuIconExit, menuIconBack);
@@ -175,7 +187,7 @@ public class MenuView {
         SubMenu.setHgap(5);
         SubMenu.setGridLinesVisible(false);
         // alle Inhalte ins Grid holen mit getChildren
-        SubMenu.getChildren().addAll(btnSprache1, btnSprache2, btnSprache3, iview1, iview2, iview3, gameCharacter1, gameCharacter2, gameCharacter3, gameCharacter4);
+        SubMenu.getChildren().addAll(btnSprache1, btnSprache2, btnSprache3, iview1, iview2, iview3, gameCharacter1, gameCharacter2, gameCharacter3, gameCharacter4,txtAtlantis);
 
         //------------------- Player Icons und Grid anordnen -------------------
         player1 = new Label("\ue7FD");
@@ -222,7 +234,6 @@ public class MenuView {
         gmpane.setLeft(MainMenu);
         gmpane.setCenter(SubMenu);
 
-
         // ------------------- Stylesheets aufrufen -------------------
         gmpane.getStylesheets().add("/ch/fhnw/atlantis/resources/css/style.css");
         gmpane.getStylesheets().add("/ch/fhnw/atlantis/resources/css/font.css");
@@ -244,7 +255,25 @@ public class MenuView {
 
     }
 
+    private static final String TEXT =
+            "\"Bleibt wachsam - selbst die mächtigsten Staaten können jederzeit untergehen\" \n"+
+                    "\n"+
+            "Ein erfundener Mythos oder Realität? \n" +
+            "Bis Heute ist das Rätsel, um die versunkene Stadt Atlantis ungelöst. Die angeblich prächtigste und mächtigste Stadt der Welt, versunken in den Fluten des Meeres.\n" +
+            "Das verschwundene Paradies verschluckt vom Wasser innerhalb eines Tages und einer Nacht. \n" +
+                    "\n"+
+            "Rettet euer Hab und Gut, schnell von der Insel!"      ;
+
     // ------------------- Getter und Setter -------------------
+
+    public Label getTxtAtlantis() {
+        return txtAtlantis;
+    }
+
+    public void setTxtAtlantis(Label txtAtlantis) {
+        this.txtAtlantis = txtAtlantis;
+    }
+
     public Scene getScene() {
         return scene;
     }

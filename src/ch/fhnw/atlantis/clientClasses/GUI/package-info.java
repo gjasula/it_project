@@ -8,10 +8,12 @@ package ch.fhnw.atlantis.clientClasses.GUI;
  * Das Pattern: Model-View-Controller (MVC) wurde eingesetzt.
  *
  *
- * verwendete Quellen für Bilder und Icons:
- * Hintergrundbild: https://pixabay.com/ (20.10.2016
+ * verwendete Quellen für Text (Atalantis), Bilder und Icons:
+ * Geschichte Atlantis: http://www.geo.de/geolino/mensch/1707-rtkl-atlantis-das-raetsel-um-die-versunkene-stadt (06.12.2016)
+ * Hintergrundbild: https://pixabay.com/ (20.10.2016)
  * Icons für Spieler und Menu: https://material.io/icons/ (29.11.2016)
  * Flaggen für Sprachen: https://www.iconfinder.com/iconsets/195-flat-flag-psd-icons (29.11.2016)
+ *
  *
  */
 
