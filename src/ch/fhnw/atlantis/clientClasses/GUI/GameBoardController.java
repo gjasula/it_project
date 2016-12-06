@@ -15,6 +15,17 @@ public class GameBoardController {
         this.model = model;
         this.view = new GameBoardView();
 
+        // ------------------- CSS Styling den Playern (Icons) zuweisen - WEISS -------------------
+        view.getPlayer1().getStyleClass().add("Playerbefore");
+        view.getPlayer2().getStyleClass().add("Playerbefore");
+        view.getPlayer3().getStyleClass().add("Playerbefore");
+        view.getPlayer4().getStyleClass().add("Playerbefore");
+
+        view.getPointsP1().getStyleClass().add("Label-big");
+        view.getPointsP2().getStyleClass().add("Label-big");
+        view.getPointsP3().getStyleClass().add("Label-big");
+        view.getPointsP4().getStyleClass().add("Label-big");
+
     }
 
     public void show() {
