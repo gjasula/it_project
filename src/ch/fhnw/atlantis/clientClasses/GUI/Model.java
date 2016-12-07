@@ -1,9 +1,6 @@
 package ch.fhnw.atlantis.clientClasses.GUI;
 
-import ch.fhnw.atlantis.globalClasses.models.Card;
-import ch.fhnw.atlantis.globalClasses.models.GameBoard;
-import ch.fhnw.atlantis.globalClasses.models.Player;
-import ch.fhnw.atlantis.globalClasses.models.Tile;
+import ch.fhnw.atlantis.globalClasses.models.*;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
@@ -22,6 +19,9 @@ import java.util.Hashtable;
 public class Model {
     private Stage primaryStage = null;
 
+    private TileDeck tileDeck;
+
+
     private ArrayList<Player> players;
     private ArrayList<Tile> tiles;
     private ArrayList<Card> pathCards;
@@ -33,15 +33,18 @@ public class Model {
     public GameBoard gameBoard = new GameBoard();
 
     public Model(Stage primaryStage){
+
+
+        tileDeck = new TileDeck();
+
+        tileDeck.createTileDeck();
+
         this.primaryStage = primaryStage;
 
-        //for (Player player : players) {
-        //    player.playerColor();
-        //    if (player.getPlayerID() == localPlayer.getPlayerID()) {
-        //        this.localPlayer = player;
-        //    }
-        //}
+
     }
+
+    // Getter and Setter
 
     public Stage getPrimaryStage(){
         return primaryStage;

@@ -59,9 +59,13 @@ Button{
  }
 
 #PlayerIcon{
--fx-font-family: 'Material Icons';
+ -fx-font-family: 'Material Icons';
  -fx-font-size: 40;
  -fx-text-fill: #000000;
  }
+
+hBox cardPane{
+ -fx-background-color: #ffffff;
+}
 
 

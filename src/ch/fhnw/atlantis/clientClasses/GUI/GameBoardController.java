@@ -2,6 +2,8 @@ package ch.fhnw.atlantis.clientClasses.GUI;
 
 import ch.fhnw.atlantis.globalClasses.models.GameBoard;
 
+import java.io.FileNotFoundException;
+
 /**
  * Created by js on 02.11.2016.
  */
@@ -10,7 +12,7 @@ public class GameBoardController {
     public Model model;
     public GameBoardView view;
 
-    public GameBoardController(Model model){
+    public GameBoardController(Model model) throws FileNotFoundException {
         super();
         this.model = model;
         this.view = new GameBoardView();
@@ -25,6 +27,8 @@ public class GameBoardController {
         view.getPointsP2().getStyleClass().add("Label-big");
         view.getPointsP3().getStyleClass().add("Label-big");
         view.getPointsP4().getStyleClass().add("Label-big");
+
+
 
     }
 

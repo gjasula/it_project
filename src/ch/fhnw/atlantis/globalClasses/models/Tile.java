@@ -1,7 +1,9 @@
 package ch.fhnw.atlantis.globalClasses.models;
 
 import javafx.scene.layout.StackPane;
+import javafx.scene.paint.*;
 
+import java.awt.*;
 import java.io.Serializable;
 
 /**
@@ -14,49 +16,73 @@ public class Tile extends StackPane implements Serializable {
 
     //private static final long serialVersionUID = 1;
 
-    private int pathId;
-    private int x;
-    private int y;
-    private int side;
+    private int tileValue;
+    private int posX;
+    private int posY;
+    private boolean tileInGame;
+    private boolean isWater;
 
+    private Color color;
 
-    public Tile(int x, int y, int pathId) {
-        this.x = x;
-        this.y = y;
-        this.pathId = pathId;
+    // Constructor for pathtile
+    public Tile(int tileValue, Color color) {
+        this.color = color;
+        this.tileValue = tileValue;
+        this.isWater = false;
+    }
+
+    // Constructor for watertile
+    public Tile(boolean isWater) {
+        this.isWater = isWater;
     }
 
     /** Getter and Setter */
 
-    public int getX() {
-        return x;
+    public int getTileValue() {
+        return tileValue;
     }
 
-    public int getY() {
-        return y;
+    public void setTileValue(int tileValue) {
+        this.tileValue = tileValue;
     }
 
-    public void setX(int x) {
-        this.x = x;
+    public int getPosX() {
+        return posX;
     }
 
-    public void setY(int y) {
-        this.y = y;
+    public void setPosX(int posX) {
+        this.posX = posX;
     }
 
-    public int getSide() {
-        return side;
+    public int getPosY() {
+        return posY;
     }
 
-    public void setSide(int side) {
-        this.side = side;
+    public void setPosY(int posY) {
+        this.posY = posY;
     }
 
-    public int getPathId() {
-        return pathId;
+    public boolean isTileInGame() {
+        return tileInGame;
     }
 
-    public void setPathId(int pathId) {
-        this.pathId = pathId;
+    public void setTileInGame(boolean tileInGame) {
+        this.tileInGame = tileInGame;
+    }
+
+    public boolean isWater() {
+        return isWater;
+    }
+
+    public void setWater(boolean water) {
+        isWater = water;
+    }
+
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
     }
 }
