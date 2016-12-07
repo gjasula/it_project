@@ -1,4 +1,4 @@
-package ch.fhnw.atlantis.clientClasses.GUI;
+package ch.fhnw.atlantis.serverClasses.serverClasses.GUI;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -95,7 +95,7 @@ public class ServerView {
     // ------------------- View der Stage bekannt geben -------------------
     public void show(Stage stage) {
         stage.setTitle("Atlantis by Team Gerstenland");
-        Image icon = new Image(getClass().getResourceAsStream("./../../resources/images/atlantis.jpg"));
+        Image icon = new Image(getClass().getResourceAsStream("./../../../resources/images/atlantis.jpg"));
         stage.setResizable(false);
         stage.getIcons().add(icon);
         stage.setScene(scene);

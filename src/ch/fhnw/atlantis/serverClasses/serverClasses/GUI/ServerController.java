@@ -1,8 +1,5 @@
-package ch.fhnw.atlantis.clientClasses.GUI;
-
-import ch.fhnw.atlantis.serverClasses.Server;
-import javafx.animation.Animation;
-import javafx.event.ActionEvent;
+package ch.fhnw.atlantis.serverClasses.serverClasses.GUI;
+import ch.fhnw.atlantis.clientClasses.GUI.Model;
 
 /**
  * Created by Nadine on 19.10.2016.

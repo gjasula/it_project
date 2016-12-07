@@ -67,6 +67,7 @@ public class LogInView {
         lbl3 = new Label();
         lbl3.setText("Team Gerstenland: IT-Projekt Fachhochschule Nordwestschweiz, 2016");
 
+
         // ------------------- Labels VBox anordnen -------------------
         labelPane = new VBox(lbl1, lbl2);
         labelPane.setAlignment(Pos.CENTER);
@@ -78,6 +79,7 @@ public class LogInView {
         lbl1.setId("Label-big");
         lbl3.setId("Label-small");
 
+
         // ------------------- Buttons erstellen -------------------
         btnConnect = new Button("SERVER VERBINDEN");
         btnClose = new Button("SCHLIESSEN");
@@ -85,6 +87,7 @@ public class LogInView {
 
         // ------------------- Labels erstellen -------------------
         IPLabel = new Label("IP Adresse");
+
 
         // ------------------- Textfield -------------------
         IPEnter = new TextField("185.xx.xx.xx");
