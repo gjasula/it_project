@@ -23,6 +23,7 @@ public class ServerView {
     private Scene scene;
 
     private HBox shbox;
+    private VBox vbox;
     private VBox svbox;
     private StackPane stack;
     private BorderPane border;
@@ -30,7 +31,8 @@ public class ServerView {
     private Button btnConnect_s;
     private Button btnStop_s;
 
-    private TextField IPServer;
+    private TextField PortServer;
+    private TextArea txtLog;
 
     private Label SWelcome;
     private Label SGroup;
@@ -57,21 +59,28 @@ public class ServerView {
         btnStop_s = new Button("STOP SERVER");
 
         //  ------------------- TextField -------------------
-        IPServer = new TextField("184.xx.xx");
+        PortServer = new TextField("7777");
+
+        txtLog = new TextArea();
+        txtLog.setEditable(false);
+        txtLog.setWrapText(true);
+
 
         //  ------------------- Elemente in HBox anordnen  -------------------
-        shbox = new HBox(IPServer, btnConnect_s, btnStop_s);
+        shbox = new HBox(PortServer, btnConnect_s, btnStop_s);
         shbox.setAlignment(Pos.CENTER);
         shbox.setPadding(new Insets(50));
         shbox.setSpacing(15);
         shbox.setId("Button");
+
+        vbox = new VBox(shbox, txtLog);
 
         svbox = new VBox(SWelcome, SStart);
         svbox.setAlignment(Pos.CENTER);
 
 
         //  ------------------- Retangle definieren und zu Stackpane hinzufügen  -------------------
-        rect = new Rectangle(1000, 550);
+        rect = new Rectangle(1050, 500);
         rect.setFill(Color.rgb(200, 200, 200, 0.4));
         rect.setArcHeight(3.5);
         rect.setArcWidth(3.5);
@@ -79,8 +88,8 @@ public class ServerView {
         rect.setVisible(true);
 
         stack = new StackPane();
-        stack.getChildren().addAll(rect, shbox);
-        //   stack.setAlignment(Pos.CENTER);
+        stack.getChildren().addAll(rect, vbox);
+        stack.setAlignment(Pos.CENTER);
 
         border = new BorderPane();
         border.setCenter(stack);
@@ -88,7 +97,7 @@ public class ServerView {
         border.setBottom(SGroup);
 
         //  -------------------BorderPane zu Scene hinzufügen und Fenstergrösse setzen-------------------
-        scene = new Scene(border, 1024, 640);
+        scene = new Scene(border, 1024, 450);
         scene.getStylesheets().add("/ch/fhnw/atlantis/resources/css/style.css");
     }
 
@@ -104,14 +113,22 @@ public class ServerView {
     }
 
     // ------------------- Getter Funktionen auf Element, für Interaktion -------------------
-    public TextField getIPServer() {
-        return IPServer;
+    public TextField getPortServer() {
+        return PortServer;
     }
 
-    public void setIPServer(TextField IPServer) {
-        this.IPServer = IPServer;
-
+    public void setPortServer(TextField portServer) {
+        PortServer = portServer;
     }
+
+    public TextArea getTxtLog() {
+        return txtLog;
+    }
+
+    public void setTxtLog(TextArea txtLog) {
+        this.txtLog = txtLog;
+    }
+
     public Scene getScene() {
         return scene;
     }
