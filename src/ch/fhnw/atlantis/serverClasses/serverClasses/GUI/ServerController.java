@@ -3,6 +3,7 @@ import ch.fhnw.atlantis.clientClasses.GUI.Model;
 import ch.fhnw.atlantis.serverClasses.Server;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.control.TextField;
 
 /**
  * Created by Nadine on 19.10.2016.
@@ -33,7 +34,7 @@ public class ServerController {
         @Override
         public void handle(ActionEvent event) {
 
-            Server server = Server.getInstance();
+            Server server = Server.getInstance(7766);
 
             server.startTCP();
 
