@@ -33,6 +33,10 @@ public class ServerController {
         @Override
         public void handle(ActionEvent event) {
 
+            Server server = Server.getInstance();
+
+            server.startTCP();
+
         }
     }
 
