@@ -17,9 +17,10 @@ public class RichyRunToBeDeleted {
     public void writeMessage(String msg) {
 
 
-        ServerClientHandler test2 = new ServerClientHandler();
-        test2.send(msg);
+        //ServerClientHandler test2 = new ServerClientHandler();
+        //test2.send(msg);
 
 
     }
+
 }

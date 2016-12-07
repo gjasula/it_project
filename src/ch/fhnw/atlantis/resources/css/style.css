@@ -25,6 +25,18 @@ Label{
  -fx-font-weight: bold;
 }
 
+#Label-text{
+
+ -fx-font-size: 15px;
+ -fx-font-weight: bold;
+ -fx-text-fill: #e8e8e8;
+ -fx-text-alignment: center;
+ -fx-font-style: italic;
+ -fx-line-height: 0.8;
+
+
+}
+
 Button{
  -fx-background-color: #ffffff;
  -fx-font-weight: bold;
