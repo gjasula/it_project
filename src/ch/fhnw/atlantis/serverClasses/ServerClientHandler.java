@@ -16,9 +16,10 @@ public class ServerClientHandler implements Runnable {
     private ObjectInputStream inputStream;
     private Server server;
     private int clientId;
+    private int port;
 
     public ServerClientHandler(Socket socketToClient) {
-        server = Server.getInstance();
+        server = Server.getInstance(port);
         this.socketToClient = socketToClient;
         try {
             outputStream = new ObjectOutputStream(socketToClient.getOutputStream());
@@ -47,11 +48,11 @@ public class ServerClientHandler implements Runnable {
                 Interpreter InterpretServerMessage = new Interpreter();
                 InterpretServerMessage.interpretServerMsg(messagefromClient);
 
-                System.out.println("Received Message from client ("+socketToClient.hashCode()+"): " + messagefromClient);
+                //System.out.println("Received Message from client ("+socketToClient.hashCode()+"): " + messagefromClient);
                 server.forwardMessage("client ("+socketToClient.hashCode()+"):" + messagefromClient, this);
             } catch (IOException e) {
                 e.printStackTrace();
-                Server.getInstance().removeClient(this);
+                Server.getInstance(port).removeClient(this);
                 break;
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();

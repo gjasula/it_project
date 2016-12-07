@@ -12,10 +12,11 @@ public class ServerTCPListener implements Runnable {
 
     private ServerSocket serverSocket;
     private Server server;
+    private int port;
 
     public ServerTCPListener(ServerSocket serverSocket) {
         this.serverSocket = serverSocket;
-        server = Server.getInstance();
+        server = Server.getInstance(port);
     }
 
     @Override
@@ -23,6 +24,8 @@ public class ServerTCPListener implements Runnable {
         while (!serverSocket.isClosed()) {
             try {
                 final Socket socketToClient = serverSocket.accept();
+
+                System.out.println(socketToClient);
 
                 System.out.println("Client connected form: " + socketToClient.getInetAddress().toString());
                 final ServerClientHandler sch = new ServerClientHandler(socketToClient);
