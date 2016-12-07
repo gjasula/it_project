@@ -5,22 +5,26 @@ package ch.fhnw.atlantis.serverClasses;
  */
 public class RichyRunToBeDeleted {
 
+    private ServerClientHandler ServerCH;
+
 
 
     public static void main(String[] args) {
 
-        RichyRunToBeDeleted test = new RichyRunToBeDeleted();
-        test.writeMessage("test");
+        //RichyRunToBeDeleted test = new RichyRunToBeDeleted();
+        //writeMessage("test");
+
+    }
+
+    public RichyRunToBeDeleted(ServerClientHandler test){
+        ServerCH = test;
 
     }
 
     public void writeMessage(String msg) {
 
-
-        //ServerClientHandler test2 = new ServerClientHandler();
-        //test2.send(msg);
-
-
+       // ServerClientHandler test2 = new ServerClientHandler();
+        ServerCH.send(msg);
     }
 
 }
