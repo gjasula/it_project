@@ -14,6 +14,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
+import java.io.FileNotFoundException;
 import java.util.Optional;
 
 /**
@@ -29,11 +30,16 @@ public class Client_Main extends Application {
     }
 
     @Override
-    public void start(final Stage primaryStage) {
+    public void start(final Stage primaryStage) throws FileNotFoundException {
         Model model = new Model(primaryStage);
 
-        LogInController logInController = new LogInController(model);
-        logInController.show();
+       // GameBoardView view = new GameBoardView(model);
+
+        //LogInController logInController = new LogInController(model);
+        //logInController.show();
+
+        GameBoardController gbCon = new GameBoardController(model);
+        gbCon.show();
 
     primaryStage.setOnCloseRequest(event -> {
         event.consume();

@@ -29,6 +29,7 @@ public class ServerClientHandler implements Runnable {
 
     }
 
+
     public void send(String message) {
         try {
             outputStream.writeObject(message);
