@@ -25,6 +25,7 @@ public class Player implements Serializable {
     private Color color;
     private int bridge;
     private int score;
+    private Pawn pawn, pawn1, pawn2, pawn3;
 
     private boolean isConnected = true;
     private int playernumber = 0;
@@ -36,27 +37,33 @@ public class Player implements Serializable {
         this.playerName = playerName;
         this.playerID = playerID;
         this.gameName = gameName;
+
+        pawn1 = new Pawn(this, 1);
+        pawn2 = new Pawn(this, 2);
+        pawn3 = new Pawn(this, 3);
+
     }
 
     /**
      * Methode zur Vergabe einer Farbe an einen Player
      */
-    public void playerColor() {
-        switch (playerID) {
-            case 0:
-                color = Color.RED;
-                break;
-            case 1:
-                color = Color.BLUE;
-                break;
-            case 2:
-                color = Color.GREEN;
-                break;
-            case 3:
-                color = Color.YELLOW;
-                break;
-        }
-    }
+    //public playerColor(Color color) {
+    //    switch (playerID) {
+    //        case 0:
+    //            color = Color.RED;
+    //            break;
+    //        case 1:
+    //            color = Color.BLUE;
+    //            break;
+    //        case 2:
+    //            color = Color.GREEN;
+    //            break;
+    //        case 3:
+    //            color = Color.YELLOW;
+    //            break;
+    //    }
+    //    return color;
+    //}
 
     // TODO: müsste man noch auf die neue Tiles Klasse anpassen
     // Austausch von Wegplättchen in Bewegungskarte
@@ -174,7 +181,22 @@ public class Player implements Serializable {
             }
             MovementCards.remove(0);
         }
+    }
 
+    /**
+     * Getter für Nummerierung der Spielfiguren
+     * @param pawn ist eine Spielfigutr
+     * @return die jeweilige Spielfigur
+     */
+    public Pawn getPawn(Pawn pawn) {
+        if (pawn.getPawnNum() == 1) {
+            return pawn1;
+        } else if (pawn.getPawnNum() == 2) {
+            return pawn2;
+        } else if (pawn.getPawnNum() == 3) {
+            return pawn3;
+        }
+        return null;
     }
 
 }

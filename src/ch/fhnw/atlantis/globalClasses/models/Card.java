@@ -14,11 +14,6 @@ import java.util.Hashtable;
  *
  * Klasse für die Erstellung von Karten sowie die Bewegung derjenigen
  */
-
-enum TileType {
-    TILE, WATER, START, END, BRIDGE, MOVEMENT;
-}
-
 public class Card extends Rectangle implements Serializable {
 
     //private static final long serialVersionUID = 1;
@@ -26,17 +21,7 @@ public class Card extends Rectangle implements Serializable {
     public boolean isOnTop;
     private boolean isPlayed;
     private int value, colorSet, pathID;
-    private TileType object;
     private Image image;
-
-    public final static Color Blue = Color.BLUE;
-    public final static Color Brown = Color.BROWN;
-    public final static Color Green = Color.GREEN;
-    public final static Color Gray = Color.GRAY;
-    public final static Color Pink = Color.PINK;
-    public final static Color Yellow = Color.YELLOW;
-    public final static Color White = Color.WHITE;
-
 
     /**
      * Erstelle eine Hashtable mit ImageView Objekten auf Enums der einzelnen Tiles
@@ -44,31 +29,8 @@ public class Card extends Rectangle implements Serializable {
      * Inkl. Start und Ende des Spiels
      * @param htOfImages
      */
-    public void addImagesToTile(Hashtable<String, ImageView> htOfImages) {
-
-        if (this.getObject() == TileType.TILE) {
-            //TODO: müssen wir noch für unsere Zwecke anpassen mit den Bildernamen
-            super.setFill(new ImagePattern(htOfImages.get(colorSet + "_" + value + ".jpg").getImage()));
-
-        } else if (getObject() == TileType.MOVEMENT) {
-
-            super.setFill(new ImagePattern(htOfImages.get("card_" + colorSet + ".jpg").getImage()));
-
-        } else if (getObject() == TileType.START) {
-
-            super.setFill(new ImagePattern(htOfImages.get("atlantis.jpg").getImage()));
-
-        } else if (getObject() == TileType.END) {
-
-            super.setFill(new ImagePattern(htOfImages.get("land.jpg").getImage()));
-        }
-    }
 
     /** Getter und Setter für die definierten Attribute*/
-
-    public TileType getObject() {
-        return object;
-    }
 
     public boolean isPlayed() {
         return isPlayed;
@@ -94,10 +56,6 @@ public class Card extends Rectangle implements Serializable {
         this.colorSet = colorSet;
     }
 
-    public void setObject(TileType object) {
-        this.object = object;
-    }
-
     public int getPathID() {
         return pathID;
     }
@@ -109,7 +67,6 @@ public class Card extends Rectangle implements Serializable {
     public boolean isOnTop() {
         return isOnTop;
     }
-
 
     public void setImage(Image image) {
         this.image = image;

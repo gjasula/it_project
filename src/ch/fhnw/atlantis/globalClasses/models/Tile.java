@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 /**
  * Created by juerg on 02.12.2016.
- *
+ * <p>
  * Klasse zur Erstellung von Bewegungsplättchen und Zuteilung auf dem Spielfeld
  */
 
@@ -14,49 +14,58 @@ public class Tile extends StackPane implements Serializable {
 
     //private static final long serialVersionUID = 1;
 
-    private int pathId;
-    private int x;
-    private int y;
-    private int side;
+    private Color color;
+    private int tileNumber;
+    private int tileValue;
+    private boolean tileInGame;
+    //private boolean isOccupied;
+    private boolean isWater;
 
+    //Constructor for regular tile
+    public Tile(int tileValue, Color color) {
+        this.color = color;
+        this.tileValue = tileValue;
+        //isOccupied = false;
+        tileInGame = true;
+        isWater = false;
+    }
 
-    public Tile(int x, int y, int pathId) {
-        this.x = x;
-        this.y = y;
-        this.pathId = pathId;
+    //Constructor for watertile
+    public Tile(boolean isWater) {
+        this.isWater = isWater;
     }
 
     /** Getter and Setter */
 
-    public int getX() {
-        return x;
+    public int getTileNumber() {
+        return tileNumber;
     }
 
-    public int getY() {
-        return y;
+    public void setTileNumber(int tileNumber) {
+        this.tileNumber = tileNumber;
     }
 
-    public void setX(int x) {
-        this.x = x;
+    public int getTileValue() {
+        return tileValue;
     }
 
-    public void setY(int y) {
-        this.y = y;
+    public void setTileValue(int tileValue) {
+        this.tileValue = tileValue;
     }
 
-    public int getSide() {
-        return side;
+    public boolean isTileInGame() {
+        return tileInGame;
     }
 
-    public void setSide(int side) {
-        this.side = side;
+    public void setTileInGame(boolean tileInGame) {
+        this.tileInGame = tileInGame;
     }
 
-    public int getPathId() {
-        return pathId;
+    public boolean isWater() {
+        return isWater;
     }
 
-    public void setPathId(int pathId) {
-        this.pathId = pathId;
+    public void setWater(boolean water) {
+        isWater = water;
     }
 }

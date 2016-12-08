@@ -16,12 +16,19 @@ public class Pawn extends Rectangle implements Serializable {
     private double x;
     private double y;
     private int pathId;
+    private int pawnNum;
 
     Player playerPawn;
 
-    public Pawn(Player playerPawn, int pathId) {
-        this.playerPawn = playerPawn;
-        this.pathId = pathId;
+    public Pawn(Player player, int pawnNum) {
+        this.pawnNum = pawnNum;
+
+        if (player.getPlayerID() == 1) {
+            //layerColor
+        }
+        else {
+            //color = FigureColor.ORANGE;
+        }
     }
 
     public void move(double x, double y) {
@@ -37,6 +44,14 @@ public class Pawn extends Rectangle implements Serializable {
 
     public int getPathId() {
         return pathId;
+    }
+
+    public int getPawnNum() {
+        return pawnNum;
+    }
+
+    public void setPawnNum(int pawnNum) {
+        this.pawnNum = pawnNum;
     }
 
     public double getPawnX() {

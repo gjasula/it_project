@@ -22,12 +22,14 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.FileNotFoundException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 
 public class GameBoardView extends Pane {
 
+    private Array[] LabelsArray;
     //private AtlantisView view;
     private ArrayList<Player> players;
     private ArrayList<Card> pathCards;
@@ -35,6 +37,7 @@ public class GameBoardView extends Pane {
 
     private GridPane gameBoard;
     private GridPane grid;
+    private Scene scene;
 
 
     private int maxColIndex, maxRowIndex, height;
@@ -44,10 +47,6 @@ public class GameBoardView extends Pane {
     private Model model;
 
     // löschen
-
-
-
-    private Scene scene;
 
     private BorderPane welcome_pane;
     private HBox buttonPane;
@@ -78,6 +77,9 @@ public class GameBoardView extends Pane {
     private Label pointsP4;
 
     public GameBoardView() {
+
+
+
         // ------------------- Grid für Player Icons -------------------
         grid = new GridPane();
 
@@ -171,6 +173,68 @@ public class GameBoardView extends Pane {
 
         // ------------------- BorderPane zu Scene hinzufügen und Fenstergrösse setzen -------------------
         scene = new Scene(welcome_pane, 1024, 640);
+
+        String test[] = {"A","B","C"};
+        LabelsArray = new Array[]{};
+        Label label = new Label();
+
+        for(int i=0; i<3; i++) {
+            int x = i;
+            int y = 0;
+            label = new Label(test[i]);
+            //gameBoard.add(LabelsArray.get(0), x, y);
+        }
+
+
+            //LabelsArray.add(test);
+            //System.out.println(test[i]);
+
+
+
+        //int ArrayPosition = 0;
+        //for(int z=0; z<10; z++){
+        //    int x = z;
+        //        int y = 0;
+        //        gameBoard.add(LabelsArray.get(ArrayPosition), x, y);
+        //        ArrayPosition++;
+        //    }
+        //    gameBoard.add(LabelsArray.get(10), 9, 1);
+        //    ArrayPosition = 11;
+        //    for(int z=9; z>=0; z--){
+        //        int x = z;
+        //        int y = 2;
+        //        gameBoard.add(LabelsArray.get(ArrayPosition), x, y);
+        //        ArrayPosition++;
+        //    }
+        //    gameBoard.add(LabelsArray.get(21), 0, 3);
+        //    ArrayPosition = 22;
+        //    for(int z=0; z<10; z++){
+        //        int x = z;
+        //        int y = 4;
+        //        gameBoard.add(LabelsArray.get(ArrayPosition), x, y);
+        //        ArrayPosition++;
+        //    }
+        //    gameBoard.add(LabelsArray.get(32), 9, 5);
+        //    ArrayPosition = 33;
+        //    for(int z=9; z>=0; z--){
+        //        int x = z;
+        //        int y = 6;
+        //        gameBoard.add(LabelsArray.get(ArrayPosition), x, y);
+        //        ArrayPosition++;
+        //    }
+        //    gameBoard.add(LabelsArray.get(43), 0, 7);
+        //    ArrayPosition = 44;
+        //    for(int z=0; z<10; z++){
+        //        int x = z;
+        //        int y = 8;
+        //        gameBoard.add(LabelsArray.get(ArrayPosition), x, y);
+        //        ArrayPosition++;
+        //    }
+        //
+        //    gameBoard.add(LabelsArray.get(54), 9, 9);
+
+
+
     }
 
     // ------------------- View der Stage bekannt geben -------------------
@@ -200,31 +264,31 @@ public class GameBoardView extends Pane {
      * @param pathCards: Arraylist mit allen Karten
      * @param tiles: Arraylist mit allen Bewegungskärtchen
      */
-    private void drawCards(ArrayList<Card> pathCards, ArrayList<Tile> tiles) {
-
-        for (Card card : pathCards) {
-            for (Tile tile : tiles) {
-                if (tile.getPathId() == 500) {
-                    consoleTile = tile;
-                }
-                if (card.getPathID() == tile.getPathId()) {
-                    card.setWidth(tile.getSide());
-                    card.setHeight(tile.getSide());
-                    card.setLayoutX(tile.getX());
-                    card.setLayoutY(tile.getY());
-                    card.setStroke(Color.BLACK);
-
-                    //addWater(card);
-
-                    //addStartEndCard();
-
-                    //card.addImagesToTile(model.htOfImages());
-                    //TODO: At this place the card-image will be added to the card
-                    //this.getChildren().add(card);
-                }
-            }
-        }
-    }
+    //private void drawCards(ArrayList<Card> pathCards, ArrayList<Tile> tiles) {
+        //
+        //    for (Card card : pathCards) {
+            //        for (Tile tile : tiles) {
+                //            if (tile.getPathId() == 500) {
+                    //                consoleTile = tile;
+                    //            }
+                //            if (card.getPathID() == tile.getPathId()) {
+                    //                card.setWidth(tile.getSide());
+                    //                card.setHeight(tile.getSide());
+                    //                card.setLayoutX(tile.getX());
+                    //                card.setLayoutY(tile.getY());
+                    //                card.setStroke(Color.BLACK);
+                    //
+                    //                //addWater(card);
+                    //
+                    //                //addStartEndCard();
+                    //
+                    //                //card.addImagesToTile(model.htOfImages());
+                    //                //TODO: At this place the card-image will be added to the card
+                    //                //this.getChildren().add(card);
+                    //            }
+                //        }
+            //    }
+        //}
 
     /**
      * Methode zum zeichnen eines Wasserplättchen
