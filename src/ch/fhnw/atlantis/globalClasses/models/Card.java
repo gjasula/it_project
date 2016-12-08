@@ -14,8 +14,6 @@ import java.util.Hashtable;
  *
  * Klasse für die Erstellung von Karten sowie die Bewegung derjenigen
  */
-
-
 public class Card extends Rectangle implements Serializable {
 
     //private static final long serialVersionUID = 1;
@@ -23,14 +21,16 @@ public class Card extends Rectangle implements Serializable {
     public boolean isOnTop;
     private boolean isPlayed;
     private int value, colorSet, pathID;
-    private Card object;
     private Image image;
 
-
+    /**
+     * Erstelle eine Hashtable mit ImageView Objekten auf Enums der einzelnen Tiles
+     * sowie der einzelnen Karten
+     * Inkl. Start und Ende des Spiels
+     * @param htOfImages
+     */
 
     /** Getter und Setter für die definierten Attribute*/
-
-
 
     public boolean isPlayed() {
         return isPlayed;
@@ -56,7 +56,6 @@ public class Card extends Rectangle implements Serializable {
         this.colorSet = colorSet;
     }
 
-
     public int getPathID() {
         return pathID;
     }
@@ -68,7 +67,6 @@ public class Card extends Rectangle implements Serializable {
     public boolean isOnTop() {
         return isOnTop;
     }
-
 
     public void setImage(Image image) {
         this.image = image;

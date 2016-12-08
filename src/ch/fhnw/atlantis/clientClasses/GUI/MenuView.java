@@ -189,7 +189,7 @@ public class MenuView {
         // alle Inhalte ins Grid holen mit getChildren
         SubMenu.getChildren().addAll(btnSprache1, btnSprache2, btnSprache3, iview1, iview2, iview3, gameCharacter1, gameCharacter2, gameCharacter3, gameCharacter4,txtAtlantis);
 
-        //------------------- Player Icons und Grid anordnen -------------------
+        //------------------- Player_Old Icons und Grid anordnen -------------------
         player1 = new Label("\ue7FD");
         grid.setConstraints(player1, 0, 0);
         grid.setHalignment(player1, HPos.CENTER);
@@ -209,7 +209,7 @@ public class MenuView {
         //  player3.setId("Playerbefore");
         //  player4.setId("Playerbefore");
 
-        // ------------------- Player Labels definieren ---------
+        // ------------------- Player_Old Labels definieren ---------
         p1 = new Label("Spieler 1");
         grid.setConstraints(p1, 0, 1);
         p2 = new Label("Spieler 2");
