@@ -37,7 +37,7 @@ public class ServerController {
                 int portInt = Integer.parseInt(portString);
 
                 Server server = Server.getInstance(portInt);
-                view.setTxtLog("Server Started on Port: " + portInt);
+                view.setTxtLog("Server Started and is listening on Port: " + portInt);
                 view.btnConnect_s.setDisable(true);
                 server.startTCP();
             }
