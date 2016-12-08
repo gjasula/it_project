@@ -28,11 +28,11 @@ public class ServerView {
     private StackPane stack;
     private BorderPane border;
 
-    private Button btnConnect_s;
+    public Button btnConnect_s;
     private Button btnStop_s;
 
     private TextField PortServer;
-    private TextArea txtLog;
+    public TextArea txtLog;
 
     private Label SWelcome;
     private Label SGroup;
@@ -43,6 +43,8 @@ public class ServerView {
     private ImageView iview1;
 
     private Rectangle rect;
+
+    private final static String newline = "\n";
 
 
     public ServerView() {
@@ -61,7 +63,7 @@ public class ServerView {
         //  ------------------- TextField -------------------
         PortServer = new TextField("7777");
 
-        txtLog = new TextArea();
+        txtLog = new TextArea("");
         txtLog.setEditable(false);
         txtLog.setWrapText(true);
         txtLog.setMaxHeight(200);
@@ -113,20 +115,22 @@ public class ServerView {
     }
 
     // ------------------- Getter Funktionen auf Element, für Interaktion -------------------
-    public TextField getPortServer() {
-        return PortServer;
+    public String getPortServer() {
+        return PortServer.getText();
     }
 
-    public void setPortServer(TextField portServer) {
-        PortServer = portServer;
+    public void setPortServer(String portServer) {
+        PortServer.setText(portServer);
     }
 
     public TextArea getTxtLog() {
         return txtLog;
     }
 
-    public void setTxtLog(TextArea txtLog) {
-        this.txtLog = txtLog;
+    public void setTxtLog(String LogMessage) {
+
+        txtLog.appendText(LogMessage + newline);
+
     }
 
     public Scene getScene() {
