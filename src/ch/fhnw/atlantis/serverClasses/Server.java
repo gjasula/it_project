@@ -24,9 +24,9 @@ public class Server {
         socketList = new ArrayList<>();
     }
 
-    public static Server getInstance() {
+    public static Server getInstance(int port) {
         if (instance == null) {
-            instance = new Server(7777);
+            instance = new Server(port);
         }
         return instance;
     }
@@ -60,9 +60,9 @@ public class Server {
         }
     }
 
-    public static void main(String[] args) {
-        Server server = Server.getInstance();
-
-        server.startTCP();
-    }
+    //public static void main(String[] args) {
+    //    Server server = Server.getInstance();
+//
+    //    server.startTCP();
+    //}
 }
