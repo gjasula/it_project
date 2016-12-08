@@ -65,9 +65,9 @@ public class Server {
     }
 
 
-    public static void main(String[] args) {
-        Server server = Server.getInstance(7777);
-
-        server.startTCP();
-    }
+    //public static void main(String[] args) {
+    //    Server server = Server.getInstance(7777);
+//
+    //    server.startTCP();
+    //}
 }
