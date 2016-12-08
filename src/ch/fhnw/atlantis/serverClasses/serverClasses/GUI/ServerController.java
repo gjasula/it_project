@@ -1,9 +1,14 @@
 package ch.fhnw.atlantis.serverClasses.serverClasses.GUI;
 import ch.fhnw.atlantis.clientClasses.GUI.Model;
 import ch.fhnw.atlantis.serverClasses.Server;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
+
+import java.util.Optional;
 
 /**
  * Created by Nadine on 19.10.2016.
@@ -40,6 +45,28 @@ public class ServerController {
                 view.setTxtLog("Server Started and is listening on Port: " + portInt);
                 view.btnConnect_s.setDisable(true);
                 server.startTCP();
+            }
+        });
+
+        view.getBtnStop_s().setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent event) {
+                String portString = view.getPortServer().trim();
+                int portInt = Integer.parseInt(portString);
+                Server server = Server.getInstance(portInt);
+                server.stopTCP();
+
+                event.consume();
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION,
+                        "Soll Atlantis wirklich beendet werden?", ButtonType.YES, ButtonType.NO);
+                alert.setTitle("Confirmation Dialog");
+                alert.setHeaderText("Spiel verlassen");
+
+                Optional<ButtonType> result = alert.showAndWait();
+                if (result.get()== ButtonType.YES){
+                    Platform.exit();
+                    System.out.println("Atlantis ist geschlossen");
+                }
             }
         });
 

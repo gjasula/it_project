@@ -60,6 +60,17 @@ public class Server {
         }
     }
 
+    public void stopTCP() {
+        try {
+            serverSocket = new ServerSocket(port);
+            new Thread(new ServerTCPListener(serverSocket)).stop();
+            System.out.println("Server started");
+        } catch ( IOException e ) {
+            e.printStackTrace();
+        }
+    }
+
+
     //public static void main(String[] args) {
     //    Server server = Server.getInstance(7777);
 //
