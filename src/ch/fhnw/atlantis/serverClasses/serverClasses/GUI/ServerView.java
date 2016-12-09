@@ -70,6 +70,7 @@ public class ServerView {
 
         txtLog = new TextArea("");
         txtLog.setEditable(false);
+        txtLog.setMaxWidth(1004);
         txtLog.setWrapText(true);
         txtLog.setMaxHeight(200);
 
@@ -81,13 +82,14 @@ public class ServerView {
         shbox.setId("Button");
 
         vbox = new VBox(shbox, txtLog);
+        vbox.setAlignment(Pos.CENTER);
 
         svbox = new VBox(SWelcome, SStart);
         svbox.setAlignment(Pos.CENTER);
 
 
         //  ------------------- Retangle definieren und zu Stackpane hinzufügen  -------------------
-        rect = new Rectangle(1050, 500);
+        rect = new Rectangle(1024, 400);
         rect.setFill(Color.rgb(200, 200, 200, 0.4));
         rect.setArcHeight(3.5);
         rect.setArcWidth(3.5);
