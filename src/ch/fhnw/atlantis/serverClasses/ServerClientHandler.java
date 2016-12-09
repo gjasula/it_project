@@ -1,6 +1,9 @@
 package ch.fhnw.atlantis.serverClasses;
 
 
+import ch.fhnw.atlantis.serverClasses.serverClasses.GUI.ServerController;
+import ch.fhnw.atlantis.serverClasses.serverClasses.GUI.ServerView;
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -48,6 +51,9 @@ public class ServerClientHandler implements Runnable {
                 //Forward Message from Server to Interpreter
                 Interpreter InterpretServerMessage = new Interpreter();
                 InterpretServerMessage.interpretServerMsg(messagefromClient);
+
+                ServerView serverView = new ServerView();
+                serverView.setTxtLog("Received Message from client ("+socketToClient.hashCode()+"): " + messagefromClient);
 
                 //System.out.println("Received Message from client ("+socketToClient.hashCode()+"): " + messagefromClient);
                 server.forwardMessage("client ("+socketToClient.hashCode()+"):" + messagefromClient, this);
