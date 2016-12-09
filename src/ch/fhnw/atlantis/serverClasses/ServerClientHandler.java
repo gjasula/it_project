@@ -53,7 +53,7 @@ public class ServerClientHandler implements Runnable {
                 InterpretServerMessage.interpretServerMsg(messagefromClient);
 
                 ServerView serverView = new ServerView();
-                serverView.setTxtLog("Received Message from client ("+socketToClient.hashCode()+"): " + messagefromClient);
+                serverView.setTxtLog("Received Message from client");
 
                 //System.out.println("Received Message from client ("+socketToClient.hashCode()+"): " + messagefromClient);
                 server.forwardMessage("client ("+socketToClient.hashCode()+"):" + messagefromClient, this);
