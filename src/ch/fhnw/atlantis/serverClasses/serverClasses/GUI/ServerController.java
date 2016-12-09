@@ -54,7 +54,7 @@ public class ServerController {
                 String portString = view.getPortServer().trim();
                 int portInt = Integer.parseInt(portString);
                 Server server = Server.getInstance(portInt);
-                server.stopTCP();
+
 
                 event.consume();
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION,
@@ -64,7 +64,7 @@ public class ServerController {
 
                 Optional<ButtonType> result = alert.showAndWait();
                 if (result.get()== ButtonType.YES){
-                    Platform.exit();
+                    server.stopTCP();
                     System.out.println("Atlantis ist geschlossen");
                 }
             }
