@@ -1,5 +1,7 @@
 package ch.fhnw.atlantis.serverClasses.serverClasses.GUI;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -12,6 +14,7 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+import sun.rmi.runtime.Log;
 
 
 /**
@@ -19,6 +22,8 @@ import javafx.stage.Stage;
  */
 
 public class ServerView {
+
+    private TextField textField;
 
     private Scene scene;
 
@@ -98,6 +103,9 @@ public class ServerView {
         border.setTop(svbox);
         border.setBottom(SGroup);
 
+        //textField = new TextField("tet");
+        //textField.textProperty().addListener((observable, oldValue, newValue) -> txtLog.appendText("test"));
+
         //  -------------------BorderPane zu Scene hinzufügen und Fenstergrösse setzen-------------------
         scene = new Scene(border, 1024, 450);
         scene.getStylesheets().add("/ch/fhnw/atlantis/resources/css/style.css");
@@ -121,6 +129,7 @@ public class ServerView {
 
     public void setPortServer(String portServer) {
         PortServer.setText(portServer);
+
     }
 
     public TextArea getTxtLog() {
