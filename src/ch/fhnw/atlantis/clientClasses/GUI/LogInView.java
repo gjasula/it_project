@@ -39,8 +39,8 @@ public class LogInView {
     private Button btnAltConnect;
     private Button btnClose;
 
-    private TextField PortEnter;
-    private TextField IPEnter;
+    public TextField PortEnter;
+    public TextField IPEnter;
 
     private Label lbl1;
     private Label lbl2;
@@ -94,7 +94,7 @@ public class LogInView {
 
         // ------------------- Textfield -------------------
         PortEnter = new TextField("7777");
-        IPEnter = new TextField("185.xx.x");
+        IPEnter = new TextField("127.0.0.1");
 
         // ------------------- Buttons / Label / Textfield HBox anordnen -------------------
         labelPane2 = new HBox(PortLabel, PortEnter, IPLabel, IPEnter);
@@ -251,8 +251,12 @@ public class LogInView {
         this.btnClose = btnClose;
     }
 
-    public TextField getPortEnter() {
-        return PortEnter;
+    public String getPortEnter() {
+        return PortEnter.getText();
+    }
+
+    public String getIPEnter() {
+        return IPEnter.getText();
     }
 
     public void setPortEnter(TextField portEnter) {

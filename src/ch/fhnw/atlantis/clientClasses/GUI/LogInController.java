@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.TextField;
 
 import java.util.Optional;
 
@@ -24,7 +25,29 @@ public class LogInController {
         this.view = new LogInView();
 
 
-        view.getBtnConnect().setOnAction(new btnConnectEventHandler());
+        view.getBtnConnect().setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent event) {
+
+                String host = view.getIPEnter().trim();
+                String portString = view.getPortEnter().trim();
+                int portInt = Integer.parseInt(portString);
+
+                Client client = new Client();
+                int isConnectedclient= client.connectToServer(host, portInt);
+
+                try {
+                    Thread.sleep(1000);
+                    if (isConnectedclient == 1){
+                        MenuController menuController = new MenuController(model);
+                        menuController.show();
+                    }
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        });
         view.getBtnClose().setOnAction(new btnCloseEventHandler());
 
         // ------------------- CSS Styling den Playern (Icons) zuweisen - WEISS -------------------
@@ -56,12 +79,4 @@ public class LogInController {
         }
     }
 
-
-    class btnConnectEventHandler implements EventHandler<ActionEvent> {
-        @Override
-        public void handle(ActionEvent event) {
-            MenuController menuController = new MenuController(model);
-            menuController.show();
-        }
-    }
 }
