@@ -8,9 +8,14 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 
+import java.util.Enumeration;
+import java.util.Locale;
 import java.util.Optional;
+import java.util.ResourceBundle;
+// import org.springframework.context.support.RessourceBundleMessageSource;
 
 
 
@@ -21,6 +26,7 @@ import java.util.Optional;
 public class MenuController {
     private Model model;
     private MenuView view;
+    private ResourceBundle resourceBundle;
 
 
     public MenuController(Model model) {
@@ -145,6 +151,9 @@ public class MenuController {
         class btnSprache1Eventhandler implements EventHandler<ActionEvent> {
             @Override
             public void handle(ActionEvent event) {
+            Locale locale = new Locale("en","USA");
+
+
 
             }
 
@@ -160,8 +169,8 @@ public class MenuController {
 
             }
         }
+  }
 
-}
 
 
 

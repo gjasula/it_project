@@ -45,7 +45,6 @@ public class RankingByeView {
 
             scene = new Scene(Bpane, 1024, 640);
 
-
             Bpane.getStylesheets().add("/ch/fhnw/atlantis/resources/css/style.css");
 
 
