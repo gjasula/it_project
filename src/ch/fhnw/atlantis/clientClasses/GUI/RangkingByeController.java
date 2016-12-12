@@ -4,6 +4,7 @@ import javafx.stage.Stage;
 
 /**
  * Created by Nadine on 28.11.2016.
+ */
 
 public class RangkingByeController {
     private Model model;
@@ -16,11 +17,11 @@ public class RangkingByeController {
     }
 
     public void show(){
-        Stage secondStage = new Stage();
-        view.show(secondStage);
+        view.show(model.getPrimaryStage());
+        }
     }
-}
-*/
+
+
 
 
 

@@ -1,6 +1,7 @@
 package ch.fhnw.atlantis.serverClasses.serverClasses.GUI;
 
 import ch.fhnw.atlantis.clientClasses.GUI.Model;
+import ch.fhnw.atlantis.serverClasses.Server;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
@@ -20,7 +21,6 @@ public class ServerMain extends Application {
         Model model = new Model(primaryStage);
         ServerController serverController = new ServerController(model);
         serverController.show();
-
 
     }
 }
