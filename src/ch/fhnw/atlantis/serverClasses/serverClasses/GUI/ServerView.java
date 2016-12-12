@@ -72,7 +72,6 @@ public class ServerView {
         txtLog.setEditable(false);
         txtLog.setMaxWidth(1004);
         txtLog.setWrapText(true);
-        txtLog.setMaxHeight(200);
 
         //  ------------------- Elemente in HBox anordnen  -------------------
         shbox = new HBox(PortServer, btnConnect_s, btnStop_s);

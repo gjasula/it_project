@@ -9,7 +9,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 /**
@@ -110,6 +109,15 @@ public class MenuView {
         menuIconExit.setId("MenuIcon");
         menuIconBack.setId("MenuIcon");
 
+        // ------------------- Buttons und MenuIcons in Grid anordnen -------------------
+        MainMenu = new GridPane();
+        MainMenu.setPadding(new Insets(20, 20, 20, 20));
+        MainMenu.setVgap(5);
+        MainMenu.setHgap(7);
+        MainMenu.setGridLinesVisible(false);
+        // alle Inhalte ins Grid holen mit getChildren
+        MainMenu.getChildren().addAll(btnStartGame, btnOptions, btnPlayer, btnRules, btnBack, btnExit, menuIconStart, menuIconOpt, menuIconPlayer, menuIconRule, menuIconExit, menuIconBack);
+
         // ------------------- Buttons SubMenu definieren, in Grid anordnen und Verbergen -------------------
         btnSprache1 = new Button("DEUTSCH");
         btnSprache2 = new Button("ENGLISCH");
@@ -172,15 +180,7 @@ public class MenuView {
         gameCharacter3.setVisible(false);
         gameCharacter4.setVisible(false);
 
-        // ------------------- Buttons und MenuIcons in Grid anordnen -------------------
-        MainMenu = new GridPane();
-        MainMenu.setPadding(new Insets(20, 20, 20, 20));
-        MainMenu.setVgap(5);
-        MainMenu.setHgap(7);
-        MainMenu.setGridLinesVisible(false);
-        // alle Inhalte ins Grid holen mit getChildren
-        MainMenu.getChildren().addAll(btnStartGame, btnOptions, btnPlayer, btnRules, btnBack, btnExit, menuIconStart, menuIconOpt, menuIconPlayer, menuIconRule, menuIconExit, menuIconBack);
-
+       // ------------------- SubMenu: Inhalte in Grid anordnen -------------------
         SubMenu = new GridPane();
         SubMenu.setPadding(new Insets(60, 60, 100, 100));   // top, right, bottom, left
         SubMenu.setVgap(5);
@@ -257,12 +257,12 @@ public class MenuView {
 
     private static final String TEXT =
             "\"Bleibt wachsam - selbst die mächtigsten Staaten können jederzeit untergehen\" \n"+
-                    "\n"+
+            "\n"+
             "Ein erfundener Mythos oder Realität? \n" +
             "Bis Heute ist das Rätsel, um die versunkene Stadt Atlantis ungelöst. Die angeblich prächtigste und mächtigste Stadt der Welt, versunken in den Fluten des Meeres.\n" +
             "Das verschwundene Paradies verschluckt vom Wasser innerhalb eines Tages und einer Nacht. \n" +
-                    "\n"+
-            "Rettet euer Hab und Gut, schnell von der Insel!"      ;
+            "\n"+
+            "Rettet euer Hab und Gut, schnell von der Insel!";
 
     // ------------------- Getter und Setter -------------------
 

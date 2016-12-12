@@ -37,7 +37,7 @@ public class LogInView {
     private Button btnAltConnect;
     private Button btnClose;
 
-    private TextField IPEnter;
+    private TextField PortEnter;
 
     private Label lbl1;
     private Label lbl2;
@@ -83,17 +83,17 @@ public class LogInView {
         // ------------------- Buttons erstellen -------------------
         btnConnect = new Button("SERVER VERBINDEN");
         btnClose = new Button("SCHLIESSEN");
-        //btnAltConnect = new Button("ALTERNATIV SERVER");
+        // btnAltConnect = new Button("ALTERNATIV SERVER");
 
         // ------------------- Labels erstellen -------------------
         IPLabel = new Label("IP Adresse");
 
 
         // ------------------- Textfield -------------------
-        IPEnter = new TextField("185.xx.xx.xx");
+        PortEnter = new TextField("185.xx.xx.xx");
 
         // ------------------- Buttons / Label / Textfield HBox anordnen -------------------
-        buttonPane = new HBox(IPLabel, IPEnter, btnConnect, btnClose);
+        buttonPane = new HBox(IPLabel, PortEnter, btnConnect, btnClose);
         buttonPane.setAlignment(Pos.BOTTOM_CENTER);
         buttonPane.setPadding(new Insets(0));
         buttonPane.setSpacing(10);
@@ -239,12 +239,12 @@ public class LogInView {
         this.btnClose = btnClose;
     }
 
-    public TextField getIPEnter() {
-        return IPEnter;
+    public TextField getPortEnter() {
+        return PortEnter;
     }
 
-    public void setIPEnter(TextField IPEnter) {
-        this.IPEnter = IPEnter;
+    public void setPortEnter(TextField portEnter) {
+        this.PortEnter = portEnter;
     }
 
     public Label getLbl1() {

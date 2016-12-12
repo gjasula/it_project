@@ -38,8 +38,8 @@ public class Client_Main extends Application {
         LogInController logInController = new LogInController(model);
         logInController.show();
 
-        //GameBoardController gbCon = new GameBoardController(model);
-        //gbCon.show();
+      //  GameBoardController gbCon = new GameBoardController(model);
+      //  gbCon.show();
 
     primaryStage.setOnCloseRequest(event -> {
         event.consume();
