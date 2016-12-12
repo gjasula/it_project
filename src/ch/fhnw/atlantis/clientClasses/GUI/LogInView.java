@@ -32,17 +32,21 @@ public class LogInView {
     private HBox buttonPane;
     private VBox labelPane;
     private HBox imagePane;
+    private HBox labelPane2;
+    private VBox pane;
 
     private Button btnConnect;
     private Button btnAltConnect;
     private Button btnClose;
 
     private TextField PortEnter;
+    private TextField IPEnter;
 
     private Label lbl1;
     private Label lbl2;
     private Label lbl3;
     private Label IPLabel;
+    private Label PortLabel;
 
     private ImageView root;
 
@@ -79,7 +83,6 @@ public class LogInView {
         lbl1.setId("Label-big");
         lbl3.setId("Label-small");
 
-
         // ------------------- Buttons erstellen -------------------
         btnConnect = new Button("SERVER VERBINDEN");
         btnClose = new Button("SCHLIESSEN");
@@ -87,16 +90,25 @@ public class LogInView {
 
         // ------------------- Labels erstellen -------------------
         IPLabel = new Label("IP Adresse");
-
+        PortLabel = new Label("Portnummer");
 
         // ------------------- Textfield -------------------
-        PortEnter = new TextField("185.xx.xx.xx");
+        PortEnter = new TextField("7777");
+        IPEnter = new TextField("185.xx.x");
 
         // ------------------- Buttons / Label / Textfield HBox anordnen -------------------
-        buttonPane = new HBox(IPLabel, PortEnter, btnConnect, btnClose);
-        buttonPane.setAlignment(Pos.BOTTOM_CENTER);
-        buttonPane.setPadding(new Insets(0));
+        labelPane2 = new HBox(PortLabel, PortEnter, IPLabel, IPEnter);
+        labelPane2.setPadding(new Insets(10));
+        labelPane2.setAlignment(Pos.CENTER);
+        labelPane2.setSpacing(10);
+        buttonPane = new HBox(btnConnect, btnClose);
+        buttonPane.setPadding(new Insets(10));
+        buttonPane.setAlignment(Pos.CENTER);
         buttonPane.setSpacing(10);
+        pane = new VBox(labelPane2, buttonPane);
+        pane.setAlignment(Pos.BOTTOM_CENTER);
+        pane.setPadding(new Insets(10));
+        pane.setSpacing(15);
 
         // ------------------- Player Icons -------------------
         player1 = new Label("\ue7FD");
@@ -143,7 +155,7 @@ public class LogInView {
         // ------------------- BorderPane erstellen und HBox, VBox, Grid hinzufügen -------------------
         BorderPane welcome_pane = new BorderPane();
         welcome_pane.setBottom(grid);
-        welcome_pane.setCenter(buttonPane);
+        welcome_pane.setCenter(pane);
         welcome_pane.setTop(labelPane);
 
         // ------------------- Stylesheets aufrufen -------------------
