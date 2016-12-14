@@ -48,6 +48,7 @@ public class LogInController {
 
             }
         });
+
         view.getBtnClose().setOnAction(new btnCloseEventHandler());
 
         // ------------------- CSS Styling den Playern (Icons) zuweisen - WEISS -------------------
@@ -56,11 +57,12 @@ public class LogInController {
         view.getPlayer3().getStyleClass().add("Playerbefore");
         view.getPlayer4().getStyleClass().add("Playerbefore");
 
+        view.getLbl2().setText("Bitte starten Sie den Server und verbinden Sie sich damit");
+
     }
 
     public void show() {
         view.show(model.getPrimaryStage());
-
     }
 
     class btnCloseEventHandler implements EventHandler<ActionEvent>{
@@ -78,5 +80,4 @@ public class LogInController {
             }
         }
     }
-
 }

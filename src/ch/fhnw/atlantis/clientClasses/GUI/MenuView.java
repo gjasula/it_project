@@ -1,7 +1,9 @@
 package ch.fhnw.atlantis.clientClasses.GUI;
 
+import ch.fhnw.atlantis.serverClasses.Main;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -10,6 +12,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 /**
  * Created by Nadine on 25.10.2016.
@@ -54,6 +59,7 @@ public class MenuView {
     private Label menuIconBack;
 
     private Label txtAtlantis;
+    private Label txt;
 
     private Image Flag_GB;
     private Image Flag_Germany;
@@ -116,7 +122,8 @@ public class MenuView {
         MainMenu.setHgap(7);
         MainMenu.setGridLinesVisible(false);
         // alle Inhalte ins Grid holen mit getChildren
-        MainMenu.getChildren().addAll(btnStartGame, btnOptions, btnPlayer, btnRules, btnBack, btnExit, menuIconStart, menuIconOpt, menuIconPlayer, menuIconRule, menuIconExit, menuIconBack);
+        MainMenu.getChildren().addAll(btnStartGame, btnOptions, btnPlayer, btnRules,
+                btnBack, btnExit, menuIconStart, menuIconOpt, menuIconPlayer, menuIconRule, menuIconExit, menuIconBack);
 
         // ------------------- Buttons SubMenu definieren, in Grid anordnen und Verbergen -------------------
         btnSprache1 = new Button("DEUTSCH");
@@ -136,9 +143,16 @@ public class MenuView {
         txtAtlantis.setId("Label-text");
         txtAtlantis.setVisible(true);
 
-        SubMenu.setConstraints(txtAtlantis, 1,1);
+        SubMenu.setConstraints(txtAtlantis, 1, 1);
         SubMenu.setColumnSpan(txtAtlantis, 5);
         SubMenu.setRowSpan(txtAtlantis,4);
+
+        txt = new Label();
+        txt.setWrapText(true);
+        txt.setVisible(true);
+
+        SubMenu.setConstraints(txt, 0,0);
+        SubMenu.setColumnSpan(txt, 5);
 
         // ------------------- Flaggen SubMenu -------------------
         Flag_GB = new Image("/ch/fhnw/atlantis/resources/images/Flag_GB.png");
@@ -187,7 +201,8 @@ public class MenuView {
         SubMenu.setHgap(5);
         SubMenu.setGridLinesVisible(false);
         // alle Inhalte ins Grid holen mit getChildren
-        SubMenu.getChildren().addAll(btnSprache1, btnSprache2, btnSprache3, iview1, iview2, iview3, gameCharacter1, gameCharacter2, gameCharacter3, gameCharacter4,txtAtlantis);
+        SubMenu.getChildren().addAll(btnSprache1, btnSprache2, btnSprache3, iview1,
+                iview2, iview3, gameCharacter1, gameCharacter2, gameCharacter3, gameCharacter4, txt, txtAtlantis);
 
         //------------------- Player_Old Icons und Grid anordnen -------------------
         player1 = new Label("\ue7FD");
@@ -256,7 +271,7 @@ public class MenuView {
     }
 
     private static final String TEXT =
-            "\"Bleibt wachsam - selbst die mächtigsten Staaten können jederzeit untergehen\" \n"+
+            "Bleibt wachsam - selbst die mächtigsten Staaten können jederzeit untergehen \n"+
             "\n"+
             "Ein erfundener Mythos oder Realität? \n" +
             "Bis Heute ist das Rätsel, um die versunkene Stadt Atlantis ungelöst. Die angeblich prächtigste und mächtigste Stadt der Welt, versunken in den Fluten des Meeres.\n" +
@@ -265,6 +280,14 @@ public class MenuView {
             "Rettet euer Hab und Gut, schnell von der Insel!";
 
     // ------------------- Getter und Setter -------------------
+
+    public Label getTxt() {
+        return txt;
+    }
+
+    public void setTxt(Label txt) {
+        this.txt = txt;
+    }
 
     public Label getTxtAtlantis() {
         return txtAtlantis;

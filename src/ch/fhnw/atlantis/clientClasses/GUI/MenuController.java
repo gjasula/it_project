@@ -15,8 +15,8 @@ import java.util.Enumeration;
 import java.util.Locale;
 import java.util.Optional;
 import java.util.ResourceBundle;
-// import org.springframework.context.support.RessourceBundleMessageSource;
 
+import static ch.fhnw.atlantis.clientClasses.GUI.Properties.*;
 
 
 /**
@@ -26,7 +26,7 @@ import java.util.ResourceBundle;
 public class MenuController {
     private Model model;
     private MenuView view;
-    private ResourceBundle resourceBundle;
+
 
 
     public MenuController(Model model) {
@@ -34,7 +34,6 @@ public class MenuController {
         this.view = new MenuView();
 
         // ------------------- Eventhandler registrieren Hauptmenu -------------------
-
         view.getBtnRules().setOnAction(new btnRulesEventHandler());
         view.getBtnOptions().setOnMouseClicked(new btnOptionsEventHandler1());
         view.getBtnPlayer().setOnMouseClicked(new btnPlayerEventhandler());
@@ -44,12 +43,17 @@ public class MenuController {
 
 
         // ------------------- Eventhandler registrieren Untermenu -------------------
-     //   view.getBtnSprache1().setOnAction(new btnSprache1Eventhandler());
+            //   view.getBtnSprache1().setOnAction(new btnSprache1Eventhandler());
+            //   view.getBtnSprache2().setOnAction(new btnSprache2Eventhandler());
+            //   view.getBtnSprache3().setOnAction(new btnSprache3Eventhandler());
+
+            //   view.getGameCharacter1().setOnAction(new GameCharacter1EventHandler());
+            //   view.getGameCharacter2().setOnAction(new GameCharacter2EventHandler());
+            //   view.getGameCharacter3().setOnAction(new GameCharacter3EventHandler());
+            //   view.getGameCharacter4().setOnAction(new GameCharacter4EventHandler());
 
 
         // ------------------- StartButton Disable setzen solange, nicht mind. 2 Spieler angemeldet sind -------------------
-
-
 
 
         // ------------------- CSS Styling den angemeldeten Playern (Icons) zuweisen - Orange -------------------
@@ -59,12 +63,17 @@ public class MenuController {
         view.getPlayer2().getStyleClass().add("Playerafter");
         view.getPlayer3().getStyleClass().add("Playerbefore");
         view.getPlayer4().getStyleClass().add("Playerbefore");
+
+        // view.getTxt().setText("Bitte wählen Sie eine Spielfigur aus");
+
     }
 
     // ------------------- View anzeigen - Primarystage aufrufen-------------------
     public void show(){
         view.show(model.getPrimaryStage());
     }
+
+
 
     /* ------------------- EVENTS definieren -------------------
     -------------------------------------------------------------
@@ -151,9 +160,6 @@ public class MenuController {
         class btnSprache1Eventhandler implements EventHandler<ActionEvent> {
             @Override
             public void handle(ActionEvent event) {
-            Locale locale = new Locale("en","USA");
-
-
 
             }
 
