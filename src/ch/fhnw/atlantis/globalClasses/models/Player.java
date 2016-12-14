@@ -44,6 +44,9 @@ public class Player implements Serializable {
 
     }
 
+    // Required for interpreter on server
+    public Player(){}
+
     /**
      * Methode zur Vergabe einer Farbe an einen Player
      */
