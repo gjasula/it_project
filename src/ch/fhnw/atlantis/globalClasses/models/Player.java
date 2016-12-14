@@ -28,7 +28,7 @@ public class Player implements Serializable {
     private Pawn pawn, pawn1, pawn2, pawn3;
 
     private boolean isConnected = true;
-    private int playernumber = 0;
+    public static int playernumber = 0;
     static Stack<String> MovementCards = new Stack<String>();
     static ArrayList<String> PlayerOneHandCards = new ArrayList<>();
     static ArrayList<String> PlayerTwoHandCards = new ArrayList<>();
@@ -41,6 +41,10 @@ public class Player implements Serializable {
         pawn1 = new Pawn(this, 1);
         pawn2 = new Pawn(this, 2);
         pawn3 = new Pawn(this, 3);
+
+    }
+
+    public Player() {
 
     }
 
@@ -79,6 +83,24 @@ public class Player implements Serializable {
         //        getCardFromStack(PullCards, Player);
         //    }
         //}
+    }
+
+    // Jedem Spieler wird eine ID zugewiesen welcher für die Identifikation genutzt wird. - Richard Künzi
+    public int definePlayerIdentity(){
+        switch (playernumber) {
+            case 2:
+                playernumber++;
+                break;
+            case 3:
+                playernumber++;
+                break;
+            case 4:
+                playernumber++;
+                break;
+            default:
+                playernumber++;
+        }
+        return playernumber;
     }
 
     //Remove Card from hand
