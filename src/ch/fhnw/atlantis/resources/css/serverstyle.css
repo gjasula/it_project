@@ -1,0 +1,70 @@
+.root{
+
+ -fx-background-image: url("../images/lighthouse.png");
+ -fx-background-repeat: no-repeat;
+ -fx-background-attachment: fixed;
+ -fx-background-position: right;
+ -fx-background-size: 530px 450px;
+ }
+
+Label{
+ -fx-text-fill: #000000 ;
+ -fx-font-family: "Courier New";
+ -fx-font-size: 15px;
+
+}
+
+#Label-big{
+ -fx-font-family: "Courier New";
+ -fx-font-size: 20px;
+ -fx-font-weight: bold;
+}
+
+#Label-small{
+ -fx-font-family: "Castellar";
+ -fx-font-size: 9px;
+ -fx-font-weight: bold;
+}
+
+Button{
+ -fx-background-color: #A0A0A0;
+ -fx-font-weight: bold;
+ -fx-font-family: "Courier New";
+ -fx-alignment: Center;
+ -fx-pref-width: 170px;
+
+}
+
+.button:hover{
+ -fx-background-color: #000000;
+ -fx-text-fill: white;
+
+}
+
+.Playerbefore{
+ -fx-font-family: 'Material Icons';
+ -fx-font-size: 60;
+ -fx-text-fill: #ffffff;
+}
+
+.Playerafter{
+ -fx-font-family: 'Material Icons';
+ -fx-font-size: 60;
+ -fx-text-fill: #ff9933;
+}
+
+#MenuIcon{
+ -fx-font-family: 'Material Icons';
+ -fx-font-size: 29;
+ -fx-text-fill: #ffffff;
+ }
+
+#PlayerIcon{
+ -fx-font-family: 'Material Icons';
+ -fx-font-size: 40;
+ -fx-text-fill: #000000;
+ }
+
+hBox cardPane{
+ -fx-background-color: #ffffff;
+}
