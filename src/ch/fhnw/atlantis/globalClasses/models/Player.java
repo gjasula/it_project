@@ -44,10 +44,6 @@ public class Player implements Serializable {
 
     }
 
-    public Player() {
-
-    }
-
     /**
      * Methode zur Vergabe einer Farbe an einen Player
      */
@@ -103,8 +99,9 @@ public class Player implements Serializable {
         return playernumber;
     }
 
-    //Remove Card from hand
-    //removeCardFromHand(1, 1);
+    // Remove Card from hand
+    // removeCardFromHand(1, 1);
+    // Richard Künzi
     static void removeCardFromHand(int Player, int Card){
 
         if(Player == 1){
