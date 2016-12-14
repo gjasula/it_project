@@ -40,7 +40,7 @@ public class GameBoardView extends Pane {
     //-------------------- All Panes -----------------------------------
     private BorderPane gBPane;
     private GridPane gameBoard, playerGrid;
-    private StackPane start, end;
+    private StackPane start, end, pos1, pos2, pos3, pos4, pos5, pos6, pos7, pos8, pos9, pos10, pos11, pos12, pos13, pos14, pos15, pos16, pos17, pos18, pos19, pos20, pos21, pos22, pos23, pos24, pos25;
     private Scene scene;
 
     private HashMap<Integer, Label> scoresLabels;
@@ -158,6 +158,81 @@ public class GameBoardView extends Pane {
         end.setBackground(new Background(new BackgroundImage(getImage("ende.jpg"),
                 BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
 
+        pos1 = new StackPane();
+        pos1.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+                BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
+        pos2 = new StackPane();
+        pos2.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+                BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
+        pos3 = new StackPane();
+        pos3.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+                BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
+        pos4 = new StackPane();
+        pos4.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+                BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
+        pos5 = new StackPane();
+        pos5.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+                BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
+        pos6 = new StackPane();
+        pos6.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+                BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
+        pos7 = new StackPane();
+        pos7.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+                BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
+        pos8 = new StackPane();
+        pos8.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+                BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
+        pos9 = new StackPane();
+        pos9.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+                BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
+        pos10 = new StackPane();
+        pos10.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+                BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
+        pos11 = new StackPane();
+        pos11.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+                BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
+        pos12 = new StackPane();
+        pos12.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+                BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
+        pos13 = new StackPane();
+        pos13.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+                BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
+        pos14 = new StackPane();
+        pos14.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+                BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
+        pos15 = new StackPane();
+        pos15.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+                BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
+        pos16 = new StackPane();
+        pos16.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+                BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
+        pos17 = new StackPane();
+        pos17.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+                BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
+        pos18 = new StackPane();
+        pos18.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+                BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
+        pos19 = new StackPane();
+        pos19.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+                BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
+        pos20 = new StackPane();
+        pos20.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+                BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
+        pos21 = new StackPane();
+        pos21.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+                BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
+        pos22 = new StackPane();
+        pos22.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+                BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
+        pos23 = new StackPane();
+        pos23.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+                BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
+        pos24 = new StackPane();
+        pos24.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+                BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
+        pos25 = new StackPane();
+        pos25.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+                BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
 
         btnBuyCard = new Button("Karte kaufen");
         btnFinishTurn = new Button("Zug beenden");
@@ -172,11 +247,37 @@ public class GameBoardView extends Pane {
         gameBoard.setConstraints(cardPane, 5, 7,7,3);
         gameBoard.setConstraints(end, 13, 7,3,3);
 
-        gameBoard.setGridLinesVisible(true);
+        gameBoard.setConstraints(pos1, 1,3);
+        gameBoard.setConstraints(pos2, 1,4);
+        gameBoard.setConstraints(pos3, 1,5);
+        gameBoard.setConstraints(pos4, 2,6);
+        gameBoard.setConstraints(pos5, 3,6);
+        gameBoard.setConstraints(pos6, 4,5);
+        gameBoard.setConstraints(pos7, 4,4);
+        gameBoard.setConstraints(pos8, 4,3);
+        gameBoard.setConstraints(pos9, 4,2);
+        gameBoard.setConstraints(pos10, 5,1);
+        gameBoard.setConstraints(pos11, 6,2);
+        gameBoard.setConstraints(pos12, 6,3);
+        gameBoard.setConstraints(pos13, 7,4);
+        gameBoard.setConstraints(pos14, 8,3);
+        gameBoard.setConstraints(pos15, 8,2);
+        gameBoard.setConstraints(pos16, 9,1);
+        gameBoard.setConstraints(pos17, 10,1);
+        gameBoard.setConstraints(pos18, 11,1);
+        gameBoard.setConstraints(pos19, 12,1);
+        gameBoard.setConstraints(pos20, 13,1);
+        gameBoard.setConstraints(pos21, 14,2);
+        gameBoard.setConstraints(pos22, 14,3);
+        gameBoard.setConstraints(pos23, 14,4);
+        gameBoard.setConstraints(pos24, 14,5);
+        gameBoard.setConstraints(pos25, 14,6);
+
+        gameBoard.setGridLinesVisible(false);
 
 
         // alle Inhalte in die Gridpanes holen mit getChildren
-        gameBoard.getChildren().addAll(btnBuyCard,btnFinishTurn, cardPane, start, end);
+        gameBoard.getChildren().addAll(btnBuyCard,btnFinishTurn, cardPane, start, end, pos1, pos2, pos3, pos4, pos5, pos6, pos7, pos8, pos9, pos10, pos11, pos12, pos13, pos14, pos15, pos16, pos17, pos18, pos19, pos20, pos21, pos22, pos23, pos24, pos25);
         playerGrid.getChildren().addAll(player1, player2, player3, player4, p1, p2, p3, p4, pointsP1, pointsP2, pointsP3, pointsP4);
 
         // ------------------- BorderPane erstellen und HBox, VBox, Gameboard und playerGrid hinzufügen -------------------

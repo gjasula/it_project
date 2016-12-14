@@ -16,8 +16,6 @@ import java.util.Locale;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
-import static ch.fhnw.atlantis.clientClasses.GUI.Properties.*;
-
 
 /**
  * Created by Nadine on 25.10.2016.
