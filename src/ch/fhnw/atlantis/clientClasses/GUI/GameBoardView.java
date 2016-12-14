@@ -158,6 +158,7 @@ public class GameBoardView extends Pane {
         end.setBackground(new Background(new BackgroundImage(getImage("ende.jpg"),
                 BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
 
+
         btnBuyCard = new Button("Karte kaufen");
         btnFinishTurn = new Button("Zug beenden");
 

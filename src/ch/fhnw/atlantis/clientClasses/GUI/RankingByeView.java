@@ -29,18 +29,17 @@ public class RankingByeView {
     public RankingByeView() {
 
             // ------------------- Labels -------------------
-            lblResult = new Label("Resultat");
-            lblResult.setAlignment(Pos.CENTER);
+            //   lblResult = new Label("Resultat");
+            //   lblResult.setAlignment(Pos.CENTER);
 
+            lblEnd = new Label("Das Spiel ist beendet. Wir gratulieren zum Sieg. Du hast dich aufs Festland gerettet.");
 
-            lblEnd = new Label("Das Spiel ist beendet. Wir gratulieren zum Sieg. Du hast Atlantis gerettet.");
-
-            vbox = new VBox(lblResult);
+            // vbox = new VBox(lblResult);
 
             // ------------------- Borderpane und Scene -------------------
             Bpane = new BorderPane();
             Bpane.setTop(lblEnd);
-            Bpane.setCenter(vbox);
+            //  Bpane.setCenter(vbox);
 
 
             scene = new Scene(Bpane, 1024, 640);

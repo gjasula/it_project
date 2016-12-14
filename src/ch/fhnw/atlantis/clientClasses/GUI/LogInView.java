@@ -15,6 +15,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+
 /**
  * Created by Nadine on 18.10.2016.
  *
@@ -62,15 +63,12 @@ public class LogInView {
 
 
     public LogInView() {
-
         //  ------------------- Labels -------------------
         lbl1 = new Label();
         lbl1.setText("Willkommen in Atlantis");
         lbl2 = new Label();
-        lbl2.setText("Bitte stellen Sie die Verbindung zum Server her");
         lbl3 = new Label();
         lbl3.setText("Team Gerstenland: IT-Projekt Fachhochschule Nordwestschweiz, 2016");
-
 
         // ------------------- Labels VBox anordnen -------------------
         labelPane = new VBox(lbl1, lbl2);

@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -15,7 +16,9 @@ import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
 import java.io.FileNotFoundException;
+import java.util.Locale;
 import java.util.Optional;
+import java.util.ResourceBundle;
 
 /**
  * Created by Nadine on 12.10.2016.
@@ -27,6 +30,8 @@ import java.util.Optional;
 public class Client_Main extends Application {
     public static void main(String[] args) {
         launch(args);
+
+
     }
 
     @Override
@@ -38,8 +43,8 @@ public class Client_Main extends Application {
         LogInController logInController = new LogInController(model);
         logInController.show();
 
-      //  GameBoardController gbCon = new GameBoardController(model);
-      //  gbCon.show();
+     //   GameBoardController gbCon = new GameBoardController(model);
+     //   gbCon.show();
 
     primaryStage.setOnCloseRequest(event -> {
         event.consume();
@@ -57,6 +62,7 @@ public class Client_Main extends Application {
     });
 
     }
+
 
 }
 

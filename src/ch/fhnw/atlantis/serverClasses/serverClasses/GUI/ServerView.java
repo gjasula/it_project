@@ -56,9 +56,11 @@ public class ServerView {
 
         // ------------------- Labels -------------------
         SWelcome = new Label("Willkommen in Atlantis");
-        SStart = new Label("Bitte starten Sie den Server und die Client Anwendung, um das Spiel zu starten!");
-        SGroup = new Label("Team Gerstenland: IT-Projekt Fachhochschule Nordwestschweiz, 2016");
+        SWelcome.setId("Label-big");
+        SStart = new Label("Bitte starten Sie den Server und die Client Anwendung!");
+        SStart.setId("Label");
 
+        SGroup = new Label("Team Gerstenland: IT-Projekt Fachhochschule Nordwestschweiz, 2016");
         SGroup.setId("Label-small");
 
         // ------------------- Buttons -------------------
@@ -70,38 +72,40 @@ public class ServerView {
 
         txtLog = new TextArea("");
         txtLog.setEditable(false);
-        txtLog.setMaxWidth(1004);
+        txtLog.setMaxWidth(500);
         txtLog.setWrapText(true);
 
         //  ------------------- Elemente in HBox anordnen  -------------------
         shbox = new HBox(PortServer, btnConnect_s, btnStop_s);
-        shbox.setAlignment(Pos.CENTER);
-        shbox.setPadding(new Insets(50));
-        shbox.setSpacing(15);
+        shbox.setAlignment(Pos.CENTER_LEFT);
+        shbox.setPadding(new Insets(5));
+        shbox.setSpacing(5);
         shbox.setId("Button");
 
         vbox = new VBox(shbox, txtLog);
-        vbox.setAlignment(Pos.CENTER);
+        vbox.setAlignment(Pos.CENTER_LEFT);
+        vbox.setPadding(new Insets(50));
 
         svbox = new VBox(SWelcome, SStart);
-        svbox.setAlignment(Pos.CENTER);
+        svbox.setAlignment(Pos.TOP_LEFT);
 
 
         //  ------------------- Retangle definieren und zu Stackpane hinzufügen  -------------------
-        rect = new Rectangle(1024, 400);
-        rect.setFill(Color.rgb(200, 200, 200, 0.4));
+        rect = new Rectangle(505, 50);
+        rect.setFill(Color.rgb(160, 160, 160, 0.4));
         rect.setArcHeight(3.5);
         rect.setArcWidth(3.5);
         rect.setStroke(Color.LIGHTGRAY);
         rect.setVisible(true);
 
         stack = new StackPane();
-        stack.getChildren().addAll(rect, vbox);
-        stack.setAlignment(Pos.CENTER);
+        stack.getChildren().addAll(rect, svbox);
+        stack.setAlignment(Pos.TOP_LEFT);
+        stack.setPadding(new Insets(50));
 
         border = new BorderPane();
-        border.setCenter(stack);
-        border.setTop(svbox);
+        border.setCenter(vbox);
+        border.setTop(stack);
         border.setBottom(SGroup);
 
         //textField = new TextField("tet");
@@ -109,13 +113,13 @@ public class ServerView {
 
         //  -------------------BorderPane zu Scene hinzufügen und Fenstergrösse setzen-------------------
         scene = new Scene(border, 1024, 450);
-        scene.getStylesheets().add("/ch/fhnw/atlantis/resources/css/style.css");
+        scene.getStylesheets().add("/ch/fhnw/atlantis/resources/css/serverstyle.css");
     }
 
     // ------------------- View der Stage bekannt geben -------------------
     public void show(Stage stage) {
         stage.setTitle("Atlantis by Team Gerstenland");
-        Image icon = new Image(getClass().getResourceAsStream("./../../../resources/images/atlantis.jpg"));
+        Image icon = new Image(getClass().getResourceAsStream("./../../../resources/images/lighthouse.png"));
         stage.setResizable(false);
         stage.getIcons().add(icon);
         stage.setScene(scene);
