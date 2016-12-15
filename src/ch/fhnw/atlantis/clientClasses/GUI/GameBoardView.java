@@ -161,80 +161,82 @@ public class GameBoardView extends Pane {
         //  end.setBackground(new Background(new BackgroundImage(getImage("ende.jpg"),
         //          BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
 
+        ImageLoader imageLoader = new ImageLoader();
+
         pos1 = new StackPane();
-        pos1.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+        pos1.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(),
                 BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
         pos2 = new StackPane();
-        pos2.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+        pos2.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(),
                 BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
         pos3 = new StackPane();
-        pos3.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+        pos3.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(),
                 BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
         pos4 = new StackPane();
-        pos4.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+        pos4.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(),
                 BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
         pos5 = new StackPane();
-        pos5.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+        pos5.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(),
                 BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
         pos6 = new StackPane();
-        pos6.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+        pos6.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(),
                 BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
         pos7 = new StackPane();
-        pos7.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+        pos7.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(),
                 BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
         pos8 = new StackPane();
-        pos8.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+        pos8.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(),
                 BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
         pos9 = new StackPane();
-        pos9.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+        pos9.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(),
                 BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
         pos10 = new StackPane();
-        pos10.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+        pos10.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(),
                 BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
         pos11 = new StackPane();
-        pos11.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+        pos11.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(),
                 BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
         pos12 = new StackPane();
-        pos12.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+        pos12.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(),
                 BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
         pos13 = new StackPane();
-        pos13.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+        pos13.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(),
                 BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
         pos14 = new StackPane();
-        pos14.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+        pos14.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(),
                 BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
         pos15 = new StackPane();
-        pos15.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+        pos15.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(),
                 BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
         pos16 = new StackPane();
-        pos16.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+        pos16.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(),
                 BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
         pos17 = new StackPane();
-        pos17.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+        pos17.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(),
                 BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
         pos18 = new StackPane();
-        pos18.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+        pos18.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(),
                 BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
         pos19 = new StackPane();
-        pos19.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+        pos19.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(),
                 BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
         pos20 = new StackPane();
-        pos20.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+        pos20.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(),
                 BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
         pos21 = new StackPane();
-        pos21.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+        pos21.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(),
                 BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
         pos22 = new StackPane();
-        pos22.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+        pos22.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(),
                 BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
         pos23 = new StackPane();
-        pos23.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+        pos23.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(),
                 BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
         pos24 = new StackPane();
-        pos24.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+        pos24.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(),
                 BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
         pos25 = new StackPane();
-        pos25.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+        pos25.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(),
                 BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
 
         btnBuyCard = new Button("Karte kaufen");
