@@ -37,7 +37,11 @@ public class Model {
 
         tileDeck = new TileDeck();
 
+        // to be deleted?
         //tileDeck.createTileDeck();
+
+        // Richy's generateTileDeck
+        tileDeck.generateTileDeck();
 
         this.primaryStage = primaryStage;
 
