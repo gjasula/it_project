@@ -37,7 +37,7 @@ public class Model {
 
         tileDeck = new TileDeck();
 
-        tileDeck.createTileDeck();
+        //tileDeck.createTileDeck();
 
         this.primaryStage = primaryStage;
 
