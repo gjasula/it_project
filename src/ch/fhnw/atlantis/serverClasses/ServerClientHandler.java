@@ -21,6 +21,7 @@ public class ServerClientHandler implements Runnable {
     private int clientId;
     private int port;
 
+
     public ServerClientHandler(Socket socketToClient) {
         server = Server.getInstance(port);
         this.socketToClient = socketToClient;
@@ -48,12 +49,15 @@ public class ServerClientHandler implements Runnable {
             try {
                 final String messagefromClient = (String) inputStream.readObject();
 
-                //Forward Message from Server to Interpreter
+                //Forward message from server to interpreter
                 Interpreter InterpretServerMessage = new Interpreter();
-                InterpretServerMessage.interpretServerMsg(messagefromClient);
+                String monthstring = InterpretServerMessage.interpretServerMsg(messagefromClient);
+                server.forwardMessage(monthstring, this);
+                System.out.println(monthstring);
 
+                // Send String to Server Client has Connected.
                 ServerView serverView = new ServerView();
-                serverView.setTxtLog("Received Message from client");
+                serverView.setTxtLog(messagefromClient);
 
                 //System.out.println("Received Message from client ("+socketToClient.hashCode()+"): " + messagefromClient);
                 server.forwardMessage("client ("+socketToClient.hashCode()+"):" + messagefromClient, this);
