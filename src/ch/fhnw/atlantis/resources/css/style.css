@@ -4,6 +4,8 @@
  -fx-background-repeat: no-repeat;
  -fx-background-attachment: fixed;
  -fx-background-position: bottom;
+ -fx-background-opacity: 0.1;
+
  }
 
 Label{
@@ -80,3 +82,32 @@ hBox cardPane{
  -fx-background-color: #ffffff;
 }
 
+#start {
+
+ -fx-background-image: url("../images/start.jpg");
+ -fx-background-repeat: no-repeat;
+ -fx-background-attachment: fixed;
+ -fx-background-position: bottom;
+ -fx-background-opacity: 0.1;
+ -fx-background-size: contain;
+ }
+
+#end {
+
+  -fx-background-image: url("../images/ende.jpg");
+  -fx-background-repeat: no-repeat;
+  -fx-background-attachment: fixed;
+  -fx-background-position: bottom;
+  -fx-background-opacity: 0.1;
+  -fx-background-size: contain;
+  }
+
+#RankingBye{
+   -fx-background-image: url("../images/gold-65821_1920.jpg");
+   -fx-background-repeat: no-repeat;
+   -fx-background-attachment: fixed;
+   -fx-background-position: bottom;
+   -fx-background-opacity: 0.1;
+   -fx-background-size: contain;
+
+}

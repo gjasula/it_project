@@ -7,6 +7,7 @@ import javafx.application.Application;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.geometry.VPos;
 import javafx.scene.Scene;
 
 import javafx.scene.control.Button;
@@ -128,7 +129,7 @@ public class GameBoardView extends Pane {
 
         // ------------------- Gridpane definieren für Gameboard-------------------
         gameBoard = new GridPane();
-        gameBoard.setHgap(5);
+        gameBoard.setHgap(0);
         gameBoard.setVgap(5);
 
         gameBoard.setPadding(new Insets(10, 10, 10, 10));
@@ -153,10 +154,12 @@ public class GameBoardView extends Pane {
         // ------------------- Elemente definieren für Gameboard-------------------
         start = new StackPane();
         end = new StackPane();
-        start.setBackground(new Background(new BackgroundImage(getImage("start.jpg"),
-                BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
-        end.setBackground(new Background(new BackgroundImage(getImage("ende.jpg"),
-                BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
+        end.setId("end");
+        start.setId("start");
+        // start.setBackground(new Background(new BackgroundImage(getImage("start.jpg"),
+        //         BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
+        //  end.setBackground(new Background(new BackgroundImage(getImage("ende.jpg"),
+        //          BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
 
         pos1 = new StackPane();
         pos1.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),

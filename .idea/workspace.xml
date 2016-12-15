@@ -1,19 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7558498e-8008-4ac5-ab74-71a944ffbf03" name="Default" comment="Verschieben der Server GUIs in serverClasses.GUI">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/properties/Resources.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/properties/Resources_de.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/properties/Resources_en.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/properties/Resources_swiss.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+    <list default="true" id="7558498e-8008-4ac5-ab74-71a944ffbf03" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/gold-65821_1920.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/blue_1.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/blue_1.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/blue_2.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/blue_2.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/blue_3.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/blue_3.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/blue_4.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/blue_4.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/blue_5.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/blue_5.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/blue_6.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/blue_6.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/blue_7.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/blue_7.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/brown_1.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/brown_1.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/brown_2.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/brown_2.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/brown_3.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/brown_3.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/brown_4.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/brown_4.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/brown_5.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/brown_5.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/brown_6.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/brown_6.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/brown_7.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/brown_7.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/green_1.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/green_1.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/green_2.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/green_2.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/green_3.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/green_3.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/green_4.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/green_4.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/green_5.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/green_5.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/green_6.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/green_6.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/green_7.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/green_7.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/grey_1.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/grey_1.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/grey_2.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/grey_2.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/grey_3.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/grey_3.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/grey_4.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/grey_4.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/grey_5.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/grey_5.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/grey_6.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/grey_6.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/grey_7.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/grey_7.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/pink_1.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/pink_1.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/pink_2.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/pink_2.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/pink_3.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/pink_3.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/pink_4.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/pink_4.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/pink_5.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/pink_5.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/pink_6.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/pink_6.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/pink_7.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/pink_7.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/white_1.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/white_1.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/white_2.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/white_2.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/white_3.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/white_3.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/white_4.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/white_4.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/white_5.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/white_5.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/white_6.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/white_6.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/white_7.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/white_7.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/yellow_1.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/yellow_1.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/yellow_2.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/yellow_2.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/yellow_3.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/yellow_3.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/yellow_4.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/yellow_4.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/yellow_5.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/yellow_5.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/yellow_6.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/yellow_6.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/yellow_7.jpg" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/yellow_7.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/Client_Main.java" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/Client_Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/LogInView.java" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/LogInView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/MenuController.java" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/MenuController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/MenuView.java" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/MenuView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/GameBoardView.java" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/GameBoardView.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/RankingByeView.java" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/RankingByeView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/css/style.css" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/properties/Resources.properties" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/properties/Resources.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/properties/Resources_de.properties" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/properties/Resources_de.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/properties/Resources_en.properties" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/properties/Resources_en.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/properties/Resources_swiss.properties" afterPath="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/properties/Resources_swiss.properties" />
     </list>
     <ignored path="it_project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,11 +81,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="MenuView.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MenuView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/MenuView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="75" column="0" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="48" />
+            <state relative-caret-position="162">
+              <caret line="176" column="37" selection-start-line="176" selection-start-column="37" selection-end-line="176" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -49,28 +96,28 @@
       <file leaf-file-name="Client_Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/Client_Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="37" column="8" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
+            <state relative-caret-position="180">
+              <caret line="43" column="7" selection-start-line="43" selection-start-column="7" selection-end-line="43" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RangkingByeController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/RangkingByeController.java">
+      <file leaf-file-name="GameBoardView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/GameBoardView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="492">
-              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state relative-caret-position="196">
+              <caret line="145" column="9" selection-start-line="145" selection-start-column="9" selection-end-line="145" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RankingByeView.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RankingByeView.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/RankingByeView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="463">
-              <caret line="47" column="67" selection-start-line="47" selection-start-column="40" selection-end-line="47" selection-end-column="67" />
+            <state relative-caret-position="392">
+              <caret line="45" column="35" selection-start-line="45" selection-start-column="35" selection-end-line="45" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -78,81 +125,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MenuController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/MenuController.java">
+      <file leaf-file-name="ServerMain.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/serverClasses/serverClasses/GUI/ServerMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="155" column="0" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Resources_swiss.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/properties/Resources_swiss.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+            <state relative-caret-position="300">
+              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding />
             </state>
           </provider>
-          <provider editor-type-id="ResourceBundle">
-            <state />
-          </provider>
         </entry>
       </file>
-      <file leaf-file-name="Resources_en.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/properties/Resources_en.properties">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="ResourceBundle">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Resources.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/properties/Resources.properties">
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="ResourceBundle">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Resources_de.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/properties/Resources_de.properties">
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="ResourceBundle">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LogInView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/LogInView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="605">
-              <caret line="39" column="26" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
+            <state relative-caret-position="507">
+              <caret line="110" column="32" selection-start-line="110" selection-start-column="32" selection-end-line="110" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -173,16 +173,20 @@
         <option value="$PROJECT_DIR$/src/ch/fhnw/atlantis/serverClasses/serverClasses/GUI/ServerMain.java" />
         <option value="$PROJECT_DIR$/src/ch/fhnw/atlantis/serverClasses/Server.java" />
         <option value="$PROJECT_DIR$/src/ch/fhnw/atlantis/serverClasses/serverClasses/GUI/ServerController.java" />
-        <option value="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/css/style.css" />
-        <option value="$PROJECT_DIR$/src/ch/fhnw/atlantis/serverClasses/serverClasses/GUI/ServerView.java" />
         <option value="$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/RangkingByeController.java" />
-        <option value="$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/RankingByeView.java" />
         <option value="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/properties/Resources_de.properties" />
-        <option value="$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/LogInView.java" />
         <option value="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/properties/Resources.properties" />
-        <option value="$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/Client_Main.java" />
         <option value="$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/MenuController.java" />
+        <option value="$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/LogInController.java" />
+        <option value="$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/LogInView.java" />
         <option value="$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/MenuView.java" />
+        <option value="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/css/serverstyle.css" />
+        <option value="$PROJECT_DIR$/src/ch/fhnw/atlantis/serverClasses/serverClasses/GUI/ServerView.java" />
+        <option value="$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/Properties.java" />
+        <option value="$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/RankingByeView.java" />
+        <option value="$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/css/style.css" />
+        <option value="$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/Client_Main.java" />
+        <option value="$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/GameBoardView.java" />
       </list>
     </option>
   </component>
@@ -227,8 +231,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -265,6 +267,58 @@
               <option name="myItemId" value="atlantis" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="serverClasses" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="it_project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="it_project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="atlantis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="serverClasses" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GUI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="it_project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="it_project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="atlantis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -288,12 +342,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="properties" />
+              <option name="myItemId" value="images" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resource Bundle 'Resources'" />
-              <option name="myItemType" value="com.intellij.lang.properties.projectView.ResourceBundleNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -315,6 +365,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="it_project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="it_project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="atlantis" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -342,7 +414,14 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\nadin\IdeaProjects\it_project\src\ch\fhnw\atlantis\resources\images" />
+    </key>
   </component>
   <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
     <UpdatedFiles>
@@ -358,25 +437,10 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/Client_Main.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/GameBoardController.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/GameBoardView.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/MenuView.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/Model.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/ch/fhnw/atlantis/globalClasses/models/Card.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/ch/fhnw/atlantis/globalClasses/models/GameBoard.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/ch/fhnw/atlantis/globalClasses/models/Pawn.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/MenuController.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/src/ch/fhnw/atlantis/globalClasses/models/Player.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/ch/fhnw/atlantis/globalClasses/models/Tile.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/css/style.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/ende.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/start.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/ch/fhnw/atlantis/serverClasses/RichyRunToBeDeleted.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/ch/fhnw/atlantis/serverClasses/Server.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/ch/fhnw/atlantis/serverClasses/ServerClientHandler.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/ch/fhnw/atlantis/serverClasses/ServerTCPListener.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/ch/fhnw/atlantis/serverClasses/serverClasses/GUI/ServerController.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/ch/fhnw/atlantis/serverClasses/serverClasses/GUI/ServerView.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/ch/fhnw/atlantis/serverClasses/Interpreter.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -384,9 +448,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/ch/fhnw/atlantis/globalClasses/models/Color.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/ch/fhnw/atlantis/globalClasses/models/TileDeck.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/ch/fhnw/atlantis/globalClasses/models/WaterTile.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -394,6 +455,7 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="true" />
           <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/ch/fhnw/atlantis/serverClasses/RichyRunToBeDeleted.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Restored" />
@@ -818,6 +880,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value=",GROUP_BY_PREFIXES" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -871,7 +936,35 @@
       <option name="project" value="LOCAL" />
       <updated>1481530805513</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Anpassung GUI Klassen">
+      <created>1481549388399</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1481549388399</updated>
+    </task>
+    <task id="LOCAL-00008" summary="GUI LogIn View anpassen">
+      <created>1481550551694</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1481550551694</updated>
+    </task>
+    <task id="LOCAL-00009" summary="GUI ServerView angepasst">
+      <created>1481732148879</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1481732148879</updated>
+    </task>
+    <task id="LOCAL-00010" summary="CSS für Server">
+      <created>1481732230068</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1481732230068</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -885,12 +978,12 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921347" sideWeight="0.50289017" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18549345" sideWeight="0.49710983" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4849216" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17479192" sideWeight="0.49710983" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4839477" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32810616" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22432433" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.073513515" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32818073" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -946,7 +1039,11 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update GUI Klassen &#10;- Ergänzung Mythostext in MenuView und Eventhandler" />
     <MESSAGE value="Verschieben der Server GUIs in serverClasses.GUI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Verschieben der Server GUIs in serverClasses.GUI" />
+    <MESSAGE value="Anpassung GUI Klassen" />
+    <MESSAGE value="GUI LogIn View anpassen" />
+    <MESSAGE value="GUI ServerView angepasst" />
+    <MESSAGE value="CSS für Server" />
+    <option name="LAST_COMMIT_MESSAGE" value="CSS für Server" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -957,7 +1054,7 @@
           <properties class="ch.fhnw.atlantis.serverClasses.Server" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="1" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -966,178 +1063,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/MenuController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1250">
-          <caret line="58" column="3" selection-start-line="58" selection-start-column="3" selection-end-line="60" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/MenuView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6475">
-          <caret line="259" column="25" selection-start-line="259" selection-start-column="25" selection-end-line="259" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/LogInView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="875">
-          <caret line="35" column="4" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#5995#5996#0" expanded="false" />
-            <element signature="e#6023#6024#0" expanded="false" />
-            <element signature="e#6064#6065#0" expanded="false" />
-            <element signature="e#6098#6099#0" expanded="false" />
-            <element signature="e#6141#6142#0" expanded="false" />
-            <element signature="e#6176#6177#0" expanded="false" />
-            <element signature="e#6236#6237#0" expanded="false" />
-            <element signature="e#6284#6285#0" expanded="false" />
-            <element signature="e#6317#6318#0" expanded="false" />
-            <element signature="e#6344#6345#0" expanded="false" />
-            <element signature="e#6386#6387#0" expanded="false" />
-            <element signature="e#6418#6419#0" expanded="false" />
-            <element signature="e#6453#6454#0" expanded="false" />
-            <element signature="e#6486#6487#0" expanded="false" />
-            <element signature="e#6536#6537#0" expanded="false" />
-            <element signature="e#6580#6581#0" expanded="false" />
-            <element signature="e#6614#6615#0" expanded="false" />
-            <element signature="e#6646#6647#0" expanded="false" />
-            <element signature="e#6694#6695#0" expanded="false" />
-            <element signature="e#6736#6737#0" expanded="false" />
-            <element signature="e#6770#6771#0" expanded="false" />
-            <element signature="e#6802#6803#0" expanded="false" />
-            <element signature="e#6850#6851#0" expanded="false" />
-            <element signature="e#6892#6893#0" expanded="false" />
-            <element signature="e#6929#6930#0" expanded="false" />
-            <element signature="e#6962#6963#0" expanded="false" />
-            <element signature="e#7014#7015#0" expanded="false" />
-            <element signature="e#7058#7059#0" expanded="false" />
-            <element signature="e#7098#7099#0" expanded="false" />
-            <element signature="e#7134#7135#0" expanded="false" />
-            <element signature="e#7192#7193#0" expanded="false" />
-            <element signature="e#7242#7243#0" expanded="false" />
-            <element signature="e#7277#7278#0" expanded="false" />
-            <element signature="e#7308#7309#0" expanded="false" />
-            <element signature="e#7356#7357#0" expanded="false" />
-            <element signature="e#7396#7397#0" expanded="false" />
-            <element signature="e#7435#7436#0" expanded="false" />
-            <element signature="e#7467#7468#0" expanded="false" />
-            <element signature="e#7520#7521#0" expanded="false" />
-            <element signature="e#7562#7563#0" expanded="false" />
-            <element signature="e#7592#7593#0" expanded="false" />
-            <element signature="e#7619#7620#0" expanded="false" />
-            <element signature="e#7658#7659#0" expanded="false" />
-            <element signature="e#7690#7691#0" expanded="false" />
-            <element signature="e#7720#7721#0" expanded="false" />
-            <element signature="e#7747#7748#0" expanded="false" />
-            <element signature="e#7786#7787#0" expanded="false" />
-            <element signature="e#7818#7819#0" expanded="false" />
-            <element signature="e#7851#7852#0" expanded="false" />
-            <element signature="e#7881#7882#0" expanded="false" />
-            <element signature="e#7926#7927#0" expanded="false" />
-            <element signature="e#7964#7965#0" expanded="false" />
-            <element signature="e#7998#7999#0" expanded="false" />
-            <element signature="e#8025#8026#0" expanded="false" />
-            <element signature="e#8068#8069#0" expanded="false" />
-            <element signature="e#8100#8101#0" expanded="false" />
-            <element signature="e#8128#8129#0" expanded="false" />
-            <element signature="e#8153#8154#0" expanded="false" />
-            <element signature="e#8188#8189#0" expanded="false" />
-            <element signature="e#8216#8217#0" expanded="false" />
-            <element signature="e#8244#8245#0" expanded="false" />
-            <element signature="e#8269#8270#0" expanded="false" />
-            <element signature="e#8304#8305#0" expanded="false" />
-            <element signature="e#8332#8333#0" expanded="false" />
-            <element signature="e#8360#8361#0" expanded="false" />
-            <element signature="e#8385#8386#0" expanded="false" />
-            <element signature="e#8420#8421#0" expanded="false" />
-            <element signature="e#8448#8449#0" expanded="false" />
-            <element signature="e#8476#8477#0" expanded="false" />
-            <element signature="e#8501#8502#0" expanded="false" />
-            <element signature="e#8536#8537#0" expanded="false" />
-            <element signature="e#8564#8565#0" expanded="false" />
-            <element signature="e#8597#8598#0" expanded="false" />
-            <element signature="e#8627#8628#0" expanded="false" />
-            <element signature="e#8672#8673#0" expanded="false" />
-            <element signature="e#8710#8711#0" expanded="false" />
-            <element signature="e#8743#8744#0" expanded="false" />
-            <element signature="e#8773#8774#0" expanded="false" />
-            <element signature="e#8818#8819#0" expanded="false" />
-            <element signature="e#8856#8857#0" expanded="false" />
-            <element signature="e#8889#8890#0" expanded="false" />
-            <element signature="e#8919#8920#0" expanded="false" />
-            <element signature="e#8964#8965#0" expanded="false" />
-            <element signature="e#9002#9003#0" expanded="false" />
-            <element signature="e#9035#9036#0" expanded="false" />
-            <element signature="e#9065#9066#0" expanded="false" />
-            <element signature="e#9110#9111#0" expanded="false" />
-            <element signature="e#9148#9149#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/MenuController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2350">
-          <caret line="107" column="52" selection-start-line="107" selection-start-column="52" selection-end-line="107" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/serverClasses/serverClasses/GUI/ServerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/serverClasses/serverClasses/GUI/ServerMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#488#489#0" expanded="false" />
-            <element signature="e#516#517#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/serverClasses/serverClasses/GUI/ServerView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2375">
-          <caret line="107" column="13" selection-start-line="107" selection-start-column="13" selection-end-line="107" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/RangkingByeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/RankingByeView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1152,7 +1077,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="850">
           <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1171,95 +1095,7 @@
         <state relative-caret-position="550">
           <caret line="35" column="4" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#5995#5996#0" expanded="false" />
-            <element signature="e#6023#6024#0" expanded="false" />
-            <element signature="e#6064#6065#0" expanded="false" />
-            <element signature="e#6098#6099#0" expanded="false" />
-            <element signature="e#6141#6142#0" expanded="false" />
-            <element signature="e#6176#6177#0" expanded="false" />
-            <element signature="e#6236#6237#0" expanded="false" />
-            <element signature="e#6284#6285#0" expanded="false" />
-            <element signature="e#6317#6318#0" expanded="false" />
-            <element signature="e#6344#6345#0" expanded="false" />
-            <element signature="e#6386#6387#0" expanded="false" />
-            <element signature="e#6418#6419#0" expanded="false" />
-            <element signature="e#6453#6454#0" expanded="false" />
-            <element signature="e#6486#6487#0" expanded="false" />
-            <element signature="e#6536#6537#0" expanded="false" />
-            <element signature="e#6580#6581#0" expanded="false" />
-            <element signature="e#6614#6615#0" expanded="false" />
-            <element signature="e#6646#6647#0" expanded="false" />
-            <element signature="e#6694#6695#0" expanded="false" />
-            <element signature="e#6736#6737#0" expanded="false" />
-            <element signature="e#6770#6771#0" expanded="false" />
-            <element signature="e#6802#6803#0" expanded="false" />
-            <element signature="e#6850#6851#0" expanded="false" />
-            <element signature="e#6892#6893#0" expanded="false" />
-            <element signature="e#6929#6930#0" expanded="false" />
-            <element signature="e#6962#6963#0" expanded="false" />
-            <element signature="e#7014#7015#0" expanded="false" />
-            <element signature="e#7058#7059#0" expanded="false" />
-            <element signature="e#7098#7099#0" expanded="false" />
-            <element signature="e#7134#7135#0" expanded="false" />
-            <element signature="e#7192#7193#0" expanded="false" />
-            <element signature="e#7242#7243#0" expanded="false" />
-            <element signature="e#7277#7278#0" expanded="false" />
-            <element signature="e#7308#7309#0" expanded="false" />
-            <element signature="e#7356#7357#0" expanded="false" />
-            <element signature="e#7396#7397#0" expanded="false" />
-            <element signature="e#7435#7436#0" expanded="false" />
-            <element signature="e#7467#7468#0" expanded="false" />
-            <element signature="e#7520#7521#0" expanded="false" />
-            <element signature="e#7562#7563#0" expanded="false" />
-            <element signature="e#7592#7593#0" expanded="false" />
-            <element signature="e#7619#7620#0" expanded="false" />
-            <element signature="e#7658#7659#0" expanded="false" />
-            <element signature="e#7690#7691#0" expanded="false" />
-            <element signature="e#7720#7721#0" expanded="false" />
-            <element signature="e#7747#7748#0" expanded="false" />
-            <element signature="e#7786#7787#0" expanded="false" />
-            <element signature="e#7818#7819#0" expanded="false" />
-            <element signature="e#7851#7852#0" expanded="false" />
-            <element signature="e#7881#7882#0" expanded="false" />
-            <element signature="e#7926#7927#0" expanded="false" />
-            <element signature="e#7964#7965#0" expanded="false" />
-            <element signature="e#7998#7999#0" expanded="false" />
-            <element signature="e#8025#8026#0" expanded="false" />
-            <element signature="e#8068#8069#0" expanded="false" />
-            <element signature="e#8100#8101#0" expanded="false" />
-            <element signature="e#8128#8129#0" expanded="false" />
-            <element signature="e#8153#8154#0" expanded="false" />
-            <element signature="e#8188#8189#0" expanded="false" />
-            <element signature="e#8216#8217#0" expanded="false" />
-            <element signature="e#8244#8245#0" expanded="false" />
-            <element signature="e#8269#8270#0" expanded="false" />
-            <element signature="e#8304#8305#0" expanded="false" />
-            <element signature="e#8332#8333#0" expanded="false" />
-            <element signature="e#8360#8361#0" expanded="false" />
-            <element signature="e#8385#8386#0" expanded="false" />
-            <element signature="e#8420#8421#0" expanded="false" />
-            <element signature="e#8448#8449#0" expanded="false" />
-            <element signature="e#8476#8477#0" expanded="false" />
-            <element signature="e#8501#8502#0" expanded="false" />
-            <element signature="e#8536#8537#0" expanded="false" />
-            <element signature="e#8564#8565#0" expanded="false" />
-            <element signature="e#8597#8598#0" expanded="false" />
-            <element signature="e#8627#8628#0" expanded="false" />
-            <element signature="e#8672#8673#0" expanded="false" />
-            <element signature="e#8710#8711#0" expanded="false" />
-            <element signature="e#8743#8744#0" expanded="false" />
-            <element signature="e#8773#8774#0" expanded="false" />
-            <element signature="e#8818#8819#0" expanded="false" />
-            <element signature="e#8856#8857#0" expanded="false" />
-            <element signature="e#8889#8890#0" expanded="false" />
-            <element signature="e#8919#8920#0" expanded="false" />
-            <element signature="e#8964#8965#0" expanded="false" />
-            <element signature="e#9002#9003#0" expanded="false" />
-            <element signature="e#9035#9036#0" expanded="false" />
-            <element signature="e#9065#9066#0" expanded="false" />
-            <element signature="e#9110#9111#0" expanded="false" />
-            <element signature="e#9148#9149#0" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1274,18 +1110,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/properties/language_CH.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/properties/language_CH.properties" />
     <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1309,32 +1138,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/properties/language_DE.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="650">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/properties/language_EN.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/properties/language_CH.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/properties/language_DE.properties" />
+    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/properties/language_EN.properties" />
+    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/properties/language_CH.properties" />
     <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1358,48 +1168,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/properties/language_DE.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/properties/language_EN.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/properties/language_EN.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/properties/language_CH.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/properties/language_DE.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="650">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/properties/language_DE.properties" />
+    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/properties/language_EN.properties" />
+    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/properties/language_EN.properties" />
+    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/properties/language_CH.properties" />
+    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/properties/language_DE.properties" />
     <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/package-info.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -1416,38 +1189,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/serverClasses/serverClasses/GUI/ServerMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#488#489#0" expanded="false" />
-            <element signature="e#516#517#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/serverClasses/serverClasses/GUI/ServerController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="767">
           <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/serverClasses/serverClasses/GUI/ServerView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4108">
-          <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
           <folding />
         </state>
       </provider>
@@ -1478,14 +1223,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/GameBoardView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7085">
-          <caret line="79" column="97" selection-start-line="79" selection-start-column="97" selection-end-line="79" selection-end-column="97" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/Model.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="554">
@@ -1495,89 +1232,189 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/properties/Resources_de.properties">
+      <provider selected="true" editor-type-id="ResourceBundle">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/properties/Resources_swiss.properties">
+      <provider editor-type-id="ResourceBundle">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/ClientComSocket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-249">
+          <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-674">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/properties/Resources_en.properties">
+      <provider editor-type-id="ResourceBundle">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/java/util/ResourceBundle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="844" column="0" selection-start-line="844" selection-start-column="0" selection-end-line="844" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/properties/Resources.properties">
       <provider selected="true" editor-type-id="ResourceBundle">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/LogInController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding>
+            <element signature="e#2204#2205#0" expanded="false" />
+            <element signature="e#2254#2255#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/Atlantis_BG.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/atlantis_client.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/atlantis.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/images/logoMuehle.jpg">
+      <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/LogInView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="605">
-          <caret line="39" column="26" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
+        <state relative-caret-position="1450">
+          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/css/serverstyle.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="37" column="14" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/serverClasses/serverClasses/GUI/ServerMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/MenuController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/Properties.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="54" column="3" selection-start-line="54" selection-start-column="3" selection-end-line="54" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/serverClasses/serverClasses/GUI/ServerView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="72" column="7" selection-start-line="72" selection-start-column="7" selection-end-line="72" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/MenuView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="176" column="37" selection-start-line="176" selection-start-column="37" selection-end-line="176" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="507">
+          <caret line="110" column="32" selection-start-line="110" selection-start-column="32" selection-end-line="110" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/Client_Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="37" column="8" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
+        <state relative-caret-position="180">
+          <caret line="43" column="7" selection-start-line="43" selection-start-column="7" selection-end-line="43" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/GameBoardView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="145" column="9" selection-start-line="145" selection-start-column="9" selection-end-line="145" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/RankingByeView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
-          <caret line="47" column="67" selection-start-line="47" selection-start-column="40" selection-end-line="47" selection-end-column="67" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/properties/Resources_swiss.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="ResourceBundle">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/properties/Resources_en.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="ResourceBundle">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/MenuController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="155" column="0" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/resources/properties/Resources.properties">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="ResourceBundle">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/fhnw/atlantis/clientClasses/GUI/MenuView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="75" column="0" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="48" />
+        <state relative-caret-position="392">
+          <caret line="45" column="35" selection-start-line="45" selection-start-column="35" selection-end-line="45" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
