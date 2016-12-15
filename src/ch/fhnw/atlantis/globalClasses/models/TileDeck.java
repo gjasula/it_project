@@ -17,6 +17,7 @@ public class TileDeck {
 
     ArrayList<Tile> tileDeck = new ArrayList<Tile>(); //contains all the 42 tiles that are from relevance (no water)
     ArrayList<Tile> waterTilesDeck = new ArrayList<Tile>(); //stores 42 watertiles
+    static ArrayList<String> tileDeckString = new ArrayList<>();
 
     /**
      * creates ArrayList with all tiles that have a color and a number (no watertiles)
@@ -54,6 +55,50 @@ public class TileDeck {
         for (int i = 1; i <= 42; i++) { //42 as random, could be more or also less, but to be safe 42 tiles
             waterTilesDeck.add(new Tile(true));
         }
+    }
+
+    public String getTileImage(){
+
+        String nextTile = null;
+
+        nextTile = tileDeckString.get(0);
+        tileDeckString.remove(0);
+
+        return nextTile;
+    }
+
+    public void generateTileDeck(){
+
+        for( int i = 1 ; i < 8 ; i++ ) {
+            String add = "blue_"+i+".jpg";
+            tileDeckString.add(add);
+        }
+        for( int i = 1 ; i < 8 ; i++ ) {
+            String add = "brown_"+i+".jpg";
+            tileDeckString.add(add);
+        }
+        for( int i = 1 ; i < 8 ; i++ ) {
+            String add = "green_"+i+".jpg";
+            tileDeckString.add(add);
+        }
+        for( int i = 1 ; i < 8 ; i++ ) {
+            String add = "grey_"+i+".jpg";
+            tileDeckString.add(add);
+        }
+        for( int i = 1 ; i < 8 ; i++ ) {
+            String add = "pink_"+i+".jpg";
+            tileDeckString.add(add);
+        }
+        for( int i = 1 ; i < 8 ; i++ ) {
+            String add = "white_"+i+".jpg";
+            tileDeckString.add(add);
+        }
+        for( int i = 1 ; i < 8 ; i++ ) {
+            String add = "yellow_"+i+".jpg";
+            tileDeckString.add(add);
+        }
+
+        Collections.shuffle(tileDeckString);
     }
 
     public ArrayList<Tile> getTiles() {
