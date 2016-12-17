@@ -45,6 +45,9 @@ public class ServerClientHandler implements Runnable {
 
     @Override
     public void run() {
+
+        int SetIDUser = 0;
+
         while (socketToClient.isConnected()) {
             try {
                 final String messagefromClient = (String) inputStream.readObject();
@@ -53,14 +56,21 @@ public class ServerClientHandler implements Runnable {
                 Interpreter InterpretServerMessage = new Interpreter();
                 String monthstring = InterpretServerMessage.interpretServerMsg(messagefromClient);
                 server.forwardMessage(monthstring, this);
-                System.out.println(monthstring);
+                //System.out.println(monthstring);
 
-                // Send String to Server Client has Connected.
-                ServerView serverView = new ServerView();
-                serverView.setTxtLog(messagefromClient);
+                // Define ID for users directly after connecting
+                if(SetIDUser == 0) {
+                    server.forwardMessageToOne("DefineIdentity1", this);
+                    SetIDUser = 1;
+                }
+                if(SetIDUser == 1){
+                    server.forwardMessage("DefineIdentity2", this);
+                    SetIDUser = 2;
+                }
+
 
                 //System.out.println("Received Message from client ("+socketToClient.hashCode()+"): " + messagefromClient);
-                server.forwardMessage("client ("+socketToClient.hashCode()+"):" + messagefromClient, this);
+                //server.forwardMessage("client ("+socketToClient.hashCode()+"):" + messagefromClient, this);
             } catch (IOException e) {
                 e.printStackTrace();
                 Server.getInstance(port).removeClient(this);
