@@ -35,7 +35,10 @@ public class Server {
         socketList.add(sch);
     }
     public void removeClient(ServerClientHandler sch) {
+        // How many Sockets are Connected
+        //System.out.println(socketList);
         socketList.remove(sch);
+        //System.out.println(socketList);
     }
 
     public void forwardMessage(String message, ServerClientHandler sender) {
@@ -43,10 +46,17 @@ public class Server {
 
         while (itr.hasNext()) {
             ServerClientHandler sch = (ServerClientHandler) itr.next();
-            if (!sender.equals(sch)) {
+            //if (!sender.equals(sch)) {
                 sch.send(message);
-            }
+            //}
         }
+    }
+
+    // Sends message if only one client is connected
+    public void forwardMessageToOne(String message, ServerClientHandler sender){
+        Iterator itr = socketList.iterator();
+        ServerClientHandler sch = (ServerClientHandler) itr.next();
+        sch.send(message);
     }
 
 
@@ -54,7 +64,6 @@ public class Server {
         try {
             serverSocket = new ServerSocket(port);
             new Thread(new ServerTCPListener(serverSocket)).start();
-            System.out.println("Server started");
         } catch ( IOException e ) {
             e.printStackTrace();
         }
@@ -64,10 +73,4 @@ public class Server {
         System.exit(0);
     }
 
-
-    //public static void main(String[] args) {
-    //    Server server = Server.getInstance(7777);
-//
-    //    server.startTCP();
-    //}
 }
