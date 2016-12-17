@@ -5,7 +5,6 @@ import javafx.scene.paint.Color;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Stack;
 
 /**
  * Created by juerg on 02.12.2016.
@@ -29,7 +28,8 @@ public class Player implements Serializable {
 
     private boolean isConnected = true;
     public static int playernumber = 0;
-    static Stack<String> MovementCards = new Stack<String>();
+    public static int GameStarted = 0;
+    static ArrayList<String> MovementCards = new ArrayList<>();
     static ArrayList<String> PlayerOneHandCards = new ArrayList<>();
     static ArrayList<String> PlayerTwoHandCards = new ArrayList<>();
 
@@ -123,6 +123,14 @@ public class Player implements Serializable {
 
     }
 
+    public void GameStart(){
+        if(GameStarted == 0){
+            // MovementCard Stapel erzeugen
+            CardStack();
+        GameStarted = 1;
+        }
+    }
+
     /*
     * Kartenstapel erzeugen - Richard Künzi
     */
@@ -138,16 +146,18 @@ public class Player implements Serializable {
         // Alle 105 Bewegungskarten einfügen (15 mal werden die 7 Karten hinzugefügt)
         for( int i = 0 ; i < 15 ; i++ )
         {
-            MovementCards.push(MV_Blue);
-            MovementCards.push(MV_Brown);
-            MovementCards.push(MV_Green);
-            MovementCards.push(MV_Grey);
-            MovementCards.push(MV_Pink);
-            MovementCards.push(MV_White);
-            MovementCards.push(MV_Yellow);
+            MovementCards.add(MV_Blue);
+            MovementCards.add(MV_Brown);
+            MovementCards.add(MV_Green);
+            MovementCards.add(MV_Grey);
+            MovementCards.add(MV_Pink);
+            MovementCards.add(MV_White);
+            MovementCards.add(MV_Yellow);
         }
         // Mischen der Bewegungskarten
         Collections.shuffle(MovementCards);
+        getCardFromStack(4,1);
+        getCardFromStack(5,2);
     }
 
     public Color getColor() { return color; }
@@ -192,17 +202,45 @@ public class Player implements Serializable {
 
     public ArrayList<Card> getMovementCards() { return movementCards; }
 
-    static void getCardFromStack(int AmountMV, int Player){
+    public String getPlayerOneHand(){
+        String StringPlayerOneHandCards = "";
+
+        for( int i = 0 ; i < PlayerOneHandCards.size() ; i++ )
+        {
+            //System.out.println(PlayerOneHandCards.get(i));
+            StringPlayerOneHandCards += PlayerOneHandCards.get(i) + ",";
+        }
+        return StringPlayerOneHandCards;
+    }
+
+    public String getPlayerTwoHand(){
+        String StringPlayerTwoHandCards = "";
+
+        for( int i = 0 ; i < PlayerTwoHandCards.size() ; i++ )
+        {
+            //System.out.println(PlayerOneHandCards.get(i));
+            StringPlayerTwoHandCards += PlayerTwoHandCards.get(i) + ",";
+        }
+        return StringPlayerTwoHandCards;
+    }
+
+    public static String getCardFromStack(int AmountMV, int Player){
+        String returnToClient = MovementCards.get(0);
+
         // Ausgabe erste Karte vom Stapel
         for( int i = 0 ; i < AmountMV ; i++ )
         {
             if(Player == 1){
-                PlayerOneHandCards.add(MovementCards.pop());
+                PlayerOneHandCards.add(MovementCards.get(0));
             }else{
-                PlayerTwoHandCards.add(MovementCards.pop());
+                PlayerTwoHandCards.add(MovementCards.get(0));
             }
             MovementCards.remove(0);
         }
+        System.out.println("Player One Hand: " + PlayerOneHandCards);
+        System.out.println("Player Two Hand: " + PlayerTwoHandCards);
+
+        return returnToClient;
     }
 
     /**
