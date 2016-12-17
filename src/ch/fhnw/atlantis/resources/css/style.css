@@ -109,5 +109,10 @@ hBox cardPane{
    -fx-background-position: bottom;
    -fx-background-opacity: 0.1;
    -fx-background-size: contain;
+}
 
+#PawnP1{
+    -fx-font-family: 'Material Icons';
+    -fx-font-size: 30;
+    -fx-text-fill: #410b33;
 }
