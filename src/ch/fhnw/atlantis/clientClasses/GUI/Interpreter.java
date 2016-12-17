@@ -5,20 +5,30 @@ package ch.fhnw.atlantis.clientClasses.GUI;
  */
 public class Interpreter {
 
+    PlayerClient playerClient = new PlayerClient();
+
     public String interpretClientMsg(String messagefromServer){
 
-        String monthString;
-
         switch (messagefromServer) {
-            case "Monday":
-                monthString = "[Monday] specific output from client to server interpreter";
-                System.out.println(monthString);
+            case "StartGame":
+                playerClient.sendMessageToServer(messagefromServer);
+                break;
+            case "DefineIdentity1":
+                playerClient.setPlayerID(1);
+                break;
+            case "DefineIdentity2":
+                playerClient.setPlayerID(2);
                 break;
             default:
-                monthString = "Default output from client to server interpreter";
-                System.out.println(monthString);
+
+                if(messagefromServer.substring(0,13).equals("PlayerOneHand")){
+                    playerClient.setPlayerOneHandCards(messagefromServer.substring(13));
+                }else if(messagefromServer.substring(0,13).equals("PlayerTwoHand")){
+                    playerClient.setPlayerTwoHandCards(messagefromServer.substring(13));
+                }
         }
-        return monthString;
+
+        return null;
     }
 
 }
