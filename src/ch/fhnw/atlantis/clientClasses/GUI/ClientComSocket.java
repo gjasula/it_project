@@ -39,7 +39,7 @@ public class ClientComSocket implements Runnable {
         while (socketToServer.isConnected()) {
             try {
                 final String messagefromServer = (String) inputStream.readObject();
-                System.out.println("Received Message from server: " + messagefromServer);
+                //System.out.println("Received Message from server: " + messagefromServer);
 
                 // Forward message to interpreter
                 Interpreter InterpretClientMessage = new Interpreter();
