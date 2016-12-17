@@ -28,6 +28,8 @@ public class GameBoardController {
         view.getPointsP3().getStyleClass().add("Label-big");
         view.getPointsP4().getStyleClass().add("Label-big");
 
+        view.getPawnP1().getStyleClass().add("PawnP1");
+
 
 
     }

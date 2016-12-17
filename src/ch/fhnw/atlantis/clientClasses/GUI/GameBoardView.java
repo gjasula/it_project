@@ -41,7 +41,7 @@ public class GameBoardView extends Pane {
     //-------------------- All Panes -----------------------------------
     private BorderPane gBPane;
     private GridPane gameBoard, playerGrid;
-    private StackPane start, end, pos1, pos2, pos3, pos4, pos5, pos6, pos7, pos8, pos9, pos10, pos11, pos12, pos13, pos14, pos15, pos16, pos17, pos18, pos19, pos20, pos21, pos22, pos23, pos24, pos25;
+    private StackPane start, end, pos1, pos2, pos3, pos4, pos5, pos6, pos7, pos8, pos9, pos10, pos11, pos12, pos13, pos14, pos15, pos16, pos17, pos18, pos19, pos20, pos21, pos22, pos23, pos24, pos25, cardPane, tilePane;
     private Scene scene;
 
     private HashMap<Integer, Label> scoresLabels;
@@ -50,10 +50,9 @@ public class GameBoardView extends Pane {
 
     private Image atlantis, mainland;
 
-    private HBox cardPane;
+    private ImageView cardIv, tileIv;
 
-    private Button btnFinishTurn;
-    private Button btnBuyCard;
+    private Button btnFinishTurn, btnBuyCard, btnNextCard, btnNextTile;
 
     private Label p1;
     private Label p2;
@@ -69,6 +68,11 @@ public class GameBoardView extends Pane {
     private Label pointsP2;
     private Label pointsP3;
     private Label pointsP4;
+
+    private Label pawnP1;
+    private Label pawnP2;
+    private Label pawnP3;
+    private Label pawnP4;
 
     private int maxColIndex, maxRowIndex;
 
@@ -151,15 +155,24 @@ public class GameBoardView extends Pane {
             //LabelsArray.add(label);
         }
 
+        //
+        pawnP1 = new Label("\ue91D");
+        pawnP2 = new Label("\ue532");
+        pawnP3 = new Label("\ue16B");
+        pawnP4 = new Label("\ue80C");
+
+
         // ------------------- Elemente definieren für Gameboard-------------------
         start = new StackPane();
         end = new StackPane();
+        cardPane = new StackPane();
+        tilePane = new StackPane();
         end.setId("end");
         start.setId("start");
-        // start.setBackground(new Background(new BackgroundImage(getImage("start.jpg"),
-        //         BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
-        //  end.setBackground(new Background(new BackgroundImage(getImage("ende.jpg"),
-        //          BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
+        //start.setBackground(new Background(new BackgroundImage(getImage("start.jpg"),
+        //        BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
+        //end.setBackground(new Background(new BackgroundImage(getImage("ende.jpg"),
+        //        BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
 
         ImageLoader imageLoader = new ImageLoader();
 
@@ -241,16 +254,30 @@ public class GameBoardView extends Pane {
 
         btnBuyCard = new Button("Karte kaufen");
         btnFinishTurn = new Button("Zug beenden");
+        btnNextCard = new Button("Nächste Karte");
+        btnNextTile = new Button("Nächstes Plättchen");
+        btnNextTile.setWrapText(true);
+        btnNextTile.setCenterShape(true);
 
-        cardPane = new HBox();
-        cardPane.setStyle(" -fx-background-color: #ffffff; -fx-opacity: 0.6;");
-        cardPane.setOpacity(20);
+        cardPane.setBackground(new Background(new BackgroundImage(getImage("card_Blue.jpg"),
+                BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
 
-        gameBoard.setConstraints(start, 0,0,3,3);
-        gameBoard.setConstraints(btnBuyCard, 6,6, 2, 1);
-        gameBoard.setConstraints(btnFinishTurn, 9,6,2,1);
-        gameBoard.setConstraints(cardPane, 5, 7,7,3);
-        gameBoard.setConstraints(end, 13, 7,3,3);
+        tilePane.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+                BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
+
+
+        gameBoard.setConstraints(pawnP1, 0, 0);
+        gameBoard.setConstraints(start, 0, 0, 3, 3);
+
+        gameBoard.setConstraints(cardPane, 5, 7, 2, 3);
+        gameBoard.setConstraints(btnBuyCard, 5, 6, 2, 1);
+        gameBoard.setConstraints(btnNextCard, 3, 8, 2, 1);
+
+        gameBoard.setConstraints(tilePane, 8, 7, 2, 3);
+        gameBoard.setConstraints(btnFinishTurn, 8, 6, 2, 1);
+        gameBoard.setConstraints(btnNextTile, 10, 8, 2, 1);
+
+        gameBoard.setConstraints(end, 13, 7, 3, 3);
 
         gameBoard.setConstraints(pos1, 1,3);
         gameBoard.setConstraints(pos2, 1,4);
@@ -282,8 +309,9 @@ public class GameBoardView extends Pane {
 
 
         // alle Inhalte in die Gridpanes holen mit getChildren
-        gameBoard.getChildren().addAll(btnBuyCard,btnFinishTurn, cardPane, start, end, pos1, pos2, pos3, pos4, pos5, pos6, pos7, pos8, pos9, pos10, pos11, pos12, pos13, pos14, pos15, pos16, pos17, pos18, pos19, pos20, pos21, pos22, pos23, pos24, pos25);
+        gameBoard.getChildren().addAll(btnBuyCard, btnFinishTurn, btnNextCard, btnNextTile, cardPane, tilePane, start, end, pos1, pos2, pos3, pos4, pos5, pos6, pos7, pos8, pos9, pos10, pos11, pos12, pos13, pos14, pos15, pos16, pos17, pos18, pos19, pos20, pos21, pos22, pos23, pos24, pos25);
         playerGrid.getChildren().addAll(player1, player2, player3, player4, p1, p2, p3, p4, pointsP1, pointsP2, pointsP3, pointsP4);
+        start.getChildren().addAll(pawnP1, pawnP2, pawnP3, pawnP4);
 
         // ------------------- BorderPane erstellen und HBox, VBox, Gameboard und playerGrid hinzufügen -------------------
         BorderPane gBPane = new BorderPane();
@@ -426,12 +454,15 @@ public class GameBoardView extends Pane {
     public Label getPlayer1() {
         return player1;
     }
+
     public Label getPlayer2() {
         return player2;
     }
+
     public Label getPlayer3() {
         return player3;
     }
+
     public Label getPlayer4() {
         return player4;
     }
@@ -450,6 +481,22 @@ public class GameBoardView extends Pane {
 
     public Label getPointsP4() {
         return pointsP4;
+    }
+
+    public Label getPawnP1() {
+        return pawnP1;
+    }
+
+    public Label getPawnP2() {
+        return pawnP2;
+    }
+
+    public Label getPawnP3() {
+        return pawnP3;
+    }
+
+    public Label getPawnP4() {
+        return pawnP4;
     }
 }
 
