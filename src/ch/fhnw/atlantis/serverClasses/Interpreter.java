@@ -16,13 +16,21 @@ public class Interpreter {
         Player player = new Player();
 
         switch (messagefromClient) {
-            case "PlayerConnected":
-                returnToClient = "[Monday] specific output from client to server interpreter";
-                System.out.println(returnToClient);
+            case "StartGame":
+                player.GameStart();
+                returnToClient = "RequestYourIdentity";
                 break;
             case "DefineIdentity":
-                returnToClient = String.valueOf(player.definePlayerIdentity());
-                System.out.println("DefineIdentity: " + returnToClient);
+                returnToClient = "Your ID will be: " + String.valueOf(player.definePlayerIdentity());
+                break;
+            case "GetPlayerOneHand":
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "GetPlayerTwoHand":
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
             default:
                 returnToClient = "Default Output";
                 //System.out.println(returnToClient);
