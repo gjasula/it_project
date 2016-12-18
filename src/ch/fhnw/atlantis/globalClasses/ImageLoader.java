@@ -1,5 +1,7 @@
 package ch.fhnw.atlantis.globalClasses;
 
+import ch.fhnw.atlantis.clientClasses.GUI.ConvertMovementCardToFileName;
+import ch.fhnw.atlantis.clientClasses.GUI.PlayerClient;
 import ch.fhnw.atlantis.globalClasses.models.TileDeck;
 import javafx.scene.image.Image;
 
@@ -39,6 +41,19 @@ public class ImageLoader {
         }
         return null;
 
+    }
+
+    public static Image getPlayerMovementCardHand(int MovementCardNumber){
+        String imagePath = "ch/fhnw/atlantis/resources/images/";
+        PlayerClient playerClient = new PlayerClient();
+        ConvertMovementCardToFileName convertMovementCardToFileName = new ConvertMovementCardToFileName();
+
+        try {
+            return new Image(imagePath + convertMovementCardToFileName.ConvertMovementCardToFileName(playerClient.getPlayerMovementCardHandGUI(MovementCardNumber)));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 }

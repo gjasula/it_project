@@ -1,8 +1,5 @@
 package ch.fhnw.atlantis.clientClasses.GUI;
 
-import ch.fhnw.atlantis.globalClasses.models.Tile;
-import ch.fhnw.atlantis.globalClasses.models.TileDeck;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -53,5 +50,17 @@ public class PlayerClient {
         String str[] = MVCard.split(",");
         PlayerTwoHandCards = Arrays.asList(str);
         System.out.println("Player Two Hand: " + PlayerTwoHandCards);
+    }
+
+    public String getPlayerMovementCardHandGUI(int MovementCardNumber){
+        String returnHand = "MV_Pink";
+
+        if(PlayerID == 1){
+            returnHand = PlayerOneHandCards.get(MovementCardNumber);
+        }else if(PlayerID == 2){
+            returnHand = PlayerTwoHandCards.get(MovementCardNumber);
+        }
+
+        return returnHand;
     }
 }
