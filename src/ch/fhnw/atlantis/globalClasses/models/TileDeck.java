@@ -4,6 +4,8 @@ package ch.fhnw.atlantis.globalClasses.models;
  * Created by juerg on 07.12.2016.
  */
 
+import com.sun.beans.decoder.ValueObject;
+
 import java.util.ArrayList;
 import java.util.Collections;
 

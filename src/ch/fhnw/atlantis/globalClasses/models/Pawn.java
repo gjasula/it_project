@@ -24,10 +24,10 @@ public class Pawn extends Rectangle implements Serializable {
         this.pawnNum = pawnNum;
 
         if (player.getPlayerID() == 1) {
-            //layerColor
+
         }
         else {
-            //color = FigureColor.ORANGE;
+
         }
     }
 

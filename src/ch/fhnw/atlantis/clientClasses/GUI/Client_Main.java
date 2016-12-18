@@ -38,13 +38,16 @@ public class Client_Main extends Application {
     public void start(final Stage primaryStage) throws FileNotFoundException {
         Model model = new Model(primaryStage);
 
+        //System.out.println("TileDeck contains (with additional waterTile: " + GameBoard.getTileDeck().getTiles().size());
+        //model.getTileDeck().getTiles().remove(12);
+        //System.out.println("TileDeck now contains: " + model.getTileDeck().getTiles().size());
        // GameBoardView view = new GameBoardView(model);
 
-     //   LogInController logInController = new LogInController(model);
-     //   logInController.show();
+    //  LogInController logInController = new LogInController(model);
+    //  logInController.show();
 
-      GameBoardController gbCon = new GameBoardController(model);
-      gbCon.show();
+        GameBoardController gbCon = new GameBoardController(model);
+        gbCon.show();
 
     primaryStage.setOnCloseRequest(event -> {
         event.consume();

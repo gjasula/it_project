@@ -2,30 +2,24 @@ package ch.fhnw.atlantis.clientClasses.GUI;
 
 import ch.fhnw.atlantis.globalClasses.ImageLoader;
 import ch.fhnw.atlantis.globalClasses.models.*;
-import javafx.application.Application;
 
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
-import javafx.geometry.VPos;
 import javafx.scene.Scene;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
-import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 
 import javafx.scene.paint.Color;
 
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.awt.*;
 import java.io.FileNotFoundException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -34,25 +28,15 @@ import static ch.fhnw.atlantis.globalClasses.ImageLoader.getImage;
 
 public class GameBoardView extends Pane {
 
-    private final ArrayList<Label> LabelsArray;
-    private ArrayList<Player> players;
-    private ArrayList<Card> pathCards;
-
     //-------------------- All Panes -----------------------------------
     private BorderPane gBPane;
     private GridPane gameBoard, playerGrid;
     private StackPane start, end, pos1, pos2, pos3, pos4, pos5, pos6, pos7, pos8, pos9, pos10, pos11, pos12, pos13, pos14, pos15, pos16, pos17, pos18, pos19, pos20, pos21, pos22, pos23, pos24, pos25, cardPane, tilePane;
     private Scene scene;
 
-    private HashMap<Integer, Label> scoresLabels;
     private Model model;
 
-
-    private Image atlantis, mainland;
-
-    private ImageView cardIv, tileIv;
-
-    private Button btnFinishTurn, btnBuyCard, btnNextCard, btnNextTile;
+    private Button btnFinishTurn, btnBuyCard, btnNextCard, btnPlayCard, btnNextTile, btnPlayTile ;
 
     private Label p1;
     private Label p2;
@@ -80,9 +64,6 @@ public class GameBoardView extends Pane {
 
         maxColIndex = 16;
         maxRowIndex = 10;
-
-        LabelsArray = new ArrayList<>();
-        atlantis = new Image(getClass().getResourceAsStream("./../../resources/images/start.jpg"));
 
         // ------------------- Grid für Player Icons -------------------
         playerGrid = new GridPane();
@@ -257,7 +238,10 @@ public class GameBoardView extends Pane {
         btnNextCard = new Button("Nächste Karte");
         btnNextTile = new Button("Nächstes Plättchen");
         btnNextTile.setWrapText(true);
-        btnNextTile.setCenterShape(true);
+        btnPlayCard = new Button("Karte spielen");
+        btnPlayTile = new Button("Plättchen eintauschen");
+        btnPlayTile.setWrapText(true);
+
 
         cardPane.setBackground(new Background(new BackgroundImage(getImage("card_Blue.jpg"),
                 BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
@@ -271,11 +255,13 @@ public class GameBoardView extends Pane {
 
         gameBoard.setConstraints(cardPane, 5, 7, 2, 3);
         gameBoard.setConstraints(btnBuyCard, 5, 6, 2, 1);
-        gameBoard.setConstraints(btnNextCard, 3, 8, 2, 1);
+        gameBoard.setConstraints(btnPlayCard, 3, 8, 2, 1);
+        gameBoard.setConstraints(btnNextCard, 3, 9, 2, 1);
 
         gameBoard.setConstraints(tilePane, 8, 7, 2, 3);
         gameBoard.setConstraints(btnFinishTurn, 8, 6, 2, 1);
-        gameBoard.setConstraints(btnNextTile, 10, 8, 2, 1);
+        gameBoard.setConstraints(btnPlayTile, 10, 8, 2, 1);
+        gameBoard.setConstraints(btnNextTile, 10, 9, 2, 1);
 
         gameBoard.setConstraints(end, 13, 7, 3, 3);
 
@@ -309,7 +295,7 @@ public class GameBoardView extends Pane {
 
 
         // alle Inhalte in die Gridpanes holen mit getChildren
-        gameBoard.getChildren().addAll(btnBuyCard, btnFinishTurn, btnNextCard, btnNextTile, cardPane, tilePane, start, end, pos1, pos2, pos3, pos4, pos5, pos6, pos7, pos8, pos9, pos10, pos11, pos12, pos13, pos14, pos15, pos16, pos17, pos18, pos19, pos20, pos21, pos22, pos23, pos24, pos25);
+        gameBoard.getChildren().addAll(btnBuyCard, btnFinishTurn, btnNextCard, btnNextTile, btnPlayCard, btnPlayTile, cardPane, tilePane, start, end, pos1, pos2, pos3, pos4, pos5, pos6, pos7, pos8, pos9, pos10, pos11, pos12, pos13, pos14, pos15, pos16, pos17, pos18, pos19, pos20, pos21, pos22, pos23, pos24, pos25);
         playerGrid.getChildren().addAll(player1, player2, player3, player4, p1, p2, p3, p4, pointsP1, pointsP2, pointsP3, pointsP4);
         start.getChildren().addAll(pawnP1, pawnP2, pawnP3, pawnP4);
 
@@ -420,36 +406,31 @@ public class GameBoardView extends Pane {
 
     }
 
-    /**
-     * Methode zum zeichnen einet SPielfigur
-     * TODO: Möglicherweise können wir hier unsere Symbole verwenden?
-     */
-    private void drawPawns() {
-        int offsetX = 10;
-        int offsetY = 5;
-        for (Card card : pathCards) {
-            //TileType Enum gibt noch einen Fehler da nicht public
-            //if (card.getObject() == TileType.START) {
-            for (Player player : players) {
-                for (Pawn pawn : player.getPawns()) {
-                    //Put the game pieces onto the start field
-                    pawn.setLayoutX(card.getLayoutX() + offsetX);
-                    pawn.setLayoutY(card.getLayoutY() + offsetY);
-                    pawn.setPathId(card.getPathID());
-                    pawn.setFill(player.getColor());
-                    pawn.setStroke(Color.BLACK);
-                    pawn.setWidth(10);
-                    pawn.setHeight(10);
-                    this.getChildren().add(pawn);
-                    offsetX += 20;
-                }
-                offsetY += 15;
-                offsetX = 10;
-            }
-        }
+    /** Getter und Setter **/
+
+    public Button getBtnFinishTurn() {
+        return btnFinishTurn;
     }
 
+    public Button getBtnBuyCard() {
+        return btnBuyCard;
+    }
 
+    public Button getBtnNextCard() {
+        return btnNextCard;
+    }
+
+    public Button getBtnPlayCard() {
+        return btnPlayCard;
+    }
+
+    public Button getBtnNextTile() {
+        return btnNextTile;
+    }
+
+    public Button getBtnPlayTile() {
+        return btnPlayTile;
+    }
 
     public Label getPlayer1() {
         return player1;
@@ -499,54 +480,3 @@ public class GameBoardView extends Pane {
         return pawnP4;
     }
 }
-
-
-/** TODO: Alter Code zum löschen sobald alles funktioniert
-
- GridPane[][] gameBoard = new GridPane[COL][ROW];
-
- BorderPane bp = new BorderPane();
-
- @Override
- public void start(Stage primaryStage) throws FileNotFoundException {
- primaryStage.setTitle("GridPane example");
-
- //Adding GridPane
- GridPane gridPane = new GridPane();
-
-
-
- Scene scene = new Scene(gridPane,sceneWidth, sceneHeight);
- primaryStage.setScene(scene);
- primaryStage.show();
- }
- }
-
- GridPane gridPane;
- StackPane sp = new StackPane();
- Group root = new Group();
- Node node = new ImageView();
-
- ImageView iv = new ImageView();
- iv.setFitWidth(25);
- iv.setFitHeight(25);
-
- for (String tiles : model.gameBoard.getPicturesToArraylist()) {
- for (int i = 0; i < COL; i++) {
- for (int j = 0; j < ROW; j++) {
- gridPane = null;
- // create obstacle
- if (i == 1 && j == 1) {
- node = new ImageView(ImageLoader.getImage(tiles));
- }
- //add node to group
- if (iv != null) {
- root.getChildren().add(iv);
- // add to playfield for further reference using an array
- gameBoard[i][j] = gridPane;
- }
- }
- }
- }
-
- */

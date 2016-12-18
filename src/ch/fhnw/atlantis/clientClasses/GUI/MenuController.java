@@ -171,8 +171,8 @@ public class MenuController {
                 rangkingByeController.show();
 
                 // Initialisiere Spiel Backend - Richard Künzi
-                PlayerClient playerClient = new PlayerClient();
-                playerClient.startGame();
+                //PlayerClient playerClient = new PlayerClient();
+                //playerClient.startGame();
 
 
             }
