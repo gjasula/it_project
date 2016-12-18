@@ -243,7 +243,7 @@ public class GameBoardView extends Pane {
         btnPlayTile.setWrapText(true);
 
 
-        cardPane.setBackground(new Background(new BackgroundImage(getImage("card_Blue.jpg"),
+        cardPane.setBackground(new Background(new BackgroundImage(imageLoader.getPlayerMovementCardHand(1),
                 BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
 
         tilePane.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
