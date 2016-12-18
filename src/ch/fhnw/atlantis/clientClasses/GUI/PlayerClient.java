@@ -13,6 +13,8 @@ public class PlayerClient {
     public static int PlayerID = 0;
     static List<String> PlayerOneHandCards = new ArrayList<>();
     static List<String> PlayerTwoHandCards = new ArrayList<>();
+    static List<String> PlayerOneHandTiles = new ArrayList<>();
+    static List<String> PlayerTwoHandTiles = new ArrayList<>();
 
 
     public void startGame() {
@@ -63,4 +65,17 @@ public class PlayerClient {
 
         return returnHand;
     }
+
+    public String getPlayerPathTileHandGUI(int MovementCardNumber){
+        String returnHand = "pink_3.jpg";
+
+        if(PlayerID == 1){
+            returnHand = PlayerOneHandTiles.get(MovementCardNumber);
+        }else if(PlayerID == 2){
+            returnHand = PlayerTwoHandTiles.get(MovementCardNumber);
+        }
+
+        return returnHand;
+    }
+
 }

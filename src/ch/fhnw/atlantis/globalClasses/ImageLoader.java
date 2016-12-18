@@ -56,4 +56,16 @@ public class ImageLoader {
         return null;
     }
 
+    public static Image getPlayerPathTileHand(int PathTileNumber){
+        String imagePath = "ch/fhnw/atlantis/resources/images/";
+        PlayerClient playerClient = new PlayerClient();
+
+        try {
+            return new Image(imagePath + playerClient.getPlayerPathTileHandGUI(PathTileNumber));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 }

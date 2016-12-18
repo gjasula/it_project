@@ -246,7 +246,7 @@ public class GameBoardView extends Pane {
         cardPane.setBackground(new Background(new BackgroundImage(imageLoader.getPlayerMovementCardHand(1),
                 BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
 
-        tilePane.setBackground(new Background(new BackgroundImage(getImage("blue_1.jpg"),
+        tilePane.setBackground(new Background(new BackgroundImage(imageLoader.getPlayerPathTileHand(1),
                 BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
 
 
