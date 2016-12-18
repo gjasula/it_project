@@ -60,6 +60,9 @@ public class GameBoardView extends Pane {
 
     private int maxColIndex, maxRowIndex;
 
+    public static int DisplayMovementCard = 0;
+    public static int DisplayPathTile = 0;
+
     public GameBoardView() throws FileNotFoundException {
 
         maxColIndex = 16;
@@ -243,10 +246,10 @@ public class GameBoardView extends Pane {
         btnPlayTile.setWrapText(true);
 
 
-        cardPane.setBackground(new Background(new BackgroundImage(imageLoader.getPlayerMovementCardHand(1),
+        cardPane.setBackground(new Background(new BackgroundImage(imageLoader.getPlayerMovementCardHand(DisplayMovementCard),
                 BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
 
-        tilePane.setBackground(new Background(new BackgroundImage(imageLoader.getPlayerPathTileHand(1),
+        tilePane.setBackground(new Background(new BackgroundImage(imageLoader.getPlayerPathTileHand(DisplayPathTile),
                 BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
 
 
@@ -406,14 +409,19 @@ public class GameBoardView extends Pane {
 
     }
 
+    public Button getBtnBuyCard() {
+        return btnBuyCard;
+    }
+
+    public void UpdatePositivePathTile(){
+        DisplayPathTile ++;
+        System.out.println("PathTileNumber on GUI: " + DisplayPathTile);
+    }
+
     /** Getter und Setter **/
 
     public Button getBtnFinishTurn() {
         return btnFinishTurn;
-    }
-
-    public Button getBtnBuyCard() {
-        return btnBuyCard;
     }
 
     public Button getBtnNextCard() {

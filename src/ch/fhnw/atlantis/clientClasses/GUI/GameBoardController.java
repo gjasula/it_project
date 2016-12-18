@@ -34,7 +34,9 @@ public class GameBoardController {
         });
 
         view.getBtnNextTile().setOnAction(event -> {
-
+            view.UpdatePositivePathTile();
+            //view.DisplayMovementCard = 1;
+            //System.out.println("PathTileNumber on GUI: " + view.DisplayPathTile);
         });
 
         view.getBtnPlayCard().setOnAction(event -> {

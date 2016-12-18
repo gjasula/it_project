@@ -66,13 +66,26 @@ public class PlayerClient {
         return returnHand;
     }
 
-    public String getPlayerPathTileHandGUI(int MovementCardNumber){
+    public String getPlayerPathTileHandGUI(int PathTileNumber){
+        // ONLY TESTING
+        PlayerOneHandTiles.add("pink_3.jpg");
+        PlayerOneHandTiles.add("pink_1.jpg");
+        PlayerOneHandTiles.add("pink_2.jpg");
+        PlayerOneHandTiles.add("pink_4.jpg");
+        PlayerOneHandTiles.add("pink_5.jpg");
+
         String returnHand = "pink_3.jpg";
 
+        // ONLY TESTING
+        returnHand = PlayerOneHandTiles.get(PathTileNumber);
+        System.out.println("PathTileNumber which Client returns: " + PathTileNumber);
+
         if(PlayerID == 1){
-            returnHand = PlayerOneHandTiles.get(MovementCardNumber);
+            // MovementCardNumber > PlayerOneHandTiles.size()
+            // MovementCardNumber = 0 wird aber nicht gehen da sonst immer die letzte Karte angezeigt wird falls einmal durch
+            returnHand = PlayerOneHandTiles.get(PathTileNumber);
         }else if(PlayerID == 2){
-            returnHand = PlayerTwoHandTiles.get(MovementCardNumber);
+            returnHand = PlayerTwoHandTiles.get(PathTileNumber);
         }
 
         return returnHand;
