@@ -411,7 +411,6 @@ public class GameBoardView extends Pane {
 
     public void UpdatePositivePathTile(){
         DisplayPathTile ++;
-        System.out.println("PathTileNumber on GUI: " + DisplayPathTile);
     }
 
     public void UpdatePositiveMovementCard(){
