@@ -113,6 +113,7 @@ public class PlayerClient {
         PlayerOneHandTiles.add("pink_3.jpg");
         PlayerOneHandTiles.add("pink_4.jpg");
         PlayerOneHandTiles.add("pink_5.jpg");
+        PlayerTwoHandTiles.add("pink_5.jpg");
 
         String returnHand;
 
