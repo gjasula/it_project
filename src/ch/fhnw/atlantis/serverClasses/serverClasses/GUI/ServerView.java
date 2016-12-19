@@ -62,20 +62,22 @@ public class ServerView {
 
         SGroup = new Label("Team Gerstenland: IT-Projekt Fachhochschule Nordwestschweiz, 2016");
         SGroup.setId("Label-small");
+        SGroup.setPadding(new Insets(10));
 
         // ------------------- Buttons -------------------
         btnConnect_s = new Button("START SERVER");
         btnStop_s = new Button("STOP SERVER");
 
-        //  ------------------- TextField -------------------
+        //  ------------------- TextField für Port Nummer -------------------
         PortServer = new TextField("7777");
 
+        //  ------------------- TextArea für Anzeige des Servers -------------------
         txtLog = new TextArea("");
         txtLog.setEditable(false);
         txtLog.setMaxWidth(500);
         txtLog.setWrapText(true);
 
-        //  ------------------- Elemente in HBox anordnen  -------------------
+        //  ------------------- Elemente in HBox und VBox anordnen  -------------------
         shbox = new HBox(PortServer, btnConnect_s, btnStop_s);
         shbox.setAlignment(Pos.CENTER_LEFT);
         shbox.setPadding(new Insets(5));
@@ -113,6 +115,7 @@ public class ServerView {
 
         //  -------------------BorderPane zu Scene hinzufügen und Fenstergrösse setzen-------------------
         scene = new Scene(border, 1024, 450);
+        // CSS aufrufen für Styling
         scene.getStylesheets().add("/ch/fhnw/atlantis/resources/css/serverstyle.css");
     }
 
@@ -134,7 +137,6 @@ public class ServerView {
 
     public void setPortServer(String portServer) {
         PortServer.setText(portServer);
-
     }
 
     public TextArea getTxtLog() {
@@ -144,7 +146,6 @@ public class ServerView {
     public void setTxtLog(String LogMessage) {
 
         txtLog.appendText(LogMessage + newline);
-
     }
 
     public Scene getScene() {

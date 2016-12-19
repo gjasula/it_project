@@ -45,7 +45,6 @@ public class LogInController {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-
             }
         });
 

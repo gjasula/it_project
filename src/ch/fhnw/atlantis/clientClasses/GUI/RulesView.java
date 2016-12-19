@@ -9,7 +9,6 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-
 /**
  * Created by Nadine on 28.11.2016.
  */
@@ -21,8 +20,6 @@ public class RulesView {
     private StackPane root;
     private Scene scene;
 
-    private Button btnBack2;
-
     private ImageView AR1;
     private ImageView AR2;
     private ImageView AR3;
@@ -30,13 +27,9 @@ public class RulesView {
     private ImageView AR5;
     private ImageView AR6;
 
-
-
     public RulesView() {
 
         root = new StackPane();
-
-        // ------------------- Button -------------------
 
         // ------------------- Regeln -------------------
         Regeln = new VBox();
@@ -53,7 +46,6 @@ public class RulesView {
         root.getChildren().add(RegelnSP);
 
         scene = new Scene(root, 575, 650);
-
 
         RegelnSP.getStylesheets().add("/ch/fhnw/atlantis/resources/css/style.css");
     }

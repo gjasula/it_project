@@ -138,16 +138,9 @@ public class MenuView {
         txtAtlantis.setId("Label-text");
         txtAtlantis.setVisible(true);
 
-        SubMenu.setConstraints(txtAtlantis, 1, 1);
+        SubMenu.setConstraints(txtAtlantis, 1, 0);
         SubMenu.setColumnSpan(txtAtlantis, 5);
         SubMenu.setRowSpan(txtAtlantis,4);
-
-        txt = new Label();
-        txt.setWrapText(true);
-        txt.setVisible(true);
-
-        SubMenu.setConstraints(txt, 0,0);
-        SubMenu.setColumnSpan(txt, 5);
 
         // ------------------- Flaggen SubMenu -------------------
         Flag_GB = new Image("/ch/fhnw/atlantis/resources/images/Flag_GB.png");
@@ -197,7 +190,7 @@ public class MenuView {
         SubMenu.setGridLinesVisible(false);
         // alle Inhalte ins Grid holen mit getChildren
         SubMenu.getChildren().addAll(btnSprache1, btnSprache2, btnSprache3, iview1,
-                iview2, iview3, gameCharacter1, gameCharacter2, gameCharacter3, gameCharacter4, txt, txtAtlantis);
+                iview2, iview3, gameCharacter1, gameCharacter2, gameCharacter3, gameCharacter4, txtAtlantis);
 
         //------------------- Player_Old Icons und Grid anordnen -------------------
         player1 = new Label("\ue7FD");
@@ -266,13 +259,15 @@ public class MenuView {
     }
 
     private static final String TEXT =
-            "Bleibt wachsam - selbst die mächtigsten Staaten können jederzeit untergehen \n"+
+            "Das Spiel kann gestartet werden, wenn zwei Spieler verbunden sind und eine Spielfigur ausgewählt ist! \n" +
+            "\n"+
+            "Bleib wachsam - selbst die mächtigsten Staaten können jederzeit untergehen \n"+
             "\n"+
             "Ein erfundener Mythos oder Realität? \n" +
             "Bis Heute ist das Rätsel, um die versunkene Stadt Atlantis ungelöst. Die angeblich prächtigste und mächtigste Stadt der Welt, versunken in den Fluten des Meeres.\n" +
             "Das verschwundene Paradies verschluckt vom Wasser innerhalb eines Tages und einer Nacht. \n" +
             "\n"+
-            "Rettet euer Hab und Gut, schnell von der Insel!";
+            "Rettet euer Hab und Gut, schnell von der Insel auf das Festland!";
 
     // ------------------- Getter und Setter -------------------
 

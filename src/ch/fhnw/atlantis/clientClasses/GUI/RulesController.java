@@ -16,7 +16,6 @@ public class RulesController {
     public RulesController(Model model) {
         this.model = model;
         this.view = new RulesView();
-
     }
 
     public void show() {
