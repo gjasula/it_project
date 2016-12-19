@@ -22,21 +22,24 @@ public class GameBoardController {
         // Eventhandler für Buttons auf dem GameBoard
 
         view.getBtnBuyCard().setOnAction(event -> {
-
+            view.btnPlayTile.setDisable(false);
+            view.btnPlayCard.setDisable(false);
+            view.btnNextTile.setDisable(false);
+            view.btnNextCard.setDisable(false);
+            view.btnFinishTurn.setDisable(false);
+            view.btnBuyCard.setDisable(true);
+            view.UpdateGUIThread();
         });
 
         view.getBtnFinishTurn().setOnAction(event -> {
-
         });
 
         view.getBtnNextCard().setOnAction(event -> {
-
+            view.UpdatePositiveMovementCard();
         });
 
         view.getBtnNextTile().setOnAction(event -> {
             view.UpdatePositivePathTile();
-            //view.DisplayMovementCard = 1;
-            //System.out.println("PathTileNumber on GUI: " + view.DisplayPathTile);
         });
 
         view.getBtnPlayCard().setOnAction(event -> {

@@ -3,6 +3,7 @@ package ch.fhnw.atlantis.clientClasses.GUI;
 import ch.fhnw.atlantis.globalClasses.ImageLoader;
 import ch.fhnw.atlantis.globalClasses.models.*;
 
+import javafx.application.Platform;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -11,17 +12,15 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
-
-import javafx.scene.paint.Color;
 
 import javafx.stage.Stage;
 
-import java.awt.*;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 import static ch.fhnw.atlantis.globalClasses.ImageLoader.getImage;
 
@@ -36,7 +35,7 @@ public class GameBoardView extends Pane {
 
     private Model model;
 
-    private Button btnFinishTurn, btnBuyCard, btnNextCard, btnPlayCard, btnNextTile, btnPlayTile ;
+    public Button btnFinishTurn, btnBuyCard, btnNextCard, btnPlayCard, btnNextTile, btnPlayTile ;
 
     private Label p1;
     private Label p2;
@@ -236,22 +235,19 @@ public class GameBoardView extends Pane {
         pos25.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(),
                 BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
 
-        btnBuyCard = new Button("Karte kaufen");
+        btnBuyCard = new Button("Starte Spiel");
         btnFinishTurn = new Button("Zug beenden");
+        btnFinishTurn.setDisable(true);
         btnNextCard = new Button("Nächste Karte");
+        btnNextCard.setDisable(true);
         btnNextTile = new Button("Nächstes Plättchen");
         btnNextTile.setWrapText(true);
+        btnNextTile.setDisable(true);
         btnPlayCard = new Button("Karte spielen");
+        btnPlayCard.setDisable(true);
         btnPlayTile = new Button("Plättchen eintauschen");
         btnPlayTile.setWrapText(true);
-
-
-        cardPane.setBackground(new Background(new BackgroundImage(imageLoader.getPlayerMovementCardHand(DisplayMovementCard),
-                BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
-
-        tilePane.setBackground(new Background(new BackgroundImage(imageLoader.getPlayerPathTileHand(DisplayPathTile),
-                BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
-
+        btnPlayTile.setDisable(true);
 
         gameBoard.setConstraints(pawnP1, 0, 0);
         gameBoard.setConstraints(start, 0, 0, 3, 3);
@@ -418,23 +414,44 @@ public class GameBoardView extends Pane {
         System.out.println("PathTileNumber on GUI: " + DisplayPathTile);
     }
 
+    public void UpdatePositiveMovementCard(){
+        DisplayMovementCard ++;
+    }
+
     /** Getter und Setter **/
 
     public Button getBtnFinishTurn() {
         return btnFinishTurn;
     }
 
-    public Button getBtnNextCard() {
-        return btnNextCard;
+    public void UpdateGUIThread() {
+        final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
+        scheduler.scheduleWithFixedDelay(new Runnable() {
+            @Override
+            public void run() {
+                Platform.runLater(() -> UpdateValues()
+                );
+            }
+        }, 0, 300, TimeUnit.MILLISECONDS);
+    }
+
+    public void UpdateValues(){
+        ImageLoader imageLoader = new ImageLoader();
+            // Hand Wegplättchen Anzeigen
+            tilePane.setBackground(new Background(new BackgroundImage(imageLoader.getPlayerPathTileHand(DisplayPathTile),
+                    BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
+            // Hand Bewegungskarten Anzeigen
+            cardPane.setBackground(new Background(new BackgroundImage(imageLoader.getPlayerMovementCardHand(DisplayMovementCard),
+                    BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
     }
 
     public Button getBtnPlayCard() {
         return btnPlayCard;
     }
 
-    public Button getBtnNextTile() {
-        return btnNextTile;
-    }
+    public Button getBtnNextTile() { return btnNextTile; }
+
+    public Button getBtnNextCard() { return btnNextCard; }
 
     public Button getBtnPlayTile() {
         return btnPlayTile;

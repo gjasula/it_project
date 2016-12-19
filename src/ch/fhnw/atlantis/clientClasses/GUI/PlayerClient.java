@@ -55,7 +55,17 @@ public class PlayerClient {
     }
 
     public String getPlayerMovementCardHandGUI(int MovementCardNumber){
+        // ONLY TESTING
+        PlayerOneHandCards.add("MV_Blue");
+        PlayerOneHandCards.add("MV_Grey");
+        PlayerOneHandCards.add("MV_Green");
+        PlayerOneHandCards.add("MV_Pink");
+        PlayerOneHandCards.add("MV_White");
+
         String returnHand = "MV_Pink";
+
+        returnHand = PlayerOneHandCards.get(MovementCardNumber);
+        // ONLY TESTING ENDS
 
         if(PlayerID == 1){
             returnHand = PlayerOneHandCards.get(MovementCardNumber);
@@ -76,9 +86,9 @@ public class PlayerClient {
 
         String returnHand = "pink_3.jpg";
 
-        // ONLY TESTING
         returnHand = PlayerOneHandTiles.get(PathTileNumber);
-        System.out.println("PathTileNumber which Client returns: " + PathTileNumber);
+        // ONLY TESTING ENDS
+
 
         if(PlayerID == 1){
             // MovementCardNumber > PlayerOneHandTiles.size()
