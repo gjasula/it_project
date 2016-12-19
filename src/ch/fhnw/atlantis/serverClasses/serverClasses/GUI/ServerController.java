@@ -6,9 +6,13 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 import java.util.Optional;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by Nadine on 19.10.2016.
@@ -31,20 +35,10 @@ public class ServerController {
     public void show() {
         //view.show(model.getPrimaryStage());
 
-        //view.getBtnConnect_s().setOnAction(new btnConnectEventHandler());
-
-        view.getBtnConnect_s().setOnAction(new EventHandler<ActionEvent>(){
-
+        view.getBtnConnect_s().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-
-                String portString = view.getPortServer().trim();
-                int portInt = Integer.parseInt(portString);
-
-                Server server = Server.getInstance(portInt);
-                view.setTxtLog("Server Started and is listening on Port: " + portInt);
-                view.btnConnect_s.setDisable(true);
-                server.startTCP();
+                startScheduledExecutorService();
             }
         });
 
@@ -54,7 +48,6 @@ public class ServerController {
                 String portString = view.getPortServer().trim();
                 int portInt = Integer.parseInt(portString);
                 Server server = Server.getInstance(portInt);
-
 
                 event.consume();
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION,
@@ -72,8 +65,22 @@ public class ServerController {
 
         view.show(model.getPrimaryStage());
     }
-}
 
+    public void startScheduledExecutorService(){
+        final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
+
+        String portString = view.getPortServer().trim();
+        int portInt = Integer.parseInt(portString);
+
+        view.setTxtLog("Server Started and is listening on Port: " + portInt);
+        Server server = Server.getInstance(portInt);
+        view.btnConnect_s.setDisable(true);
+        server.startTCP();
+
+        // Starte den UpdateAll Scheduler
+        view.updateAll();
+    }
+}
     //class btnConnectEventHandler implements EventHandler<ActionEvent>{
 //
     //    private ServerView view;

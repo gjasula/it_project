@@ -1,7 +1,6 @@
 package ch.fhnw.atlantis.serverClasses.serverClasses.GUI;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
+import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -14,7 +13,10 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
-import sun.rmi.runtime.Log;
+
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 
 /**
@@ -22,8 +24,6 @@ import sun.rmi.runtime.Log;
  */
 
 public class ServerView {
-
-    private TextField textField;
 
     private Scene scene;
 
@@ -38,6 +38,7 @@ public class ServerView {
 
     private TextField PortServer;
     public TextArea txtLog;
+    public static String txtLogString;
 
     private Label SWelcome;
     private Label SGroup;
@@ -62,22 +63,20 @@ public class ServerView {
 
         SGroup = new Label("Team Gerstenland: IT-Projekt Fachhochschule Nordwestschweiz, 2016");
         SGroup.setId("Label-small");
-        SGroup.setPadding(new Insets(10));
 
         // ------------------- Buttons -------------------
         btnConnect_s = new Button("START SERVER");
         btnStop_s = new Button("STOP SERVER");
 
-        //  ------------------- TextField für Port Nummer -------------------
+        //  ------------------- TextField -------------------
         PortServer = new TextField("7777");
 
-        //  ------------------- TextArea für Anzeige des Servers -------------------
         txtLog = new TextArea("");
         txtLog.setEditable(false);
         txtLog.setMaxWidth(500);
         txtLog.setWrapText(true);
 
-        //  ------------------- Elemente in HBox und VBox anordnen  -------------------
+        //  ------------------- Elemente in HBox anordnen  -------------------
         shbox = new HBox(PortServer, btnConnect_s, btnStop_s);
         shbox.setAlignment(Pos.CENTER_LEFT);
         shbox.setPadding(new Insets(5));
@@ -110,12 +109,11 @@ public class ServerView {
         border.setTop(stack);
         border.setBottom(SGroup);
 
-        //textField = new TextField("tet");
-        //textField.textProperty().addListener((observable, oldValue, newValue) -> txtLog.appendText("test"));
+        // Beispiel für einen Listener
+        //PortServer.textProperty().addListener((observable, oldValue, newValue) -> txtLog.appendText("test" + newline));
 
         //  -------------------BorderPane zu Scene hinzufügen und Fenstergrösse setzen-------------------
         scene = new Scene(border, 1024, 450);
-        // CSS aufrufen für Styling
         scene.getStylesheets().add("/ch/fhnw/atlantis/resources/css/serverstyle.css");
     }
 
@@ -139,16 +137,30 @@ public class ServerView {
         PortServer.setText(portServer);
     }
 
-    public TextArea getTxtLog() {
-        return txtLog;
+    public String getTxtLog() {
+        //return txtLog.getText();
+        return txtLogString;
     }
 
     public void setTxtLog(String LogMessage) {
 
-        txtLog.appendText(LogMessage + newline);
+        txtLogString = txtLogString + newline + LogMessage;
+
     }
 
-    public Scene getScene() {
+    public void updateAll(){
+        final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
+        scheduler.scheduleWithFixedDelay(new Runnable() {
+            @Override
+            public void run() {
+                // Nur txtLog kann sich beim Server ändern daher ein UpdateAll
+                Platform.runLater(() -> txtLog.setText(getTxtLog())
+                );
+            }
+        }, 0, 1000, TimeUnit.MILLISECONDS);
+    }
+
+     public Scene getScene() {
         return scene;
     }
 
