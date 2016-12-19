@@ -1,0 +1,48 @@
+#RankingBye{
+   -fx-background-image: url("../images/buildings.jpg");
+   -fx-background-repeat: no-repeat;
+   -fx-background-attachment: fixed;
+   -fx-background-position: bottom;
+
+ }
+
+ Button{
+  -fx-background-color: #ffffff;
+  -fx-font-weight: bold;
+  -fx-font-family: "Courier New";
+  -fx-alignment: Center;
+  -fx-pref-width: 200px;
+ }
+
+ .button:hover{
+  -fx-background-color: #000000;
+  -fx-text-fill: white;
+ }
+
+ Label{
+  -fx-text-fill: #e8e8e8;
+  -fx-font-family: "Courier New";
+  -fx-font-size: 18px;
+
+ }
+
+ #Label-big{
+  -fx-font-family: "Castellar";
+  -fx-font-size: 40px;
+  -fx-font-weight: bold;
+ }
+
+ #Label-small{
+  -fx-font-family: "Castellar";
+  -fx-font-size: 9px;
+  -fx-font-weight: bold;
+ }
+
+ #Label-text{
+  -fx-font-size: 15px;
+  -fx-font-weight: bold;
+  -fx-text-fill: #e8e8e8;
+  -fx-text-alignment: center;
+  -fx-font-style: italic;
+  -fx-line-height: 0.8;
+ }
