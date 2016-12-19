@@ -48,6 +48,8 @@ public class Client_Main extends Application {
 
         GameBoardController gbCon = new GameBoardController(model);
         gbCon.show();
+        PlayerClient playerClient = new PlayerClient();
+        playerClient.sendMessageToServer("StartGame");
 
     primaryStage.setOnCloseRequest(event -> {
         event.consume();

@@ -1,5 +1,7 @@
 package ch.fhnw.atlantis.clientClasses.GUI;
 
+import java.io.FileNotFoundException;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -66,18 +68,20 @@ public class PlayerClient {
     }
 
     public String getPlayerMovementCardHandGUI(int MovementCardNumber){
-        // ONLY TESTING
-        //PlayerOneHandCards.add("MV_Blue");
-        //PlayerOneHandCards.add("MV_Blue");
-        //PlayerOneHandCards.add("MV_Blue");
-        //PlayerOneHandCards.add("MV_Blue");
-        //PlayerOneHandCards.add("MV_Blue");
 
-        String returnHand = "MV_Pink";
+        String returnHand;
+
+        // Damit man nur einen Next Button benötigt.
+        if(MovementCardNumber >= PlayerOneHandCards.size()){
+            double nr1;
+            long nr2;
+
+            nr1 = MovementCardNumber / PlayerOneHandCards.size();
+            nr2 = (long) nr1;
+            MovementCardNumber = (int) (MovementCardNumber - (nr2 * PlayerOneHandCards.size()));
+        }
 
         returnHand = PlayerOneHandCards.get(MovementCardNumber);
-        System.out.println(returnHand);
-        // ONLY TESTING ENDS
 
         if(PlayerID == 1){
             returnHand = PlayerOneHandCards.get(MovementCardNumber);
@@ -90,17 +94,26 @@ public class PlayerClient {
 
     public String getPlayerPathTileHandGUI(int PathTileNumber){
         // ONLY TESTING
-        PlayerOneHandTiles.add("pink_3.jpg");
         PlayerOneHandTiles.add("pink_1.jpg");
         PlayerOneHandTiles.add("pink_2.jpg");
+        PlayerOneHandTiles.add("pink_3.jpg");
         PlayerOneHandTiles.add("pink_4.jpg");
         PlayerOneHandTiles.add("pink_5.jpg");
 
-        String returnHand = "pink_3.jpg";
+        String returnHand;
+
+        // Damit man nur einen Next Button benötigt.
+        if(PathTileNumber >= PlayerOneHandTiles.size()){
+            double nr1;
+            long nr2;
+
+            nr1 = PathTileNumber / PlayerOneHandTiles.size();
+            nr2 = (long) nr1;
+            PathTileNumber = (int) (PathTileNumber - (nr2 * PlayerOneHandTiles.size()));
+        }
+
 
         returnHand = PlayerOneHandTiles.get(PathTileNumber);
-        // ONLY TESTING ENDS
-
 
         if(PlayerID == 1){
             // MovementCardNumber > PlayerOneHandTiles.size()

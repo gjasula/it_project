@@ -34,7 +34,6 @@ public class Interpreter {
             //// 2DO! This case has to be done for each PT and each Player
             case "Player1_ExchangePathTileValue_pink_3.jpg":
                 // change PT into MV
-                player.GameStart();
                 getCardFromStack(3, 1);
                 //// 2DO! Add still remove from PT hand
                 // return updated hand

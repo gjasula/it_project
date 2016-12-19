@@ -434,7 +434,7 @@ public class GameBoardView extends Pane {
                 Platform.runLater(() -> UpdateValues()
                 );
             }// Change delay to 300 after testing
-        }, 0, 300, TimeUnit.MILLISECONDS);
+        }, 0, 500, TimeUnit.MILLISECONDS);
     }
 
     public void UpdateValues(){
