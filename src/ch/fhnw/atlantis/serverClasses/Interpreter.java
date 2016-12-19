@@ -33,6 +33,12 @@ public class Interpreter {
                 returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
                 System.out.println(returnToClient);
                 break;
+            case "ChangeTurnToPlayer1":
+                returnToClient = "Player1Turn";
+                break;
+            case "ChangeTurnToPlayer2":
+                returnToClient = "Player2Turn";
+                break;
             case "ReturnGameBoard":
                 returnToClient = "PathTileGameBoard_" + tileDeck.getGameBoard();
                 System.out.println(returnToClient);

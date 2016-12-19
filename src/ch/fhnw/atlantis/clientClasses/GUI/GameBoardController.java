@@ -33,6 +33,7 @@ public class GameBoardController {
         });
 
         view.getBtnFinishTurn().setOnAction(event -> {
+            playerClient.closeMyTurn();
         });
 
         view.getBtnNextCard().setOnAction(event -> {

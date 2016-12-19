@@ -25,6 +25,12 @@ public class Interpreter {
             case "AskForGameBoard":
                 playerClient.sendMessageToServer("ReturnGameBoard");
                 break;
+            case "Player1Turn":
+                playerClient.PlayersTurn = 1;
+                break;
+            case "Player2Turn":
+                playerClient.PlayersTurn = 2;
+                break;
             default:
 
                 if(messagefromServer.substring(0,13).equals("PlayerOneHand")){

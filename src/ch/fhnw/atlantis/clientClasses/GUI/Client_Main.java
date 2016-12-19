@@ -48,6 +48,8 @@ public class Client_Main extends Application {
 
         GameBoardController gbCon = new GameBoardController(model);
         gbCon.show();
+
+        // Richy! Needed to start Game
         PlayerClient playerClient = new PlayerClient();
         playerClient.sendMessageToServer("StartGame");
 

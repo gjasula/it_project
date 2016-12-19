@@ -11,6 +11,7 @@ public class PlayerClient {
 
     Client client = new Client();
     public static int PlayerID = 0;
+    public static int PlayersTurn = 1; // Welcher Spiler ist am Zug?
     static List<String> PlayerOneHandCards = new ArrayList<>();
     static List<String> PlayerTwoHandCards = new ArrayList<>();
     static List<String> PlayerOneHandTiles = new ArrayList<>();
@@ -44,6 +45,26 @@ public class PlayerClient {
             getPlayerOneMovementCard();
             getPlayerTwoMovementCard();
         }
+    }
+
+    public void closeMyTurn(){
+        if(PlayersTurn == 1){
+            sendMessageToServer("ChangeTurnToPlayer2");
+        }else if(PlayersTurn == 2){
+            sendMessageToServer("ChangeTurnToPlayer1");
+        }
+    }
+
+    public boolean isItMyTurn(){
+        System.out.println("PlayerID: " + PlayerID);
+        System.out.println("PlayersTurn: " + PlayersTurn);
+        if(PlayerID == PlayersTurn){
+            return false;
+        }
+        else {
+            return true;
+        }
+
     }
 
     public void getPlayerOneMovementCard(){
@@ -113,6 +134,9 @@ public class PlayerClient {
         PlayerOneHandTiles.add("pink_3.jpg");
         PlayerOneHandTiles.add("pink_4.jpg");
         PlayerOneHandTiles.add("pink_5.jpg");
+        PlayerTwoHandTiles.add("pink_5.jpg");
+        PlayerTwoHandTiles.add("pink_5.jpg");
+        PlayerTwoHandTiles.add("pink_5.jpg");
         PlayerTwoHandTiles.add("pink_5.jpg");
 
         String returnHand;
