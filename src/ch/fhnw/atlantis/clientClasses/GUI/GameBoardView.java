@@ -249,7 +249,10 @@ public class GameBoardView extends Pane {
         btnPlayTile.setWrapText(true);
         btnPlayTile.setDisable(true);
 
-        gameBoard.setConstraints(pawnP1, 0, 0);
+        gameBoard.setConstraints(pawnP1, 1, 0);
+        gameBoard.setConstraints(pawnP2, 1, 2);
+        gameBoard.setConstraints(pawnP3, 2, 0);
+        gameBoard.setConstraints(pawnP4, 2, 2);
         gameBoard.setConstraints(start, 0, 0, 3, 3);
 
         gameBoard.setConstraints(cardPane, 5, 7, 2, 3);
@@ -294,9 +297,9 @@ public class GameBoardView extends Pane {
 
 
         // alle Inhalte in die Gridpanes holen mit getChildren
-        gameBoard.getChildren().addAll(btnBuyCard, btnFinishTurn, btnNextCard, btnNextTile, btnPlayCard, btnPlayTile, cardPane, tilePane, start, end, pos1, pos2, pos3, pos4, pos5, pos6, pos7, pos8, pos9, pos10, pos11, pos12, pos13, pos14, pos15, pos16, pos17, pos18, pos19, pos20, pos21, pos22, pos23, pos24, pos25);
+         gameBoard.getChildren().addAll(start, pawnP1, pawnP2, pawnP3, pawnP4, btnBuyCard, btnFinishTurn, btnNextCard, btnNextTile, btnPlayCard, btnPlayTile, cardPane, tilePane, end, pos1, pos2, pos3, pos4, pos5, pos6, pos7, pos8, pos9, pos10, pos11, pos12, pos13, pos14, pos15, pos16, pos17, pos18, pos19, pos20, pos21, pos22, pos23, pos24, pos25);
         playerGrid.getChildren().addAll(player1, player2, player3, player4, p1, p2, p3, p4, pointsP1, pointsP2, pointsP3, pointsP4);
-        start.getChildren().addAll(pawnP1, pawnP2, pawnP3, pawnP4);
+
 
         // ------------------- BorderPane erstellen und HBox, VBox, Gameboard und playerGrid hinzufügen -------------------
         BorderPane gBPane = new BorderPane();

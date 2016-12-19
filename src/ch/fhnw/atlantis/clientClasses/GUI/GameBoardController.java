@@ -62,10 +62,10 @@ public class GameBoardController {
         view.getPointsP3().getStyleClass().add("Label-big");
         view.getPointsP4().getStyleClass().add("Label-big");
 
-        view.getPawnP1().getStyleClass().add("PawnP1");
-        view.getPawnP2().getStyleClass().add("PawnP2");
-        view.getPawnP3().getStyleClass().add("PawnP3");
-        view.getPawnP4().getStyleClass().add("PawnP4");
+        view.getPawnP1().getStyleClass().add("Pawn-P1");
+        view.getPawnP2().getStyleClass().add("Pawn-P2");
+        view.getPawnP3().getStyleClass().add("Pawn-P3");
+        view.getPawnP4().getStyleClass().add("Pawn-P4");
     }
 
     //Show Methode der GameBoard Klase
