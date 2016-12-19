@@ -77,7 +77,7 @@ public class GameBoardView extends Pane {
 
         // ------------------- Player Icons -------------------
         player1 = new Label("\ue7FD");
-        playerGrid.setConstraints(player1, 0, 0);
+        playerGrid.setConstraints(player1, 0    , 0);
         playerGrid.setHalignment(player1, HPos.CENTER);
         pointsP1 = new Label("0");
         playerGrid.setConstraints(pointsP1, 1, 0 );
@@ -249,7 +249,7 @@ public class GameBoardView extends Pane {
         btnPlayTile.setWrapText(true);
         btnPlayTile.setDisable(true);
 
-        gameBoard.setConstraints(pawnP1, 1, 0);
+        gameBoard.setConstraints(pawnP1, 1, 3);
         gameBoard.setConstraints(pawnP2, 1, 2);
         gameBoard.setConstraints(pawnP3, 2, 0);
         gameBoard.setConstraints(pawnP4, 2, 2);
@@ -433,7 +433,7 @@ public class GameBoardView extends Pane {
             public void run() {
                 Platform.runLater(() -> UpdateValues()
                 );
-            }
+            }// Change delay to 300 after testing
         }, 0, 300, TimeUnit.MILLISECONDS);
     }
 
@@ -445,6 +445,19 @@ public class GameBoardView extends Pane {
             // Hand Bewegungskarten Anzeigen
             cardPane.setBackground(new Background(new BackgroundImage(imageLoader.getPlayerMovementCardHand(DisplayMovementCard),
                     BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
+    }
+
+    public String getDisplayPathTile(){
+        PlayerClient playerClient = new PlayerClient();
+        return playerClient.getPlayerPathTileHandGUI(DisplayPathTile);
+        //return DisplayPathTile;
+    }
+
+    public void sendPathTileExchange(){
+        PlayerClient playerClient = new PlayerClient();
+        playerClient.addPlayerToString("ExchangePathTileValue_"+getDisplayPathTile());
+        System.out.println(getDisplayPathTile());
+
     }
 
     public Button getBtnPlayCard() {

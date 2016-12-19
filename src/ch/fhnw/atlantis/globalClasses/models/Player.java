@@ -5,6 +5,7 @@ import javafx.scene.paint.Color;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 /**
  * Created by juerg on 02.12.2016.
@@ -32,6 +33,8 @@ public class Player implements Serializable {
     static ArrayList<String> MovementCards = new ArrayList<>();
     static ArrayList<String> PlayerOneHandCards = new ArrayList<>();
     static ArrayList<String> PlayerTwoHandCards = new ArrayList<>();
+    static List<String> PlayerOneHandTiles = new ArrayList<>();
+    static List<String> PlayerTwoHandTiles = new ArrayList<>();
 
     public Player(int playerID, String gameName, String playerName) {
         this.playerName = playerName;

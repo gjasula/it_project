@@ -55,9 +55,9 @@ public class ServerClientHandler implements Runnable {
 
                 // Forward message from server to interpreter
                 Interpreter InterpretServerMessage = new Interpreter();
-                String monthstring = InterpretServerMessage.interpretServerMsg(messagefromClient);
-                server.forwardMessage(monthstring, this);
-                //System.out.println(monthstring);
+                String answerToClientString = InterpretServerMessage.interpretServerMsg(messagefromClient);
+                server.forwardMessage(answerToClientString, this);
+                System.out.println(messagefromClient);
 
                 // Define ID for users directly after connecting
                 if(SetIDUser == 0) {

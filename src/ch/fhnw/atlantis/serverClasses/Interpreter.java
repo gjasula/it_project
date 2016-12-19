@@ -31,6 +31,16 @@ public class Interpreter {
                 returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
                 System.out.println(returnToClient);
                 break;
+            //// 2DO! This case has to be done for each PT and each Player
+            case "Player1_ExchangePathTileValue_pink_3.jpg":
+                // change PT into MV
+                player.GameStart();
+                getCardFromStack(3, 1);
+                //// 2DO! Add still remove from PT hand
+                // return updated hand
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
             default:
                 returnToClient = "Default Output";
                 //System.out.println(returnToClient);

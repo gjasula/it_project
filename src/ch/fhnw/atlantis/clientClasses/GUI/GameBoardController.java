@@ -47,7 +47,8 @@ public class GameBoardController {
         });
 
         view.getBtnPlayTile().setOnAction(event -> {
-
+            // Das ist Plättchen eintauschen
+            view.sendPathTileExchange();
         });
 
         // ------------------- CSS Styling der Gameboard Elemente  -------------------

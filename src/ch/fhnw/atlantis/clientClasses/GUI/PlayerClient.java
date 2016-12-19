@@ -23,6 +23,17 @@ public class PlayerClient {
     public void sendMessageToServer(String msg){
         client.connectToServer("127.0.0.1", 7777);
         client.sendMessagetoServer(msg);
+        System.out.println("Sending this to server: "+msg);
+    }
+
+    public void addPlayerToString(String msg){
+        sendMessageToServer("Player1_"+msg);
+        if(PlayerID == 1){
+            sendMessageToServer("Player1_"+msg);
+        }
+        else if(PlayerID == 2){
+            sendMessageToServer("Player2_"+msg);
+        }
     }
 
     public void setPlayerID(int playerID) {
@@ -56,15 +67,16 @@ public class PlayerClient {
 
     public String getPlayerMovementCardHandGUI(int MovementCardNumber){
         // ONLY TESTING
-        PlayerOneHandCards.add("MV_Blue");
-        PlayerOneHandCards.add("MV_Grey");
-        PlayerOneHandCards.add("MV_Green");
-        PlayerOneHandCards.add("MV_Pink");
-        PlayerOneHandCards.add("MV_White");
+        //PlayerOneHandCards.add("MV_Blue");
+        //PlayerOneHandCards.add("MV_Blue");
+        //PlayerOneHandCards.add("MV_Blue");
+        //PlayerOneHandCards.add("MV_Blue");
+        //PlayerOneHandCards.add("MV_Blue");
 
         String returnHand = "MV_Pink";
 
         returnHand = PlayerOneHandCards.get(MovementCardNumber);
+        System.out.println(returnHand);
         // ONLY TESTING ENDS
 
         if(PlayerID == 1){

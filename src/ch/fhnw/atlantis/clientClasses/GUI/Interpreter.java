@@ -19,6 +19,9 @@ public class Interpreter {
             case "DefineIdentity2":
                 playerClient.setPlayerID(2);
                 break;
+            case "ExchangePathTile":
+                playerClient.sendMessageToServer("ExchangePathTile");
+                break;
             default:
 
                 if(messagefromServer.substring(0,13).equals("PlayerOneHand")){
