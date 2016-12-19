@@ -55,9 +55,9 @@ public class PlayerClient {
         }
     }
 
+    // Prüft ob man an der Reihe ist.
+    // Falls die PlayerID mit dem globalen PlayersTurn übereinstimmt ist man am zug.
     public boolean isItMyTurn(){
-        System.out.println("PlayerID: " + PlayerID);
-        System.out.println("PlayersTurn: " + PlayersTurn);
         if(PlayerID == PlayersTurn){
             return false;
         }
@@ -103,24 +103,33 @@ public class PlayerClient {
     }
 
     public String getPlayerMovementCardHandGUI(int MovementCardNumber){
-
-        String returnHand;
-
-        // Damit man nur einen Next Button benötigt.
-        if(MovementCardNumber >= PlayerOneHandCards.size()){
-            double nr1;
-            long nr2;
-
-            nr1 = MovementCardNumber / PlayerOneHandCards.size();
-            nr2 = (long) nr1;
-            MovementCardNumber = (int) (MovementCardNumber - (nr2 * PlayerOneHandCards.size()));
-        }
-
-        returnHand = PlayerOneHandCards.get(MovementCardNumber);
+        String returnHand = null;
 
         if(PlayerID == 1){
+
+            // Damit man nur einen Next Button benötigt und keinen Zurück.
+            if(MovementCardNumber >= PlayerOneHandCards.size()){
+                double nr1;
+                long nr2;
+
+                nr1 = MovementCardNumber / PlayerOneHandCards.size();
+                nr2 = (long) nr1;
+                MovementCardNumber = (int) (MovementCardNumber - (nr2 * PlayerOneHandCards.size()));
+            }
+
             returnHand = PlayerOneHandCards.get(MovementCardNumber);
         }else if(PlayerID == 2){
+
+            // Damit man nur einen Next Button benötigt und keinen Zurück.
+            if(MovementCardNumber >= PlayerTwoHandCards.size()){
+                double nr1;
+                long nr2;
+
+                nr1 = MovementCardNumber / PlayerTwoHandCards.size();
+                nr2 = (long) nr1;
+                MovementCardNumber = (int) (MovementCardNumber - (nr2 * PlayerTwoHandCards.size()));
+            }
+
             returnHand = PlayerTwoHandCards.get(MovementCardNumber);
         }
 
@@ -129,37 +138,45 @@ public class PlayerClient {
 
     public String getPlayerPathTileHandGUI(int PathTileNumber){
         // ONLY TESTING
-        PlayerOneHandTiles.add("pink_1.jpg");
+        PlayerOneHandTiles.add("pathtile0.jpg");
         PlayerOneHandTiles.add("pink_2.jpg");
         PlayerOneHandTiles.add("pink_3.jpg");
         PlayerOneHandTiles.add("pink_4.jpg");
         PlayerOneHandTiles.add("pink_5.jpg");
-        PlayerTwoHandTiles.add("pink_5.jpg");
-        PlayerTwoHandTiles.add("pink_5.jpg");
-        PlayerTwoHandTiles.add("pink_5.jpg");
-        PlayerTwoHandTiles.add("pink_5.jpg");
+        //PlayerTwoHandTiles.add("pathtile0.jpg");
+        //PlayerTwoHandTiles.add("pathtile0.jpg");
+        //PlayerTwoHandTiles.add("pink_5.jpg");
+        // END ONLY TESTING
 
-        String returnHand;
-
-        // Damit man nur einen Next Button benötigt.
-        if(PathTileNumber >= PlayerOneHandTiles.size()){
-            double nr1;
-            long nr2;
-
-            nr1 = PathTileNumber / PlayerOneHandTiles.size();
-            nr2 = (long) nr1;
-            PathTileNumber = (int) (PathTileNumber - (nr2 * PlayerOneHandTiles.size()));
-        }
-
-
-        returnHand = PlayerOneHandTiles.get(PathTileNumber);
+        String returnHand = "pathtile0.jpg";
 
         if(PlayerID == 1){
-            // MovementCardNumber > PlayerOneHandTiles.size()
-            // MovementCardNumber = 0 wird aber nicht gehen da sonst immer die letzte Karte angezeigt wird falls einmal durch
-            returnHand = PlayerOneHandTiles.get(PathTileNumber);
+            if(PlayerOneHandTiles.size() > 0) {
+                // Damit man nur einen Next Button benötigt und keinen Zurück.
+                if (PathTileNumber >= PlayerOneHandTiles.size()) {
+                    double nr1;
+                    long nr2;
+
+                    nr1 = PathTileNumber / PlayerOneHandTiles.size();
+                    nr2 = (long) nr1;
+                    PathTileNumber = (int) (PathTileNumber - (nr2 * PlayerOneHandTiles.size()));
+                }
+
+                returnHand = PlayerOneHandTiles.get(PathTileNumber);
+            }
         }else if(PlayerID == 2){
-            returnHand = PlayerTwoHandTiles.get(PathTileNumber);
+            if(PlayerTwoHandTiles.size() > 0) {
+                // Damit man nur einen Next Button benötigt und keinen Zurück.
+                if (PathTileNumber >= PlayerTwoHandTiles.size()) {
+                    double nr1;
+                    long nr2;
+
+                    nr1 = PathTileNumber / PlayerTwoHandTiles.size();
+                    nr2 = (long) nr1;
+                    PathTileNumber = (int) (PathTileNumber - (nr2 * PlayerTwoHandTiles.size()));
+                }
+                returnHand = PlayerTwoHandTiles.get(PathTileNumber);
+            }
         }
 
         return returnHand;
