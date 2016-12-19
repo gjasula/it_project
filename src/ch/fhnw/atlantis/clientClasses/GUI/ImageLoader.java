@@ -1,4 +1,4 @@
-package ch.fhnw.atlantis.globalClasses;
+package ch.fhnw.atlantis.clientClasses.GUI;
 
 import ch.fhnw.atlantis.clientClasses.GUI.ConvertMovementCardToFileName;
 import ch.fhnw.atlantis.clientClasses.GUI.PlayerClient;
@@ -29,13 +29,13 @@ public class ImageLoader {
 
     }
 
-    public static Image getPathTile() throws FileNotFoundException {
+    public static Image getPathTile(int PathTileNumber) throws FileNotFoundException {
 
         String imagePath = "ch/fhnw/atlantis/resources/images/";
-        TileDeck tileDeck = new TileDeck();
+        PlayerClient playerClient = new PlayerClient();
 
         try {
-            return new Image(imagePath + tileDeck.getTileImage());
+            return new Image(imagePath + playerClient.getTileImage(PathTileNumber));
         } catch (Exception e) {
             e.printStackTrace();
         }

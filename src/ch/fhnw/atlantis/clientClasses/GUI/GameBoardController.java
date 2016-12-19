@@ -11,6 +11,7 @@ import java.io.FileNotFoundException;
  */
 public class GameBoardController {
 
+    PlayerClient playerClient = new PlayerClient();
     public Model model;
     public GameBoardView view;
 
@@ -43,7 +44,7 @@ public class GameBoardController {
         });
 
         view.getBtnPlayCard().setOnAction(event -> {
-
+            playerClient.sendMessageToServer("ReturnGameBoard");
         });
 
         view.getBtnPlayTile().setOnAction(event -> {

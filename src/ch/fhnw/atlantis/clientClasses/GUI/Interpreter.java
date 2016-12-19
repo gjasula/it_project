@@ -22,12 +22,17 @@ public class Interpreter {
             case "ExchangePathTile":
                 playerClient.sendMessageToServer("ExchangePathTile");
                 break;
+            case "AskForGameBoard":
+                playerClient.sendMessageToServer("ReturnGameBoard");
+                break;
             default:
 
                 if(messagefromServer.substring(0,13).equals("PlayerOneHand")){
                     playerClient.setPlayerOneHandCards(messagefromServer.substring(13));
                 }else if(messagefromServer.substring(0,13).equals("PlayerTwoHand")){
                     playerClient.setPlayerTwoHandCards(messagefromServer.substring(13));
+                }else if(messagefromServer.substring(0,18).equals("PathTileGameBoard_")){
+                    playerClient.setGameBoard(messagefromServer.substring(18));
                 }
         }
 

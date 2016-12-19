@@ -69,7 +69,21 @@ public class TileDeck {
         return nextTile;
     }
 
+    public String getGameBoard(){
+        String GameBoard = "";
+
+        for( int i = 0 ; i < tileDeckString.size() ; i++ )
+        {
+            //System.out.println(PlayerOneHandCards.get(i));
+            GameBoard += tileDeckString.get(i) + ",";
+        }
+
+        return GameBoard;
+    }
+
     public void generateTileDeck(){
+
+        // Der Shit funktioniert zurzeit nur lokal! das ganze muss auf dem server generiert werden und danach über die verbindung übergeben werden!!
 
         for( int i = 1 ; i < 8 ; i++ ) {
             String add = "blue_"+i+".jpg";

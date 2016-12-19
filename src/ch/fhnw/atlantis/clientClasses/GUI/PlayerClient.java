@@ -1,7 +1,5 @@
 package ch.fhnw.atlantis.clientClasses.GUI;
 
-import java.io.FileNotFoundException;
-import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -17,6 +15,7 @@ public class PlayerClient {
     static List<String> PlayerTwoHandCards = new ArrayList<>();
     static List<String> PlayerOneHandTiles = new ArrayList<>();
     static List<String> PlayerTwoHandTiles = new ArrayList<>();
+    static List<String> PathTileList = new ArrayList<>();
 
 
     public void startGame() {
@@ -65,6 +64,21 @@ public class PlayerClient {
         String str[] = MVCard.split(",");
         PlayerTwoHandCards = Arrays.asList(str);
         System.out.println("Player Two Hand: " + PlayerTwoHandCards);
+    }
+
+    public void setGameBoard(String PTString){
+        String str[] = PTString.split(",");
+        PathTileList = Arrays.asList(str);
+        System.out.println("GameBoard PathTiles: " + PathTileList);
+    }
+
+    public String getTileImage(int PathTileNumber){
+
+        String nextTile = null;
+
+        nextTile = PathTileList.get(PathTileNumber);
+
+        return nextTile;
     }
 
     public String getPlayerMovementCardHandGUI(int MovementCardNumber){

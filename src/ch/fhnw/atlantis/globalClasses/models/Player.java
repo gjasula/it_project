@@ -50,27 +50,6 @@ public class Player implements Serializable {
     // Required for interpreter on server
     public Player(){}
 
-    /**
-     * Methode zur Vergabe einer Farbe an einen Player
-     */
-    //public playerColor(Color color) {
-    //    switch (playerID) {
-    //        case 0:
-    //            color = Color.RED;
-    //            break;
-    //        case 1:
-    //            color = Color.BLUE;
-    //            break;
-    //        case 2:
-    //            color = Color.GREEN;
-    //            break;
-    //        case 3:
-    //            color = Color.YELLOW;
-    //            break;
-    //    }
-    //    return color;
-    //}
-
     // TODO: müsste man noch auf die neue Tiles Klasse anpassen
     // Austausch von Wegplättchen in Bewegungskarte
     static void ChangeTileToMovementcard(int Player, int TileID){
@@ -127,12 +106,16 @@ public class Player implements Serializable {
     }
 
     public void GameStart(){
+        TileDeck tileDeck = new TileDeck();
         if(GameStarted == 0){
             // MovementCard Stapel erzeugen
             CardStack();
+            tileDeck.generateTileDeck();
         GameStarted = 1;
         }
     }
+
+
 
     /*
     * Kartenstapel erzeugen - Richard Künzi

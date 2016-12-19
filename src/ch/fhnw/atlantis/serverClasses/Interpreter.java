@@ -1,6 +1,7 @@
 package ch.fhnw.atlantis.serverClasses;
 
 import ch.fhnw.atlantis.globalClasses.models.Player;
+import ch.fhnw.atlantis.globalClasses.models.TileDeck;
 import ch.fhnw.atlantis.serverClasses.serverClasses.GUI.ServerView;
 
 import static ch.fhnw.atlantis.globalClasses.models.Player.*;
@@ -14,11 +15,12 @@ public class Interpreter {
 
         String returnToClient;
         Player player = new Player();
+        TileDeck tileDeck = new TileDeck();
 
         switch (messagefromClient) {
             case "StartGame":
                 player.GameStart();
-                returnToClient = "RequestYourIdentity";
+                returnToClient = "AskForGameBoard";
                 break;
             case "DefineIdentity":
                 returnToClient = "Your ID will be: " + String.valueOf(player.definePlayerIdentity());
@@ -29,6 +31,10 @@ public class Interpreter {
                 break;
             case "GetPlayerTwoHand":
                 returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "ReturnGameBoard":
+                returnToClient = "PathTileGameBoard_" + tileDeck.getGameBoard();
                 System.out.println(returnToClient);
                 break;
             //// 2DO! This case has to be done for each PT and each Player
