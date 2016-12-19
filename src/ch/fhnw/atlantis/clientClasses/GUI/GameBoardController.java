@@ -45,10 +45,11 @@ public class GameBoardController {
         });
 
         view.getBtnPlayCard().setOnAction(event -> {
-
-            // This is how to set position of Pawn
-            view.setPositionPawnP1(1,2);
-            view.setPositionPawnP2(1, 4);
+            try {
+                view.playMovementCard();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         });
 
         view.getBtnPlayTile().setOnAction(event -> {

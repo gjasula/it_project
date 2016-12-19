@@ -1,13 +1,16 @@
 package ch.fhnw.atlantis.clientClasses.GUI;
 
+import java.io.FileNotFoundException;
+
 /**
  * Created by Richard on 10/12/2016.
  */
 public class Interpreter {
 
     PlayerClient playerClient = new PlayerClient();
+    DefinePawnPosition definePawnPosition = new DefinePawnPosition();
 
-    public String interpretClientMsg(String messagefromServer){
+    public String interpretClientMsg(String messagefromServer) throws FileNotFoundException {
 
         switch (messagefromServer) {
             case "StartGame":
@@ -39,6 +42,13 @@ public class Interpreter {
                     playerClient.setPlayerTwoHandCards(messagefromServer.substring(13));
                 }else if(messagefromServer.substring(0,18).equals("PathTileGameBoard_")){
                     playerClient.setGameBoard(messagefromServer.substring(18));
+                }else if(messagefromServer.substring(0,17).equals("Player1_Position_")){
+                    definePawnPosition.setPosition(messagefromServer);
+                }else if(messagefromServer.substring(0,15).equals("PlayerOnePTHand")){
+                    System.out.println("JOdel"+messagefromServer);
+                    playerClient.setPlayerOneHandTiles(messagefromServer.substring(15));
+                }else if(messagefromServer.substring(0,15).equals("PlayerTwoPTHand")){
+                    playerClient.setPlayerTwoHandTiles(messagefromServer.substring(15));
                 }
         }
 

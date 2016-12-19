@@ -4,8 +4,6 @@ package ch.fhnw.atlantis.globalClasses.models;
  * Created by juerg on 07.12.2016.
  */
 
-import com.sun.beans.decoder.ValueObject;
-
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -83,8 +81,6 @@ public class TileDeck {
 
     public void generateTileDeck(){
 
-        // Der Shit funktioniert zurzeit nur lokal! das ganze muss auf dem server generiert werden und danach über die verbindung übergeben werden!!
-
         for( int i = 1 ; i < 8 ; i++ ) {
             String add = "blue_"+i+".jpg";
             tileDeckString.add(add);
@@ -115,6 +111,26 @@ public class TileDeck {
         }
 
         Collections.shuffle(tileDeckString);
+    }
+
+    public String getPositionXY(String MovementCard){
+        String PathTile = null;
+        String Position = null;
+
+        switch (MovementCard) {
+            case "MV_Blue":
+                PathTile = "blue";
+                break;
+            default:
+        }
+
+        for (int i = 0; i < tileDeckString.size(); i++) {
+            if(tileDeckString.get(i).startsWith(PathTile)){
+                Position = "Position_"+i;
+                break;
+            }
+        }
+        return Position;
     }
 
     public ArrayList<Tile> getTiles() {

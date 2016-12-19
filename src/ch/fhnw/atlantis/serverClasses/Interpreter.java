@@ -33,6 +33,13 @@ public class Interpreter {
                 returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
                 System.out.println(returnToClient);
                 break;
+            case "GetPlayerOneHandTiles":
+                returnToClient = "PlayerOnePTHand" + player.getPlayerHandTiles(1);
+                System.out.println(returnToClient);
+                break;
+            case "GetPlayerTwoHandTiles":
+                returnToClient = "PlayerTwoPTHand" + player.getPlayerHandTiles(2);
+                break;
             case "ChangeTurnToPlayer1":
                 returnToClient = "Player1Turn";
                 break;
@@ -43,6 +50,22 @@ public class Interpreter {
                 returnToClient = "PathTileGameBoard_" + tileDeck.getGameBoard();
                 System.out.println(returnToClient);
                 break;
+            case "Player1_Played_MV_Blue":
+                player.removeMovementCardFromHand(1, "MV_Blue");
+                // Sends update of player's hand to client
+                //interpretServerMsg("GetPlayerOneHand");
+                //interpretServerMsg("GetPlayerOneHandTiles");
+                returnToClient = "Player1_" + tileDeck.getPositionXY("MV_Blue");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                returnToClient = "PlayerOnePTHand" + player.getPlayerHandTiles(1);
+                break;
+
+
+
+
+
+
+
             //// 2DO! This case has to be done for each PT and each Player
             case "Player1_ExchangePathTileValue_pink_3.jpg":
                 // change PT into MV

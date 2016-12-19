@@ -105,6 +105,21 @@ public class Player implements Serializable {
 
     }
 
+    public void removeMovementCardFromHand(int Player, String MovementCard){
+        if(Player == 1) {
+            // Kein simples .remove, da sonst alle elemente aus der Liste gelöscht werden
+            for (int i = 0; i < PlayerOneHandCards.size(); i++) {
+                if(PlayerOneHandCards.get(i).equals(MovementCard)){
+                    PlayerOneHandCards.remove(i);
+                    break;
+                }
+            }
+        }else if(Player == 2){
+            PlayerTwoHandCards.remove(MovementCard);
+        }
+
+    }
+
     public void GameStart(){
         TileDeck tileDeck = new TileDeck();
         if(GameStarted == 0){
@@ -133,12 +148,12 @@ public class Player implements Serializable {
         for( int i = 0 ; i < 15 ; i++ )
         {
             MovementCards.add(MV_Blue);
-            MovementCards.add(MV_Brown);
-            MovementCards.add(MV_Green);
-            MovementCards.add(MV_Grey);
-            MovementCards.add(MV_Pink);
-            MovementCards.add(MV_White);
-            MovementCards.add(MV_Yellow);
+            //MovementCards.add(MV_Brown);
+            //MovementCards.add(MV_Green);
+            //MovementCards.add(MV_Grey);
+            //MovementCards.add(MV_Pink);
+            //MovementCards.add(MV_White);
+            //MovementCards.add(MV_Yellow);
         }
         // Mischen der Bewegungskarten
         Collections.shuffle(MovementCards);
@@ -208,6 +223,30 @@ public class Player implements Serializable {
             StringPlayerTwoHandCards += PlayerTwoHandCards.get(i) + ",";
         }
         return StringPlayerTwoHandCards;
+    }
+
+    public String getPlayerHandTiles(int Player){
+        String StringPlayerHandTiles = "";
+
+        PlayerOneHandTiles.add("green_3.jpg");
+        PlayerOneHandTiles.add("green_3.jpg");
+        PlayerOneHandTiles.add("green_3.jpg");
+        PlayerOneHandTiles.add("green_3.jpg");
+
+        if(Player == 1){
+            for( int i = 0 ; i < PlayerOneHandTiles.size() ; i++ )
+            {
+                //System.out.println(PlayerOneHandCards.get(i));
+                StringPlayerHandTiles += PlayerOneHandTiles.get(i) + ",";
+            }
+        }else if(Player == 2){
+            for( int i = 0 ; i < PlayerTwoHandTiles.size() ; i++ )
+            {
+                //System.out.println(PlayerOneHandCards.get(i));
+                StringPlayerHandTiles += PlayerTwoHandTiles.get(i) + ",";
+            }
+        }
+        return StringPlayerHandTiles;
     }
 
     public static String getCardFromStack(int AmountMV, int Player){

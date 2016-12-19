@@ -29,7 +29,6 @@ public class PlayerClient {
     }
 
     public void addPlayerToString(String msg){
-        sendMessageToServer("Player1_"+msg);
         if(PlayerID == 1){
             sendMessageToServer("Player1_"+msg);
         }
@@ -87,6 +86,18 @@ public class PlayerClient {
         System.out.println("Player Two Hand: " + PlayerTwoHandCards);
     }
 
+    public void setPlayerOneHandTiles(String PathTiles){
+        String str[] = PathTiles.split(",");
+        PlayerOneHandTiles = Arrays.asList(str);
+        System.out.println("Player One Hand Tiles: " + PlayerOneHandTiles);
+    }
+
+    public void setPlayerTwoHandTiles(String PathTiles){
+        String str[] = PathTiles.split(",");
+        PlayerTwoHandTiles = Arrays.asList(str);
+        System.out.println("Player One Hand Tiles: " + PlayerTwoHandTiles);
+    }
+
     public void setGameBoard(String PTString){
         String str[] = PTString.split(",");
         PathTileList = Arrays.asList(str);
@@ -136,17 +147,13 @@ public class PlayerClient {
         return returnHand;
     }
 
+    public void getMovementCardNameFromArrayNumber(int ArrayNumber){
+        // Sample output Played_MV_Blue
+        addPlayerToString("Played_"+PlayerOneHandCards.get(ArrayNumber));
+
+    }
+
     public String getPlayerPathTileHandGUI(int PathTileNumber){
-        // ONLY TESTING
-        PlayerOneHandTiles.add("pathtile0.jpg");
-        PlayerOneHandTiles.add("pink_2.jpg");
-        PlayerOneHandTiles.add("pink_3.jpg");
-        PlayerOneHandTiles.add("pink_4.jpg");
-        PlayerOneHandTiles.add("pink_5.jpg");
-        //PlayerTwoHandTiles.add("pathtile0.jpg");
-        //PlayerTwoHandTiles.add("pathtile0.jpg");
-        //PlayerTwoHandTiles.add("pink_5.jpg");
-        // END ONLY TESTING
 
         String returnHand = "pathtile0.jpg";
 

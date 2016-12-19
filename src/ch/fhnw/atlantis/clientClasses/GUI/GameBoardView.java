@@ -410,55 +410,55 @@ public class GameBoardView extends Pane {
             btnFinishTurn.setDisable(playerClient.isItMyTurn());
 
             // Wegplättchen
-            pos1.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(1),
+            pos1.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(0),
                     BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
-            pos2.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(2),
+            pos2.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(1),
                     BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
-            pos3.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(3),
+            pos3.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(2),
                     BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
-            pos4.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(4),
+            pos4.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(3),
                     BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
-            pos5.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(5),
+            pos5.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(4),
                     BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
-            pos6.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(6),
+            pos6.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(5),
                     BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
-            pos7.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(7),
+            pos7.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(6),
                     BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
-            pos8.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(8),
+            pos8.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(7),
                     BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
-            pos9.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(9),
+            pos9.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(8),
                     BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
-            pos10.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(10),
+            pos10.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(9),
                     BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
-            pos11.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(11),
+            pos11.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(10),
                     BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
-            pos12.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(12),
+            pos12.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(11),
                     BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
-            pos13.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(13),
+            pos13.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(12),
                     BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
-            pos14.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(14),
+            pos14.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(13),
                     BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
-            pos15.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(15),
+            pos15.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(14),
                     BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
-            pos16.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(16),
+            pos16.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(15),
                     BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
-            pos17.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(17),
+            pos17.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(16),
                     BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
-            pos18.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(18),
+            pos18.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(17),
                     BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
-            pos19.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(19),
+            pos19.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(18),
                     BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
-            pos20.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(20),
+            pos20.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(19),
                     BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
-            pos21.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(21),
+            pos21.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(20),
                     BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
-            pos22.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(22),
+            pos22.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(21),
                     BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
-            pos23.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(23),
+            pos23.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(22),
                     BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
-            pos24.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(24),
+            pos24.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(23),
                     BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
-            pos25.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(25),
+            pos25.setBackground(new Background(new BackgroundImage(imageLoader.getPathTile(24),
                     BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT,BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
     }
 
@@ -483,6 +483,11 @@ public class GameBoardView extends Pane {
     public void setPositionPawnP2(int x, int y){
         PositionXPawnP2 = x;
         PositionYPawnP2 = y;
+    }
+
+    public void playMovementCard() throws InterruptedException {
+        PlayerClient playerClient = new PlayerClient();
+        playerClient.getMovementCardNameFromArrayNumber(DisplayMovementCard);
     }
 
     public Button getBtnPlayCard() {
