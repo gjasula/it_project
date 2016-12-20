@@ -84,7 +84,7 @@ hBox cardPane{
 
 #start {
 
- -fx-background-image: url("../images/start.jpg");
+ -fx-background-image: url("../images/start.png");
  -fx-background-repeat: no-repeat;
  -fx-background-attachment: fixed;
  -fx-background-position: bottom;
@@ -94,7 +94,7 @@ hBox cardPane{
 
 #end {
 
-  -fx-background-image: url("../images/ende.jpg");
+  -fx-background-image: url("../images/ende.png");
   -fx-background-repeat: no-repeat;
   -fx-background-attachment: fixed;
   -fx-background-position: bottom;
