@@ -150,12 +150,12 @@ public class Player implements Serializable {
         for( int i = 0 ; i < 15 ; i++ )
         {
             MovementCards.add(MV_Blue);
-            //MovementCards.add(MV_Brown);
-            //MovementCards.add(MV_Green);
-            //MovementCards.add(MV_Grey);
-            //MovementCards.add(MV_Pink);
-            //MovementCards.add(MV_White);
-            //MovementCards.add(MV_Yellow);
+            MovementCards.add(MV_Brown);
+            MovementCards.add(MV_Green);
+            MovementCards.add(MV_Grey);
+            MovementCards.add(MV_Pink);
+            MovementCards.add(MV_White);
+            MovementCards.add(MV_Yellow);
         }
         // Mischen der Bewegungskarten
         Collections.shuffle(MovementCards);
