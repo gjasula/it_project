@@ -111,6 +111,7 @@ public class TileDeck {
         }
 
         Collections.shuffle(tileDeckString);
+        tileDeckString.subList(25, 49).clear();
     }
 
     public String getPositionXY(String MovementCard){
@@ -120,6 +121,24 @@ public class TileDeck {
         switch (MovementCard) {
             case "MV_Blue":
                 PathTile = "blue";
+                break;
+            case "MV_Brown":
+                PathTile = "brown";
+                break;
+            case "MV_Green":
+                PathTile = "green";
+                break;
+            case "MV_Grey":
+                PathTile = "grey";
+                break;
+            case "MV_Pink":
+                PathTile = "pink";
+                break;
+            case "MV_White":
+                PathTile = "white";
+                break;
+            case "MV_Yellow":
+                PathTile = "yellow";
                 break;
             default:
         }

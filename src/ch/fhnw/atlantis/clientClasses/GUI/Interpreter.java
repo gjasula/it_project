@@ -44,8 +44,10 @@ public class Interpreter {
                     playerClient.setGameBoard(messagefromServer.substring(18));
                 }else if(messagefromServer.substring(0,17).equals("Player1_Position_")){
                     definePawnPosition.setPosition(messagefromServer);
+                    playerClient.sendMessageToServer("GetPlayerOneHand");
+                    playerClient.sendMessageToServer("GetPlayerOneHandTiles");
+                    playerClient.sendMessageToServer("ReturnGameBoard");
                 }else if(messagefromServer.substring(0,15).equals("PlayerOnePTHand")){
-                    System.out.println("JOdel"+messagefromServer);
                     playerClient.setPlayerOneHandTiles(messagefromServer.substring(15));
                 }else if(messagefromServer.substring(0,15).equals("PlayerTwoPTHand")){
                     playerClient.setPlayerTwoHandTiles(messagefromServer.substring(15));

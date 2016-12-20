@@ -4,6 +4,8 @@ import ch.fhnw.atlantis.globalClasses.models.Player;
 import ch.fhnw.atlantis.globalClasses.models.TileDeck;
 import ch.fhnw.atlantis.serverClasses.serverClasses.GUI.ServerView;
 
+import java.io.FileNotFoundException;
+
 import static ch.fhnw.atlantis.globalClasses.models.Player.*;
 
 /**
@@ -11,7 +13,7 @@ import static ch.fhnw.atlantis.globalClasses.models.Player.*;
  */
 public class Interpreter {
 
-    public String interpretServerMsg(String messagefromClient){
+    public String interpretServerMsg(String messagefromClient) throws FileNotFoundException {
 
         String returnToClient;
         Player player = new Player();
@@ -50,14 +52,13 @@ public class Interpreter {
                 returnToClient = "PathTileGameBoard_" + tileDeck.getGameBoard();
                 System.out.println(returnToClient);
                 break;
+            //// 2DO! This case has to be done for each PT and each Player
             case "Player1_Played_MV_Blue":
                 player.removeMovementCardFromHand(1, "MV_Blue");
-                // Sends update of player's hand to client
-                //interpretServerMsg("GetPlayerOneHand");
-                //interpretServerMsg("GetPlayerOneHandTiles");
-                returnToClient = "Player1_" + tileDeck.getPositionXY("MV_Blue");
-                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
-                returnToClient = "PlayerOnePTHand" + player.getPlayerHandTiles(1);
+                String Position = tileDeck.getPositionXY("MV_Blue");
+player.updatePlayerHandTiles(1, Position.substring(9));
+                //System.out.println(tileDeck.getPositionXY("MV_Blue"));
+                returnToClient = "Player1_" + Position;
                 break;
 
 

@@ -41,7 +41,7 @@ public class Model {
         //tileDeck.createTileDeck();
 
         // Richy's generateTileDeck
-        tileDeck.generateTileDeck();
+        //tileDeck.generateTileDeck();
 
         this.primaryStage = primaryStage;
 

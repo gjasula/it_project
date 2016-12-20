@@ -1,7 +1,9 @@
 package ch.fhnw.atlantis.globalClasses.models;
 
+import ch.fhnw.atlantis.clientClasses.GUI.Interpreter;
 import javafx.scene.paint.Color;
 
+import java.io.FileNotFoundException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -228,11 +230,6 @@ public class Player implements Serializable {
     public String getPlayerHandTiles(int Player){
         String StringPlayerHandTiles = "";
 
-        PlayerOneHandTiles.add("green_3.jpg");
-        PlayerOneHandTiles.add("green_3.jpg");
-        PlayerOneHandTiles.add("green_3.jpg");
-        PlayerOneHandTiles.add("green_3.jpg");
-
         if(Player == 1){
             for( int i = 0 ; i < PlayerOneHandTiles.size() ; i++ )
             {
@@ -248,6 +245,25 @@ public class Player implements Serializable {
         }
         return StringPlayerHandTiles;
     }
+
+    public void updatePlayerHandTiles(int Player, String Position){
+        int PickUpTile;
+        TileDeck tileDeck = new TileDeck();
+
+        if(0 == Integer.parseInt(Position)){
+            System.out.println("Position is 0");
+        }else{
+            PickUpTile = Integer.parseInt(Position) - 1;
+            System.out.println(Position+" "+PickUpTile);
+            if (Player == 1) {
+                PlayerOneHandTiles.add(tileDeck.tileDeckString.get(PickUpTile));
+                tileDeck.tileDeckString.set(PickUpTile, "water.jpg");
+            } else if (Player == 2) {
+                PlayerTwoHandTiles.add(tileDeck.tileDeckString.get(PickUpTile));
+            }
+        }
+    }
+
 
     public static String getCardFromStack(int AmountMV, int Player){
         String returnToClient = MovementCards.get(0);
