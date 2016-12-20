@@ -42,11 +42,24 @@ public class Interpreter {
                     playerClient.setPlayerTwoHandCards(messagefromServer.substring(13));
                 }else if(messagefromServer.substring(0,18).equals("PathTileGameBoard_")){
                     playerClient.setGameBoard(messagefromServer.substring(18));
+
+                //
                 }else if(messagefromServer.substring(0,17).equals("Player1_Position_")){
-                    definePawnPosition.setPosition(messagefromServer);
-                    playerClient.sendMessageToServer("GetPlayerOneHand");
-                    playerClient.sendMessageToServer("GetPlayerOneHandTiles");
-                    playerClient.sendMessageToServer("ReturnGameBoard");
+                    if(messagefromServer.equals("Player1_Position_NotAvailable")){}
+                    else{
+                        definePawnPosition.setPosition(messagefromServer);
+                        playerClient.sendMessageToServer("GetPlayerOneHand");
+                        playerClient.sendMessageToServer("GetPlayerOneHandTiles");
+                        playerClient.sendMessageToServer("ReturnGameBoard");
+                    }
+                }else if(messagefromServer.substring(0,17).equals("Player2_Position_")){
+                    if(messagefromServer.equals("Player2_Position_NotAvailable")){}
+                    else {
+                        definePawnPosition.setPosition(messagefromServer);
+                        playerClient.sendMessageToServer("GetPlayerTwoHand");
+                        playerClient.sendMessageToServer("GetPlayerTwoHandTiles");
+                        playerClient.sendMessageToServer("ReturnGameBoard");
+                    }
                 }else if(messagefromServer.substring(0,15).equals("PlayerOnePTHand")){
                     // Wird benötigt falls die Hand Leer ist.
                     if(messagefromServer.equals("PlayerOnePTHand")){}else {

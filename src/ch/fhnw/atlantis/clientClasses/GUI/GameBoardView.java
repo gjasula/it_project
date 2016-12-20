@@ -81,22 +81,23 @@ public class GameBoardView extends Pane {
 
         // ------------------- Player Icons -------------------
         player1 = new Label("\ue7FD");
-        playerGrid.setConstraints(player1, 0    , 0);
+        playerGrid.setConstraints(player1, 1    , 0);
         playerGrid.setHalignment(player1, HPos.CENTER);
-        pointsP1 = new Label("0");
-        playerGrid.setConstraints(pointsP1, 1, 0 );
+        pointsP1 = new Label("Im Ziel:\n0/3");
         playerGrid.setHalignment(pointsP1, HPos.CENTER);
+        playerGrid.setConstraints(pointsP1, 2, 0 );
 
         player2 = new Label("\ue7FD");
-        playerGrid.setConstraints(player2, 2, 0);
+        playerGrid.setConstraints(player2, 6, 0);
         playerGrid.setHalignment(player2, HPos.CENTER);
-        pointsP2 = new Label("0");
-        playerGrid.setConstraints(pointsP2, 3, 0 );
+        pointsP2 = new Label("Im Ziel:\n0/3");
         playerGrid.setHalignment(pointsP2, HPos.CENTER);
+        playerGrid.setConstraints(pointsP2, 7, 0 );
 
         player3 = new Label("\ue7FD");
         playerGrid.setConstraints(player3, 4, 0);
         playerGrid.setHalignment(player3, HPos.CENTER);
+        player3.setDisable(true);
         pointsP3 = new Label("0");
         playerGrid.setConstraints(pointsP3, 5, 0 );
         playerGrid.setHalignment(pointsP3, HPos.CENTER);
@@ -104,15 +105,16 @@ public class GameBoardView extends Pane {
         player4 = new Label("\ue7FD");
         playerGrid.setConstraints(player4, 6, 0);
         playerGrid.setHalignment(player4, HPos.CENTER);
+        player4.setDisable(true);
         pointsP4 = new Label("0");
         playerGrid.setConstraints(pointsP4, 7, 0 );
         playerGrid.setHalignment(pointsP4, HPos.CENTER);
 
         // ------------------- Player Labels definieren ---------
         p1 = new Label("Spieler 1");
-        playerGrid.setConstraints(p1, 0, 1);
+        playerGrid.setConstraints(p1, 1, 1);
         p2 = new Label("Spieler 2");
-        playerGrid.setConstraints(p2, 2, 1);
+        playerGrid.setConstraints(p2, 6, 1);
         p3 = new Label("Spieler 3");
         playerGrid.setConstraints(p3, 4, 1);
         p4 = new Label("Spieler 4");
@@ -247,7 +249,7 @@ public class GameBoardView extends Pane {
 
         // alle Inhalte in die Gridpanes holen mit getChildren
         gameBoard.getChildren().addAll(start, btnBuyCard, btnFinishTurn, btnNextCard, btnNextTile, btnPlayCard, btnPlayTile, cardPane, tilePane, end, pos1, pos2, pos3, pos4, pos5, pos6, pos7, pos8, pos9, pos10, pos11, pos12, pos13, pos14, pos15, pos16, pos17, pos18, pos19, pos20, pos21, pos22, pos23, pos24, pos25, pawnP1, pawnP2, pawnP3, pawnP4);
-        playerGrid.getChildren().addAll(player1, player2, player3, player4, p1, p2, p3, p4, pointsP1, pointsP2, pointsP3, pointsP4);
+        playerGrid.getChildren().addAll(player1, player2, p1, p2, pointsP1, pointsP2);
 
 
         // ------------------- BorderPane erstellen und HBox, VBox, Gameboard und playerGrid hinzufügen -------------------
@@ -402,6 +404,10 @@ public class GameBoardView extends Pane {
             gameBoard.setConstraints(pawnP1, PositionXPawnP1, PositionYPawnP1);
             gameBoard.setConstraints(pawnP2, PositionXPawnP2, PositionYPawnP2);
 
+            // Pawn im Ziel
+            setPlayerOneOnLand();
+            setPlayerTwoOnLand();
+
             // Buttons Enable/Disable if it's player's turn
             btnPlayTile.setDisable(playerClient.isItMyTurn());
             btnPlayCard.setDisable(playerClient.isItMyTurn());
@@ -478,6 +484,16 @@ public class GameBoardView extends Pane {
     public void setPositionPawnP1(int x, int y){
         PositionXPawnP1 = x;
         PositionYPawnP1 = y;
+    }
+
+    public void setPlayerOneOnLand(){
+        PlayerClient playerClient = new PlayerClient();
+        pointsP1.setText("Im Ziel:\n"+playerClient.PlayerOneOnLand+"/3");
+    }
+
+    public void setPlayerTwoOnLand(){
+        PlayerClient playerClient = new PlayerClient();
+        pointsP2.setText("Im Ziel:\n"+playerClient.PlayerTwoOnLand+"/3");
     }
 
     public void setPositionPawnP2(int x, int y){

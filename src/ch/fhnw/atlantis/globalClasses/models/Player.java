@@ -32,6 +32,8 @@ public class Player implements Serializable {
     private boolean isConnected = true;
     public static int playernumber = 0;
     public static int GameStarted = 0;
+    public static int PlayerOnePawnOnLand = 0;
+    public static int PlayerTwoPawnOnLand = 0;
     static ArrayList<String> MovementCards = new ArrayList<>();
     static ArrayList<String> PlayerOneHandCards = new ArrayList<>();
     static ArrayList<String> PlayerTwoHandCards = new ArrayList<>();
@@ -246,6 +248,21 @@ public class Player implements Serializable {
         return StringPlayerHandTiles;
     }
 
+    public void setPawnOnLand(int Player){
+        if(Player == 1) {
+            PlayerOnePawnOnLand++;
+
+            if(PlayerOnePawnOnLand == 3){
+                // Leite Spielschluss ein
+            }
+        }else if(Player == 2){
+            PlayerTwoPawnOnLand++;
+            if(PlayerTwoPawnOnLand == 3){
+                // Leite Spielschluss ein
+            }
+        }
+    }
+
     public void updatePlayerHandTiles(int Player, String Position){
         int PickUpTile;
         TileDeck tileDeck = new TileDeck();
@@ -253,6 +270,23 @@ public class Player implements Serializable {
         // Die 0 muss mit Gänsefüsslein sein, weil es ein String ist!
         if(Position.equals("0")){
             System.out.println("Position is 0, no Tile for Player");
+
+        // User is on last PathTile
+        }else if(Position.equals("98")){
+            PickUpTile = tileDeck.LastPathTile;
+            if (Player == 1) {
+                PlayerOneHandTiles.add(tileDeck.tileDeckString.get(PickUpTile));
+                tileDeck.tileDeckString.set(PickUpTile, "water.jpg");
+                setPawnOnLand(1);
+                tileDeck.PositionPlayer1 = -1;
+            } else if (Player == 2) {
+                PlayerTwoHandTiles.add(tileDeck.tileDeckString.get(PickUpTile));
+                tileDeck.tileDeckString.set(PickUpTile, "water.jpg");
+                setPawnOnLand(2);
+                tileDeck.PositionPlayer2 = -1;
+            }
+
+        // User lands on any PathTile
         }else{
             PickUpTile = Integer.parseInt(Position) - 1;
             System.out.println(Position+" "+PickUpTile);
@@ -261,6 +295,7 @@ public class Player implements Serializable {
                 tileDeck.tileDeckString.set(PickUpTile, "water.jpg");
             } else if (Player == 2) {
                 PlayerTwoHandTiles.add(tileDeck.tileDeckString.get(PickUpTile));
+                tileDeck.tileDeckString.set(PickUpTile, "water.jpg");
             }
         }
     }

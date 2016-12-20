@@ -18,8 +18,8 @@ public class TileDeck {
     ArrayList<Tile> tileDeck = new ArrayList<Tile>(); //contains all the 42 tiles that are from relevance (no water)
     ArrayList<Tile> waterTilesDeck = new ArrayList<Tile>(); //stores 42 watertiles
     static ArrayList<String> tileDeckString = new ArrayList<>();
-    static int PositionPlayer1 = 0;
-    static int PositionPlayer2 = 0;
+    static int PositionPlayer1 = -1;
+    static int PositionPlayer2 = -1;
     static int LastPathTile;
 
     /**
@@ -119,7 +119,7 @@ public class TileDeck {
 
     public String getPositionXY(int Player ,String MovementCard){
         String PathTile = null;
-        String Position = null;
+        String Position = "Position_NotAvailable";
 
         switch (MovementCard) {
             case "MV_Blue":
@@ -152,21 +152,27 @@ public class TileDeck {
             }else{
                 LastPathTile = i;
             }
-            System.out.println("Das letzte Wegplättchen ist auf Position: "+LastPathTile);
+            //System.out.println("Das letzte Wegplättchen ist auf Position: "+LastPathTile);
         }
 
         if(Player == 1) {
             // Richy - returns position of first which fits MVCard
+            PositionPlayer1++;
             for (int i = PositionPlayer1; i < tileDeckString.size(); i++) {
                 if (tileDeckString.get(i).startsWith(PathTile)) {
                     Position = "Position_" + i;
                     PositionPlayer1 = i;
+                    if(PositionPlayer1 == LastPathTile){
+                        Position = "Position_98";
+                        break;
+                    }
                     break;
                 }
             }
         }
         else if(Player == 2) {
             // Richy - returns position of first which fits MVCard
+            PositionPlayer2++;
             for (int i = PositionPlayer2; i < tileDeckString.size(); i++) {
                 if (tileDeckString.get(i).startsWith(PathTile)) {
                     Position = "Position_" + i;

@@ -12,6 +12,8 @@ public class PlayerClient {
     Client client = new Client();
     public static int PlayerID = 0;
     public static int PlayersTurn = 1; // Welcher Spiler ist am Zug?
+    public static int PlayerOneOnLand = 0;
+    public static int PlayerTwoOnLand = 0;
     static List<String> PlayerOneHandCards = new ArrayList<>();
     static List<String> PlayerTwoHandCards = new ArrayList<>();
     static List<String> PlayerOneHandTiles = new ArrayList<>();
