@@ -52,6 +52,10 @@ public class Interpreter {
                 returnToClient = "PathTileGameBoard_" + tileDeck.getGameBoard();
                 System.out.println(returnToClient);
                 break;
+            case "ReturnPawnOnLand":
+                returnToClient = "PawnOnLand" + player.getPlayerOnLand();
+                System.out.println(returnToClient);
+                break;
             //// 2DO! This case has to be done for each PT and each Player
             case "Player1_Played_MV_Blue":
                 player.removeMovementCardFromHand(1, "MV_Blue");

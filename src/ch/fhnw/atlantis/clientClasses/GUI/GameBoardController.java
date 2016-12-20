@@ -44,11 +44,14 @@ public class GameBoardController {
             view.UpdatePositivePathTile();
         });
 
-        view.getBtnPlayCard().setOnAction(event -> {
-            try {
-                view.playMovementCard();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+        view.getBtnPlayCard().setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                try {
+                    view.playMovementCard();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
         });
 

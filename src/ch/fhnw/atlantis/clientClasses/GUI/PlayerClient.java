@@ -1,8 +1,14 @@
 package ch.fhnw.atlantis.clientClasses.GUI;
 
+import ch.fhnw.atlantis.serverClasses.Server;
+import javafx.event.ActionEvent;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Created by Richard on 16/12/2016.
@@ -12,8 +18,8 @@ public class PlayerClient {
     Client client = new Client();
     public static int PlayerID = 0;
     public static int PlayersTurn = 1; // Welcher Spiler ist am Zug?
-    public static int PlayerOneOnLand = 0;
-    public static int PlayerTwoOnLand = 0;
+    public static String PlayerOneOnLand = "0";
+    public static String PlayerTwoOnLand = "0";
     static List<String> PlayerOneHandCards = new ArrayList<>();
     static List<String> PlayerTwoHandCards = new ArrayList<>();
     static List<String> PlayerOneHandTiles = new ArrayList<>();
@@ -24,6 +30,19 @@ public class PlayerClient {
         client.connectToServer("127.0.0.1", 7777);
         client.sendMessagetoServer(msg);
         System.out.println("Sending this to server: "+msg);
+    }
+
+    public void setPlayerOnLand(String OnLand){
+        PlayerOneOnLand = OnLand.substring(0,1);
+        PlayerTwoOnLand = OnLand.substring(1,2);
+    }
+
+    public String getPlayerOneOnLand(){
+        return PlayerOneOnLand;
+    }
+
+    public String getPlayerTwoOnLand(){
+        return PlayerTwoOnLand;
     }
 
     public void addPlayerToString(String msg){

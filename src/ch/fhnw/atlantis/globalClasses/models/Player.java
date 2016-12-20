@@ -32,8 +32,8 @@ public class Player implements Serializable {
     private boolean isConnected = true;
     public static int playernumber = 0;
     public static int GameStarted = 0;
-    public static int PlayerOnePawnOnLand = 0;
-    public static int PlayerTwoPawnOnLand = 0;
+    static int PlayerOnePawnOnLand = 0;
+    static int PlayerTwoPawnOnLand = 0;
     static ArrayList<String> MovementCards = new ArrayList<>();
     static ArrayList<String> PlayerOneHandCards = new ArrayList<>();
     static ArrayList<String> PlayerTwoHandCards = new ArrayList<>();
@@ -251,7 +251,7 @@ public class Player implements Serializable {
     public void setPawnOnLand(int Player){
         if(Player == 1) {
             PlayerOnePawnOnLand++;
-
+            System.out.println("PlayerTwoPawnOnLand: "+PlayerTwoPawnOnLand);
             if(PlayerOnePawnOnLand == 3){
                 // Leite Spielschluss ein
             }
@@ -275,9 +275,11 @@ public class Player implements Serializable {
         }else if(Position.equals("98")){
             PickUpTile = tileDeck.LastPathTile;
             if (Player == 1) {
+                PlayerOnePawnOnLand++;
                 PlayerOneHandTiles.add(tileDeck.tileDeckString.get(PickUpTile));
                 tileDeck.tileDeckString.set(PickUpTile, "water.jpg");
-                setPawnOnLand(1);
+                System.out.println("Joodle Addition: " + PlayerOnePawnOnLand);
+                //setPawnOnLand(1);
                 tileDeck.PositionPlayer1 = -1;
             } else if (Player == 2) {
                 PlayerTwoHandTiles.add(tileDeck.tileDeckString.get(PickUpTile));
@@ -300,6 +302,10 @@ public class Player implements Serializable {
         }
     }
 
+    public String getPlayerOnLand(){
+        String OnLand = String.valueOf(PlayerOnePawnOnLand)+String.valueOf(PlayerTwoPawnOnLand);
+        return OnLand;
+    }
 
     public static String getCardFromStack(int AmountMV, int Player){
         String returnToClient = MovementCards.get(0);

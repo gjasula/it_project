@@ -386,7 +386,7 @@ public class GameBoardView extends Pane {
                         }
                 );
             }// Change delay to 300 after testing
-        }, 0, 350, TimeUnit.MILLISECONDS);
+        }, 0, 250, TimeUnit.MILLISECONDS);
     }
 
     public void UpdateValues() throws FileNotFoundException {
@@ -405,8 +405,8 @@ public class GameBoardView extends Pane {
             gameBoard.setConstraints(pawnP2, PositionXPawnP2, PositionYPawnP2);
 
             // Pawn im Ziel
-            setPlayerOneOnLand();
-            setPlayerTwoOnLand();
+            getPlayerOneOnLand();
+            getPlayerTwoOnLand();
 
             // Buttons Enable/Disable if it's player's turn
             btnPlayTile.setDisable(playerClient.isItMyTurn());
@@ -486,14 +486,14 @@ public class GameBoardView extends Pane {
         PositionYPawnP1 = y;
     }
 
-    public void setPlayerOneOnLand(){
+    public void getPlayerOneOnLand(){
         PlayerClient playerClient = new PlayerClient();
-        pointsP1.setText("Im Ziel:\n"+playerClient.PlayerOneOnLand+"/3");
+        pointsP1.setText("Im Ziel:\n"+playerClient.getPlayerOneOnLand()+"/3");
     }
 
-    public void setPlayerTwoOnLand(){
+    public void getPlayerTwoOnLand(){
         PlayerClient playerClient = new PlayerClient();
-        pointsP2.setText("Im Ziel:\n"+playerClient.PlayerTwoOnLand+"/3");
+        pointsP2.setText("Im Ziel:\n"+playerClient.getPlayerTwoOnLand()+"/3");
     }
 
     public void setPositionPawnP2(int x, int y){

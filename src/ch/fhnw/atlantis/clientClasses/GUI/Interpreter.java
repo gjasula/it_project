@@ -35,24 +35,34 @@ public class Interpreter {
                 playerClient.PlayersTurn = 2;
                 break;
             default:
+                if(messagefromServer.substring(0,10).equals("PawnOnLand")){
+                    playerClient.setPlayerOnLand(messagefromServer.substring(10));
+                }
 
                 if(messagefromServer.substring(0,13).equals("PlayerOneHand")){
                     playerClient.setPlayerOneHandCards(messagefromServer.substring(13));
-                }else if(messagefromServer.substring(0,13).equals("PlayerTwoHand")){
-                    playerClient.setPlayerTwoHandCards(messagefromServer.substring(13));
-                }else if(messagefromServer.substring(0,18).equals("PathTileGameBoard_")){
-                    playerClient.setGameBoard(messagefromServer.substring(18));
+                }
 
-                //
-                }else if(messagefromServer.substring(0,17).equals("Player1_Position_")){
+                if(messagefromServer.substring(0,13).equals("PlayerTwoHand")){
+                    playerClient.setPlayerTwoHandCards(messagefromServer.substring(13));
+                }
+
+                if(messagefromServer.substring(0,18).equals("PathTileGameBoard_")){
+                    playerClient.setGameBoard(messagefromServer.substring(18));
+                }
+
+                if(messagefromServer.substring(0,17).equals("Player1_Position_")){
                     if(messagefromServer.equals("Player1_Position_NotAvailable")){}
                     else{
                         definePawnPosition.setPosition(messagefromServer);
                         playerClient.sendMessageToServer("GetPlayerOneHand");
                         playerClient.sendMessageToServer("GetPlayerOneHandTiles");
                         playerClient.sendMessageToServer("ReturnGameBoard");
+                        playerClient.sendMessageToServer("ReturnPawnOnLand");
                     }
-                }else if(messagefromServer.substring(0,17).equals("Player2_Position_")){
+                }
+
+                if(messagefromServer.substring(0,17).equals("Player2_Position_")){
                     if(messagefromServer.equals("Player2_Position_NotAvailable")){}
                     else {
                         definePawnPosition.setPosition(messagefromServer);
@@ -60,12 +70,16 @@ public class Interpreter {
                         playerClient.sendMessageToServer("GetPlayerTwoHandTiles");
                         playerClient.sendMessageToServer("ReturnGameBoard");
                     }
-                }else if(messagefromServer.substring(0,15).equals("PlayerOnePTHand")){
+                }
+
+                if(messagefromServer.substring(0,15).equals("PlayerOnePTHand")){
                     // Wird benötigt falls die Hand Leer ist.
                     if(messagefromServer.equals("PlayerOnePTHand")){}else {
                         playerClient.setPlayerOneHandTiles(messagefromServer.substring(15));
                     }
-                }else if(messagefromServer.substring(0,15).equals("PlayerTwoPTHand")){
+                }
+
+                if(messagefromServer.substring(0,15).equals("PlayerTwoPTHand")){
                     // Wird benötigt falls die Hand Leer ist.
                     if(messagefromServer.equals("PlayerTwoPTHand")){}else {
                         playerClient.setPlayerTwoHandTiles(messagefromServer.substring(15));
