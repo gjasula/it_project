@@ -63,12 +63,10 @@ public class ServerClientHandler implements Runnable {
                 if(SetIDUser == 0) {
                     server.forwardMessageToOne("DefineIdentity1", this);
                     SetIDUser = 1;
-                    serverView.setTxtLog("Player 1 has connected.");
                 }
                 if(SetIDUser == 1){
                     server.forwardMessage("DefineIdentity2", this);
                     SetIDUser = 2;
-                    serverView.setTxtLog("Player 2 has connected.");
                 }
 
                 //System.out.println("Received Message from client ("+socketToClient.hashCode()+"): " + messagefromClient);

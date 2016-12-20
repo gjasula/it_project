@@ -48,9 +48,15 @@ public class Interpreter {
                     playerClient.sendMessageToServer("GetPlayerOneHandTiles");
                     playerClient.sendMessageToServer("ReturnGameBoard");
                 }else if(messagefromServer.substring(0,15).equals("PlayerOnePTHand")){
-                    playerClient.setPlayerOneHandTiles(messagefromServer.substring(15));
+                    // Wird benötigt falls die Hand Leer ist.
+                    if(messagefromServer.equals("PlayerOnePTHand")){}else {
+                        playerClient.setPlayerOneHandTiles(messagefromServer.substring(15));
+                    }
                 }else if(messagefromServer.substring(0,15).equals("PlayerTwoPTHand")){
-                    playerClient.setPlayerTwoHandTiles(messagefromServer.substring(15));
+                    // Wird benötigt falls die Hand Leer ist.
+                    if(messagefromServer.equals("PlayerTwoPTHand")){}else {
+                        playerClient.setPlayerTwoHandTiles(messagefromServer.substring(15));
+                    }
                 }
         }
 

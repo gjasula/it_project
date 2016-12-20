@@ -147,8 +147,8 @@ public class GameBoardView extends Pane {
         pawnP2 = new Label("\ue532");
         pawnP3 = new Label("\ue16B");
         pawnP4 = new Label("\ue80C");
-        pawnP3.setDisable(true);
-        pawnP4.setDisable(true);
+        pawnP3.setVisible(false);
+        pawnP4.setVisible(false);
 
 
         // ------------------- Elemente definieren für Gameboard-------------------
@@ -384,7 +384,7 @@ public class GameBoardView extends Pane {
                         }
                 );
             }// Change delay to 300 after testing
-        }, 0, 300, TimeUnit.MILLISECONDS);
+        }, 0, 350, TimeUnit.MILLISECONDS);
     }
 
     public void UpdateValues() throws FileNotFoundException {

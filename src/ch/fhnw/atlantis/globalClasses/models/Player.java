@@ -159,7 +159,7 @@ public class Player implements Serializable {
         }
         // Mischen der Bewegungskarten
         Collections.shuffle(MovementCards);
-        getCardFromStack(4,1);
+        getCardFromStack(20,1); // For Testing 20 back to 4!!
         getCardFromStack(5,2);
     }
 
@@ -250,8 +250,9 @@ public class Player implements Serializable {
         int PickUpTile;
         TileDeck tileDeck = new TileDeck();
 
-        if(0 == Integer.parseInt(Position)){
-            System.out.println("Position is 0");
+        // Die 0 muss mit Gänsefüsslein sein, weil es ein String ist!
+        if(Position.equals("0")){
+            System.out.println("Position is 0, no Tile for Player");
         }else{
             PickUpTile = Integer.parseInt(Position) - 1;
             System.out.println(Position+" "+PickUpTile);

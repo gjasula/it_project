@@ -18,6 +18,9 @@ public class TileDeck {
     ArrayList<Tile> tileDeck = new ArrayList<Tile>(); //contains all the 42 tiles that are from relevance (no water)
     ArrayList<Tile> waterTilesDeck = new ArrayList<Tile>(); //stores 42 watertiles
     static ArrayList<String> tileDeckString = new ArrayList<>();
+    static int PositionPlayer1 = 0;
+    static int PositionPlayer2 = 0;
+    static int LastPathTile;
 
     /**
      * creates ArrayList with all tiles that have a color and a number (no watertiles)
@@ -45,7 +48,6 @@ public class TileDeck {
             tileDeck.add(new Tile(i, Color.YELLOW));
         }
         Collections.shuffle(tileDeck);
-        System.out.println(tileDeck);
     }
 
     /**
@@ -111,10 +113,11 @@ public class TileDeck {
         }
 
         Collections.shuffle(tileDeckString);
+        // Reduce PathTiles to 25
         tileDeckString.subList(25, 49).clear();
     }
 
-    public String getPositionXY(String MovementCard){
+    public String getPositionXY(int Player ,String MovementCard){
         String PathTile = null;
         String Position = null;
 
@@ -143,10 +146,33 @@ public class TileDeck {
             default:
         }
 
-        for (int i = 0; i < tileDeckString.size(); i++) {
-            if(tileDeckString.get(i).startsWith(PathTile)){
-                Position = "Position_"+i;
-                break;
+        // Richard - Erkennt welches das Letzte Wegplättchen ist.
+        for (int i = 0; i < tileDeckString.size(); i++){
+            if(tileDeckString.get(i).equals("water.jpg")){
+            }else{
+                LastPathTile = i;
+            }
+            System.out.println("Das letzte Wegplättchen ist auf Position: "+LastPathTile);
+        }
+
+        if(Player == 1) {
+            // Richy - returns position of first which fits MVCard
+            for (int i = PositionPlayer1; i < tileDeckString.size(); i++) {
+                if (tileDeckString.get(i).startsWith(PathTile)) {
+                    Position = "Position_" + i;
+                    PositionPlayer1 = i;
+                    break;
+                }
+            }
+        }
+        else if(Player == 2) {
+            // Richy - returns position of first which fits MVCard
+            for (int i = PositionPlayer2; i < tileDeckString.size(); i++) {
+                if (tileDeckString.get(i).startsWith(PathTile)) {
+                    Position = "Position_" + i;
+                    PositionPlayer2 = i;
+                    break;
+                }
             }
         }
         return Position;
