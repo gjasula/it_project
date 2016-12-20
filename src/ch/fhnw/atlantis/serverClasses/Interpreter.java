@@ -99,6 +99,48 @@ public class Interpreter {
                 player.updatePlayerHandTiles(1, PositionYellow.substring(9));
                 returnToClient = "Player1_" + PositionYellow;
                 break;
+            case "Player2_Played_MV_Blue":
+                player.removeMovementCardFromHand(2, "MV_Blue");
+                String PositionBlue2 = tileDeck.getPositionXY(2, "MV_Blue");
+                player.updatePlayerHandTiles(2, PositionBlue2.substring(9));
+                returnToClient = "Player2_" + PositionBlue2;
+                break;
+            case "Player2_Played_MV_Brown":
+                player.removeMovementCardFromHand(2, "MV_Brown");
+                String PositionBrown2 = tileDeck.getPositionXY(2, "MV_Brown");
+                player.updatePlayerHandTiles(2, PositionBrown2.substring(9));
+                returnToClient = "Player2_" + PositionBrown2;
+                break;
+            case "Player2_Played_MV_Green":
+                player.removeMovementCardFromHand(2, "MV_Green");
+                String PositionGreen2 = tileDeck.getPositionXY(2, "MV_Green");
+                player.updatePlayerHandTiles(2, PositionGreen2.substring(9));
+                returnToClient = "Player2_" + PositionGreen2;
+                break;
+            case "Player2_Played_MV_Grey":
+                player.removeMovementCardFromHand(2, "MV_Grey");
+                String PositionGrey2 = tileDeck.getPositionXY(2, "MV_Grey");
+                player.updatePlayerHandTiles(2, PositionGrey2.substring(9));
+                returnToClient = "Player2_" + PositionGrey2;
+                break;
+            case "Player2_Played_MV_Pink":
+                player.removeMovementCardFromHand(2, "MV_Pink");
+                String PositionPink2 = tileDeck.getPositionXY(2, "MV_Pink");
+                player.updatePlayerHandTiles(2, PositionPink2.substring(9));
+                returnToClient = "Player2_" + PositionPink2;
+                break;
+            case "Player2_Played_MV_White":
+                player.removeMovementCardFromHand(2, "MV_White");
+                String PositionWhite2 = tileDeck.getPositionXY(2, "MV_White");
+                player.updatePlayerHandTiles(2, PositionWhite2.substring(9));
+                returnToClient = "Player2_" + PositionWhite2;
+                break;
+            case "Player2_Played_MV_Yellow":
+                player.removeMovementCardFromHand(2, "MV_Yellow");
+                String PositionYellow2 = tileDeck.getPositionXY(2, "MV_Yellow");
+                player.updatePlayerHandTiles(2, PositionYellow2.substring(9));
+                returnToClient = "Player2_" + PositionYellow2;
+                break;
 
 
 
