@@ -38,7 +38,7 @@ public class ServerView {
 
     private TextField PortServer;
     public TextArea txtLog;
-    public static String txtLogString;
+    public static String txtLogString = "Server Initialising...";
 
     private Label SWelcome;
     private Label SGroup;
@@ -138,7 +138,6 @@ public class ServerView {
     }
 
     public String getTxtLog() {
-        //return txtLog.getText();
         return txtLogString;
     }
 
