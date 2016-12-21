@@ -34,7 +34,7 @@ public class GameBoardView extends Pane {
 
     private Model model;
 
-    public Button btnFinishTurn, btnBuyCard, btnNextCard, btnPlayCard, btnNextTile, btnPlayTile ;
+    public Button btnFinishTurn, btnBuyCard, btnNextCard, btnPlayCard, btnNextTile, btnPlayTile;
 
     private Label p1;
     private Label p2;
@@ -56,15 +56,17 @@ public class GameBoardView extends Pane {
     private Label pawnP3;
     private Label pawnP4;
 
+    private Label showRules;
+
     private int maxColIndex, maxRowIndex;
 
     public static int DisplayMovementCard = 0;
     public static int DisplayPathTile = 0;
 
     public static int PositionXPawnP1 = 1;
-    public static int PositionYPawnP1 = 0;
+    public static int PositionYPawnP1 = 1;
     public static int PositionXPawnP2 = 2;
-    public static int PositionYPawnP2 = 0;
+    public static int PositionYPawnP2 = 1;
 
     public GameBoardView() throws FileNotFoundException {
 
@@ -80,14 +82,14 @@ public class GameBoardView extends Pane {
         playerGrid.setGridLinesVisible(false);
 
         // ------------------- Player Icons -------------------
-        player1 = new Label("\ue7FD");
+        player1 = new Label("\ue91D");
         playerGrid.setConstraints(player1, 1    , 0);
         playerGrid.setHalignment(player1, HPos.CENTER);
         pointsP1 = new Label("Im Ziel:\n0/3");
         playerGrid.setHalignment(pointsP1, HPos.CENTER);
         playerGrid.setConstraints(pointsP1, 2, 0 );
 
-        player2 = new Label("\ue7FD");
+        player2 = new Label("\ue532");
         playerGrid.setConstraints(player2, 6, 0);
         playerGrid.setHalignment(player2, HPos.CENTER);
         pointsP2 = new Label("Im Ziel:\n0/3");
@@ -201,9 +203,6 @@ public class GameBoardView extends Pane {
         btnPlayTile.setWrapText(true);
         btnPlayTile.setDisable(true);
 
-
-        gameBoard.setConstraints(pawnP3, 2, 0);
-        gameBoard.setConstraints(pawnP4, 2, 2);
         gameBoard.setConstraints(start, 0, 0, 3, 3);
 
         gameBoard.setConstraints(cardPane, 5, 7, 2, 3);
@@ -281,77 +280,6 @@ public class GameBoardView extends Pane {
 
     public void setScene(Scene scene) {
         this.scene = scene;
-    }
-
-
-    /**
-     * Methode zum zeichnen der Tiles und Karten auf dem Spielbrett
-     */
-    int co = 2;
-    int ro = 1;
-
-    // add stacks to the mainBoard
-    private void addToMainBoard(Tile water) {
-
-        if (((ro == 1) || (ro == 5) || (ro == 9)) && co != maxColIndex) {
-
-            gameBoard.add(water, co, ro);
-            co++;
-        } else if (co == maxColIndex && ((ro == 1) || (ro == 5) || (ro == 9))) {
-
-            gameBoard.add(water, maxColIndex - 1, ro + 1);
-            ro += 2;
-            co -= 1;
-        } else if (((ro == 3) || (ro == 7) || (ro == 11)) && co <= maxColIndex && co != 0) {
-
-            gameBoard.add(water, co, ro);
-            co--;
-
-        } else if (co == 0 && ((ro == 3) || (ro == 7) || (ro == 11))) {
-            gameBoard.add(water, 1, ro + 1);
-            ro += 2;
-            co += 1;
-        }
-    }
-
-    // this method adds a Rectangle and Text to each landtile
-    public void addRecAndText(ArrayList<Tile> base) throws FileNotFoundException {
-        //this.base = base;
-        for (int i = 0; i < base.size(); i++) {
-
-            Tile water = base.get(i);
-            water.setBackground(new Background(new BackgroundImage(getImage("water.jpg"), BackgroundRepeat.NO_REPEAT,
-                    BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
-            //water.convertToChildren();
-
-            //if (water.getChildren().size() != 0) {
-            //    for (int k = 0; k < water.getChildren().size(); k++) {
-//
-            //        Tile tile = (Tile) water.getChildren().get(k);
-            //        ImageView iV = new ImageView();
-            //        iV.setFitWidth(60);
-            //        iV.setFitWidth(60);
-            //        tile.getChildren().addAll(iV,
-            //                new Text(String.valueOf(tile.getTileValue()) + "\n" + tile.getColor().toString()));
-//
-            //    }
-            //}
-
-            addToMainBoard(water);
-        }
-
-    }
-
-    /**
-     * Methode zum zeichnen eines Wasserplättchen
-     * @param card
-     */
-
-
-    private void addWater(Card card) {
-
-        //card.setImage(new ImageView(new ImageLoader().getImage("./../../resources/images/water.jpg")));
-
     }
 
     public Button getBtnBuyCard() {
@@ -517,6 +445,8 @@ public class GameBoardView extends Pane {
     public Button getBtnPlayTile() {
         return btnPlayTile;
     }
+
+    public Label getShowRules() {return showRules; }
 
     public Label getPlayer1() {
         return player1;

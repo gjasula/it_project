@@ -1,6 +1,6 @@
 .root{
 
- -fx-background-image: url("../images/Atlantis_BG.jpg");
+ -fx-background-image: url("../images/background_Atlantis.png");
  -fx-background-repeat: no-repeat;
  -fx-background-attachment: fixed;
  -fx-background-position: bottom;
@@ -82,26 +82,6 @@ hBox cardPane{
  -fx-background-color: #ffffff;
 }
 
-#start {
-
- -fx-background-image: url("../images/start.png");
- -fx-background-repeat: no-repeat;
- -fx-background-attachment: fixed;
- -fx-background-position: bottom;
- -fx-background-opacity: 0.1;
- -fx-background-size: contain;
- }
-
-#end {
-
-  -fx-background-image: url("../images/ende.png");
-  -fx-background-repeat: no-repeat;
-  -fx-background-attachment: fixed;
-  -fx-background-position: bottom;
-  -fx-background-opacity: 0.1;
-  -fx-background-size: contain;
-  }
-
 #RankingBye{
    -fx-background-image: url("../images/gold-65821_1920.jpg");
    -fx-background-repeat: no-repeat;
@@ -114,13 +94,13 @@ hBox cardPane{
 .Pawn-P1{
     -fx-font-family: 'Material Icons';
     -fx-font-size: 40;
-    -fx-text-fill: #410b33;
+    -fx-text-fill: #da40ff;
 }
 
 .Pawn-P2{
     -fx-font-family: 'Material Icons';
     -fx-font-size: 40;
-    -fx-text-fill: #174123;
+    -fx-text-fill: #c00509;
 }
 .Pawn-P3{
     -fx-font-family: 'Material Icons';

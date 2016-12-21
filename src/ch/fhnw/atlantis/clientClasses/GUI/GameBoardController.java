@@ -63,8 +63,8 @@ public class GameBoardController {
 
         // ------------------- CSS Styling der Gameboard Elemente  -------------------
 
-        view.getPlayer1().getStyleClass().add("Playerbefore");
-        view.getPlayer2().getStyleClass().add("Playerbefore");
+        view.getPlayer1().getStyleClass().add("Pawn-P1");
+        view.getPlayer2().getStyleClass().add("Pawn-P2");
         view.getPlayer3().getStyleClass().add("Playerbefore");
         view.getPlayer4().getStyleClass().add("Playerbefore");
 
