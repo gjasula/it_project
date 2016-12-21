@@ -58,7 +58,7 @@ public class Interpreter {
                         playerClient.sendMessageToServer("GetPlayerOneHand");
                         playerClient.sendMessageToServer("GetPlayerOneHandTiles");
                         playerClient.sendMessageToServer("ReturnGameBoard");
-                        playerClient.sendMessageToServer("ReturnPawnOnLand");
+                        //playerClient.sendMessageToServer("ReturnPawnOnLand");
                     }
                 }
 
@@ -69,6 +69,7 @@ public class Interpreter {
                         playerClient.sendMessageToServer("GetPlayerTwoHand");
                         playerClient.sendMessageToServer("GetPlayerTwoHandTiles");
                         playerClient.sendMessageToServer("ReturnGameBoard");
+                        //playerClient.sendMessageToServer("ReturnPawnOnLand");
                     }
                 }
 

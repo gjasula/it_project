@@ -37,7 +37,10 @@ public class Server {
     public void removeClient(ServerClientHandler sch) {
         // How many Sockets are Connected
         //System.out.println(socketList);
-        socketList.remove(sch);
+//
+        //for(int i = 0; i < (socketList.size()-15); i++){
+        //    socketList.remove(0);
+        //}
         //System.out.println(socketList);
     }
 

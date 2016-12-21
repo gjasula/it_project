@@ -47,13 +47,10 @@ public class GameBoardController {
         view.getBtnPlayCard().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                try {
-                    view.playMovementCard();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+                getBtnPlayCard();
             }
         });
+
 
         view.getBtnPlayTile().setOnAction(event -> {
             // Das ist Plättchen eintauschen
@@ -78,8 +75,11 @@ public class GameBoardController {
         view.getPawnP4().getStyleClass().add("Pawn-P4");
     }
 
-    //Show Methode der GameBoard Klase
+    public void getBtnPlayCard(){
+        view.playMovementCard();
+    }
 
+    //Show Methode der GameBoard Klase
     public void show() {
         view.show(model.getPrimaryStage());
     }

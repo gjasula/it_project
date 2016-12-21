@@ -118,7 +118,7 @@ public class PlayerClient {
     public void setGameBoard(String PTString){
         String str[] = PTString.split(",");
         PathTileList = Arrays.asList(str);
-        //System.out.println("GameBoard PathTiles: " + PathTileList);
+        System.out.println("GameBoard PathTiles: " + PathTileList);
     }
 
     // Wird benutzt vom ImageLoader um den Dateinamen zu erhalten.
@@ -166,9 +166,12 @@ public class PlayerClient {
     }
 
     public void getMovementCardNameFromArrayNumber(int ArrayNumber){
+        if(PlayerID == 1){
         // Sample output Played_MV_Blue
         addPlayerToString("Played_"+PlayerOneHandCards.get(ArrayNumber));
-
+        }else if(PlayerID == 2){
+        addPlayerToString("Played_"+PlayerTwoHandCards.get(ArrayNumber));
+        }
     }
 
     public String getPlayerPathTileHandGUI(int PathTileNumber){

@@ -119,7 +119,13 @@ public class Player implements Serializable {
                 }
             }
         }else if(Player == 2){
-            PlayerTwoHandCards.remove(MovementCard);
+            // Kein simples .remove, da sonst alle elemente aus der Liste gelöscht werden
+            for (int i = 0; i < PlayerTwoHandCards.size(); i++) {
+                if(PlayerTwoHandCards.get(i).equals(MovementCard)){
+                    PlayerTwoHandCards.remove(i);
+                    break;
+                }
+            }
         }
 
     }
@@ -162,7 +168,7 @@ public class Player implements Serializable {
         // Mischen der Bewegungskarten
         Collections.shuffle(MovementCards);
         getCardFromStack(20,1); // For Testing 20 back to 4!!
-        getCardFromStack(5,2);
+        getCardFromStack(20,2);
     }
 
     public Color getColor() { return color; }
@@ -275,13 +281,13 @@ public class Player implements Serializable {
         }else if(Position.equals("98")){
             PickUpTile = tileDeck.LastPathTile;
             if (Player == 1) {
-                PlayerOnePawnOnLand++;
                 PlayerOneHandTiles.add(tileDeck.tileDeckString.get(PickUpTile));
                 tileDeck.tileDeckString.set(PickUpTile, "water.jpg");
                 System.out.println("Joodle Addition: " + PlayerOnePawnOnLand);
-                //setPawnOnLand(1);
+                setPawnOnLand(1);
                 tileDeck.PositionPlayer1 = -1;
-            } else if (Player == 2) {
+            }
+            if (Player == 2) {
                 PlayerTwoHandTiles.add(tileDeck.tileDeckString.get(PickUpTile));
                 tileDeck.tileDeckString.set(PickUpTile, "water.jpg");
                 setPawnOnLand(2);

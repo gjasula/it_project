@@ -69,6 +69,8 @@ public class ServerClientHandler implements Runnable {
                     SetIDUser = 2;
                 }
 
+                //server.removeClient(this);
+
                 //System.out.println("Received Message from client ("+socketToClient.hashCode()+"): " + messagefromClient);
                 //server.forwardMessage("client ("+socketToClient.hashCode()+"):" + messagefromClient, this);
             } catch (IOException e) {

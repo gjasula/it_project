@@ -386,7 +386,7 @@ public class GameBoardView extends Pane {
                         }
                 );
             }// Change delay to 300 after testing
-        }, 0, 250, TimeUnit.MILLISECONDS);
+        }, 0, 350, TimeUnit.MILLISECONDS);
     }
 
     public void UpdateValues() throws FileNotFoundException {
@@ -501,7 +501,7 @@ public class GameBoardView extends Pane {
         PositionYPawnP2 = y;
     }
 
-    public void playMovementCard() throws InterruptedException {
+    public void playMovementCard() {
         PlayerClient playerClient = new PlayerClient();
         playerClient.getMovementCardNameFromArrayNumber(DisplayMovementCard);
     }

@@ -7,12 +7,6 @@ package ch.fhnw.atlantis.globalClasses.models;
 import java.util.ArrayList;
 import java.util.Collections;
 
-/**
- * Created by Tobias on 02.11.2016 (if not written by Tobias, it is mentioned)
- *
- * Creates all the ArrayLists for the Tiledeck (relevant tiles), the Watertiles and the played tiles (tiles out of the game)
- * Contains methods that create the tile objects and put them into the respective ArrayList
- */
 public class TileDeck {
 
     ArrayList<Tile> tileDeck = new ArrayList<Tile>(); //contains all the 42 tiles that are from relevance (no water)
@@ -177,6 +171,10 @@ public class TileDeck {
                 if (tileDeckString.get(i).startsWith(PathTile)) {
                     Position = "Position_" + i;
                     PositionPlayer2 = i;
+                    if(PositionPlayer2 == LastPathTile){
+                        Position = "Position_98";
+                        break;
+                    }
                     break;
                 }
             }
