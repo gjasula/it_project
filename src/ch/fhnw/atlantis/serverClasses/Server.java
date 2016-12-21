@@ -38,7 +38,7 @@ public class Server {
         // How many Sockets are Connected
         //System.out.println(socketList);
 //
-        //for(int i = 0; i < (socketList.size()-15); i++){
+        //for(int i = 0; i < (socketList.size()-8); i++){
         //    socketList.remove(0);
         //}
         //System.out.println(socketList);

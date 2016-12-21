@@ -29,14 +29,14 @@ public class Interpreter {
                 playerClient.sendMessageToServer("ReturnGameBoard");
                 break;
             case "Player1Turn":
-                playerClient.PlayersTurn = 1;
+                PlayerClient.PlayersTurn = 1;
                 break;
             case "Player2Turn":
-                playerClient.PlayersTurn = 2;
+                PlayerClient.PlayersTurn = 2;
                 break;
             default:
-                if(messagefromServer.substring(0,10).equals("PawnOnLand")){
-                    playerClient.setPlayerOnLand(messagefromServer.substring(10));
+                if(messagefromServer.substring(0,18).equals("SpielfigurenImZiel")){
+                    playerClient.setPlayerOnLand(messagefromServer.substring(18));
                 }
 
                 if(messagefromServer.substring(0,13).equals("PlayerOneHand")){
@@ -58,7 +58,7 @@ public class Interpreter {
                         playerClient.sendMessageToServer("GetPlayerOneHand");
                         playerClient.sendMessageToServer("GetPlayerOneHandTiles");
                         playerClient.sendMessageToServer("ReturnGameBoard");
-                        //playerClient.sendMessageToServer("ReturnPawnOnLand");
+                        playerClient.sendMessageToServer("ReturnPawnOnLand");
                     }
                 }
 
@@ -69,7 +69,7 @@ public class Interpreter {
                         playerClient.sendMessageToServer("GetPlayerTwoHand");
                         playerClient.sendMessageToServer("GetPlayerTwoHandTiles");
                         playerClient.sendMessageToServer("ReturnGameBoard");
-                        //playerClient.sendMessageToServer("ReturnPawnOnLand");
+                        playerClient.sendMessageToServer("ReturnPawnOnLand");
                     }
                 }
 

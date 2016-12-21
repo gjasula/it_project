@@ -1,6 +1,7 @@
 package ch.fhnw.atlantis.serverClasses;
 
 
+import ch.fhnw.atlantis.globalClasses.models.Player;
 import ch.fhnw.atlantis.serverClasses.serverClasses.GUI.ServerController;
 import ch.fhnw.atlantis.serverClasses.serverClasses.GUI.ServerView;
 
@@ -47,7 +48,7 @@ public class ServerClientHandler implements Runnable {
     public void run() {
 
         int SetIDUser = 0;
-        ServerView serverView = new ServerView();
+        Player player = new Player();
 
         while (socketToClient.isConnected()) {
             try {
@@ -57,7 +58,7 @@ public class ServerClientHandler implements Runnable {
                 Interpreter InterpretServerMessage = new Interpreter();
                 String answerToClientString = InterpretServerMessage.interpretServerMsg(messagefromClient);
                 server.forwardMessage(answerToClientString, this);
-                System.out.println(messagefromClient);
+                System.out.println("Server to Client: " + answerToClientString);
 
                 // Define ID for users directly after connecting
                 if(SetIDUser == 0) {
@@ -68,6 +69,8 @@ public class ServerClientHandler implements Runnable {
                     server.forwardMessage("DefineIdentity2", this);
                     SetIDUser = 2;
                 }
+
+                //server.forwardMessage("PlayerOneHand" + player.getPlayerOneHand(), this);
 
                 //server.removeClient(this);
 

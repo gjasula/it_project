@@ -123,9 +123,10 @@ public class DefinePawnPosition {
         }
 
 
-        if(Message.substring(0,7).equals("Player1")){
+        if (Message.substring(0,7).equals("Player1")){
             gameBoardView.setPositionPawnP1(PositionX, PositionY);
-        }else if (Message.substring(0,7).equals("Player2")){
+        }
+        if (Message.substring(0,7).equals("Player2")){
             gameBoardView.setPositionPawnP2(PositionX, PositionY);
         }
     }

@@ -54,22 +54,6 @@ public class Player implements Serializable {
     // Required for interpreter on server
     public Player(){}
 
-    // TODO: müsste man noch auf die neue Tiles Klasse anpassen
-    // Austausch von Wegplättchen in Bewegungskarte
-    static void ChangeTileToMovementcard(int Player, int TileID){
-
-        int PullCards;
-
-        //for (Tile pathTile : Tile.values())
-        //{
-        //    if(TileID == pathTile.getId()){
-        //        // Das abrunden laut Spielregeln nicht nötig, da im enum keine Kommastellen vorahnden sind
-        //        PullCards = pathTile.getValue() / 2;
-        //        getCardFromStack(PullCards, Player);
-        //    }
-        //}
-    }
-
     // Jedem Spieler wird eine ID zugewiesen welcher für die Identifikation genutzt wird. - Richard Künzi
     public int definePlayerIdentity(){
         switch (playernumber) {
@@ -128,6 +112,16 @@ public class Player implements Serializable {
             }
         }
 
+    }
+
+    public void removePathTileFromHand(int Player, String PathTile){
+        if(Player == 1) {
+            // Simples .remove möglich, da PathTiles eindeutig sind
+            PlayerOneHandTiles.remove(PathTile);
+        }else if(Player == 2){
+            // Simples .remove möglich, da PathTiles eindeutig sind
+            PlayerTwoHandTiles.remove(PathTile);
+        }
     }
 
     public void GameStart(){
@@ -298,12 +292,14 @@ public class Player implements Serializable {
         }else{
             PickUpTile = Integer.parseInt(Position) - 1;
             System.out.println(Position+" "+PickUpTile);
-            if (Player == 1) {
-                PlayerOneHandTiles.add(tileDeck.tileDeckString.get(PickUpTile));
-                tileDeck.tileDeckString.set(PickUpTile, "water.jpg");
-            } else if (Player == 2) {
-                PlayerTwoHandTiles.add(tileDeck.tileDeckString.get(PickUpTile));
-                tileDeck.tileDeckString.set(PickUpTile, "water.jpg");
+            if(!tileDeck.tileDeckString.get(PickUpTile).equals("water.jpg")) {
+                if (Player == 1) {
+                    PlayerOneHandTiles.add(tileDeck.tileDeckString.get(PickUpTile));
+                    tileDeck.tileDeckString.set(PickUpTile, "water.jpg");
+                } else if (Player == 2) {
+                    PlayerTwoHandTiles.add(tileDeck.tileDeckString.get(PickUpTile));
+                    tileDeck.tileDeckString.set(PickUpTile, "water.jpg");
+                }
             }
         }
     }
@@ -331,21 +327,4 @@ public class Player implements Serializable {
 
         return returnToClient;
     }
-
-    /**
-     * Getter für Nummerierung der Spielfiguren
-     * @param pawn ist eine Spielfigutr
-     * @return die jeweilige Spielfigur
-     */
-    public Pawn getPawn(Pawn pawn) {
-        if (pawn.getPawnNum() == 1) {
-            return pawn1;
-        } else if (pawn.getPawnNum() == 2) {
-            return pawn2;
-        } else if (pawn.getPawnNum() == 3) {
-            return pawn3;
-        }
-        return null;
-    }
-
 }

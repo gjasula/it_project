@@ -44,12 +44,16 @@ public class GameBoardController {
             view.UpdatePositivePathTile();
         });
 
-        view.getBtnPlayCard().setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                getBtnPlayCard();
-            }
+        view.getBtnPlayCard().setOnAction(event -> {
+            view.playMovementCard();
         });
+
+        //view.getBtnPlayCard().setOnAction(new EventHandler<ActionEvent>() {
+        //    @Override
+        //    public void handle(ActionEvent event) {
+        //        getBtnPlayCard();
+        //    }
+        //});
 
 
         view.getBtnPlayTile().setOnAction(event -> {

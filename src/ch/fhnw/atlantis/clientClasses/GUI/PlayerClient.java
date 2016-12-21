@@ -32,6 +32,16 @@ public class PlayerClient {
         System.out.println("Sending this to server: "+msg);
     }
 
+    public void updateAllFromServer(){
+        client.connectToServer("127.0.0.1", 7777);
+        client.sendMessagetoServer("ReturnGameBoard");
+        client.sendMessagetoServer("GetPlayerOneHand");
+        client.sendMessagetoServer("GetPlayerOneHandTiles");
+        client.sendMessagetoServer("GetPlayerTwoHand");
+        client.sendMessagetoServer("GetPlayerTwoHandTiles");
+        client.sendMessagetoServer("ReturnPawnOnLand");
+    }
+
     public void setPlayerOnLand(String OnLand){
         PlayerOneOnLand = OnLand.substring(0,1);
         PlayerTwoOnLand = OnLand.substring(1,2);
@@ -80,7 +90,6 @@ public class PlayerClient {
         else {
             return true;
         }
-
     }
 
     public void getPlayerOneMovementCard(){
@@ -172,6 +181,11 @@ public class PlayerClient {
         }else if(PlayerID == 2){
         addPlayerToString("Played_"+PlayerTwoHandCards.get(ArrayNumber));
         }
+    }
+
+    public void setPlayersTurn(int newPlayersTurn){
+        PlayersTurn = newPlayersTurn;
+        System.out.println("Current Player's Turn:"+PlayersTurn);
     }
 
     public String getPlayerPathTileHandGUI(int PathTileNumber){

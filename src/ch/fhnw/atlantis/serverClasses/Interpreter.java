@@ -53,7 +53,7 @@ public class Interpreter {
                 System.out.println(returnToClient);
                 break;
             case "ReturnPawnOnLand":
-                returnToClient = "PawnOnLand" + player.getPlayerOnLand();
+                returnToClient = "SpielfigurenImZiel" + player.getPlayerOnLand();
                 System.out.println(returnToClient);
                 break;
             //// 2DO! This case has to be done for each PT and each Player
@@ -152,8 +152,9 @@ public class Interpreter {
             case "Player1_ExchangePathTileValue_pink_3.jpg":
                 // change PT into MV
                 getCardFromStack(3, 1);
-                //// 2DO! Add still remove from PT hand
+                player.removePathTileFromHand(1,"pink_3.jpg");
                 // return updated hand
+
                 returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
                 System.out.println(returnToClient);
                 break;
