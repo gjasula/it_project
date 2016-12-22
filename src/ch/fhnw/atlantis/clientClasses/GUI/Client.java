@@ -7,16 +7,9 @@ package ch.fhnw.atlantis.clientClasses.GUI;
 import java.io.*;
 import java.net.Socket;
 
-/**
- * Created by Stefan on 02.12.2016.
- */
 public class Client {
 
     private ClientComSocket clientComSocket;
-
-    public Client() {
-
-    }
 
     public int connectToServer(String host, Integer port) {
         try {
@@ -34,30 +27,4 @@ public class Client {
         clientComSocket.send(message);
     }
 
-    //public static void main(String[] args) {
-    //    Client client = new Client();
-    //    client.connectToServer();
-//
-    //    try {
-    //        Thread.sleep(1000);
-    //    } catch (InterruptedException e) {
-    //        e.printStackTrace();
-    //    }
-//
-//
-    //    while (true) {
-    //        try {
-    //            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    //            String message = br.readLine();
-    //            if (message.equals("q")) {
-    //                break;
-    //            }
-    //            client.sendMessagetoServer(message);
-    //        } catch ( IOException e ) {
-    //            e.printStackTrace();
-    //        }
-//
-    //    }
-//
-    //}
 }
