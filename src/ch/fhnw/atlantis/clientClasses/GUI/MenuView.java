@@ -12,12 +12,15 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 /**
- * Created by Nadine on 25.10.2016.
+ * Author Nadine
+ *
+ * ist für die Präsentation der Daten zuständig
+ * organisiert und speichert alle Elemente des GUI's
+ * Style und Layout
  */
 
 public class MenuView {
     private Scene scene;
-
     private BorderPane gmpane;
     private GridPane grid;
     private Stage gameMenu_stage;
@@ -28,7 +31,6 @@ public class MenuView {
     private Button btnPlayer;
     private Button btnExit;
     private Button btnBack;
-
     private Button btnSprache1;
     private Button btnSprache2;
     private Button btnSprache3;
@@ -40,7 +42,6 @@ public class MenuView {
     private Label p2;
     private Label p3;
     private Label p4;
-
     private Label player1;
     private Label player2;
     private Label player3;
@@ -52,7 +53,6 @@ public class MenuView {
     private Label menuIconRule;
     private Label menuIconExit;
     private Label menuIconBack;
-
     private Label txtAtlantis;
     private Label txt;
 
@@ -60,7 +60,6 @@ public class MenuView {
     private Image Flag_Germany;
     private Image Flag_Switzerland;
     private Image Flag1;
-
     private ImageView iview1;
     private ImageView iview2;
     private ImageView iview3;
@@ -70,9 +69,7 @@ public class MenuView {
     private Button gameCharacter3;
     private Button gameCharacter4;
 
-
     public MenuView() {
-
         // ------------------- Buttons MenuMain definieren und in Gridanordnen -------------------
         btnStartGame = new Button("SPIEL STARTEN");
         btnOptions = new Button("SPRACHE WÄHLEN");
@@ -206,12 +203,6 @@ public class MenuView {
         grid.setConstraints(player4, 3, 0);
         grid.setHalignment(player4, HPos.CENTER);
 
-        // ------------------- CSS den Icons zuweisen --> über Controller implementiert---------
-        //  player1.setId("Playerbefore");
-        //  player2.setId("Playerbefore");
-        //  player3.setId("Playerbefore");
-        //  player4.setId("Playerbefore");
-
         // ------------------- Player_Old Labels definieren ---------
         p1 = new Label("Spieler 1");
         grid.setConstraints(p1, 0, 1);
@@ -230,6 +221,8 @@ public class MenuView {
         grid.setGridLinesVisible(false);
         // alle Inhalte ins Grid holen mit getChildren
         grid.getChildren().addAll(player1, player2, player3, player4, p1, p2, p3, p4);
+
+        // ------------------- Audio Effekt-------------------
 
         // ------------------- BorderPane erstellen und HBox, VBox, Grid hinzufügen -------------------
         BorderPane gmpane = new BorderPane();
@@ -255,7 +248,6 @@ public class MenuView {
         stage.getIcons().add(icon);
         stage.setScene(scene);
         stage.show();
-
     }
 
     private static final String TEXT =
@@ -607,7 +599,3 @@ public class MenuView {
         this.gameCharacter4 = gameCharacter4;
     }
 }
-
-
-
-

@@ -1,11 +1,9 @@
 package ch.fhnw.atlantis.clientClasses.GUI;
 
-import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
@@ -13,7 +11,8 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /**
- * Created by Nadine on 28.11.2016.
+ * Author Nadine
+ *
 */
 
 public class RankingByeView {
@@ -75,7 +74,6 @@ public class RankingByeView {
         stage.getIcons().add(icon);
         stage.setScene(scene);
         stage.show();
-
     }
 
     //------------------------- Getter and Setter ---------------------------
@@ -143,4 +141,3 @@ public class RankingByeView {
         this.restartbtn = restartbtn;
     }
 }
-

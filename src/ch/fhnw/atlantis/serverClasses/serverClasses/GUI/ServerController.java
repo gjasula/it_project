@@ -1,31 +1,24 @@
 package ch.fhnw.atlantis.serverClasses.serverClasses.GUI;
 import ch.fhnw.atlantis.clientClasses.GUI.Model;
 import ch.fhnw.atlantis.serverClasses.Server;
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
-
 import java.util.Optional;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
 
 /**
- * Created by Nadine on 19.10.2016.
+ * Author Nadine
  */
 
 public class ServerController {
-
 
     private Model model;
     // View
     private ServerView view;
     private Server server;
-
 
     public ServerController(Model model) {
         this.model = model;

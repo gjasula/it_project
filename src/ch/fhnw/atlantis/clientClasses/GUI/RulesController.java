@@ -1,14 +1,12 @@
 package ch.fhnw.atlantis.clientClasses.GUI;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-
 /**
- * Created by Nadine on 28.11.2016.
+ * Author Nadine
+ *
  */
+
 public class RulesController {
     private Model model;
     private RulesView view;
@@ -26,5 +24,4 @@ public class RulesController {
         view.show(secondStage);
 
     }
-
 }

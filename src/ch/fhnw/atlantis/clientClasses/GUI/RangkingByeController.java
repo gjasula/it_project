@@ -6,13 +6,12 @@ import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
-
 import java.util.Optional;
 
 /**
- * Created by Nadine on 28.11.2016.
+ * Author Nadine
+ *
  */
-
 public class RangkingByeController {
     private Model model;
     private RankingByeView view;
@@ -71,8 +70,3 @@ public class RangkingByeController {
     }
 
 }
-
-
-
-
-

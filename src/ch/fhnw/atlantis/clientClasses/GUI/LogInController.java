@@ -4,16 +4,14 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
-import javafx.scene.control.TextField;
-
 import java.util.Optional;
 
 /**
- * Created by Nadine on 18.10.2016.
+ * Author: Nadine
+ *
  * MVC - Vorlage zur Strukturierung von Programmen, notwendig um
  * Programme schnell erweitern zu können und sich schnell einarbeiten - schneller Fehler finden
  * Mehrere Views (alles was angezeigt wird) mit mehreren Controller (kümmert sich um Interaktion)und einem Model (Datenablage wie Listen/Werte)
- *
  */
 
 public class LogInController {
@@ -23,7 +21,6 @@ public class LogInController {
     public LogInController(Model model) {
         this.model = model;
         this.view = new LogInView();
-
 
         view.getBtnConnect().setOnAction(new EventHandler<ActionEvent>(){
             @Override
@@ -56,9 +53,7 @@ public class LogInController {
         view.getPlayer2().getStyleClass().add("Playerbefore");
         view.getPlayer3().getStyleClass().add("Playerbefore");
         view.getPlayer4().getStyleClass().add("Playerbefore");
-
         view.getLbl2().setText("Bitte starten Sie den Server und verbinden Sie sich damit");
-
     }
 
     public void show() {
