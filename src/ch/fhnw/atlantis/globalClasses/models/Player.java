@@ -165,47 +165,10 @@ public class Player implements Serializable {
         getCardFromStack(20,2);
     }
 
-    public Color getColor() { return color; }
-
-    public int getScore() { return score; }
-
-    public int getBridge() {
-        return bridge;
-    }
-
-    public void removeBridge() {
-        this.bridge = 0;
-    }
 
     public int getPlayerID() {
         return playerID;
     }
-
-    public String getPlayerName() {
-        return playerName;
-    }
-
-    public String getGameName() {
-        return gameName;
-    }
-
-    public void setGameName(String gameName) {
-        this.gameName = gameName;
-    }
-
-    public void addScore(int score) {
-        this.score += score;
-    }
-
-    public void subtractScore(int score) {
-        this.score -= score;
-    }
-
-    public ArrayList<Pawn> getPawns() {
-        return pawns;
-    }
-
-    public ArrayList<Card> getMovementCards() { return movementCards; }
 
     public String getPlayerOneHand(){
         String StringPlayerOneHandCards = "";
@@ -251,7 +214,6 @@ public class Player implements Serializable {
     public void setPawnOnLand(int Player){
         if(Player == 1) {
             PlayerOnePawnOnLand++;
-            System.out.println("PlayerTwoPawnOnLand: "+PlayerTwoPawnOnLand);
             if(PlayerOnePawnOnLand == 3){
                 // Leite Spielschluss ein
             }
@@ -277,7 +239,6 @@ public class Player implements Serializable {
             if (Player == 1) {
                 PlayerOneHandTiles.add(tileDeck.tileDeckString.get(PickUpTile));
                 tileDeck.tileDeckString.set(PickUpTile, "water.jpg");
-                System.out.println("Joodle Addition: " + PlayerOnePawnOnLand);
                 setPawnOnLand(1);
                 tileDeck.PositionPlayer1 = -1;
             }

@@ -151,7 +151,7 @@ public class Interpreter {
             //// 2DO! This case has to be done for each PT and each Player
             case "Player1_ExchangePathTileValue_pink_3.jpg":
                 // change PT into MV
-                getCardFromStack(3, 1);
+                getCardFromStack(1, 1);
                 player.removePathTileFromHand(1,"pink_3.jpg");
                 // return updated hand
 

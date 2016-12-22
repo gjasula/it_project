@@ -193,7 +193,7 @@ public class GameBoardView extends Pane {
         pos24 = new StackPane();
         pos25 = new StackPane();
 
-        btnBuyCard = new Button("Starte Spiel");
+        btnBuyCard = new Button("Lade Spielbrett");
         btnFinishTurn = new Button("Zug beenden");
         btnFinishTurn.setDisable(true);
         btnNextCard = new Button("Nächste Karte");
