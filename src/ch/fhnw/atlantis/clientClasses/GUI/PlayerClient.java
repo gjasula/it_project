@@ -23,6 +23,8 @@ public class PlayerClient {
     static List<String> PlayersOnLand = new ArrayList<>();
     public static String PlayerOneOnLand = "0";
     public static String PlayerTwoOnLand = "0";
+    public static String Host = "localhost";
+    public static int Port = 7777;
     static List<String> PlayerOneHandCards = new ArrayList<>();
     static List<String> PlayerTwoHandCards = new ArrayList<>();
     static List<String> PlayerOneHandTiles = new ArrayList<>();
@@ -30,10 +32,10 @@ public class PlayerClient {
     static List<String> PathTileList = new ArrayList<>();
 
     public void sendMessageToServer(String msg){
-        //if(client == null){
+        if(client == null){
             client = new Client();
-            client.connectToServer("localhost", 7777);
-        //}
+            client.connectToServer(Host, Port);
+        }
         client.sendMessagetoServer(msg);
         System.out.println("Sending this to server: "+msg);
     }

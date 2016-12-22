@@ -90,7 +90,7 @@ public class LogInView {
 
         // ------------------- Textfield -------------------
         PortEnter = new TextField("7777");
-        IPEnter = new TextField("127.0.0.1");
+        IPEnter = new TextField("localhost");
 
         // ------------------- Buttons / Label / Textfield HBox anordnen -------------------
         labelPane2 = new HBox(PortLabel, PortEnter, IPLabel, IPEnter);

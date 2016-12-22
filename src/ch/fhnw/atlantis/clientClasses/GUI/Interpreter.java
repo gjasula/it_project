@@ -61,29 +61,23 @@ public class Interpreter {
                     if(messagefromServer.equals("Player1_Position_NotAvailable")){}
                     else{
                         playerClient.sendMessageToServer("GetPlayerOneHand");
-                        Thread.sleep(100);
                         playerClient.sendMessageToServer("GetPlayerOneHandTiles");
-                        Thread.sleep(100);
                         definePawnPosition.setPosition(messagefromServer);
-                        Thread.sleep(100);
                         playerClient.sendMessageToServer("ReturnGameBoard");
-                        Thread.sleep(100);
-                        playerClient.sendMessageToServer("ReturnPawnOnLand");
+                        // Wird benötigt sobald mehr als eine Runde gespielt wird
+                        //playerClient.sendMessageToServer("ReturnPawnOnLand");
                     }
                 }
 
                 if(messagefromServer.substring(0,17).equals("Player2_Position_")){
                     if(messagefromServer.equals("Player2_Position_NotAvailable")){}
                     else {
-                        playerClient.sendMessageToServer("ReturnGameBoard");
-                        Thread.sleep(100);
                         playerClient.sendMessageToServer("GetPlayerTwoHand");
-                        Thread.sleep(100);
-                        definePawnPosition.setPosition(messagefromServer);
-                        Thread.sleep(100);
                         playerClient.sendMessageToServer("GetPlayerTwoHandTiles");
-                        Thread.sleep(100);
-                        playerClient.sendMessageToServer("ReturnPawnOnLand");
+                        definePawnPosition.setPosition(messagefromServer);
+                        playerClient.sendMessageToServer("ReturnGameBoard");
+                        // Wird benötigt sobald mehr als eine Runde gespielt wird
+                        //playerClient.sendMessageToServer("ReturnPawnOnLand");
                     }
                 }
 

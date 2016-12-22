@@ -727,7 +727,6 @@ public class Interpreter {
                 break;
             default:
                 returnToClient = "Default Output";
-                //System.out.println(returnToClient);
         }
         return returnToClient;
     }

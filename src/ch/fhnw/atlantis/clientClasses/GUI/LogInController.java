@@ -17,6 +17,7 @@ import java.util.Optional;
 public class LogInController {
     private Model model;
     private LogInView view;
+    PlayerClient playerClient = new PlayerClient();
 
     public LogInController(Model model) {
         this.model = model;
@@ -29,6 +30,9 @@ public class LogInController {
                 String host = view.getIPEnter().trim();
                 String portString = view.getPortEnter().trim();
                 int portInt = Integer.parseInt(portString);
+
+                playerClient.Host = host;
+                playerClient.Port = portInt;
 
                 Client client = new Client();
                 int isConnectedclient= client.connectToServer(host, portInt);
