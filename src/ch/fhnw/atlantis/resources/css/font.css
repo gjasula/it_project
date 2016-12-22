@@ -1,7 +1,7 @@
 /* fallback */
 @font-face {
   font-family: 'Material Icons';
-  src: url('./../fonts/MaterialIcons-Regular.ttf');
+  src: url('/ch/fhnw/atlantis/resources/fonts/MaterialIcons-Regular.ttf');
 }
 
 .material-icons {

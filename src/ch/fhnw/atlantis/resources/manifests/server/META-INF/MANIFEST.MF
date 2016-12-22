@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: ch.fhnw.atlantis.serverClasses.serverClasses.GUI.ServerMai
+ n
+
