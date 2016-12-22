@@ -55,7 +55,7 @@ public class Interpreter {
                 System.out.println(returnToClient);
                 break;
             case "ReturnPawnOnLand":
-                returnToClient = "SpielfigurenImZiel" + player.getPlayerOnLand();
+                returnToClient = player.calculateWinner();
                 System.out.println(returnToClient);
                 break;
             //// 2DO! This case has to be done for each PT and each Player

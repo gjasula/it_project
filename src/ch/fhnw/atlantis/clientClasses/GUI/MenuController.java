@@ -224,9 +224,6 @@ public class MenuController {
                 }
                 gbCon.show();
 
-                // Initialisiere Spiel Backend - Richard Künzi
-                //PlayerClient playerClient = new PlayerClient();
-                //playerClient.startGame();
             }
         }
   }

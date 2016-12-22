@@ -33,6 +33,10 @@ public class GameBoardController {
         });
 
         view.getBtnFinishTurn().setOnAction(event -> {
+            if (playerClient.PlayerWon > 0){
+                RangkingByeController rangkingByeController = new RangkingByeController(model);
+                rangkingByeController.show();
+            }
             playerClient.closeMyTurn();
         });
 
@@ -50,20 +54,12 @@ public class GameBoardController {
             playerClient.MovementCardPlayed++;
         });
 
-        //view.getBtnPlayCard().setOnAction(new EventHandler<ActionEvent>() {
-        //    @Override
-        //    public void handle(ActionEvent event) {
-        //        getBtnPlayCard();
-        //    }
-        //});
-
-
         view.getBtnPlayTile().setOnAction(event -> {
             // Das ist Plättchen eintauschen
             view.sendPathTileExchange();
 
             // DAS HIER DANACH EINFèGEN SONST KANN ER IMMER BEWEGUNGSPLàTTCHEN EINTAUSCHEN
-            //playerClient.PathTileExchanged++;
+            playerClient.PathTileExchanged++;
 
         });
 

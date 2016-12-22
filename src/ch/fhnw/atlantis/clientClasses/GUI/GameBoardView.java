@@ -90,14 +90,14 @@ public class GameBoardView extends Pane {
         player1 = new Label(Pawn1);
         playerGrid.setConstraints(player1, 1    , 0);
         playerGrid.setHalignment(player1, HPos.CENTER);
-        pointsP1 = new Label("Im Ziel:\n0/3");
+        pointsP1 = new Label("Im Ziel:\n0/1");
         playerGrid.setHalignment(pointsP1, HPos.CENTER);
         playerGrid.setConstraints(pointsP1, 2, 0 );
 
         player2 = new Label(Pawn2);
         playerGrid.setConstraints(player2, 6, 0);
         playerGrid.setHalignment(player2, HPos.CENTER);
-        pointsP2 = new Label("Im Ziel:\n0/3");
+        pointsP2 = new Label("Im Ziel:\n0/1");
         playerGrid.setHalignment(pointsP2, HPos.CENTER);
         playerGrid.setConstraints(pointsP2, 7, 0 );
 

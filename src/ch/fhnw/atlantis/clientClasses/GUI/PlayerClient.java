@@ -25,6 +25,7 @@ public class PlayerClient {
     public static String PlayerTwoOnLand = "0";
     public static String Host = "localhost";
     public static int Port = 7777;
+    public static int PlayerWon = 0;
     static List<String> PlayerOneHandCards = new ArrayList<>();
     static List<String> PlayerTwoHandCards = new ArrayList<>();
     static List<String> PlayerOneHandTiles = new ArrayList<>();

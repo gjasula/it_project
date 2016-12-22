@@ -40,6 +40,12 @@ public class Interpreter {
                 PlayerClient.PlayersTurn = 2;
                 playerClient.MovementCardPlayed = 2;
                 break;
+            case "WinnerPlayer1":
+                playerClient.PlayerWon = 1;
+                break;
+            case "WinnerPlayer2":
+                playerClient.PlayerWon = 2;
+                break;
             default:
                 if(messagefromServer.substring(0,18).equals("SpielfigurenImZiel")){
                     playerClient.setPlayerOnLand(messagefromServer.substring(18));
@@ -65,7 +71,7 @@ public class Interpreter {
                         definePawnPosition.setPosition(messagefromServer);
                         playerClient.sendMessageToServer("ReturnGameBoard");
                         // Wird benötigt sobald mehr als eine Runde gespielt wird
-                        //playerClient.sendMessageToServer("ReturnPawnOnLand");
+                        playerClient.sendMessageToServer("ReturnPawnOnLand");
                     }
                 }
 
@@ -77,7 +83,7 @@ public class Interpreter {
                         definePawnPosition.setPosition(messagefromServer);
                         playerClient.sendMessageToServer("ReturnGameBoard");
                         // Wird benötigt sobald mehr als eine Runde gespielt wird
-                        //playerClient.sendMessageToServer("ReturnPawnOnLand");
+                        playerClient.sendMessageToServer("ReturnPawnOnLand");
                     }
                 }
 

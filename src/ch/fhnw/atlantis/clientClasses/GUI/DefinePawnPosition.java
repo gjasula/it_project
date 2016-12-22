@@ -116,9 +116,9 @@ public class DefinePawnPosition {
                 PositionY = 6;
                 break;
             case "Position_98":
-                // Zurück an Start für nächsten Pawn
-                PositionX = 1;
-                PositionY = 0;
+                // Festland
+                PositionX = 14;
+                PositionY = 8;
                 break;
         }
 

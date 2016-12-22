@@ -1,9 +1,7 @@
 package ch.fhnw.atlantis.globalClasses.models;
 
-import ch.fhnw.atlantis.clientClasses.GUI.Interpreter;
 import javafx.scene.paint.Color;
 
-import java.io.FileNotFoundException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -240,12 +238,14 @@ public class Player implements Serializable {
                 PlayerOneHandTiles.add(tileDeck.tileDeckString.get(PickUpTile));
                 tileDeck.tileDeckString.set(PickUpTile, "water.jpg");
                 setPawnOnLand(1);
+                calculateWinner();
                 tileDeck.PositionPlayer1 = -1;
             }
             if (Player == 2) {
                 PlayerTwoHandTiles.add(tileDeck.tileDeckString.get(PickUpTile));
                 tileDeck.tileDeckString.set(PickUpTile, "water.jpg");
                 setPawnOnLand(2);
+                calculateWinner();
                 tileDeck.PositionPlayer2 = -1;
             }
 
@@ -283,9 +283,35 @@ public class Player implements Serializable {
             }
             MovementCards.remove(0);
         }
-        System.out.println("Player One Hand: " + PlayerOneHandCards);
-        System.out.println("Player Two Hand: " + PlayerTwoHandCards);
 
         return returnToClient;
+    }
+
+    public String calculateWinner(){
+        String winner = "WinnerPlayer1";
+        int PlayerOnePoints = 0;
+        int PlayerTwoPoints = 0;
+
+        // Die Punkte der Bewegungskarten addieren.
+        PlayerOnePoints = PlayerOneHandCards.size();
+        PlayerTwoPoints = PlayerTwoHandCards.size();
+
+        // Die Punkte der Wegplättchen dazurechnen.
+        for( int i = 0 ; i < PlayerOneHandTiles.size() ; i++ ){
+            String zwischenString = PlayerOneHandTiles.get(i).substring(PlayerOneHandTiles.get(i).length() - 5);
+            PlayerOnePoints = PlayerOnePoints + Integer.parseInt(zwischenString.substring(0,1));
+        }
+        for( int i = 0 ; i < PlayerTwoHandTiles.size() ; i++ ){
+            String zwischenString = PlayerTwoHandTiles.get(i).substring(PlayerTwoHandTiles.get(i).length() - 5);
+            PlayerTwoPoints = PlayerTwoPoints + Integer.parseInt(zwischenString.substring(0,1));
+        }
+
+        if(PlayerOnePoints > PlayerTwoPoints){
+            winner = "WinnerPlayer1";
+        }else{
+            winner = "WinnerPlayer2";
+        }
+
+        return winner;
     }
 }
