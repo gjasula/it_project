@@ -266,7 +266,7 @@ public class Player implements Serializable {
     }
 
     public String getPlayerOnLand(){
-        String OnLand = String.valueOf(PlayerOnePawnOnLand)+String.valueOf(PlayerTwoPawnOnLand);
+        String OnLand = String.valueOf(PlayerOnePawnOnLand)+","+String.valueOf(PlayerTwoPawnOnLand)+",";
         return OnLand;
     }
 

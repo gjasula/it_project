@@ -20,6 +20,7 @@ public class PlayerClient {
     public static int PlayersTurn = 1; // Welcher Spiler ist am Zug?
     public static int MovementCardPlayed = 1;
     public static int PathTileExchanged = 1;
+    static List<String> PlayersOnLand = new ArrayList<>();
     public static String PlayerOneOnLand = "0";
     public static String PlayerTwoOnLand = "0";
     static List<String> PlayerOneHandCards = new ArrayList<>();
@@ -29,19 +30,20 @@ public class PlayerClient {
     static List<String> PathTileList = new ArrayList<>();
 
     public void sendMessageToServer(String msg){
-        if(client == null){
+        //if(client == null){
             client = new Client();
             client.connectToServer("localhost", 7777);
-        }
+        //}
         client.sendMessagetoServer(msg);
         System.out.println("Sending this to server: "+msg);
     }
 
     public void setPlayerOnLand(String OnLand){
-        PlayerOneOnLand = OnLand.substring(0,1);
-        //System.out.println("1 Anzahl Spieler auf dem Land: " + PlayerOneOnLand);
-        PlayerTwoOnLand = OnLand.substring(1,2);
-        //System.out.println("2 Anzahl Spieler auf dem Land: " + PlayerTwoOnLand);
+        String str[] = OnLand.split(",");
+        PlayersOnLand = Arrays.asList(str);
+
+        PlayerOneOnLand = PlayersOnLand.get(0);
+        PlayerTwoOnLand = PlayersOnLand.get(1);
     }
 
     public String getPlayerOneOnLand(){

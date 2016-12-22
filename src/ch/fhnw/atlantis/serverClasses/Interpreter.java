@@ -44,9 +44,11 @@ public class Interpreter {
                 break;
             case "ChangeTurnToPlayer1":
                 returnToClient = "Player1Turn";
+                player.getCardFromStack(1,2);
                 break;
             case "ChangeTurnToPlayer2":
                 returnToClient = "Player2Turn";
+                player.getCardFromStack(1,1);
                 break;
             case "ReturnGameBoard":
                 returnToClient = "PathTileGameBoard_" + tileDeck.getGameBoard();
