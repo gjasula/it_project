@@ -35,8 +35,7 @@ public class LogInController {
 
                 Client client = new Client();
                 int isConnectedclient= client.connectToServer(host, portInt);
-                PlayerClient playerClient = new PlayerClient();
-                playerClient.sendMessageToServer("StartGame");
+                client.sendMessagetoServer("StartGame");
 
                 try {
                     Thread.sleep(1000);
