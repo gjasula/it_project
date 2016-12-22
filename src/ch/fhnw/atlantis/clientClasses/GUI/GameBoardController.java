@@ -46,6 +46,8 @@ public class GameBoardController {
 
         view.getBtnPlayCard().setOnAction(event -> {
             view.playMovementCard();
+            // MovementCardPlayed darf einfach nicht mehr dem PlayersTurn entsprechen
+            playerClient.MovementCardPlayed++;
         });
 
         //view.getBtnPlayCard().setOnAction(new EventHandler<ActionEvent>() {
@@ -59,6 +61,10 @@ public class GameBoardController {
         view.getBtnPlayTile().setOnAction(event -> {
             // Das ist Plättchen eintauschen
             view.sendPathTileExchange();
+
+            // DAS HIER DANACH EINFèGEN SONST KANN ER IMMER BEWEGUNGSPLàTTCHEN EINTAUSCHEN
+            //playerClient.PathTileExchanged++;
+
         });
 
         // ------------------- CSS Styling der Gameboard Elemente  -------------------

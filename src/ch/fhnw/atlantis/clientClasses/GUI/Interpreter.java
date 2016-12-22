@@ -9,6 +9,10 @@ public class Interpreter {
 
     PlayerClient playerClient = new PlayerClient();
     DefinePawnPosition definePawnPosition = new DefinePawnPosition();
+    GameBoardView gameBoardView = new GameBoardView();
+
+    public Interpreter() throws FileNotFoundException {
+    }
 
     public String interpretClientMsg(String messagefromServer) throws FileNotFoundException, InterruptedException {
 
@@ -30,9 +34,11 @@ public class Interpreter {
                 break;
             case "Player1Turn":
                 PlayerClient.PlayersTurn = 1;
+                playerClient.MovementCardPlayed = 1;
                 break;
             case "Player2Turn":
                 PlayerClient.PlayersTurn = 2;
+                playerClient.MovementCardPlayed = 2;
                 break;
             default:
                 if(messagefromServer.substring(0,18).equals("SpielfigurenImZiel")){

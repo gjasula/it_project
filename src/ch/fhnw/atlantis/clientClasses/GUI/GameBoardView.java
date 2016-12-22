@@ -343,8 +343,8 @@ public class GameBoardView extends Pane {
             setPawnP2("X");
 
             // Buttons Enable/Disable if it's player's turn
-            btnPlayTile.setDisable(playerClient.isItMyTurn());
-            btnPlayCard.setDisable(playerClient.isItMyTurn());
+            btnPlayTile.setDisable(playerClient.isItMyTurnPathTile());
+            btnPlayCard.setDisable(playerClient.isItMyTurnMovementCard());
             btnNextTile.setDisable(playerClient.isItMyTurn());
             btnNextCard.setDisable(playerClient.isItMyTurn());
             btnFinishTurn.setDisable(playerClient.isItMyTurn());

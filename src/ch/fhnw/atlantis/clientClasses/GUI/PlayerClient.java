@@ -18,6 +18,8 @@ public class PlayerClient {
     public Client client;
     public static int PlayerID = 0;
     public static int PlayersTurn = 1; // Welcher Spiler ist am Zug?
+    public static int MovementCardPlayed = 1;
+    public static int PathTileExchanged = 1;
     public static String PlayerOneOnLand = "0";
     public static String PlayerTwoOnLand = "0";
     static List<String> PlayerOneHandCards = new ArrayList<>();
@@ -29,7 +31,7 @@ public class PlayerClient {
     public void sendMessageToServer(String msg){
         if(client == null){
             client = new Client();
-            client.connectToServer("127.0.0.1", 7777);
+            client.connectToServer("localhost", 7777);
         }
         client.sendMessagetoServer(msg);
         System.out.println("Sending this to server: "+msg);
@@ -37,7 +39,9 @@ public class PlayerClient {
 
     public void setPlayerOnLand(String OnLand){
         PlayerOneOnLand = OnLand.substring(0,1);
+        //System.out.println("1 Anzahl Spieler auf dem Land: " + PlayerOneOnLand);
         PlayerTwoOnLand = OnLand.substring(1,2);
+        //System.out.println("2 Anzahl Spieler auf dem Land: " + PlayerTwoOnLand);
     }
 
     public String getPlayerOneOnLand(){
@@ -85,6 +89,24 @@ public class PlayerClient {
         }
     }
 
+    public boolean isItMyTurnMovementCard(){
+        if(PlayerID == PlayersTurn && PlayersTurn == MovementCardPlayed){
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+
+    public boolean isItMyTurnPathTile(){
+        if(PlayerID == PlayersTurn && PlayersTurn == PathTileExchanged){
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+
     public void getPlayerOneMovementCard(){
         sendMessageToServer("GetPlayerOneHand");
     }
@@ -120,7 +142,7 @@ public class PlayerClient {
     public void setGameBoard(String PTString){
         String str[] = PTString.split(",");
         PathTileList = Arrays.asList(str);
-        System.out.println("GameBoard PathTiles: " + PathTileList);
+        //System.out.println("GameBoard PathTiles: " + PathTileList);
     }
 
     // Wird benutzt vom ImageLoader um den Dateinamen zu erhalten.
@@ -178,7 +200,7 @@ public class PlayerClient {
 
     public void setPlayersTurn(int newPlayersTurn){
         PlayersTurn = newPlayersTurn;
-        System.out.println("Current Player's Turn:"+PlayersTurn);
+        //System.out.println("Current Player's Turn:"+PlayersTurn);
     }
 
     public String getPlayerPathTileHandGUI(int PathTileNumber){
