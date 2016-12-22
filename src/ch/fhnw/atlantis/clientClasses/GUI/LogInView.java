@@ -163,7 +163,7 @@ public class LogInView {
         stage.setScene(scene);
         stage.show();
         // ------------------- Bild in Stage Titel laden  -------------------
-        Image icon = new Image(getClass().getResourceAsStream("./../../resources/images/atlantis_client.jpg"));
+        Image icon = new Image(getClass().getResourceAsStream("/ch/fhnw/atlantis/resources/images/atlantis_client.jpg"));
         stage.getIcons().add(icon);
 
     }

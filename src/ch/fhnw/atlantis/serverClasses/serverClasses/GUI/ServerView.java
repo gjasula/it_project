@@ -116,7 +116,7 @@ public class ServerView {
     // ------------------- View der Stage bekannt geben -------------------
     public void show(Stage stage) {
         stage.setTitle("Atlantis by Team Gerstenland");
-        Image icon = new Image(getClass().getResourceAsStream("./../../../resources/images/lighthouse.png"));
+        Image icon = new Image(getClass().getResourceAsStream("/ch/fhnw/atlantis/resources/images/lighthouse.png"));
         stage.setResizable(false);
         stage.getIcons().add(icon);
         stage.setScene(scene);
