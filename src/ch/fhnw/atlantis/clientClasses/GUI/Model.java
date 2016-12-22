@@ -3,7 +3,6 @@ package ch.fhnw.atlantis.clientClasses.GUI;
 import ch.fhnw.atlantis.globalClasses.models.*;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
-
 import java.util.ArrayList;
 import java.util.Hashtable;
 
@@ -21,7 +20,6 @@ public class Model {
 
     private TileDeck tileDeck;
 
-
     private ArrayList<Player> players;
     private ArrayList<Tile> tiles;
     private ArrayList<Card> pathCards;
@@ -34,7 +32,6 @@ public class Model {
 
     public Model(Stage primaryStage){
 
-
         tileDeck = new TileDeck();
 
         // to be deleted?
@@ -44,8 +41,6 @@ public class Model {
         //tileDeck.generateTileDeck();
 
         this.primaryStage = primaryStage;
-
-
     }
 
     // Getter and Setter

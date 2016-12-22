@@ -15,9 +15,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-
 /**
- * Created by Nadine on 18.10.2016.
+ * Author: Nadine
  *
  * ist für die Präsentation der Daten zuständig
  * organisiert und speichert alle Elemente des GUI's
@@ -27,7 +26,6 @@ import javafx.stage.Stage;
 public class LogInView {
 
     private Scene scene;
-
     private BorderPane welcome_pane;
     private GridPane grid;
     private HBox buttonPane;
@@ -121,12 +119,6 @@ public class LogInView {
         player4 = new Label("\ue7FD");
         grid.setConstraints(player4, 3, 0);
         grid.setHalignment(player4, HPos.CENTER);
-
-        // ------------------- CSS den Icons zuweisen --> über Controller implementiert  ---------
-          //player1.setId("Playerbefore");
-         // player2.setId("Playerbefore");
-        //  player3.setId("Playerbefore")
-       //   player4.setId("Playerbefore");
 
         // ------------------- Player Labels definieren ---------
         p1 = new Label("Spieler 1");

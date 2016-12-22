@@ -1,32 +1,20 @@
 package ch.fhnw.atlantis.clientClasses.GUI;
 
-
-
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
-import javafx.scene.control.ProgressIndicator;
 import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
-
-
 import java.io.FileNotFoundException;
-import java.util.Enumeration;
-import java.util.Locale;
 import java.util.Optional;
-import java.util.ResourceBundle;
-
 
 /**
- * Created by Nadine on 25.10.2016.
+ * Author Nadine
  */
 
 public class MenuController {
     private Model model;
     private MenuView view;
-
-
 
     public MenuController(Model model) {
         this.model = model;
@@ -39,7 +27,6 @@ public class MenuController {
         view.getBtnBack().setOnAction(new btnBackEventHandler());
         view.getBtnExit().setOnAction(new btnExitEventHandler());
         view.getBtnStartGame().setOnAction(new btnStartGameEventHandler());
-
 
         // ------------------- Eventhandler registrieren Untermenu -------------------
             //   view.getBtnSprache1().setOnAction(new btnSprache1Eventhandler());
@@ -87,28 +74,19 @@ public class MenuController {
                     }
                 });
 
-
-        // ------------------- StartButton Disable setzen solange, nicht mind. 2 Spieler angemeldet sind -------------------
-
-
         // ------------------- CSS Styling den angemeldeten Playern (Icons) zuweisen - Orange -------------------
-        view.getPlayer1().getStyleClass().remove("Playerbefore");
-        view.getPlayer1().getStyleClass().add("Playerafter");
-        view.getPlayer2().getStyleClass().remove("Playerbefore");
-        view.getPlayer2().getStyleClass().add("Playerafter");
+            // view.getPlayer1().getStyleClass().remove("Playerbefore");
+        view.getPlayer1().getStyleClass().add("Playerbefore");
+            // view.getPlayer2().getStyleClass().remove("Playerbefore");
+        view.getPlayer2().getStyleClass().add("Playerbefore");
         view.getPlayer3().getStyleClass().add("Playerbefore");
         view.getPlayer4().getStyleClass().add("Playerbefore");
-
-        // view.getTxt().setText("Bitte wählen Sie eine Spielfigur aus");
-
     }
 
     // ------------------- View anzeigen - Primarystage aufrufen-------------------
     public void show(){
         view.show(model.getPrimaryStage());
     }
-
-
 
     /* ------------------- EVENTS definieren -------------------
     -------------------------------------------------------------
@@ -235,22 +213,10 @@ public class MenuController {
         }
     }
 
-        class btnSprache1Eventhandler implements EventHandler<ActionEvent> {
-            @Override
-            public void handle(ActionEvent event) {
-
-            }
-
-        }
-
         class btnStartGameEventHandler implements EventHandler<ActionEvent> {
             @Override
             public void handle(ActionEvent event) {
-              //  view.getBtnStartGame().setDisable(false);
-                //RangkingByeController rangkingByeController = new RangkingByeController(model);
-                //rangkingByeController.show();
-
-                GameBoardController gbCon = null;
+              GameBoardController gbCon = null;
                 try {
                     gbCon = new GameBoardController(model);
                 } catch (FileNotFoundException e) {
@@ -258,18 +224,9 @@ public class MenuController {
                 }
                 gbCon.show();
 
-
-
-
                 // Initialisiere Spiel Backend - Richard Künzi
                 //PlayerClient playerClient = new PlayerClient();
                 //playerClient.startGame();
-
-
             }
         }
   }
-
-
-
-

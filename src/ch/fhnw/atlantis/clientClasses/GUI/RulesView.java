@@ -1,7 +1,6 @@
 package ch.fhnw.atlantis.clientClasses.GUI;
 
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -10,11 +9,10 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /**
- * Created by Nadine on 28.11.2016.
+ * Author Nadine
  */
 
 public class RulesView {
-
     private VBox Regeln;
     private ScrollPane RegelnSP;
     private StackPane root;
@@ -30,7 +28,6 @@ public class RulesView {
     public RulesView() {
 
         root = new StackPane();
-
         // ------------------- Regeln -------------------
         Regeln = new VBox();
         AR1 = new ImageView(new Image(getClass().getResourceAsStream("./../../resources/images/AtlantisRegeln1.JPG")));
@@ -59,8 +56,6 @@ public class RulesView {
         stage.getIcons().add(icon);
         stage.setScene(scene);
         stage.show();
-
-
     }
 
     public VBox getRegeln() {
@@ -142,6 +137,4 @@ public class RulesView {
     public void setAR6(ImageView AR6) {
         this.AR6 = AR6;
     }
-
-
 }

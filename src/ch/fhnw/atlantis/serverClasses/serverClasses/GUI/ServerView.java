@@ -13,20 +13,17 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
-
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-
 /**
- * Created by Nadine on 18.10.2016.
+ * Author Nadine
  */
 
 public class ServerView {
 
     private Scene scene;
-
     private HBox shbox;
     private VBox vbox;
     private VBox svbox;
@@ -47,7 +44,6 @@ public class ServerView {
     private Image icon;
     private Image img;
     private ImageView iview1;
-
     private Rectangle rect;
 
     private final static String newline = "\n";
@@ -125,7 +121,6 @@ public class ServerView {
         stage.getIcons().add(icon);
         stage.setScene(scene);
         stage.show();
-
     }
 
     // ------------------- Getter Funktionen auf Element, für Interaktion -------------------
