@@ -151,13 +151,578 @@ public class Interpreter {
 
 
             //// 2DO! This case has to be done for each PT and each Player
+            case "Player1_ExchangePathTileValue_pink_1.jpg":
+                player.removePathTileFromHand(1,"pink_1.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player1_ExchangePathTileValue_pink_2.jpg":
+                getCardFromStack(1, 1);
+                player.removePathTileFromHand(1,"pink_2.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
             case "Player1_ExchangePathTileValue_pink_3.jpg":
-                // change PT into MV
                 getCardFromStack(1, 1);
                 player.removePathTileFromHand(1,"pink_3.jpg");
-                // return updated hand
-
                 returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player1_ExchangePathTileValue_pink_4.jpg":
+                getCardFromStack(2, 1);
+                player.removePathTileFromHand(1,"pink_4.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player1_ExchangePathTileValue_pink_5.jpg":
+                getCardFromStack(2, 1);
+                player.removePathTileFromHand(1,"pink_5.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player1_ExchangePathTileValue_pink_6.jpg":
+                getCardFromStack(3, 1);
+                player.removePathTileFromHand(1,"pink_6.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player1_ExchangePathTileValue_pink_7.jpg":
+                getCardFromStack(3, 1);
+                player.removePathTileFromHand(1,"pink_7.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player1_ExchangePathTileValue_blue_1.jpg":
+                player.removePathTileFromHand(1,"blue_1.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player1_ExchangePathTileValue_blue_2.jpg":
+                getCardFromStack(1, 1);
+                player.removePathTileFromHand(1,"blue_2.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player1_ExchangePathTileValue_blue_3.jpg":
+                getCardFromStack(1, 1);
+                player.removePathTileFromHand(1,"blue_3.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player1_ExchangePathTileValue_blue_4.jpg":
+                getCardFromStack(2, 1);
+                player.removePathTileFromHand(1,"blue_4.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player1_ExchangePathTileValue_blue_5.jpg":
+                getCardFromStack(2, 1);
+                player.removePathTileFromHand(1,"blue_5.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player1_ExchangePathTileValue_blue_6.jpg":
+                getCardFromStack(3, 1);
+                player.removePathTileFromHand(1,"blue_6.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player1_ExchangePathTileValue_blue_7.jpg":
+                getCardFromStack(3, 1);
+                player.removePathTileFromHand(1,"blue_7.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player1_ExchangePathTileValue_brown_1.jpg":
+                player.removePathTileFromHand(1,"brown_1.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player1_ExchangePathTileValue_brown_2.jpg":
+                getCardFromStack(1, 1);
+                player.removePathTileFromHand(1,"brown_2.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player1_ExchangePathTileValue_brown_3.jpg":
+                getCardFromStack(1, 1);
+                player.removePathTileFromHand(1,"brown_3.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player1_ExchangePathTileValue_brown_4.jpg":
+                getCardFromStack(2, 1);
+                player.removePathTileFromHand(1,"brown_4.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player1_ExchangePathTileValue_brown_5.jpg":
+                getCardFromStack(2, 1);
+                player.removePathTileFromHand(1,"brown_5.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player1_ExchangePathTileValue_brown_6.jpg":
+                getCardFromStack(3, 1);
+                player.removePathTileFromHand(1,"brown_6.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player1_ExchangePathTileValue_brown_7.jpg":
+                getCardFromStack(3, 1);
+                player.removePathTileFromHand(1,"brown_7.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player1_ExchangePathTileValue_white_1.jpg":
+                player.removePathTileFromHand(1,"white_1.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player1_ExchangePathTileValue_white_2.jpg":
+                getCardFromStack(1, 1);
+                player.removePathTileFromHand(1,"white_2.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player1_ExchangePathTileValue_white_3.jpg":
+                getCardFromStack(1, 1);
+                player.removePathTileFromHand(1,"white_3.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player1_ExchangePathTileValue_white_4.jpg":
+                getCardFromStack(2, 1);
+                player.removePathTileFromHand(1,"white_4.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player1_ExchangePathTileValue_white_5.jpg":
+                getCardFromStack(2, 1);
+                player.removePathTileFromHand(1,"white_5.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player1_ExchangePathTileValue_white_6.jpg":
+                getCardFromStack(3, 1);
+                player.removePathTileFromHand(1,"white_6.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player1_ExchangePathTileValue_white_7.jpg":
+                getCardFromStack(3, 1);
+                player.removePathTileFromHand(1,"white_7.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player1_ExchangePathTileValue_yellow_1.jpg":
+                player.removePathTileFromHand(1,"yellow_1.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player1_ExchangePathTileValue_yellow_2.jpg":
+                getCardFromStack(1, 1);
+                player.removePathTileFromHand(1,"yellow_2.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player1_ExchangePathTileValue_yellow_3.jpg":
+                getCardFromStack(1, 1);
+                player.removePathTileFromHand(1,"yellow_3.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player1_ExchangePathTileValue_yellow_4.jpg":
+                getCardFromStack(2, 1);
+                player.removePathTileFromHand(1,"yellow_4.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player1_ExchangePathTileValue_yellow_5.jpg":
+                getCardFromStack(2, 1);
+                player.removePathTileFromHand(1,"yellow_5.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player1_ExchangePathTileValue_yellow_6.jpg":
+                getCardFromStack(3, 1);
+                player.removePathTileFromHand(1,"yellow_6.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player1_ExchangePathTileValue_yellow_7.jpg":
+                getCardFromStack(3, 1);
+                player.removePathTileFromHand(1,"yellow_7.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player1_ExchangePathTileValue_green_1.jpg":
+                player.removePathTileFromHand(1,"green_1.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player1_ExchangePathTileValue_green_2.jpg":
+                getCardFromStack(1, 1);
+                player.removePathTileFromHand(1,"green_2.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player1_ExchangePathTileValue_green_3.jpg":
+                getCardFromStack(1, 1);
+                player.removePathTileFromHand(1,"green_3.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player1_ExchangePathTileValue_green_4.jpg":
+                getCardFromStack(2, 1);
+                player.removePathTileFromHand(1,"green_4.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player1_ExchangePathTileValue_green_5.jpg":
+                getCardFromStack(2, 1);
+                player.removePathTileFromHand(1,"green_5.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player1_ExchangePathTileValue_green_6.jpg":
+                getCardFromStack(3, 1);
+                player.removePathTileFromHand(1,"green_6.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player1_ExchangePathTileValue_green_7.jpg":
+                getCardFromStack(3, 1);
+                player.removePathTileFromHand(1,"green_7.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player1_ExchangePathTileValue_grey_1.jpg":
+                player.removePathTileFromHand(1,"grey_1.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player1_ExchangePathTileValue_grey_2.jpg":
+                getCardFromStack(1, 1);
+                player.removePathTileFromHand(1,"grey_2.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player1_ExchangePathTileValue_grey_3.jpg":
+                getCardFromStack(1, 1);
+                player.removePathTileFromHand(1,"grey_3.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player1_ExchangePathTileValue_grey_4.jpg":
+                getCardFromStack(2, 1);
+                player.removePathTileFromHand(1,"grey_4.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player1_ExchangePathTileValue_grey_5.jpg":
+                getCardFromStack(2, 1);
+                player.removePathTileFromHand(1,"grey_5.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player1_ExchangePathTileValue_grey_6.jpg":
+                getCardFromStack(3, 1);
+                player.removePathTileFromHand(1,"grey_6.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player1_ExchangePathTileValue_grey_7.jpg":
+                getCardFromStack(3, 1);
+                player.removePathTileFromHand(1,"grey_7.jpg");
+                returnToClient = "PlayerOneHand" + player.getPlayerOneHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_pink_1.jpg":
+                player.removePathTileFromHand(2,"pink_1.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_pink_2.jpg":
+                getCardFromStack(1, 2);
+                player.removePathTileFromHand(2,"pink_2.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_pink_3.jpg":
+                getCardFromStack(1, 2);
+                player.removePathTileFromHand(2,"pink_3.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_pink_4.jpg":
+                getCardFromStack(2, 2);
+                player.removePathTileFromHand(2,"pink_4.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_pink_5.jpg":
+                getCardFromStack(2, 2);
+                player.removePathTileFromHand(2,"pink_5.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_pink_6.jpg":
+                getCardFromStack(3, 2);
+                player.removePathTileFromHand(2,"pink_6.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_pink_7.jpg":
+                getCardFromStack(3, 2);
+                player.removePathTileFromHand(2,"pink_7.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_blue_1.jpg":
+                player.removePathTileFromHand(2,"blue_1.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_blue_2.jpg":
+                getCardFromStack(1, 2);
+                player.removePathTileFromHand(2,"blue_2.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_blue_3.jpg":
+                getCardFromStack(1, 2);
+                player.removePathTileFromHand(2,"blue_3.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_blue_4.jpg":
+                getCardFromStack(2, 2);
+                player.removePathTileFromHand(2,"blue_4.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_blue_5.jpg":
+                getCardFromStack(2, 2);
+                player.removePathTileFromHand(2,"blue_5.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_blue_6.jpg":
+                getCardFromStack(3, 2);
+                player.removePathTileFromHand(2,"blue_6.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_blue_7.jpg":
+                getCardFromStack(3, 2);
+                player.removePathTileFromHand(2,"blue_7.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_brown_1.jpg":
+                player.removePathTileFromHand(2,"brown_1.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_brown_2.jpg":
+                getCardFromStack(1, 2);
+                player.removePathTileFromHand(2,"brown_2.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_brown_3.jpg":
+                getCardFromStack(1, 2);
+                player.removePathTileFromHand(2,"brown_3.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_brown_4.jpg":
+                getCardFromStack(2, 2);
+                player.removePathTileFromHand(2,"brown_4.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_brown_5.jpg":
+                getCardFromStack(2, 2);
+                player.removePathTileFromHand(2,"brown_5.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_brown_6.jpg":
+                getCardFromStack(3, 2);
+                player.removePathTileFromHand(2,"brown_6.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_brown_7.jpg":
+                getCardFromStack(3, 2);
+                player.removePathTileFromHand(2,"brown_7.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_white_1.jpg":
+                player.removePathTileFromHand(2,"white_1.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_white_2.jpg":
+                getCardFromStack(1, 2);
+                player.removePathTileFromHand(2,"white_2.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_white_3.jpg":
+                getCardFromStack(1, 2);
+                player.removePathTileFromHand(2,"white_3.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_white_4.jpg":
+                getCardFromStack(2, 2);
+                player.removePathTileFromHand(2,"white_4.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_white_5.jpg":
+                getCardFromStack(2, 2);
+                player.removePathTileFromHand(2,"white_5.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_white_6.jpg":
+                getCardFromStack(3, 2);
+                player.removePathTileFromHand(2,"white_6.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_white_7.jpg":
+                getCardFromStack(3, 2);
+                player.removePathTileFromHand(2,"white_7.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_yellow_1.jpg":
+                player.removePathTileFromHand(2,"yellow_1.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_yellow_2.jpg":
+                getCardFromStack(1, 2);
+                player.removePathTileFromHand(2,"yellow_2.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_yellow_3.jpg":
+                getCardFromStack(1, 2);
+                player.removePathTileFromHand(2,"yellow_3.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_yellow_4.jpg":
+                getCardFromStack(2, 2);
+                player.removePathTileFromHand(2,"yellow_4.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_yellow_5.jpg":
+                getCardFromStack(2, 2);
+                player.removePathTileFromHand(2,"yellow_5.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_yellow_6.jpg":
+                getCardFromStack(3, 2);
+                player.removePathTileFromHand(2,"yellow_6.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_yellow_7.jpg":
+                getCardFromStack(3, 2);
+                player.removePathTileFromHand(2,"yellow_7.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_green_1.jpg":
+                player.removePathTileFromHand(2,"green_1.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_green_2.jpg":
+                getCardFromStack(1, 2);
+                player.removePathTileFromHand(2,"green_2.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_green_3.jpg":
+                getCardFromStack(1, 2);
+                player.removePathTileFromHand(2,"green_3.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_green_4.jpg":
+                getCardFromStack(2, 2);
+                player.removePathTileFromHand(2,"green_4.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_green_5.jpg":
+                getCardFromStack(2, 2);
+                player.removePathTileFromHand(2,"green_5.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_green_6.jpg":
+                getCardFromStack(3, 2);
+                player.removePathTileFromHand(2,"green_6.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_green_7.jpg":
+                getCardFromStack(3, 2);
+                player.removePathTileFromHand(2,"green_7.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_grey_1.jpg":
+                player.removePathTileFromHand(2,"grey_1.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_grey_2.jpg":
+                getCardFromStack(1, 2);
+                player.removePathTileFromHand(2,"grey_2.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_grey_3.jpg":
+                getCardFromStack(1, 2);
+                player.removePathTileFromHand(2,"grey_3.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_grey_4.jpg":
+                getCardFromStack(2, 2);
+                player.removePathTileFromHand(2,"grey_4.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_grey_5.jpg":
+                getCardFromStack(2, 2);
+                player.removePathTileFromHand(2,"grey_5.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_grey_6.jpg":
+                getCardFromStack(3, 2);
+                player.removePathTileFromHand(2,"grey_6.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
+                System.out.println(returnToClient);
+                break;
+            case "Player2_ExchangePathTileValue_grey_7.jpg":
+                getCardFromStack(3, 2);
+                player.removePathTileFromHand(2,"grey_7.jpg");
+                returnToClient = "PlayerTwoHand" + player.getPlayerTwoHand();
                 System.out.println(returnToClient);
                 break;
             default:
