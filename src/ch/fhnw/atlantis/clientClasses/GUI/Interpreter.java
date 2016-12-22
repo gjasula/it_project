@@ -10,7 +10,7 @@ public class Interpreter {
     PlayerClient playerClient = new PlayerClient();
     DefinePawnPosition definePawnPosition = new DefinePawnPosition();
 
-    public String interpretClientMsg(String messagefromServer) throws FileNotFoundException {
+    public String interpretClientMsg(String messagefromServer) throws FileNotFoundException, InterruptedException {
 
         switch (messagefromServer) {
             case "StartGame":
@@ -54,10 +54,14 @@ public class Interpreter {
                 if(messagefromServer.substring(0,17).equals("Player1_Position_")){
                     if(messagefromServer.equals("Player1_Position_NotAvailable")){}
                     else{
-                        definePawnPosition.setPosition(messagefromServer);
                         playerClient.sendMessageToServer("GetPlayerOneHand");
+                        Thread.sleep(100);
                         playerClient.sendMessageToServer("GetPlayerOneHandTiles");
+                        Thread.sleep(100);
+                        definePawnPosition.setPosition(messagefromServer);
+                        Thread.sleep(100);
                         playerClient.sendMessageToServer("ReturnGameBoard");
+                        Thread.sleep(100);
                         playerClient.sendMessageToServer("ReturnPawnOnLand");
                     }
                 }
@@ -65,10 +69,14 @@ public class Interpreter {
                 if(messagefromServer.substring(0,17).equals("Player2_Position_")){
                     if(messagefromServer.equals("Player2_Position_NotAvailable")){}
                     else {
-                        definePawnPosition.setPosition(messagefromServer);
-                        playerClient.sendMessageToServer("GetPlayerTwoHand");
-                        playerClient.sendMessageToServer("GetPlayerTwoHandTiles");
                         playerClient.sendMessageToServer("ReturnGameBoard");
+                        Thread.sleep(100);
+                        playerClient.sendMessageToServer("GetPlayerTwoHand");
+                        Thread.sleep(100);
+                        definePawnPosition.setPosition(messagefromServer);
+                        Thread.sleep(100);
+                        playerClient.sendMessageToServer("GetPlayerTwoHandTiles");
+                        Thread.sleep(100);
                         playerClient.sendMessageToServer("ReturnPawnOnLand");
                     }
                 }

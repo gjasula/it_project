@@ -11,6 +11,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 
+import java.io.FileNotFoundException;
 import java.util.Enumeration;
 import java.util.Locale;
 import java.util.Optional;
@@ -45,10 +46,46 @@ public class MenuController {
             //   view.getBtnSprache2().setOnAction(new btnSprache2Eventhandler());
             //   view.getBtnSprache3().setOnAction(new btnSprache3Eventhandler());
 
-            //   view.getGameCharacter1().setOnAction(new GameCharacter1EventHandler());
-            //   view.getGameCharacter2().setOnAction(new GameCharacter2EventHandler());
-            //   view.getGameCharacter3().setOnAction(new GameCharacter3EventHandler());
-            //   view.getGameCharacter4().setOnAction(new GameCharacter4EventHandler());
+                view.getGameCharacter1().setOnAction(new EventHandler<ActionEvent>() {
+                    @Override
+                    public void handle(ActionEvent event) {
+                        try {
+                            GameCharacter1EventHandler();
+                        } catch (FileNotFoundException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+                view.getGameCharacter2().setOnAction(new EventHandler<ActionEvent>() {
+                    @Override
+                    public void handle(ActionEvent event) {
+                        try {
+                            GameCharacter2EventHandler();
+                        } catch (FileNotFoundException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+                view.getGameCharacter3().setOnAction(new EventHandler<ActionEvent>() {
+                    @Override
+                    public void handle(ActionEvent event) {
+                        try {
+                            GameCharacter3EventHandler();
+                        } catch (FileNotFoundException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+                view.getGameCharacter4().setOnAction(new EventHandler<ActionEvent>() {
+                    @Override
+                    public void handle(ActionEvent event) {
+                        try {
+                            GameCharacter4EventHandler();
+                        } catch (FileNotFoundException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
 
 
         // ------------------- StartButton Disable setzen solange, nicht mind. 2 Spieler angemeldet sind -------------------
@@ -76,6 +113,49 @@ public class MenuController {
     /* ------------------- EVENTS definieren -------------------
     -------------------------------------------------------------
      ------------------------------------- -------------------*/
+    public void GameCharacter1EventHandler() throws FileNotFoundException {
+        GameBoardView gameBoardView = new GameBoardView();
+        PlayerClient playerClient = new PlayerClient();
+
+        if(playerClient.PlayerID == 1){
+            gameBoardView.setPawnP1("1");
+        }else{
+            gameBoardView.setPawnP2("1");
+        }
+    }
+
+    public void GameCharacter2EventHandler() throws FileNotFoundException {
+        GameBoardView gameBoardView = new GameBoardView();
+        PlayerClient playerClient = new PlayerClient();
+
+        if(playerClient.PlayerID == 1){
+            gameBoardView.setPawnP1("2");
+        }else{
+            gameBoardView.setPawnP2("2");
+        }
+    }
+
+    public void GameCharacter3EventHandler() throws FileNotFoundException {
+        GameBoardView gameBoardView = new GameBoardView();
+        PlayerClient playerClient = new PlayerClient();
+
+        if(playerClient.PlayerID == 1){
+            gameBoardView.setPawnP1("3");
+        }else{
+            gameBoardView.setPawnP2("3");
+        }
+    }
+
+    public void GameCharacter4EventHandler() throws FileNotFoundException {
+        GameBoardView gameBoardView = new GameBoardView();
+        PlayerClient playerClient = new PlayerClient();
+        if(playerClient.PlayerID == 1){
+            gameBoardView.setPawnP1("4");
+        }else{
+            gameBoardView.setPawnP2("4");
+        }
+    }
+
     class btnRulesEventHandler implements EventHandler<ActionEvent>{
         @Override
         public void handle(ActionEvent event) {
@@ -167,8 +247,19 @@ public class MenuController {
             @Override
             public void handle(ActionEvent event) {
               //  view.getBtnStartGame().setDisable(false);
-                RangkingByeController rangkingByeController = new RangkingByeController(model);
-                rangkingByeController.show();
+                //RangkingByeController rangkingByeController = new RangkingByeController(model);
+                //rangkingByeController.show();
+
+                GameBoardController gbCon = null;
+                try {
+                    gbCon = new GameBoardController(model);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+                gbCon.show();
+
+
+
 
                 // Initialisiere Spiel Backend - Richard Künzi
                 //PlayerClient playerClient = new PlayerClient();

@@ -68,6 +68,11 @@ public class GameBoardView extends Pane {
     public static int PositionXPawnP2 = 2;
     public static int PositionYPawnP2 = 1;
 
+    public static String Pawn1 = "\ue91D";
+    public static String Pawn2 = "\ue532";
+    public static String Pawn3 = "\ue16B";
+    public static String Pawn4 = "\ue80C";
+
     public GameBoardView() throws FileNotFoundException {
 
         maxColIndex = 16;
@@ -82,14 +87,14 @@ public class GameBoardView extends Pane {
         playerGrid.setGridLinesVisible(false);
 
         // ------------------- Player Icons -------------------
-        player1 = new Label("\ue91D");
+        player1 = new Label(Pawn1);
         playerGrid.setConstraints(player1, 1    , 0);
         playerGrid.setHalignment(player1, HPos.CENTER);
         pointsP1 = new Label("Im Ziel:\n0/3");
         playerGrid.setHalignment(pointsP1, HPos.CENTER);
         playerGrid.setConstraints(pointsP1, 2, 0 );
 
-        player2 = new Label("\ue532");
+        player2 = new Label(Pawn2);
         playerGrid.setConstraints(player2, 6, 0);
         playerGrid.setHalignment(player2, HPos.CENTER);
         pointsP2 = new Label("Im Ziel:\n0/3");
@@ -146,11 +151,10 @@ public class GameBoardView extends Pane {
             //LabelsArray.add(label);
         }
 
-        //
-        pawnP1 = new Label("\ue91D");
-        pawnP2 = new Label("\ue532");
-        pawnP3 = new Label("\ue16B");
-        pawnP4 = new Label("\ue80C");
+        pawnP1 = new Label(Pawn1);
+        pawnP2 = new Label(Pawn2);
+        pawnP3 = new Label(Pawn3);
+        pawnP4 = new Label(Pawn4);
         pawnP3.setVisible(false);
         pawnP4.setVisible(false);
 
@@ -335,6 +339,8 @@ public class GameBoardView extends Pane {
             // Pawn im Ziel
             getPlayerOneOnLand();
             getPlayerTwoOnLand();
+            setPawnP1("X");
+            setPawnP2("X");
 
             // Buttons Enable/Disable if it's player's turn
             btnPlayTile.setDisable(playerClient.isItMyTurn());
@@ -432,6 +438,45 @@ public class GameBoardView extends Pane {
     public void playMovementCard() {
         PlayerClient playerClient = new PlayerClient();
         playerClient.getMovementCardNameFromArrayNumber(DisplayMovementCard);
+    }
+
+    public void setPawnP1(String pawn){
+        switch (pawn) {
+            case "1":
+                Pawn1 = "\ue91D";
+                break;
+            case "2":
+                Pawn1 = "\ue532";
+                break;
+            case "3":
+                Pawn1 = "\ue16B";
+                break;
+            case "4":
+                Pawn1 = "\ue80C";
+                System.out.println("echo: "+pawnP1);
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void setPawnP2(String pawn){
+        switch (pawn) {
+            case "1":
+                Pawn2 = "\ue91D";
+                break;
+            case "2":
+                Pawn2 = "\ue532";
+                break;
+            case "3":
+                Pawn2 = "\ue16B";
+                break;
+            case "4":
+                Pawn2 = "\ue80C";
+                break;
+            default:
+                break;
+        }
     }
 
     public Button getBtnPlayCard() {

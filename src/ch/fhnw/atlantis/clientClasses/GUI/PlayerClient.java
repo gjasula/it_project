@@ -15,7 +15,7 @@ import java.util.Optional;
  */
 public class PlayerClient {
 
-    Client client = new Client();
+    public Client client;
     public static int PlayerID = 0;
     public static int PlayersTurn = 1; // Welcher Spiler ist am Zug?
     public static String PlayerOneOnLand = "0";
@@ -27,19 +27,12 @@ public class PlayerClient {
     static List<String> PathTileList = new ArrayList<>();
 
     public void sendMessageToServer(String msg){
-        client.connectToServer("127.0.0.1", 7777);
+        if(client == null){
+            client = new Client();
+            client.connectToServer("127.0.0.1", 7777);
+        }
         client.sendMessagetoServer(msg);
         System.out.println("Sending this to server: "+msg);
-    }
-
-    public void updateAllFromServer(){
-        client.connectToServer("127.0.0.1", 7777);
-        client.sendMessagetoServer("ReturnGameBoard");
-        client.sendMessagetoServer("GetPlayerOneHand");
-        client.sendMessagetoServer("GetPlayerOneHandTiles");
-        client.sendMessagetoServer("GetPlayerTwoHand");
-        client.sendMessagetoServer("GetPlayerTwoHandTiles");
-        client.sendMessagetoServer("ReturnPawnOnLand");
     }
 
     public void setPlayerOnLand(String OnLand){

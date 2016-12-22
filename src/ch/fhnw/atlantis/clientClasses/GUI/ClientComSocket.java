@@ -50,6 +50,8 @@ public class ClientComSocket implements Runnable {
                 break;
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         }
     }

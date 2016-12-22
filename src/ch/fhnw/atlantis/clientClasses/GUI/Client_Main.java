@@ -43,15 +43,15 @@ public class Client_Main extends Application {
         //System.out.println("TileDeck now contains: " + model.getTileDeck().getTiles().size());
        // GameBoardView view = new GameBoardView(model);
 
-    //  LogInController logInController = new LogInController(model);
-    //  logInController.show();
+      LogInController logInController = new LogInController(model);
+      logInController.show();
 
-        GameBoardController gbCon = new GameBoardController(model);
-        gbCon.show();
+        //GameBoardController gbCon = new GameBoardController(model);
+        //gbCon.show();
 
         // Richy! Needed to start Game
-        PlayerClient playerClient = new PlayerClient();
-        playerClient.sendMessageToServer("StartGame");
+        //PlayerClient playerClient = new PlayerClient();
+        //playerClient.sendMessageToServer("StartGame");
 
     primaryStage.setOnCloseRequest(event -> {
         event.consume();

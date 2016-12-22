@@ -32,10 +32,13 @@ public class ImageLoader {
     public static Image getPathTile(int PathTileNumber) throws FileNotFoundException {
 
         String imagePath = "ch/fhnw/atlantis/resources/images/";
+        String imageName = "water.jpg";
         PlayerClient playerClient = new PlayerClient();
 
+        imageName = playerClient.getTileImage(PathTileNumber);
+
         try {
-            return new Image(imagePath + playerClient.getTileImage(PathTileNumber));
+            return new Image(imagePath + imageName);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -45,11 +48,14 @@ public class ImageLoader {
 
     public static Image getPlayerMovementCardHand(int MovementCardNumber){
         String imagePath = "ch/fhnw/atlantis/resources/images/";
+        String imageName = "water.jpg";
         PlayerClient playerClient = new PlayerClient();
         ConvertMovementCardToFileName convertMovementCardToFileName = new ConvertMovementCardToFileName();
 
+        imageName = convertMovementCardToFileName.ConvertMovementCardToFileName(playerClient.getPlayerMovementCardHandGUI(MovementCardNumber));
+
         try {
-            return new Image(imagePath + convertMovementCardToFileName.ConvertMovementCardToFileName(playerClient.getPlayerMovementCardHandGUI(MovementCardNumber)));
+            return new Image(imagePath + imageName);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -58,10 +64,13 @@ public class ImageLoader {
 
     public static Image getPlayerPathTileHand(int PathTileNumber){
         String imagePath = "ch/fhnw/atlantis/resources/images/";
+        String imageName = "water.jpg";
         PlayerClient playerClient = new PlayerClient();
 
+        imageName = playerClient.getPlayerPathTileHandGUI(PathTileNumber);
+
         try {
-            return new Image(imagePath + playerClient.getPlayerPathTileHandGUI(PathTileNumber));
+            return new Image(imagePath + imageName);
         } catch (Exception e) {
             e.printStackTrace();
         }
