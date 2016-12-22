@@ -317,8 +317,8 @@ public class GameBoardView extends Pane {
                             }
                         }
                 );
-            }// Change delay to 300 after testing
-        }, 0, 350, TimeUnit.MILLISECONDS);
+            }// Change delay to 400 after testing
+        }, 0, 400, TimeUnit.MILLISECONDS);
     }
 
     public void UpdateValues() throws FileNotFoundException {
@@ -411,8 +411,6 @@ public class GameBoardView extends Pane {
     public void sendPathTileExchange(){
         PlayerClient playerClient = new PlayerClient();
         playerClient.addPlayerToString("ExchangePathTileValue_"+getDisplayPathTile());
-        System.out.println(getDisplayPathTile());
-
     }
 
     public void setPositionPawnP1(int x, int y){
