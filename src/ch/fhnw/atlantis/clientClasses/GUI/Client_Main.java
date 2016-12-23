@@ -36,12 +36,12 @@ public class Client_Main extends Application {
 
     @Override
     public void start(final Stage primaryStage) throws FileNotFoundException {
-      Model model = new Model(primaryStage);
+        Model model = new Model(primaryStage);
 
-      LogInController logInController = new LogInController(model);
-      logInController.show();
+        LogInController logInController = new LogInController(model);
+        logInController.show();
 
-    primaryStage.setOnCloseRequest(event -> {
+        primaryStage.setOnCloseRequest(event -> {
         event.consume();
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION,
                 "Soll Atlantis wirklich beendet werden?", ButtonType.YES, ButtonType.NO);

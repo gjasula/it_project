@@ -75,6 +75,7 @@ public class MenuView {
         btnRules = new Button("SPIELREGELN");
         btnBack = new Button("ZURÜCK");
         btnExit = new Button("SCHLIESSEN");
+        btnOptions.setDisable(true);
 
         MainMenu.setConstraints(btnStartGame, 1, 0);
         MainMenu.setConstraints(btnOptions, 1, 1);

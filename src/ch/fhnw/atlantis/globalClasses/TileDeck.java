@@ -1,7 +1,7 @@
 package ch.fhnw.atlantis.globalClasses;
 
 /**
- * Created by juerg on 07.12.2016.
+ * @author juerg & richard
  */
 
 import java.util.ArrayList;
