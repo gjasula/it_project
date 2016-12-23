@@ -32,9 +32,6 @@ public class MenuController {
         view.getBtnStartGame().setOnAction(new btnStartGameEventHandler());
 
         // ------------------- Eventhandler registrieren Untermenu -------------------
-            //   view.getBtnSprache1().setOnAction(new btnSprache1Eventhandler());
-            //   view.getBtnSprache2().setOnAction(new btnSprache2Eventhandler());
-            //   view.getBtnSprache3().setOnAction(new btnSprache3Eventhandler());
 
                 view.getGameCharacter1().setOnAction(new EventHandler<ActionEvent>() {
                     @Override
@@ -78,9 +75,7 @@ public class MenuController {
                 });
 
         // ------------------- CSS Styling den angemeldeten Playern (Icons) zuweisen - Orange -------------------
-            // view.getPlayer1().getStyleClass().remove("Playerbefore");
         view.getPlayer1().getStyleClass().add("Playerbefore");
-            // view.getPlayer2().getStyleClass().remove("Playerbefore");
         view.getPlayer2().getStyleClass().add("Playerbefore");
         view.getPlayer3().getStyleClass().add("Playerbefore");
         view.getPlayer4().getStyleClass().add("Playerbefore");

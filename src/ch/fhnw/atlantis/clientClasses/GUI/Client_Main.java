@@ -36,22 +36,10 @@ public class Client_Main extends Application {
 
     @Override
     public void start(final Stage primaryStage) throws FileNotFoundException {
-        Model model = new Model(primaryStage);
-
-        //System.out.println("TileDeck contains (with additional waterTile: " + GameBoard.getTileDeck().getTiles().size());
-        //model.getTileDeck().getTiles().remove(12);
-        //System.out.println("TileDeck now contains: " + model.getTileDeck().getTiles().size());
-       // GameBoardView view = new GameBoardView(model);
+      Model model = new Model(primaryStage);
 
       LogInController logInController = new LogInController(model);
       logInController.show();
-
-        //GameBoardController gbCon = new GameBoardController(model);
-        //gbCon.show();
-
-        // Richy! Needed to start Game
-        //PlayerClient playerClient = new PlayerClient();
-        //playerClient.sendMessageToServer("StartGame");
 
     primaryStage.setOnCloseRequest(event -> {
         event.consume();

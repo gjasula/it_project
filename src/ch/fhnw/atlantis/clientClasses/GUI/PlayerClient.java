@@ -105,7 +105,7 @@ public class PlayerClient{
 
     // Prüft ob man an der Reihe ist.
     // Falls die PlayerID mit dem globalen PlayersTurn übereinstimmt ist man am zug.
-    public boolean isItMyTurn() throws InterruptedException {
+    public boolean isItMyTurn() {
         if(PlayerID == PlayersTurn){
             return false;
         }
@@ -114,7 +114,7 @@ public class PlayerClient{
         }
     }
 
-    public boolean isItMyTurnMovementCard() throws InterruptedException {
+    public boolean isItMyTurnMovementCard() {
         if(PlayerID == PlayersTurn && PlayersTurn == MovementCardPlayed){
             return false;
         }
@@ -123,7 +123,7 @@ public class PlayerClient{
         }
     }
 
-    public boolean isItMyTurnPathTile() throws InterruptedException {
+    public boolean isItMyTurnPathTile() {
         if(PlayerID == PlayersTurn && PlayersTurn == PathTileExchanged){
             return false;
         }
