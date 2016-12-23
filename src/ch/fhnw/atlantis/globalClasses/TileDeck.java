@@ -37,13 +37,9 @@ public class TileDeck {
 
     public String getGameBoard(){
         String GameBoard = "";
-        //for(String s : tileDeckString){
-        //    GameBoard += s+",";
-        //}
 
         for( int i = 0 ; i < tileDeckString.size() ; i++ )
         {
-            //System.out.println(PlayerOneHandCards.get(i));
             GameBoard += tileDeckString.get(i) + ",";
         }
 
@@ -121,7 +117,6 @@ public class TileDeck {
             }else{
                 LastPathTile = i;
             }
-            //System.out.println("Das letzte Wegplättchen ist auf Position: "+LastPathTile);
         }
 
         if(Player == 1) {
