@@ -14,12 +14,9 @@ import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
-
-import static ch.fhnw.atlantis.clientClasses.GUI.ImageLoader.getImage;
 
 
 public class GameBoardView extends Pane {
@@ -58,6 +55,9 @@ public class GameBoardView extends Pane {
 
     private int maxColIndex, maxRowIndex;
 
+    public static int PlayerOneWon = 0;
+    public static int PlayerTwoWon = 0;
+
     public static int DisplayMovementCard = 0;
     public static int DisplayPathTile = 0;
 
@@ -88,14 +88,14 @@ public class GameBoardView extends Pane {
         player1 = new Label(Pawn1);
         playerGrid.setConstraints(player1, 1    , 0);
         playerGrid.setHalignment(player1, HPos.CENTER);
-        pointsP1 = new Label("Im Ziel:\n0/1");
+        pointsP1 = new Label("Gewonnen!");
         playerGrid.setHalignment(pointsP1, HPos.CENTER);
         playerGrid.setConstraints(pointsP1, 2, 0 );
 
         player2 = new Label(Pawn2);
         playerGrid.setConstraints(player2, 6, 0);
         playerGrid.setHalignment(player2, HPos.CENTER);
-        pointsP2 = new Label("Im Ziel:\n0/1");
+        pointsP2 = new Label("Gewonnen!");
         playerGrid.setHalignment(pointsP2, HPos.CENTER);
         playerGrid.setConstraints(pointsP2, 7, 0 );
 
@@ -335,8 +335,10 @@ public class GameBoardView extends Pane {
             gameBoard.setConstraints(pawnP2, PositionXPawnP2, PositionYPawnP2);
 
             // Pawn im Ziel
-            getPlayerOneOnLand();
-            getPlayerTwoOnLand();
+            //getPlayerOneOnLand();
+            //getPlayerTwoOnLand();
+            pointsP1.setVisible(getIfPlayerOneHasWon());
+            pointsP2.setVisible(getIfPlayerTwoHasWon());
             setPawnP1("X");
             setPawnP2("X");
 
@@ -416,14 +418,20 @@ public class GameBoardView extends Pane {
         PositionYPawnP1 = y;
     }
 
-    public void getPlayerOneOnLand(){
-        PlayerClient playerClient = new PlayerClient();
-        pointsP1.setText("Im Ziel:\n"+playerClient.getPlayerOneOnLand()+"/3");
+    public boolean getIfPlayerOneHasWon(){
+        if(PlayerOneWon == 1){
+            return true;
+        }else{
+            return false;
+        }
     }
 
-    public void getPlayerTwoOnLand(){
-        PlayerClient playerClient = new PlayerClient();
-        pointsP2.setText("Im Ziel:\n"+playerClient.getPlayerTwoOnLand()+"/3");
+    public boolean getIfPlayerTwoHasWon(){
+        if(PlayerTwoWon == 1){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     public void setPositionPawnP2(int x, int y){

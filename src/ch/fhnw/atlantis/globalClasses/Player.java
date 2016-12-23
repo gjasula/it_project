@@ -1,5 +1,6 @@
 package ch.fhnw.atlantis.globalClasses;
 
+import ch.fhnw.atlantis.serverClasses.serverClasses.GUI.ServerView;
 import javafx.scene.paint.Color;
 
 import java.io.Serializable;
@@ -293,6 +294,8 @@ public class Player implements Serializable {
     }
 
     public void calculateWinner(){
+        ServerView serverView = new ServerView();
+
         int PlayerOnePoints = 0;
         int PlayerTwoPoints = 0;
 
@@ -304,10 +307,12 @@ public class Player implements Serializable {
         for( int i = 0 ; i < PlayerOneHandTiles.size() ; i++ ){
             String zwischenString = PlayerOneHandTiles.get(i).substring(PlayerOneHandTiles.get(i).length() - 5);
             PlayerOnePoints = PlayerOnePoints + Integer.parseInt(zwischenString.substring(0,1));
+            serverView.setTxtLog("Player One has: " + PlayerOnePoints);
         }
         for( int i = 0 ; i < PlayerTwoHandTiles.size() ; i++ ){
             String zwischenString = PlayerTwoHandTiles.get(i).substring(PlayerTwoHandTiles.get(i).length() - 5);
             PlayerTwoPoints = PlayerTwoPoints + Integer.parseInt(zwischenString.substring(0,1));
+            serverView.setTxtLog("Player Two has: " + PlayerOnePoints);
         }
 
         if(PlayerOnePoints > PlayerTwoPoints){

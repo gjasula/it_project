@@ -157,7 +157,7 @@ public class TileDeck {
                     Position = "Position_" + i;
                     PositionPlayer1 = i;
                     if(PositionPlayer1 == LastPathTile){
-                        Position = "WinnerFound";
+                        Position = "Position_98";
                         break;
                     }
                     break;

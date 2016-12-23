@@ -7,7 +7,7 @@ import java.io.FileNotFoundException;
  */
 public class DefinePawnPosition {
 
-    public void setPosition(String Message) throws FileNotFoundException {
+    public void setPosition(String Message) throws FileNotFoundException, InterruptedException {
 
         GameBoardView gameBoardView = new GameBoardView();
         String Position = Message.substring(8);
@@ -120,8 +120,11 @@ public class DefinePawnPosition {
                 PositionX = 14;
                 PositionY = 8;
 
-                //PlayerClient playerClient = new PlayerClient();
-                //playerClient.sendMessageToServer("DidAPlayerWinTheGame");
+                if (Message.substring(0,7).equals("Player1")) {
+                    gameBoardView.PlayerOneWon = 1;
+                }else {
+                    gameBoardView.PlayerTwoWon = 1;
+                }
 
                 break;
         }

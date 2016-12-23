@@ -74,9 +74,9 @@ public class Interpreter {
                 if(messagefromServer.substring(0,17).equals("Player1_Position_")){
                     if(messagefromServer.equals("Player1_Position_NotAvailable")){}
                     else{
+                        definePawnPosition.setPosition(messagefromServer);
                         playerClient.sendMessageToServer("GetPlayerOneHand");
                         playerClient.sendMessageToServer("GetPlayerOneHandTiles");
-                        definePawnPosition.setPosition(messagefromServer);
                         playerClient.sendMessageToServer("ReturnGameBoard");
                         // Wird benötigt sobald mehr als eine Runde gespielt wird
                         //playerClient.sendMessageToServer("DidAPlayerWinTheGame");
@@ -86,9 +86,9 @@ public class Interpreter {
                 if(messagefromServer.substring(0,17).equals("Player2_Position_")){
                     if(messagefromServer.equals("Player2_Position_NotAvailable")){}
                     else {
+                        definePawnPosition.setPosition(messagefromServer);
                         playerClient.sendMessageToServer("GetPlayerTwoHand");
                         playerClient.sendMessageToServer("GetPlayerTwoHandTiles");
-                        definePawnPosition.setPosition(messagefromServer);
                         playerClient.sendMessageToServer("ReturnGameBoard");
                         // Wird benötigt sobald mehr als eine Runde gespielt wird
                         //playerClient.sendMessageToServer("DidAPlayerWinTheGame");
