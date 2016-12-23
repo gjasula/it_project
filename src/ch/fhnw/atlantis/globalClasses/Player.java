@@ -160,8 +160,8 @@ public class Player implements Serializable {
         }
         // Mischen der Bewegungskarten
         Collections.shuffle(MovementCards);
-        getCardFromStack(20,1); // For Testing 20 back to 4!!
-        getCardFromStack(20,2);
+        getCardFromStack(4,1); // For Testing 20 back to 4!!
+        getCardFromStack(5,2);
     }
 
 
