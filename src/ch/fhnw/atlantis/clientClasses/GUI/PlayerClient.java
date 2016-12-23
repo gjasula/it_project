@@ -136,31 +136,26 @@ public class PlayerClient{
     public void setPlayerOneHandCards(String MVCard){
         String str[] = MVCard.split(",");
         PlayerOneHandCards = Arrays.asList(str);
-        //System.out.println("Player One Hand: " + PlayerOneHandCards);
     }
 
     public void setPlayerTwoHandCards(String MVCard){
         String str[] = MVCard.split(",");
         PlayerTwoHandCards = Arrays.asList(str);
-        //System.out.println("Player Two Hand: " + PlayerTwoHandCards);
     }
 
     public void setPlayerOneHandTiles(String PathTiles){
         String str[] = PathTiles.split(",");
         PlayerOneHandTiles = Arrays.asList(str);
-        //System.out.println("Player One Hand Tiles: " + PlayerOneHandTiles);
     }
 
     public void setPlayerTwoHandTiles(String PathTiles){
         String str[] = PathTiles.split(",");
         PlayerTwoHandTiles = Arrays.asList(str);
-        //System.out.println("Player One Hand Tiles: " + PlayerTwoHandTiles);
     }
 
     public void setGameBoard(String PTString){
         String str[] = PTString.split(",");
         PathTileList = Arrays.asList(str);
-        //System.out.println("GameBoard PathTiles: " + PathTileList);
     }
 
     // Wird benutzt vom ImageLoader um den Dateinamen zu erhalten.
@@ -218,7 +213,6 @@ public class PlayerClient{
 
     public void setPlayersTurn(int newPlayersTurn){
         PlayersTurn = newPlayersTurn;
-        //System.out.println("Current Player's Turn:"+PlayersTurn);
     }
 
     public String getPlayerPathTileHandGUI(int PathTileNumber){
