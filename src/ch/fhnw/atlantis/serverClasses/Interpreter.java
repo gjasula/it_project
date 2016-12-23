@@ -8,7 +8,7 @@ import java.io.FileNotFoundException;
 import static ch.fhnw.atlantis.globalClasses.Player.*;
 
 /**
- * Created by Richard on 06/12/2016.
+ * @author Richard
  */
 public class Interpreter {
 
@@ -57,7 +57,6 @@ public class Interpreter {
                 returnToClient = player.getWinner();
                 System.out.println(returnToClient);
                 break;
-            //// 2DO! This case has to be done for each PT and each Player
             case "Player1_Played_MV_Blue":
                 player.removeMovementCardFromHand(1, "MV_Blue");
                 String PositionBlue = tileDeck.getPositionXY(1, "MV_Blue");
@@ -142,14 +141,6 @@ public class Interpreter {
                 player.updatePlayerHandTiles(2, PositionYellow2.substring(9));
                 returnToClient = "Player2_" + PositionYellow2;
                 break;
-
-
-
-
-
-
-
-            //// 2DO! This case has to be done for each PT and each Player
             case "Player1_ExchangePathTileValue_pink_1.jpg":
                 player.removePathTileFromHand(1,"pink_1.jpg");
                 returnToClient = "PlayerOneHand" + player.getPlayerOneHand();

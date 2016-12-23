@@ -5,9 +5,8 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
- * Created by Daniel on 02.12.2016.
+ * @author Daniel
  */
-
 public class ServerTCPListener implements Runnable {
 
     private ServerSocket serverSocket;

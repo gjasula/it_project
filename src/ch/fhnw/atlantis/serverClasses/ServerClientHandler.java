@@ -10,7 +10,7 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 
 /**
- * Created by Daniel on 02.12.2016.
+ * @author Daniel
  */
 public class ServerClientHandler implements Runnable {
 
@@ -20,7 +20,6 @@ public class ServerClientHandler implements Runnable {
     private Server server;
     private int clientId;
     private int port;
-
 
     public ServerClientHandler(Socket socketToClient) {
         server = Server.getInstance(port);
@@ -47,17 +46,17 @@ public class ServerClientHandler implements Runnable {
     public void run() {
 
         int SetIDUser = 0;
-        Player player = new Player();
 
         while (socketToClient.isConnected()) {
             try {
+                Thread.sleep(300);
                 final Object messagefromClient = inputStream.readObject();
+                Thread.sleep(300);
 
                 // Forward message from server to interpreter
                 Interpreter InterpretServerMessage = new Interpreter();
                 String answerToClientString = InterpretServerMessage.interpretServerMsg(messagefromClient.toString());
                 server.forwardMessage(answerToClientString, this);
-                System.out.println("Server to Client: " + answerToClientString);
 
                 // Define ID for users directly after connecting
                 if(SetIDUser == 0) {
@@ -69,17 +68,12 @@ public class ServerClientHandler implements Runnable {
                     SetIDUser = 2;
                 }
 
-                //server.forwardMessage("PlayerOneHand" + player.getPlayerOneHand(), this);
-
-                //server.removeClient(this);
-
-                //System.out.println("Received Message from client ("+socketToClient.hashCode()+"): " + messagefromClient);
-                //server.forwardMessage("client ("+socketToClient.hashCode()+"):" + messagefromClient, this);
-            } catch (IOException e) {
+           } catch (IOException e) {
                 e.printStackTrace();
-                Server.getInstance(port).removeClient(this);
                 break;
             } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }

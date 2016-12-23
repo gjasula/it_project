@@ -17,7 +17,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Author Nadine
+ * @Author Nadine
  */
 
 public class ServerView {
@@ -82,7 +82,6 @@ public class ServerView {
         svbox = new VBox(SWelcome, SStart);
         svbox.setAlignment(Pos.TOP_LEFT);
 
-
         //  ------------------- Retangle definieren und zu Stackpane hinzufügen  -------------------
         rect = new Rectangle(505, 50);
         rect.setFill(Color.rgb(160, 160, 160, 0.4));
@@ -100,9 +99,6 @@ public class ServerView {
         border.setCenter(vbox);
         border.setTop(stack);
         border.setBottom(SGroup);
-
-        // Beispiel für einen Listener
-        //PortServer.textProperty().addListener((observable, oldValue, newValue) -> txtLog.appendText("test" + newline));
 
         //  -------------------BorderPane zu Scene hinzufügen und Fenstergrösse setzen-------------------
         scene = new Scene(border, 1024, 450);
