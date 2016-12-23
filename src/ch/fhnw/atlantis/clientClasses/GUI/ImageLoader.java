@@ -5,7 +5,7 @@ import javafx.scene.image.Image;
 import java.io.FileNotFoundException;
 
 /**
- * Created by js on 13.11.2016.
+ * @author Juerg
  */
 public class ImageLoader {
     private PlayerClient playerClient;

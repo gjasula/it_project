@@ -3,7 +3,7 @@ package ch.fhnw.atlantis.clientClasses.GUI;
 import java.io.FileNotFoundException;
 
 /**
- * Created by js on 02.11.2016.
+ * @author Juerg
  */
 public class GameBoardController {
 
@@ -51,7 +51,6 @@ public class GameBoardController {
         // Das ist der Plättchen eintauschen Button
         view.getBtnPlayTile().setOnAction(event -> {
             view.sendPathTileExchange();
-            // DAS HIER DANACH EINFèGEN SONST KANN ER IMMER BEWEGUNGSPLàTTCHEN EINTAUSCHEN
             playerClient.PathTileExchanged++;
 
         });

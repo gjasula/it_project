@@ -12,7 +12,7 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 /**
- * Author Nadine
+ * @Author Nadine
  *
  * ist für die Präsentation der Daten zuständig
  * organisiert und speichert alle Elemente des GUI's

@@ -42,10 +42,8 @@ public class LogInController {
 
                 try {
                     Thread.sleep(1000);
-                    //if (isConnectedclient == 1){
                         MenuController menuController = new MenuController(model);
                         menuController.show();
-                    //}
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

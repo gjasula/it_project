@@ -21,6 +21,9 @@ import java.util.concurrent.TimeUnit;
 
 import static ch.fhnw.atlantis.clientClasses.GUI.ImageLoader.getImage;
 
+/**
+ * @author Juerg
+ */
 
 public class GameBoardView extends Pane {
     private PlayerClient playerClient;
@@ -149,12 +152,6 @@ public class GameBoardView extends Pane {
             gameBoard.getRowConstraints().add(rc);
         }
 
-        // Filling the labels of each Tile with the Serverside-created ArrayList
-        for(int i=0; i<55; i++){
-            // Label label = new Label(GameBoard.aLArray[i].get(0).toString());
-            //LabelsArray.add(label);
-        }
-
         pawnP1 = new Label(Pawn1);
         pawnP2 = new Label(Pawn2);
         pawnP3 = new Label(Pawn3);
@@ -253,11 +250,9 @@ public class GameBoardView extends Pane {
 
         gameBoard.setGridLinesVisible(false);
 
-
         // alle Inhalte in die Gridpanes holen mit getChildren
         gameBoard.getChildren().addAll(start, btnBuyCard, btnFinishTurn, btnNextCard, btnNextTile, btnPlayCard, btnPlayTile, cardPane, tilePane, end, pos1, pos2, pos3, pos4, pos5, pos6, pos7, pos8, pos9, pos10, pos11, pos12, pos13, pos14, pos15, pos16, pos17, pos18, pos19, pos20, pos21, pos22, pos23, pos24, pos25, pawnP1, pawnP2, pawnP3, pawnP4);
         playerGrid.getChildren().addAll(player1, player2, p1, p2, pointsP1, pointsP2);
-
 
         // ------------------- BorderPane erstellen und HBox, VBox, Gameboard und playerGrid hinzufügen -------------------
         BorderPane gBPane = new BorderPane();
@@ -271,7 +266,6 @@ public class GameBoardView extends Pane {
         // ------------------- BorderPane zu Scene hinzufügen und Fenstergrösse setzen -------------------
         scene = new Scene(gBPane, 1024, 640);
 
-        //drawPawns();
     }
 
     // ------------------- View der Stage bekannt geben -------------------

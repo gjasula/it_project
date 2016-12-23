@@ -5,7 +5,7 @@ import java.net.Socket;
 import java.net.SocketTimeoutException;
 
 /**
- * Created by Daniel on 02.12.2016.
+ * Created by Daniel
  */
 public class ClientComSocket implements Runnable {
 

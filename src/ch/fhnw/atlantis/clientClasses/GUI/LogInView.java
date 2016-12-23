@@ -86,7 +86,6 @@ public class LogInView {
         // ------------------- Buttons erstellen -------------------
         btnConnect = new Button("SERVER VERBINDEN");
         btnClose = new Button("SCHLIESSEN");
-        // btnAltConnect = new Button("ALTERNATIV SERVER");
 
         // ------------------- Labels erstellen -------------------
         IPLabel = new Label("IP Adresse");

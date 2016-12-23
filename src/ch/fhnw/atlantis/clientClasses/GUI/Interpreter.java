@@ -3,7 +3,7 @@ package ch.fhnw.atlantis.clientClasses.GUI;
 import java.io.FileNotFoundException;
 
 /**
- * Created by Richard on 10/12/2016.
+ * @Author Richard
  */
 public class Interpreter {
 

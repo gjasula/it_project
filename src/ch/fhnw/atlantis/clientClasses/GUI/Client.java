@@ -1,7 +1,7 @@
 package ch.fhnw.atlantis.clientClasses.GUI;
 
 /**
- * Created by Daniel on 18.11.2016.
+ * @author Daniel
  */
 
 import java.io.*;

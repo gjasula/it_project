@@ -1,7 +1,7 @@
 package ch.fhnw.atlantis.clientClasses.GUI;
 
 /**
- * Created by Richard on 18/12/2016.
+ * @author Richard
  * Diese Klasse wandelt z.B. MV_Blue in card_Blue.jpg um.
  * Sie wird im ImageLoader verwendet um die Hand vom Spieler in Bilder umzwandeln damit diese dargestellt werden können.
  */
