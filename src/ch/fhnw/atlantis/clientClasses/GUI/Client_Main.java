@@ -38,22 +38,10 @@ public class Client_Main extends Application {
     public void start(final Stage primaryStage) throws FileNotFoundException {
         Model model = new Model(primaryStage);
 
-        //System.out.println("TileDeck contains (with additional waterTile: " + GameBoard.getTileDeck().getTiles().size());
-        //model.getTileDeck().getTiles().remove(12);
-        //System.out.println("TileDeck now contains: " + model.getTileDeck().getTiles().size());
-       // GameBoardView view = new GameBoardView(model);
+        LogInController logInController = new LogInController(model);
+        logInController.show();
 
-      LogInController logInController = new LogInController(model);
-      logInController.show();
-
-        //GameBoardController gbCon = new GameBoardController(model);
-        //gbCon.show();
-
-        // Richy! Needed to start Game
-        //PlayerClient playerClient = new PlayerClient();
-        //playerClient.sendMessageToServer("StartGame");
-
-    primaryStage.setOnCloseRequest(event -> {
+        primaryStage.setOnCloseRequest(event -> {
         event.consume();
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION,
                 "Soll Atlantis wirklich beendet werden?", ButtonType.YES, ButtonType.NO);
