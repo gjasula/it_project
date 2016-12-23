@@ -20,7 +20,7 @@ public class PlayerClient{
 
     public Client client;
     public static int PlayerID = 0;
-    public static int PlayersTurn = 1; // Welcher Spiler ist am Zug?
+    public static int PlayersTurn = 2; // Welcher Spiler ist am Zug?
     public static int MovementCardPlayed = 1;
     public static int PathTileExchanged = 1;
     public static int PlayerWon = 0;
