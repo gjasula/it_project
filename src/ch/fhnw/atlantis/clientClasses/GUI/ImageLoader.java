@@ -1,4 +1,4 @@
-package ch.fhnw.atlantis.clientClasses;
+package ch.fhnw.atlantis.clientClasses.GUI;
 
 import javafx.scene.image.Image;
 

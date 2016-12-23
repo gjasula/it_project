@@ -1,4 +1,4 @@
-package ch.fhnw.atlantis.clientClasses;
+package ch.fhnw.atlantis.clientClasses.GUI;
 
 import javafx.application.Application;
 import javafx.application.Platform;

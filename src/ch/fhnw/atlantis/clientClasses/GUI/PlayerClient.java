@@ -1,4 +1,4 @@
-package ch.fhnw.atlantis.clientClasses;
+package ch.fhnw.atlantis.clientClasses.GUI;
 
 import java.util.ArrayList;
 import java.util.Arrays;

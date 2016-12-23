@@ -1,6 +1,6 @@
 package ch.fhnw.atlantis.serverClasses.serverClasses.GUI;
 
-import ch.fhnw.atlantis.clientClasses.Model;
+import ch.fhnw.atlantis.clientClasses.GUI.Model;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
