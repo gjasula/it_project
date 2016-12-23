@@ -23,7 +23,6 @@ public class MenuView {
     private Scene scene;
     private BorderPane gmpane;
     private GridPane grid;
-    private Stage gameMenu_stage;
 
     private Button btnStartGame;
     private Button btnOptions;
@@ -59,7 +58,6 @@ public class MenuView {
     private Image Flag_GB;
     private Image Flag_Germany;
     private Image Flag_Switzerland;
-    private Image Flag1;
     private ImageView iview1;
     private ImageView iview2;
     private ImageView iview3;
@@ -194,7 +192,7 @@ public class MenuView {
         grid.setConstraints(player1, 0, 0);
         grid.setHalignment(player1, HPos.CENTER);
         player2 = new Label("\ue7FD");
-        grid.setConstraints(player2, 1, 0);
+        grid.setConstraints(player2, 2, 0);
         grid.setHalignment(player2, HPos.CENTER);
         player3 = new Label("\ue7FD");
         grid.setConstraints(player3, 2, 0);
@@ -207,7 +205,7 @@ public class MenuView {
         p1 = new Label("Spieler 1");
         grid.setConstraints(p1, 0, 1);
         p2 = new Label("Spieler 2");
-        grid.setConstraints(p2, 1, 1);
+        grid.setConstraints(p2, 2, 1);
         p3 = new Label("Spieler 3");
         grid.setConstraints(p3, 2, 1);
         p4 = new Label("Spieler 4");
@@ -220,7 +218,7 @@ public class MenuView {
         grid.setHgap(150);
         grid.setGridLinesVisible(false);
         // alle Inhalte ins Grid holen mit getChildren
-        grid.getChildren().addAll(player1, player2, player3, player4, p1, p2, p3, p4);
+        grid.getChildren().addAll(player1, player2, p1, p2);
 
         // ------------------- Audio Effekt-------------------
 
@@ -285,30 +283,6 @@ public class MenuView {
 
     public void setScene(Scene scene) {
         this.scene = scene;
-    }
-
-    public BorderPane getGmpane() {
-        return gmpane;
-    }
-
-    public void setGmpane(BorderPane gmpane) {
-        this.gmpane = gmpane;
-    }
-
-    public GridPane getGrid() {
-        return grid;
-    }
-
-    public void setGrid(GridPane grid) {
-        this.grid = grid;
-    }
-
-    public Stage getGameMenu_stage() {
-        return gameMenu_stage;
-    }
-
-    public void setGameMenu_stage(Stage gameMenu_stage) {
-        this.gameMenu_stage = gameMenu_stage;
     }
 
     public Button getBtnStartGame() {
@@ -383,22 +357,6 @@ public class MenuView {
         this.btnSprache3 = btnSprache3;
     }
 
-    public GridPane getMainMenu() {
-        return MainMenu;
-    }
-
-    public void setMainMenu(GridPane mainMenu) {
-        this.MainMenu = mainMenu;
-    }
-
-    public GridPane getSubMenu() {
-        return SubMenu;
-    }
-
-    public void setSubMenu(GridPane subMenu) {
-        this.SubMenu = subMenu;
-    }
-
     public Label getP1() {
         return p1;
     }
@@ -461,86 +419,6 @@ public class MenuView {
 
     public void setPlayer4(Label player4) {
         this.player4 = player4;
-    }
-
-    public Label getMenuIconStart() {
-        return menuIconStart;
-    }
-
-    public void setMenuIconStart(Label menuIconStart) {
-        this.menuIconStart = menuIconStart;
-    }
-
-    public Label getMenuIconOpt() {
-        return menuIconOpt;
-    }
-
-    public void setMenuIconOpt(Label menuIconOpt) {
-        this.menuIconOpt = menuIconOpt;
-    }
-
-    public Label getMenuIconPlayer() {
-        return menuIconPlayer;
-    }
-
-    public void setMenuIconPlayer(Label menuIconPlayer) {
-        this.menuIconPlayer = menuIconPlayer;
-    }
-
-    public Label getMenuIconRule() {
-        return menuIconRule;
-    }
-
-    public void setMenuIconRule(Label menuIconRule) {
-        this.menuIconRule = menuIconRule;
-    }
-
-    public Label getMenuIconExit() {
-        return menuIconExit;
-    }
-
-    public void setMenuIconExit(Label menuIconExit) {
-        this.menuIconExit = menuIconExit;
-    }
-
-    public Label getMenuIconBack() {
-        return menuIconBack;
-    }
-
-    public void setMenuIconBack(Label menuIconBack) {
-        this.menuIconBack = menuIconBack;
-    }
-
-    public Image getFlag_GB() {
-        return Flag_GB;
-    }
-
-    public void setFlag_GB(Image flag_GB) {
-        Flag_GB = flag_GB;
-    }
-
-    public Image getFlag_Germany() {
-        return Flag_Germany;
-    }
-
-    public void setFlag_Germany(Image flag_Germany) {
-        Flag_Germany = flag_Germany;
-    }
-
-    public Image getFlag_Switzerland() {
-        return Flag_Switzerland;
-    }
-
-    public void setFlag_Switzerland(Image flag_Switzerland) {
-        Flag_Switzerland = flag_Switzerland;
-    }
-
-    public Image getFlag1() {
-        return Flag1;
-    }
-
-    public void setFlag1(Image flag1) {
-        Flag1 = flag1;
     }
 
     public ImageView getIview1() {

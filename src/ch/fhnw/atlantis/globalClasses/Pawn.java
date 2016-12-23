@@ -12,7 +12,7 @@ import java.io.Serializable;
 
 public class Pawn extends Rectangle implements Serializable {
 
-    //private static final long serialVersionUID = 1;
+    private static final long serialVersionUID = 1;
     private double x;
     private double y;
     private int pathId;
@@ -29,13 +29,6 @@ public class Pawn extends Rectangle implements Serializable {
         else {
 
         }
-    }
-
-    public void move(double x, double y) {
-        this.setLayoutX(x);
-        this.setLayoutY(y);
-        this.x = x;
-        this.y = y;
     }
 
     public void setPathId(int pathId) {

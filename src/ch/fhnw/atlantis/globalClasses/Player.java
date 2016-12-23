@@ -19,7 +19,6 @@ public class Player implements Serializable {
     //private static final long serialVersionUID = 1;
 
     private ArrayList<Pawn> pawns;
-    private ArrayList<Card> movementCards;
     private String playerName;
     private String gameName;
     private int playerID;

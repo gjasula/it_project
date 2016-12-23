@@ -13,7 +13,11 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
+
+import java.net.URL;
 
 /**
  * Author: Nadine
@@ -140,7 +144,7 @@ public class LogInView {
         grid.setGridLinesVisible(false);
 
         // alle Inhalte ins Grid holen mit getChildren
-        grid.getChildren().addAll(player1, player2, player3, player4, p1, p2, p3, p4, lbl3);
+        grid.getChildren().addAll(lbl3);
 
         // ------------------- BorderPane erstellen und HBox, VBox, Grid hinzufügen -------------------
         BorderPane welcome_pane = new BorderPane();
@@ -158,6 +162,7 @@ public class LogInView {
 
     // ------------------- View der Stage bekannt geben -------------------
     public void show(Stage stage) {
+
         stage.setTitle("Atlantis by Team Gerstenland");
         stage.setResizable(false);                              // Fenstergrösse nicht veränderbar
         stage.setScene(scene);

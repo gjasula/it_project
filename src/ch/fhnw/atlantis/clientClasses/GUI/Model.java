@@ -20,31 +20,14 @@ public class Model {
 
     private TileDeck tileDeck;
 
-    private ArrayList<Player> players;
-    private ArrayList<Tile> tiles;
-    private ArrayList<Card> pathCards;
-    private ArrayList<Card> deck;
-    private Player localPlayer;
-
-    private Hashtable<String, ImageView> htOfImages;
-
-    public GameBoard gameBoard = new GameBoard();
-
     public Model(Stage primaryStage){
 
         tileDeck = new TileDeck();
-
-        // to be deleted?
-        //tileDeck.createTileDeck();
-
-        // Richy's generateTileDeck
-        //tileDeck.generateTileDeck();
 
         this.primaryStage = primaryStage;
     }
 
     // Getter and Setter
-
     public Stage getPrimaryStage(){
         return primaryStage;
     }

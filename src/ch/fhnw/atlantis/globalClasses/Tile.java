@@ -12,20 +12,18 @@ import java.io.Serializable;
 
 public class Tile extends StackPane implements Serializable {
 
-    //private static final long serialVersionUID = 1;
+    private static final long serialVersionUID = 1;
 
     private Color color;
     private int tileNumber;
     private int tileValue;
     private boolean tileInGame;
-    //private boolean isOccupied;
     private boolean isWater;
 
     //Constructor for regular tile
     public Tile(int tileValue, Color color) {
         this.color = color;
         this.tileValue = tileValue;
-        //isOccupied = false;
         tileInGame = true;
         isWater = false;
     }

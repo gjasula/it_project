@@ -154,28 +154,12 @@ public class ServerView {
         }, 0, 1000, TimeUnit.MILLISECONDS);
     }
 
-     public Scene getScene() {
+    public Scene getScene() {
         return scene;
     }
 
     public void setScene(Scene scene) {
         this.scene = scene;
-    }
-
-    public HBox getShbox() {
-        return shbox;
-    }
-
-    public void setShbox(HBox shbox) {
-        this.shbox = shbox;
-    }
-
-    public StackPane getStack() {
-        return stack;
-    }
-
-    public void setStack(StackPane stack) {
-        this.stack = stack;
     }
 
     public Button getBtnConnect_s() {
@@ -194,75 +178,4 @@ public class ServerView {
         this.btnStop_s = btnStop_s;
     }
 
-    public Image getIcon() {
-        return icon;
-    }
-
-    public void setIcon(Image icon) {
-        this.icon = icon;
-    }
-
-    public Image getImg() {
-        return img;
-    }
-
-    public void setImg(Image img) {
-        this.img = img;
-    }
-
-    public ImageView getIview1() {
-        return iview1;
-    }
-
-    public void setIview1(ImageView iview1) {
-        this.iview1 = iview1;
-    }
-
-    public Rectangle getRect() {
-        return rect;
-    }
-
-    public void setRect(Rectangle rect) {
-        this.rect = rect;
-    }
-
-    public VBox getSvbox() {
-        return svbox;
-    }
-
-    public void setSvbox(VBox svbox) {
-        this.svbox = svbox;
-    }
-
-    public BorderPane getBorder() {
-        return border;
-    }
-
-    public void setBorder(BorderPane border) {
-        this.border = border;
-    }
-
-    public Label getSWelcome() {
-        return SWelcome;
-    }
-
-    public void setSWelcome(Label SWelcome) {
-        this.SWelcome = SWelcome;
-    }
-
-    public Label getSGroup() {
-        return SGroup;
-    }
-
-    public void setSGroup(Label SGroup) {
-        this.SGroup = SGroup;
-    }
-
-    public Label getSStart() {
-        return SStart;
-    }
-
-    public void setSStart(Label SStart) {
-        this.SStart = SStart;
-    }
 }

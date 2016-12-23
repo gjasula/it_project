@@ -4,6 +4,11 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+
+import java.io.File;
+import java.net.URL;
 import java.util.Optional;
 
 /**
@@ -18,10 +23,17 @@ public class LogInController {
     private Model model;
     private LogInView view;
     PlayerClient playerClient = new PlayerClient();
+    //private String musicFile = "/ch/fhnw/atlantis/resources/music/atlantismenumusic.ogg";
+
+    //final URL resource = getClass().getResource("");
 
     public LogInController(Model model) {
         this.model = model;
         this.view = new LogInView();
+
+        //Media media = new Media(new File(musicFile).toURI().toString());
+        //final MediaPlayer mediaPlayer = new MediaPlayer(media);
+        //mediaPlayer.play();
 
         view.getBtnConnect().setOnAction(new EventHandler<ActionEvent>(){
             @Override
