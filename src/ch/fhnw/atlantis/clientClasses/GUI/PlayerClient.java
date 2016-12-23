@@ -20,7 +20,7 @@ public class PlayerClient{
 
     public Client client;
     public static int PlayerID = 0;
-    public static int PlayersTurn = 2; // Welcher Spiler ist am Zug?
+    public static int PlayersTurn = 2; // Welcher Spiler ist am Zug? 2 weil dieser das Spiel für Player 1 startet.
     public static int MovementCardPlayed = 1;
     public static int PathTileExchanged = 1;
     public static int PlayerWon = 0;
@@ -105,8 +105,9 @@ public class PlayerClient{
 
     // Prüft ob man an der Reihe ist.
     // Falls die PlayerID mit dem globalen PlayersTurn übereinstimmt ist man am zug.
-    public boolean isItMyTurn(){
+    public boolean isItMyTurn() throws InterruptedException {
         if(PlayerID == PlayersTurn){
+            Thread.sleep(3000);
             return false;
         }
         else {
@@ -114,8 +115,9 @@ public class PlayerClient{
         }
     }
 
-    public boolean isItMyTurnMovementCard(){
+    public boolean isItMyTurnMovementCard() throws InterruptedException {
         if(PlayerID == PlayersTurn && PlayersTurn == MovementCardPlayed){
+            Thread.sleep(3000);
             return false;
         }
         else {
@@ -123,8 +125,9 @@ public class PlayerClient{
         }
     }
 
-    public boolean isItMyTurnPathTile(){
+    public boolean isItMyTurnPathTile() throws InterruptedException {
         if(PlayerID == PlayersTurn && PlayersTurn == PathTileExchanged){
+            Thread.sleep(3000);
             return false;
         }
         else {

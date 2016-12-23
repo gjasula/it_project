@@ -28,7 +28,6 @@ public class GameBoardController {
             view.btnFinishTurn.setDisable(false);
             view.btnBuyCard.setDisable(true);
             view.UpdateGUIThread();
-            System.out.println("asdasd: "+playerClient);
         });
 
         view.getBtnFinishTurn().setOnAction(event -> {
@@ -49,10 +48,9 @@ public class GameBoardController {
             playerClient.MovementCardPlayed++;
         });
 
+        // Das ist der Plättchen eintauschen Button
         view.getBtnPlayTile().setOnAction(event -> {
-            // Das ist Plättchen eintauschen
             view.sendPathTileExchange();
-
             // DAS HIER DANACH EINFèGEN SONST KANN ER IMMER BEWEGUNGSPLàTTCHEN EINTAUSCHEN
             playerClient.PathTileExchanged++;
 
