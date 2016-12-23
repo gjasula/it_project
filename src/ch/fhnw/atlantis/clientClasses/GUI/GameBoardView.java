@@ -318,8 +318,6 @@ public class GameBoardView extends Pane {
                                 UpdateValues();
                             } catch (FileNotFoundException e) {
                                 e.printStackTrace();
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
                             }
                         }
                 );
@@ -327,7 +325,7 @@ public class GameBoardView extends Pane {
         }, 0, 400, TimeUnit.MILLISECONDS);
     }
 
-    public void UpdateValues() throws FileNotFoundException, InterruptedException {
+    public void UpdateValues() throws FileNotFoundException {
         ImageLoader imageLoader = new ImageLoader();
         playerClient = PlayerClient.getInstance();
 
@@ -424,7 +422,7 @@ public class GameBoardView extends Pane {
         PositionYPawnP1 = y;
     }
 
-    public boolean getIfPlayerOneHasWon() throws InterruptedException {
+    public boolean getIfPlayerOneHasWon() {
         if(PlayerOneWon == 1){
             System.exit(0);
             return true;
@@ -433,7 +431,7 @@ public class GameBoardView extends Pane {
         }
     }
 
-    public boolean getIfPlayerTwoHasWon() throws InterruptedException {
+    public boolean getIfPlayerTwoHasWon() {
         if(PlayerTwoWon == 1){
             System.exit(0);
             return true;
