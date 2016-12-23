@@ -17,7 +17,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @Author Nadine
+ * @Author Nadine & Daniel
  */
 
 public class ServerView {

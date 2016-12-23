@@ -10,7 +10,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 
 /**
- * @Author Nadine
+ * @Author Nadine & Daniel
  */
 
 public class ServerController {
