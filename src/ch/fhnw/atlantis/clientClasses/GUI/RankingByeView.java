@@ -29,7 +29,7 @@ public class RankingByeView {
 
     private Button endbtn;
     private Button restartbtn;
-    PlayerClient playerClient = new PlayerClient();
+    //PlayerClient playerClient = new PlayerClient();
 
     public RankingByeView() {
         // ------------------- Buttons -------------------
@@ -37,7 +37,7 @@ public class RankingByeView {
         restartbtn = new Button("NEUES SPIEL");
         // ------------------- Labels -------------------
         lblResult = new Label("");
-        lblEnd = new Label("Das Festland ist erreicht! Das Spiel ist beendet.\n\n\nDer Gewinner nach Punkten ist Spieler " + playerClient.PlayerWon);
+        //lblEnd = new Label("Das Festland ist erreicht! Das Spiel ist beendet.\n\n\nDer Gewinner nach Punkten ist Spieler " + playerClient.PlayerWon);
         lblEnd.setWrapText(true);
 
         lbl = new Label();

@@ -7,11 +7,11 @@ import java.io.FileNotFoundException;
  */
 public class Interpreter {
 
-    PlayerClient playerClient = new PlayerClient();
+    private PlayerClient playerClient;
     DefinePawnPosition definePawnPosition = new DefinePawnPosition();
-    GameBoardView gameBoardView = new GameBoardView();
 
-    public Interpreter() throws FileNotFoundException {
+    public Interpreter() {
+        playerClient = PlayerClient.getInstance();
     }
 
     public String interpretClientMsg(String messagefromServer) throws FileNotFoundException, InterruptedException {
@@ -75,9 +75,12 @@ public class Interpreter {
                     if(messagefromServer.equals("Player1_Position_NotAvailable")){}
                     else{
                         definePawnPosition.setPosition(messagefromServer);
-                        playerClient.sendMessageToServer("GetPlayerOneHand");
-                        playerClient.sendMessageToServer("GetPlayerOneHandTiles");
+                        Thread.sleep(100);
                         playerClient.sendMessageToServer("ReturnGameBoard");
+                        Thread.sleep(100);
+                        playerClient.sendMessageToServer("GetPlayerOneHand");
+                        Thread.sleep(100);
+                        playerClient.sendMessageToServer("GetPlayerOneHandTiles");
                         // Wird benötigt sobald mehr als eine Runde gespielt wird
                         //playerClient.sendMessageToServer("DidAPlayerWinTheGame");
                     }
@@ -87,9 +90,12 @@ public class Interpreter {
                     if(messagefromServer.equals("Player2_Position_NotAvailable")){}
                     else {
                         definePawnPosition.setPosition(messagefromServer);
-                        playerClient.sendMessageToServer("GetPlayerTwoHand");
-                        playerClient.sendMessageToServer("GetPlayerTwoHandTiles");
+                        Thread.sleep(100);
                         playerClient.sendMessageToServer("ReturnGameBoard");
+                        Thread.sleep(100);
+                        playerClient.sendMessageToServer("GetPlayerTwoHand");
+                        Thread.sleep(100);
+                        playerClient.sendMessageToServer("GetPlayerTwoHandTiles");
                         // Wird benötigt sobald mehr als eine Runde gespielt wird
                         //playerClient.sendMessageToServer("DidAPlayerWinTheGame");
                     }

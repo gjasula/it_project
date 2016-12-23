@@ -4,11 +4,6 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-
-import java.io.File;
-import java.net.URL;
 import java.util.Optional;
 
 /**
@@ -22,18 +17,14 @@ import java.util.Optional;
 public class LogInController {
     private Model model;
     private LogInView view;
-    PlayerClient playerClient = new PlayerClient();
-    //private String musicFile = "/ch/fhnw/atlantis/resources/music/atlantismenumusic.ogg";
-
-    //final URL resource = getClass().getResource("");
+    PlayerClient playerClient;
 
     public LogInController(Model model) {
         this.model = model;
         this.view = new LogInView();
+        model.playMusic();
 
-        //Media media = new Media(new File(musicFile).toURI().toString());
-        //final MediaPlayer mediaPlayer = new MediaPlayer(media);
-        //mediaPlayer.play();
+        playerClient = PlayerClient.getInstance();
 
         view.getBtnConnect().setOnAction(new EventHandler<ActionEvent>(){
             @Override
@@ -46,16 +37,15 @@ public class LogInController {
                 playerClient.Host = host;
                 playerClient.Port = portInt;
 
-                Client client = new Client();
-                int isConnectedclient= client.connectToServer(host, portInt);
-                client.sendMessagetoServer("StartGame");
+                playerClient.connectToServer(host, portInt);
+                playerClient.sendMessageToServer("StartGame");
 
                 try {
                     Thread.sleep(1000);
-                    if (isConnectedclient == 1){
+                    //if (isConnectedclient == 1){
                         MenuController menuController = new MenuController(model);
                         menuController.show();
-                    }
+                    //}
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

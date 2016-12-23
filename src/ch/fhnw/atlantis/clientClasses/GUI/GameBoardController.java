@@ -7,7 +7,7 @@ import java.io.FileNotFoundException;
  */
 public class GameBoardController {
 
-    PlayerClient playerClient = new PlayerClient();
+    private PlayerClient playerClient;
     public Model model;
     public GameBoardView view;
 
@@ -15,10 +15,12 @@ public class GameBoardController {
         super();
         this.model = model;
         this.view = new GameBoardView();
+        playerClient = PlayerClient.getInstance();
 
         // Eventhandler für Buttons auf dem GameBoard
 
         view.getBtnBuyCard().setOnAction(event -> {
+            playerClient.sendMessageToServer("StartGame");
             view.btnPlayTile.setDisable(false);
             view.btnPlayCard.setDisable(false);
             view.btnNextTile.setDisable(false);
@@ -26,6 +28,7 @@ public class GameBoardController {
             view.btnFinishTurn.setDisable(false);
             view.btnBuyCard.setDisable(true);
             view.UpdateGUIThread();
+            System.out.println("asdasd: "+playerClient);
         });
 
         view.getBtnFinishTurn().setOnAction(event -> {
@@ -73,12 +76,6 @@ public class GameBoardController {
         view.getPawnP4().getStyleClass().add("Pawn-P4");
     }
 
-    public void GameFinish(){
-        if(playerClient.PlayerWon > 0){
-            RangkingByeController rangkingByeController = new RangkingByeController(model);
-            rangkingByeController.show();
-        }
-    }
 
     public void getBtnPlayCard(){
         view.playMovementCard();

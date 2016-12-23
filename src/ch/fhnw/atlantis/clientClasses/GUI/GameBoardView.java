@@ -14,12 +14,16 @@ import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
+import static ch.fhnw.atlantis.clientClasses.GUI.ImageLoader.getImage;
+
 
 public class GameBoardView extends Pane {
+    private PlayerClient playerClient;
 
     //-------------------- All Panes -----------------------------------
     private BorderPane gBPane;
@@ -72,6 +76,8 @@ public class GameBoardView extends Pane {
     public static String Pawn4 = "\ue80C";
 
     public GameBoardView() throws FileNotFoundException {
+
+        playerClient = PlayerClient.getInstance();
 
         maxColIndex = 16;
         maxRowIndex = 10;
@@ -321,7 +327,7 @@ public class GameBoardView extends Pane {
 
     public void UpdateValues() throws FileNotFoundException {
         ImageLoader imageLoader = new ImageLoader();
-        PlayerClient playerClient = new PlayerClient();
+        playerClient = PlayerClient.getInstance();
 
             // Hand Wegplättchen Anzeigen
             tilePane.setBackground(new Background(new BackgroundImage(imageLoader.getPlayerPathTileHand(DisplayPathTile),
@@ -335,8 +341,6 @@ public class GameBoardView extends Pane {
             gameBoard.setConstraints(pawnP2, PositionXPawnP2, PositionYPawnP2);
 
             // Pawn im Ziel
-            //getPlayerOneOnLand();
-            //getPlayerTwoOnLand();
             pointsP1.setVisible(getIfPlayerOneHasWon());
             pointsP2.setVisible(getIfPlayerTwoHasWon());
             setPawnP1("X");
@@ -403,13 +407,13 @@ public class GameBoardView extends Pane {
     }
 
     public String getDisplayPathTile(){
-        PlayerClient playerClient = new PlayerClient();
+        playerClient = PlayerClient.getInstance();
         return playerClient.getPlayerPathTileHandGUI(DisplayPathTile);
         //return DisplayPathTile;
     }
 
     public void sendPathTileExchange(){
-        PlayerClient playerClient = new PlayerClient();
+        playerClient = PlayerClient.getInstance();
         playerClient.addPlayerToString("ExchangePathTileValue_"+getDisplayPathTile());
     }
 
@@ -440,7 +444,7 @@ public class GameBoardView extends Pane {
     }
 
     public void playMovementCard() {
-        PlayerClient playerClient = new PlayerClient();
+        playerClient = PlayerClient.getInstance();
         playerClient.getMovementCardNameFromArrayNumber(DisplayMovementCard);
     }
 

@@ -7,11 +7,8 @@ import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
 import java.net.URISyntaxException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Hashtable;
-import java.util.Locale;
-import java.util.ResourceBundle;
 
 /**
  * Created by Nadine on 03.11.2016.
@@ -26,9 +23,13 @@ public class Model {
     private Stage primaryStage = null;
 
     private TileDeck tileDeck;
-
     private Media media;
     private MediaPlayer mediaPlayer;
+    private ArrayList<Player> players;
+    private ArrayList<Tile> tiles;
+    private Player localPlayer;
+
+    private Hashtable<String, ImageView> htOfImages;
 
     public Model(Stage primaryStage){
 
@@ -49,7 +50,12 @@ public class Model {
         mediaPlayer.play();
     }
 
+    public void stopMusic(){
+        mediaPlayer.stop();
+    }
+
     // Getter and Setter
+
     public Stage getPrimaryStage(){
         return primaryStage;
     }

@@ -314,6 +314,9 @@ public class Player implements Serializable {
             serverView.setTxtLog("Player Two has: " + PlayerOnePoints);
         }
 
+        serverView.setTxtLog("Player One has: " + PlayerOnePoints);
+        serverView.setTxtLog("Player Two has: " + PlayerTwoPoints);
+
         if(PlayerOnePoints > PlayerTwoPoints){
             winner = "WinnerPlayer1";
         }else{

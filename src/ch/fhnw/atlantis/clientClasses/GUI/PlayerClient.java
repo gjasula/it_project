@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -13,13 +14,16 @@ import java.util.Optional;
 /**
  * Created by Richard on 16/12/2016.
  */
-public class PlayerClient {
+public class PlayerClient{
 
-    public Client client = new Client();;
+    private static PlayerClient instance;
+
+    public Client client;
     public static int PlayerID = 0;
     public static int PlayersTurn = 1; // Welcher Spiler ist am Zug?
     public static int MovementCardPlayed = 1;
     public static int PathTileExchanged = 1;
+    public static int PlayerWon = 0;
     static List<String> PlayersOnLand = new ArrayList<>();
     public static String PlayerOneOnLand = "0";
     public static String PlayerTwoOnLand = "0";
@@ -30,20 +34,31 @@ public class PlayerClient {
         PlayerWon = playerWon;
     }
 
-    public static int PlayerWon = 0;
     static List<String> PlayerOneHandCards = new ArrayList<>();
     static List<String> PlayerTwoHandCards = new ArrayList<>();
     static List<String> PlayerOneHandTiles = new ArrayList<>();
     static List<String> PlayerTwoHandTiles = new ArrayList<>();
     static List<String> PathTileList = new ArrayList<>();
 
+    private PlayerClient() {
+
+    }
+
+    public static PlayerClient getInstance() {
+        if (instance == null ) {
+            instance = new PlayerClient();
+        }
+        return instance;
+    }
+
     public void sendMessageToServer(String msg){
-        //if(client == null){
-            //client = new Client();
-            client.connectToServer(Host, Port);
-        //}
         client.sendMessagetoServer(msg);
         System.out.println("Sending this to server: "+msg);
+    }
+
+    public void connectToServer(String Host, int Port){
+        client = new Client();
+        client.connectToServer(Host, Port);
     }
 
     public void setPlayerOnLand(String OnLand){

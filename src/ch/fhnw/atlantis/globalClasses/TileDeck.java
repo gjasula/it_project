@@ -17,34 +17,6 @@ public class TileDeck {
     static int LastPathTile;
 
     /**
-     * creates ArrayList with all tiles that have a color and a number (no watertiles)
-     */
-    public void createTileDeck() {
-        for (int i = 1; i < 8; i++) {
-            tileDeck.add(new Tile(i, Color.BLUE));
-        }
-        for (int i = 1; i < 8; i++) {
-            tileDeck.add(new Tile(i, Color.BROWN));
-        }
-        for (int i = 1; i < 8; i++) {
-            tileDeck.add(new Tile(i, Color.GREEN));
-        }
-        for (int i = 1; i < 8; i++) {
-            tileDeck.add(new Tile(i, Color.GRAY));
-        }
-        for (int i = 1; i < 8; i++) {
-            tileDeck.add(new Tile(i, Color.PINK));
-        }
-        for (int i = 1; i < 8; i++) {
-            tileDeck.add(new Tile(i, Color.WHITE));
-        }
-        for (int i = 1; i < 8;  i++) {
-            tileDeck.add(new Tile(i, Color.YELLOW));
-        }
-        Collections.shuffle(tileDeck);
-    }
-
-    /**
      * creates ArrayList with 42 watertiles in it
      */
     public void createWaterTileDeck() {
@@ -65,6 +37,9 @@ public class TileDeck {
 
     public String getGameBoard(){
         String GameBoard = "";
+        //for(String s : tileDeckString){
+        //    GameBoard += s+",";
+        //}
 
         for( int i = 0 ; i < tileDeckString.size() ; i++ )
         {

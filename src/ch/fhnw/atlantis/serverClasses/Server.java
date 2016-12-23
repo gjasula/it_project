@@ -1,5 +1,6 @@
 package ch.fhnw.atlantis.serverClasses;
 
+import ch.fhnw.atlantis.clientClasses.GUI.PlayerClient;
 import com.sun.xml.internal.ws.message.ByteArrayAttachment;
 
 import java.io.IOException;
@@ -45,14 +46,21 @@ public class Server {
     }
 
     public void forwardMessage(String message, ServerClientHandler sender) {
-        Iterator itr = socketList.iterator();
-
-        while (itr.hasNext()) {
+        //Iterator itr = socketList.iterator();
+        for(Iterator itr = socketList.iterator(); itr.hasNext();){
             ServerClientHandler sch = (ServerClientHandler) itr.next();
             //if (!sender.equals(sch)) {
-                sch.send(message);
+            sch.send(message);
             //}
         }
+        
+        //while (itr.hasNext()) {
+//
+        //    ServerClientHandler sch = (ServerClientHandler) itr.next();
+        //    //if (!sender.equals(sch)) {
+        //    sch.send(message);
+        //    //}
+        //}
     }
 
     // Sends message if only one client is connected

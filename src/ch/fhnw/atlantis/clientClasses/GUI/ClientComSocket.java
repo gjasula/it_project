@@ -1,8 +1,6 @@
 package ch.fhnw.atlantis.clientClasses.GUI;
 
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.net.Socket;
 import java.net.SocketTimeoutException;
 
@@ -29,7 +27,10 @@ public class ClientComSocket implements Runnable {
     public void send(String message){
         try {
             outputStream.writeObject(message);
+            Thread.sleep(200);
         } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
@@ -38,19 +39,22 @@ public class ClientComSocket implements Runnable {
     public void run() {
         while (socketToServer.isConnected()) {
             try {
-                final String messagefromServer = (String) inputStream.readObject();
-                //System.out.println("Received Message from server: " + messagefromServer);
+                Thread.sleep(300);
+                final Object messagefromServer = inputStream.readObject();
+                Thread.sleep(300);
+                System.out.println("Received Message from server: " + messagefromServer);
+                Thread.sleep(300);
 
                 // Forward message to interpreter
                 Interpreter InterpretClientMessage = new Interpreter();
-                InterpretClientMessage.interpretClientMsg(messagefromServer);
+                InterpretClientMessage.interpretClientMsg(messagefromServer.toString());
 
             } catch (IOException e) {
                 e.printStackTrace();
                 break;
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
             } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             }
         }

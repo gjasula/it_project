@@ -13,12 +13,15 @@ import java.util.Optional;
  */
 
 public class MenuController {
+    private PlayerClient playerClient;
     private Model model;
     private MenuView view;
 
     public MenuController(Model model) {
         this.model = model;
         this.view = new MenuView();
+        playerClient = PlayerClient.getInstance();
+
 
         // ------------------- Eventhandler registrieren Hauptmenu -------------------
         view.getBtnRules().setOnAction(new btnRulesEventHandler());
@@ -93,7 +96,7 @@ public class MenuController {
      ------------------------------------- -------------------*/
     public void GameCharacter1EventHandler() throws FileNotFoundException {
         GameBoardView gameBoardView = new GameBoardView();
-        PlayerClient playerClient = new PlayerClient();
+        playerClient = PlayerClient.getInstance();
 
         if(playerClient.PlayerID == 1){
             gameBoardView.setPawnP1("1");
@@ -104,7 +107,7 @@ public class MenuController {
 
     public void GameCharacter2EventHandler() throws FileNotFoundException {
         GameBoardView gameBoardView = new GameBoardView();
-        PlayerClient playerClient = new PlayerClient();
+        playerClient = PlayerClient.getInstance();
 
         if(playerClient.PlayerID == 1){
             gameBoardView.setPawnP1("2");
@@ -115,7 +118,7 @@ public class MenuController {
 
     public void GameCharacter3EventHandler() throws FileNotFoundException {
         GameBoardView gameBoardView = new GameBoardView();
-        PlayerClient playerClient = new PlayerClient();
+        playerClient = PlayerClient.getInstance();
 
         if(playerClient.PlayerID == 1){
             gameBoardView.setPawnP1("3");
@@ -126,7 +129,7 @@ public class MenuController {
 
     public void GameCharacter4EventHandler() throws FileNotFoundException {
         GameBoardView gameBoardView = new GameBoardView();
-        PlayerClient playerClient = new PlayerClient();
+        playerClient = PlayerClient.getInstance();
         if(playerClient.PlayerID == 1){
             gameBoardView.setPawnP1("4");
         }else{
@@ -223,7 +226,7 @@ public class MenuController {
                     e.printStackTrace();
                 }
                 gbCon.show();
-
+                model.stopMusic();
             }
         }
   }

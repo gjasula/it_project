@@ -2,6 +2,7 @@ package ch.fhnw.atlantis.serverClasses;
 
 
 import ch.fhnw.atlantis.globalClasses.Player;
+import ch.fhnw.atlantis.globalClasses.TileDeck;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -50,11 +51,11 @@ public class ServerClientHandler implements Runnable {
 
         while (socketToClient.isConnected()) {
             try {
-                final String messagefromClient = (String) inputStream.readObject();
+                final Object messagefromClient = inputStream.readObject();
 
                 // Forward message from server to interpreter
                 Interpreter InterpretServerMessage = new Interpreter();
-                String answerToClientString = InterpretServerMessage.interpretServerMsg(messagefromClient);
+                String answerToClientString = InterpretServerMessage.interpretServerMsg(messagefromClient.toString());
                 server.forwardMessage(answerToClientString, this);
                 System.out.println("Server to Client: " + answerToClientString);
 
