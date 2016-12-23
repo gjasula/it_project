@@ -1,7 +1,6 @@
 package ch.fhnw.atlantis.serverClasses.serverClasses.GUI;
 
 import ch.fhnw.atlantis.clientClasses.GUI.Model;
-import ch.fhnw.atlantis.serverClasses.Server;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
@@ -12,6 +11,7 @@ import javafx.stage.Stage;
  */
 
 public class ServerMain extends Application {
+
        public static void main(String[] args) {
         launch(args);
     }

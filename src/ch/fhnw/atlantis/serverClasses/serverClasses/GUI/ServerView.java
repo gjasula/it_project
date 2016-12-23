@@ -8,7 +8,6 @@ import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -41,9 +40,6 @@ public class ServerView {
     private Label SGroup;
     private Label SStart;
 
-    private Image icon;
-    private Image img;
-    private ImageView iview1;
     private Rectangle rect;
 
     private final static String newline = "\n";
