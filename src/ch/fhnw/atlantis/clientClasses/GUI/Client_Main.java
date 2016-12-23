@@ -21,7 +21,7 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 
 /**
- * Created by Nadine on 12.10.2016.
+ * Created by Nadine
  * Hauptklasse JavaFX Applikation erbt von javafx.application.Application
  * Einstiegspunkt für JavaFx Anwendung - Stage stage zuweisung "Bühne"
  * Initialisiert das ch.fhnw.atlantis.clientClasses.GUI.Model
