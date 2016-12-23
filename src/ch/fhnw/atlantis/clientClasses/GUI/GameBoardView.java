@@ -422,8 +422,6 @@ public class GameBoardView extends Pane {
 
     public boolean getIfPlayerOneHasWon() throws InterruptedException {
         if(PlayerOneWon == 1){
-            Thread.sleep(5000);
-            System.exit(0);
             return true;
         }else{
             return false;
@@ -432,8 +430,6 @@ public class GameBoardView extends Pane {
 
     public boolean getIfPlayerTwoHasWon() throws InterruptedException {
         if(PlayerTwoWon == 1){
-            Thread.sleep(5000);
-            System.exit(0);
             return true;
         }else{
             return false;
