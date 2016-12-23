@@ -107,7 +107,6 @@ public class PlayerClient{
     // Falls die PlayerID mit dem globalen PlayersTurn übereinstimmt ist man am zug.
     public boolean isItMyTurn() throws InterruptedException {
         if(PlayerID == PlayersTurn){
-            Thread.sleep(3000);
             return false;
         }
         else {
@@ -117,7 +116,6 @@ public class PlayerClient{
 
     public boolean isItMyTurnMovementCard() throws InterruptedException {
         if(PlayerID == PlayersTurn && PlayersTurn == MovementCardPlayed){
-            Thread.sleep(3000);
             return false;
         }
         else {
@@ -127,7 +125,6 @@ public class PlayerClient{
 
     public boolean isItMyTurnPathTile() throws InterruptedException {
         if(PlayerID == PlayersTurn && PlayersTurn == PathTileExchanged){
-            Thread.sleep(3000);
             return false;
         }
         else {
