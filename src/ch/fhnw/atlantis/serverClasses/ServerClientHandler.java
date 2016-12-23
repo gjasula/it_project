@@ -1,9 +1,7 @@
 package ch.fhnw.atlantis.serverClasses;
 
 
-import ch.fhnw.atlantis.globalClasses.models.Player;
-import ch.fhnw.atlantis.serverClasses.serverClasses.GUI.ServerController;
-import ch.fhnw.atlantis.serverClasses.serverClasses.GUI.ServerView;
+import ch.fhnw.atlantis.globalClasses.Player;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;

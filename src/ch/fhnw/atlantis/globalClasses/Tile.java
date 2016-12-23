@@ -1,4 +1,4 @@
-package ch.fhnw.atlantis.globalClasses.models;
+package ch.fhnw.atlantis.globalClasses;
 
 import javafx.scene.layout.StackPane;
 

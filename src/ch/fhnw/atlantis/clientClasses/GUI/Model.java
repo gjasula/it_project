@@ -1,6 +1,6 @@
 package ch.fhnw.atlantis.clientClasses.GUI;
 
-import ch.fhnw.atlantis.globalClasses.models.*;
+import ch.fhnw.atlantis.globalClasses.*;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import java.util.ArrayList;

@@ -1,12 +1,11 @@
 package ch.fhnw.atlantis.serverClasses;
 
-import ch.fhnw.atlantis.globalClasses.models.Player;
-import ch.fhnw.atlantis.globalClasses.models.TileDeck;
-import ch.fhnw.atlantis.serverClasses.serverClasses.GUI.ServerView;
+import ch.fhnw.atlantis.globalClasses.Player;
+import ch.fhnw.atlantis.globalClasses.TileDeck;
 
 import java.io.FileNotFoundException;
 
-import static ch.fhnw.atlantis.globalClasses.models.Player.*;
+import static ch.fhnw.atlantis.globalClasses.Player.*;
 
 /**
  * Created by Richard on 06/12/2016.

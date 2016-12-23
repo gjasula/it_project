@@ -1,4 +1,4 @@
-package ch.fhnw.atlantis.globalClasses.models;
+package ch.fhnw.atlantis.globalClasses;
 
 /**
  * Created by juerg on 07.12.2016.

@@ -1,8 +1,5 @@
 package ch.fhnw.atlantis.clientClasses.GUI;
 
-import ch.fhnw.atlantis.clientClasses.GUI.ConvertMovementCardToFileName;
-import ch.fhnw.atlantis.clientClasses.GUI.PlayerClient;
-import ch.fhnw.atlantis.globalClasses.models.TileDeck;
 import javafx.scene.image.Image;
 
 import java.io.FileNotFoundException;

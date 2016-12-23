@@ -1,7 +1,5 @@
 package ch.fhnw.atlantis.clientClasses.GUI;
 
-import ch.fhnw.atlantis.globalClasses.models.*;
-
 import javafx.application.Platform;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
@@ -261,7 +259,7 @@ public class GameBoardView extends Pane {
         gBPane.setCenter(gameBoard);
 
         // ------------------- Stylesheets aufrufen -------------------
-        gBPane.getStylesheets().add("/ch/fhnw/atlantis/resources/css/style.css");
+        gBPane.getStylesheets().add("/ch/fhnw/atlantis/resources/css/gameboardstyle.css");
         gBPane.getStylesheets().add("/ch/fhnw/atlantis/resources/css/font.css");
 
         // ------------------- BorderPane zu Scene hinzufügen und Fenstergrösse setzen -------------------

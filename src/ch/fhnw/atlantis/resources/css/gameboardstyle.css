@@ -1,0 +1,65 @@
+.root{
+
+ -fx-background-image: url("../images/background_gameboard.png");
+ -fx-background-repeat: no-repeat;
+ -fx-background-attachment: fixed;
+ -fx-background-position: bottom;
+ -fx-background-opacity: 0.1;
+ }
+
+Label{
+    -fx-text-fill: #3c3c3c;
+    -fx-font-family: "Courier New";
+    -fx-font-size: 18px;
+
+}
+
+#Label-big{
+    -fx-font-family: "Castellar";
+    -fx-font-size: 40px;
+    -fx-font-weight: bold;
+}
+
+#Label-text{
+ -fx-font-size: 15px;
+ -fx-font-weight: bold;
+ -fx-text-fill: #e8e8e8;
+ -fx-text-alignment: center;
+ -fx-font-style: italic;
+ -fx-line-height: 0.8;
+}
+
+Button{
+ -fx-background-color: #ffffff;
+ -fx-font-weight: bold;
+ -fx-font-family: "Courier New";
+ -fx-alignment: Center;
+ -fx-pref-width: 200px;
+}
+
+.button:hover{
+ -fx-background-color: #0000ff;
+ -fx-text-fill: white;
+}
+
+.Playerbefore{
+ -fx-font-family: 'Material Icons';
+ -fx-font-size: 60;
+ -fx-text-fill: #ffffff;
+}
+
+hBox cardPane{
+ -fx-background-color: #ffffff;
+}
+
+.Pawn-P1{
+    -fx-font-family: 'Material Icons';
+    -fx-font-size: 40;
+    -fx-text-fill: #da40ff;
+}
+
+.Pawn-P2{
+    -fx-font-family: 'Material Icons';
+    -fx-font-size: 40;
+    -fx-text-fill: #c00509;
+}

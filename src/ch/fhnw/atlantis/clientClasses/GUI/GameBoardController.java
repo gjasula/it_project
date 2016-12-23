@@ -1,9 +1,5 @@
 package ch.fhnw.atlantis.clientClasses.GUI;
 
-import ch.fhnw.atlantis.globalClasses.models.GameBoard;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-
 import java.io.FileNotFoundException;
 
 /**

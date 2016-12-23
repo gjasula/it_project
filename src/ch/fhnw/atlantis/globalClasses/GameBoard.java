@@ -1,8 +1,7 @@
-package ch.fhnw.atlantis.globalClasses.models;
+package ch.fhnw.atlantis.globalClasses;
 
 import java.lang.reflect.Array;
 import java.util.*;
-import java.util.stream.Collectors;
 
 /**
  * Created by js on 02.11.2016.
