@@ -1,5 +1,5 @@
 package ch.fhnw.atlantis.serverClasses.serverClasses.GUI;
-import ch.fhnw.atlantis.clientClasses.GUI.Model;
+import ch.fhnw.atlantis.clientClasses.Model;
 import ch.fhnw.atlantis.serverClasses.Server;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;

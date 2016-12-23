@@ -1,13 +1,13 @@
 package ch.fhnw.atlantis.serverClasses.serverClasses.GUI;
 
-import ch.fhnw.atlantis.clientClasses.GUI.Model;
+import ch.fhnw.atlantis.clientClasses.Model;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
 /**
  *@Author Nadine
  *Einstiegspunkt für JavaFx Anwendung - Stage stage zuweisung "Bühne"
- *Initialisiert das ch.fhnw.atlantis.clientClasses.GUI.Model
+ *Initialisiert das Model
  */
 
 public class ServerMain extends Application {

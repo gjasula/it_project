@@ -1,4 +1,4 @@
-package ch.fhnw.atlantis.clientClasses.GUI;
+package ch.fhnw.atlantis.clientClasses;
 
 import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;

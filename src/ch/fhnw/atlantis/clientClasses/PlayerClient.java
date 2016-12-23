@@ -1,15 +1,8 @@
-package ch.fhnw.atlantis.clientClasses.GUI;
+package ch.fhnw.atlantis.clientClasses;
 
-import ch.fhnw.atlantis.serverClasses.Server;
-import javafx.event.ActionEvent;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
 /**
  * @author Richard

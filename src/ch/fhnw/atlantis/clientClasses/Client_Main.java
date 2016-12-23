@@ -1,30 +1,19 @@
-package ch.fhnw.atlantis.clientClasses.GUI;
+package ch.fhnw.atlantis.clientClasses;
 
 import javafx.application.Application;
 import javafx.application.Platform;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
-import javafx.scene.control.Label;
-import javafx.scene.layout.StackPane;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 
 import java.io.FileNotFoundException;
-import java.util.Locale;
 import java.util.Optional;
-import java.util.ResourceBundle;
 
 /**
  * Created by Nadine
  * Hauptklasse JavaFX Applikation erbt von javafx.application.Application
  * Einstiegspunkt für JavaFx Anwendung - Stage stage zuweisung "Bühne"
- * Initialisiert das ch.fhnw.atlantis.clientClasses.GUI.Model
+ * Initialisiert das Model
  */
 
 public class Client_Main extends Application {

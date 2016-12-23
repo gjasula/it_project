@@ -1,11 +1,7 @@
 package ch.fhnw.atlantis.serverClasses;
 
-import ch.fhnw.atlantis.clientClasses.GUI.PlayerClient;
-import com.sun.xml.internal.ws.message.ByteArrayAttachment;
-
 import java.io.IOException;
 import java.net.ServerSocket;
-import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;

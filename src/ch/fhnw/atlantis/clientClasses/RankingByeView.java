@@ -1,4 +1,4 @@
-package ch.fhnw.atlantis.clientClasses.GUI;
+package ch.fhnw.atlantis.clientClasses;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;

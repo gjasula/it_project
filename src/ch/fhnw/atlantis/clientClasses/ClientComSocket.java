@@ -1,8 +1,7 @@
-package ch.fhnw.atlantis.clientClasses.GUI;
+package ch.fhnw.atlantis.clientClasses;
 
 import java.io.*;
 import java.net.Socket;
-import java.net.SocketTimeoutException;
 
 /**
  * Created by Daniel

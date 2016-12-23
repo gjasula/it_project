@@ -1,4 +1,4 @@
-package ch.fhnw.atlantis.clientClasses.GUI;
+package ch.fhnw.atlantis.clientClasses;
 
 import javafx.application.Platform;
 import javafx.geometry.HPos;
@@ -14,12 +14,9 @@ import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
-
-import static ch.fhnw.atlantis.clientClasses.GUI.ImageLoader.getImage;
 
 /**
  * @author Juerg

@@ -1,4 +1,4 @@
-package ch.fhnw.atlantis.clientClasses.GUI;
+package ch.fhnw.atlantis.clientClasses;
 
 import ch.fhnw.atlantis.globalClasses.*;
 import javafx.scene.image.ImageView;
@@ -12,7 +12,7 @@ import java.util.Hashtable;
 
 /**
  * @author Nadine
- * ch.fhnw.atlantis.clientClasses.GUI.Model: speichert die wichtigen Elemente des Programms
+ * Model: speichert die wichtigen Elemente des Programms
  *
  * PrimaryStage ist das Hauptanwendungsfenster -
  * braucht es um versch. Views anzuzeigen (damit Fenster nicht immer auf und zu geht merkt sich Programm "PrimaryStage")
