@@ -20,7 +20,7 @@ import javafx.stage.Stage;
 import java.net.URL;
 
 /**
- * Author: Nadine
+ * @Author: Nadine
  *
  * ist für die Präsentation der Daten zuständig
  * organisiert und speichert alle Elemente des GUI's

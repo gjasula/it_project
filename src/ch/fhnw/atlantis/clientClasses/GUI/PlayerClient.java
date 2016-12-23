@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * Created by Richard on 16/12/2016.
+ * @author Richard
  */
 public class PlayerClient{
 

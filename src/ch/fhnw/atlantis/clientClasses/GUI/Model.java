@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Hashtable;
 
 /**
- * Created by Nadine on 03.11.2016.
+ * @author Nadine
  * ch.fhnw.atlantis.clientClasses.GUI.Model: speichert die wichtigen Elemente des Programms
  *
  * PrimaryStage ist das Hauptanwendungsfenster -

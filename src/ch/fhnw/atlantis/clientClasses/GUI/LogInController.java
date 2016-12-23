@@ -7,7 +7,7 @@ import javafx.scene.control.ButtonType;
 import java.util.Optional;
 
 /**
- * Author: Nadine
+ * @Author: Nadine
  *
  * MVC - Vorlage zur Strukturierung von Programmen, notwendig um
  * Programme schnell erweitern zu können und sich schnell einarbeiten - schneller Fehler finden

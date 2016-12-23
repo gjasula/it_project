@@ -11,7 +11,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /**
- * Author Nadine
+ * @Author Nadine
  *
 */
 
@@ -37,7 +37,6 @@ public class RankingByeView {
         restartbtn = new Button("NEUES SPIEL");
         // ------------------- Labels -------------------
         lblResult = new Label("");
-        //lblEnd = new Label("Das Festland ist erreicht! Das Spiel ist beendet.\n\n\nDer Gewinner nach Punkten ist Spieler " + playerClient.PlayerWon);
         lblEnd.setWrapText(true);
 
         lbl = new Label();

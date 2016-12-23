@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 import java.util.Optional;
 
 /**
- * Author Nadine
+ * @Author Nadine
  *
  */
 public class RangkingByeController {

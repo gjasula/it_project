@@ -3,7 +3,7 @@ package ch.fhnw.atlantis.clientClasses.GUI;
 import javafx.stage.Stage;
 
 /**
- * Author Nadine
+ * @Author Nadine
  *
  */
 

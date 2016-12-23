@@ -9,7 +9,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /**
- * Author Nadine
+ * @Author Nadine
  */
 
 public class RulesView {
