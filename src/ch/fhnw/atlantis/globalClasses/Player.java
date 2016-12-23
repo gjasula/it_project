@@ -158,7 +158,6 @@ public class Player implements Serializable {
 
         for( int i = 0 ; i < PlayerOneHandCards.size() ; i++ )
         {
-            //System.out.println(PlayerOneHandCards.get(i));
             StringPlayerOneHandCards += PlayerOneHandCards.get(i) + ",";
         }
         return StringPlayerOneHandCards;
@@ -169,7 +168,6 @@ public class Player implements Serializable {
 
         for( int i = 0 ; i < PlayerTwoHandCards.size() ; i++ )
         {
-            //System.out.println(PlayerOneHandCards.get(i));
             StringPlayerTwoHandCards += PlayerTwoHandCards.get(i) + ",";
         }
         return StringPlayerTwoHandCards;
@@ -181,13 +179,11 @@ public class Player implements Serializable {
         if(Player == 1){
             for( int i = 0 ; i < PlayerOneHandTiles.size() ; i++ )
             {
-                //System.out.println(PlayerOneHandCards.get(i));
                 StringPlayerHandTiles += PlayerOneHandTiles.get(i) + ",";
             }
         }else if(Player == 2){
             for( int i = 0 ; i < PlayerTwoHandTiles.size() ; i++ )
             {
-                //System.out.println(PlayerOneHandCards.get(i));
                 StringPlayerHandTiles += PlayerTwoHandTiles.get(i) + ",";
             }
         }
