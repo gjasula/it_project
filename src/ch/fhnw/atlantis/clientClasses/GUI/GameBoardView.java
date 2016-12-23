@@ -290,7 +290,12 @@ public class GameBoardView extends Pane {
     }
 
     public void UpdatePositiveMovementCard(){
-        DisplayMovementCard ++;
+
+        if(playerClient.PlayerID == 1){
+            DisplayMovementCard = ++DisplayMovementCard % playerClient.PlayerOneHandCards.size();
+        }else if(playerClient.PlayerID == 2){
+            DisplayMovementCard = ++DisplayMovementCard % playerClient.PlayerTwoHandCards.size();
+        }
     }
 
     /** Getter und Setter **/
@@ -309,6 +314,8 @@ public class GameBoardView extends Pane {
                                 UpdateValues();
                             } catch (FileNotFoundException e) {
                                 e.printStackTrace();
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
                             }
                         }
                 );
@@ -316,7 +323,7 @@ public class GameBoardView extends Pane {
         }, 0, 400, TimeUnit.MILLISECONDS);
     }
 
-    public void UpdateValues() throws FileNotFoundException {
+    public void UpdateValues() throws FileNotFoundException, InterruptedException {
         ImageLoader imageLoader = new ImageLoader();
         playerClient = PlayerClient.getInstance();
 
@@ -413,18 +420,20 @@ public class GameBoardView extends Pane {
         PositionYPawnP1 = y;
     }
 
-    public boolean getIfPlayerOneHasWon() {
+    public boolean getIfPlayerOneHasWon() throws InterruptedException {
         if(PlayerOneWon == 1){
             System.exit(0);
+            Thread.sleep(5000);
             return true;
         }else{
             return false;
         }
     }
 
-    public boolean getIfPlayerTwoHasWon() {
+    public boolean getIfPlayerTwoHasWon() throws InterruptedException {
         if(PlayerTwoWon == 1){
             System.exit(0);
+            Thread.sleep(5000);
             return true;
         }else{
             return false;

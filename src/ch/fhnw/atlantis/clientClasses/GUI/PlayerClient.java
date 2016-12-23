@@ -13,7 +13,7 @@ public class PlayerClient{
 
     public Client client;
     public static int PlayerID = 0;
-    public static int PlayersTurn = 2; // Welcher Spiler ist am Zug? 2 weil dieser das Spiel für Player 1 startet.
+    public static int PlayersTurn = 1; // Welcher Spiler ist am Zug? 2 weil dieser das Spiel für Player 1 startet.
     public static int MovementCardPlayed = 1;
     public static int PathTileExchanged = 1;
     public static int PlayerWon = 0;
@@ -182,6 +182,8 @@ public class PlayerClient{
                 nr2 = (long) nr1;
                 MovementCardNumber = (int) (MovementCardNumber - (nr2 * PlayerOneHandCards.size()));
             }
+
+            //int nr1 = MovementCardNumber % PlayerOneHandCards.size();
 
             returnHand = PlayerOneHandCards.get(MovementCardNumber);
         }else if(PlayerID == 2){

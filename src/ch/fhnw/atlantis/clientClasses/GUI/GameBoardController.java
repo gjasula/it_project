@@ -20,7 +20,6 @@ public class GameBoardController {
         // Eventhandler für Buttons auf dem GameBoard
 
         view.getBtnBuyCard().setOnAction(event -> {
-            playerClient.sendMessageToServer("StartGame");
             view.btnPlayTile.setDisable(false);
             view.btnPlayCard.setDisable(false);
             view.btnNextTile.setDisable(false);

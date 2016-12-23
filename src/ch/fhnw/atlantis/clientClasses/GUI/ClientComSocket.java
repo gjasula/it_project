@@ -8,6 +8,7 @@ import java.net.Socket;
  */
 public class ClientComSocket implements Runnable {
 
+    private Object lock = new Object();
     private Socket socketToServer;
     private ObjectInputStream inputStream;
     private ObjectOutputStream outputStream;
@@ -24,13 +25,12 @@ public class ClientComSocket implements Runnable {
     }
 
     public void send(String message){
-        try {
-            outputStream.writeObject(message);
-            Thread.sleep(200);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        synchronized (lock) {
+            try {
+                outputStream.writeObject(message);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -38,11 +38,8 @@ public class ClientComSocket implements Runnable {
     public void run() {
         while (socketToServer.isConnected()) {
             try {
-                Thread.sleep(300);
                 final Object messagefromServer = inputStream.readObject();
-                Thread.sleep(300);
                 System.out.println("Received Message from server: " + messagefromServer);
-                Thread.sleep(300);
 
                 // Forward message to interpreter
                 Interpreter InterpretClientMessage = new Interpreter();

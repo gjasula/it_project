@@ -14,6 +14,7 @@ import java.net.Socket;
  */
 public class ServerClientHandler implements Runnable {
 
+    private Object lock = new Object();
     private Socket socketToClient;
     private ObjectOutputStream outputStream;
     private ObjectInputStream inputStream;
@@ -35,10 +36,12 @@ public class ServerClientHandler implements Runnable {
 
 
     public void send(String message) {
-        try {
-            outputStream.writeObject(message);
-        } catch (IOException e) {
-            e.printStackTrace();
+        synchronized (lock) {
+            try {
+                outputStream.writeObject(message);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -49,9 +52,7 @@ public class ServerClientHandler implements Runnable {
 
         while (socketToClient.isConnected()) {
             try {
-                Thread.sleep(300);
                 final Object messagefromClient = inputStream.readObject();
-                Thread.sleep(300);
 
                 // Forward message from server to interpreter
                 Interpreter InterpretServerMessage = new Interpreter();
@@ -72,8 +73,6 @@ public class ServerClientHandler implements Runnable {
                 e.printStackTrace();
                 break;
             } catch (ClassNotFoundException e) {
-                e.printStackTrace();
-            } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
