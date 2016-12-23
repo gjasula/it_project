@@ -29,10 +29,6 @@ public class GameBoardController {
         });
 
         view.getBtnFinishTurn().setOnAction(event -> {
-            if (playerClient.PlayerWon > 0){
-                RangkingByeController rangkingByeController = new RangkingByeController(model);
-                rangkingByeController.show();
-            }
             playerClient.closeMyTurn();
         });
 
@@ -75,6 +71,13 @@ public class GameBoardController {
         view.getPawnP2().getStyleClass().add("Pawn-P2");
         view.getPawnP3().getStyleClass().add("Pawn-P3");
         view.getPawnP4().getStyleClass().add("Pawn-P4");
+    }
+
+    public void GameFinish(){
+        if(playerClient.PlayerWon > 0){
+            RangkingByeController rangkingByeController = new RangkingByeController(model);
+            rangkingByeController.show();
+        }
     }
 
     public void getBtnPlayCard(){

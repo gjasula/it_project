@@ -53,8 +53,8 @@ public class Interpreter {
                 returnToClient = "PathTileGameBoard_" + tileDeck.getGameBoard();
                 System.out.println(returnToClient);
                 break;
-            case "ReturnPawnOnLand":
-                returnToClient = player.calculateWinner();
+            case "DidAPlayerWinTheGame":
+                returnToClient = player.getWinner();
                 System.out.println(returnToClient);
                 break;
             //// 2DO! This case has to be done for each PT and each Player

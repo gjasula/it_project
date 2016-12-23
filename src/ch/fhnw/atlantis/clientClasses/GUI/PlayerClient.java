@@ -15,7 +15,7 @@ import java.util.Optional;
  */
 public class PlayerClient {
 
-    public Client client;
+    public Client client = new Client();;
     public static int PlayerID = 0;
     public static int PlayersTurn = 1; // Welcher Spiler ist am Zug?
     public static int MovementCardPlayed = 1;
@@ -25,6 +25,11 @@ public class PlayerClient {
     public static String PlayerTwoOnLand = "0";
     public static String Host = "localhost";
     public static int Port = 7777;
+
+    public static void setPlayerWon(int playerWon) {
+        PlayerWon = playerWon;
+    }
+
     public static int PlayerWon = 0;
     static List<String> PlayerOneHandCards = new ArrayList<>();
     static List<String> PlayerTwoHandCards = new ArrayList<>();
@@ -33,10 +38,10 @@ public class PlayerClient {
     static List<String> PathTileList = new ArrayList<>();
 
     public void sendMessageToServer(String msg){
-        if(client == null){
-            client = new Client();
+        //if(client == null){
+            //client = new Client();
             client.connectToServer(Host, Port);
-        }
+        //}
         client.sendMessagetoServer(msg);
         System.out.println("Sending this to server: "+msg);
     }

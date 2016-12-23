@@ -119,9 +119,12 @@ public class DefinePawnPosition {
                 // Festland
                 PositionX = 14;
                 PositionY = 8;
+
+                //PlayerClient playerClient = new PlayerClient();
+                //playerClient.sendMessageToServer("DidAPlayerWinTheGame");
+
                 break;
         }
-
 
         if (Message.substring(0,7).equals("Player1")){
             gameBoardView.setPositionPawnP1(PositionX, PositionY);

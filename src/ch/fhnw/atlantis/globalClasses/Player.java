@@ -32,6 +32,7 @@ public class Player implements Serializable {
     public static int GameStarted = 0;
     static int PlayerOnePawnOnLand = 0;
     static int PlayerTwoPawnOnLand = 0;
+    static String winner = "";
     static ArrayList<String> MovementCards = new ArrayList<>();
     static ArrayList<String> PlayerOneHandCards = new ArrayList<>();
     static ArrayList<String> PlayerTwoHandCards = new ArrayList<>();
@@ -287,8 +288,11 @@ public class Player implements Serializable {
         return returnToClient;
     }
 
-    public String calculateWinner(){
-        String winner = "WinnerPlayer1";
+    public String getWinner(){
+        return winner;
+    }
+
+    public void calculateWinner(){
         int PlayerOnePoints = 0;
         int PlayerTwoPoints = 0;
 
@@ -311,7 +315,5 @@ public class Player implements Serializable {
         }else{
             winner = "WinnerPlayer2";
         }
-
-        return winner;
     }
 }
