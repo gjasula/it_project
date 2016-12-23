@@ -3,7 +3,7 @@ package ch.fhnw.atlantis.clientClasses.GUI;
 import java.io.FileNotFoundException;
 
 /**
- * @author Richard on 19/12/2016.
+ * @author Richard & Juerg
  */
 public class DefinePawnPosition {
 
