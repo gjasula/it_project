@@ -5,7 +5,7 @@ import javafx.scene.layout.StackPane;
 import java.io.Serializable;
 
 /**
- * Created by juerg on 02.12.2016.
+ * @author juerg
  * <p>
  * Klasse zur Erstellung von Bewegungsplättchen und Zuteilung auf dem Spielfeld
  */

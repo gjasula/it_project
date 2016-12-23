@@ -9,24 +9,16 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Created by juerg on 02.12.2016.
+ * @author by juerg & richard
  *
- * Erstellung eines Player
+ *
  */
 
 public class Player implements Serializable {
 
-    //private static final long serialVersionUID = 1;
+    private static final long serialVersionUID = 1;
 
-    private ArrayList<Pawn> pawns;
-    private String playerName;
-    private String gameName;
     private int playerID;
-    private Color color;
-    private int bridge;
-    private int score;
-    private Pawn pawn, pawn1, pawn2, pawn3;
-
     private boolean isConnected = true;
     public static int playernumber = 0;
     public static int GameStarted = 0;
@@ -40,13 +32,7 @@ public class Player implements Serializable {
     static List<String> PlayerTwoHandTiles = new ArrayList<>();
 
     public Player(int playerID, String gameName, String playerName) {
-        this.playerName = playerName;
         this.playerID = playerID;
-        this.gameName = gameName;
-
-        pawn1 = new Pawn(this, 1);
-        pawn2 = new Pawn(this, 2);
-        pawn3 = new Pawn(this, 3);
 
     }
 
@@ -133,10 +119,8 @@ public class Player implements Serializable {
         }
     }
 
-
-
     /*
-    * Kartenstapel erzeugen - Richard Künzi
+    * Kartenstapel erzeugen
     */
     static void CardStack(){
         String MV_Blue = "MV_Blue";
