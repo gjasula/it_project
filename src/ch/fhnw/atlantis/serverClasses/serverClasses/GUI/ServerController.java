@@ -10,7 +10,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 
 /**
- * Author Nadine
+ * @Author Nadine
  */
 
 public class ServerController {
@@ -26,7 +26,6 @@ public class ServerController {
     }
 
     public void show() {
-        //view.show(model.getPrimaryStage());
 
         view.getBtnConnect_s().setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -74,31 +73,3 @@ public class ServerController {
         view.updateAll();
     }
 }
-    //class btnConnectEventHandler implements EventHandler<ActionEvent>{
-//
-    //    private ServerView view;
-//
-    //    @Override
-    //    public void handle(ActionEvent event) {
-    //        this.view = new ServerView();
-    //        //ServerController show = new ServerController();
-    //        //serverView.getPortServer();
-    //        //String portString = serverView.getPortServer().trim();
-    //        //int portInt = Integer.parseInt(portString);
-    //        //System.out.println(portInt);
-//
-    //        //serverView.setPortServer("8888");
-//
-//
-    //        view.setTxtLog();
-    //        view.txtLog.appendText("testasd1");
-    //        //txtLog.appendText("OK\n");
-//
-//
-    //        Server server = Server.getInstance(7777);
-    //        server.startTCP();
-//
-    //    }
-    //}
-
-

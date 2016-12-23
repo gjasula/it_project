@@ -11,7 +11,7 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * Created by Daniel on 02.12.2016.
+ * @author Daniel
  */
 public class Server {
 
@@ -35,32 +35,13 @@ public class Server {
     public void addClient(ServerClientHandler sch) {
         socketList.add(sch);
     }
-    public void removeClient(ServerClientHandler sch) {
-        // How many Sockets are Connected
-        //System.out.println(socketList);
-//
-        //for(int i = 0; i < (socketList.size()-8); i++){
-        //    socketList.remove(0);
-        //}
-        //System.out.println(socketList);
-    }
 
     public void forwardMessage(String message, ServerClientHandler sender) {
         //Iterator itr = socketList.iterator();
         for(Iterator itr = socketList.iterator(); itr.hasNext();){
             ServerClientHandler sch = (ServerClientHandler) itr.next();
-            //if (!sender.equals(sch)) {
             sch.send(message);
-            //}
         }
-        
-        //while (itr.hasNext()) {
-//
-        //    ServerClientHandler sch = (ServerClientHandler) itr.next();
-        //    //if (!sender.equals(sch)) {
-        //    sch.send(message);
-        //    //}
-        //}
     }
 
     // Sends message if only one client is connected

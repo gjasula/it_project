@@ -5,7 +5,7 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 
 /**
- *Author Nadine
+ *@Author Nadine
  *Einstiegspunkt für JavaFx Anwendung - Stage stage zuweisung "Bühne"
  *Initialisiert das ch.fhnw.atlantis.clientClasses.GUI.Model
  */
